@@ -1,38 +1,224 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+@layer components {
+
+  .box{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 576px){
+    .box{
+      width: 540px;
+    }
+  }
+  @media (min-width: 768px){
+    .box{
+      width: 720px;
+    }
+  }
+  @media (min-width: 958px){
+    .box{
+      width: 880px;
+    }
+  }
+  @media (min-width: 992px){
+    .box{
+      width: 960px;
+    }
+  }
+  @media (min-width: 1200px){
+    .box{
+      width: 1140px;
+    }
+  }
+  @media (min-width: 1400px){
+    .box{
+      width: 1320px;
+    }
+  }
+  .section{
+    padding: 80px 0px;
+  }
+  @media (max-width: 1000px){
+    .section{
+      padding: 60px 0px;
+    }
+  }
+  .fw-300{
+    font-weight: 300;
+  }
+  .fw-400{
+    font-weight: 400;
+  }
+  .fw-500{
+    font-weight: 500;
+  }
+  .fw-600{
+    font-weight: 600;
+  }
+  .fw-700{
+    font-weight: 700;
+  }
+  .fw-800{
+    font-weight: 800;
+  }
+  .fw-900{
+    font-weight: 900;
+  }
+  .fs-400{
+    font-size:14px;
+  }
+  .fs-300{
+    font-size:13px;
+  }
+  .fs-500{
+    font-size: 15px;
+  }
+  .fs-600{
+    font-size: 16px;
+  }
+  .fs-700{
+    font-size: 17px;
+  }
+  .fs-800{
+    font-size: 18px;
+  }
+  .btn{
+    border-radius:10px;
+    padding: 10px 30px;
+  }
+  .bg-primary{
+    background-color:rgba(132, 194, 37, 1);
+    ;
+  }
+  .text-primary{
+    color:rgba(132, 194, 37, 1);
+  }
+  .text-secondary{
+    color: #FF7800;
+  }
+  .bg-secondary{
+    background: #FF7800;
+  }
+  .bg-sec-op{
+    background: rgba(255, 125, 4, 0.58);
+  }
+  .bg-light{
+    background: #F6FAFD;
+  }
+  .bg-white{
+    background: #FFF;
+  }
+  .text-white{
+    color: #FFF !important;
+  }
+  .bg-black{
+    background: #000000;
+  }
+  .text-black{
+    color: #000000;
+  }
+  .bg-ash{
+    background: #F6FAFDF2;
+  }
+  .bg-tertiary{
+    background: #F6F6F6;
+    ;
+  }
+  .bg-input{
+    background-color:rgba(240, 240, 255, 0.8);
+  }
+  .border-primary{
+    border: 1px solid rgba(132, 194, 37, 1);
+  }
+  .border-secondary{
+    border: 1px solid #FF7800;
+  }
+  .border-rg{
+    border-right: 7px solid #FF7800;
+  }
+  .border-lg{
+    border-left: 7px solid #FF7800;
+  }
+  .home-bg{
+    background: #F5F5F5;
+  }
+  .grid-4{
+    display:grid;
+    grid-template-columns: 23% 23% 23% 23%;
+  }
+  .grid-3{
+    display:grid;
+    grid-template-columns: 25% 25% 25%;
+  }
+  .grid-3s{
+    display:grid;
+    grid-template-columns: 30% 30% 30%;
+  }
+  .grid-2{
+    display:grid;
+    grid-template-columns: 48% 48%;
+  }
+  .grid-2s{
+    display: grid;
+    grid-template-columns: 40% 40%;
+  }
+  .menu-btn{
+    left:33%;
+  }
+  .btn-primary{
+    background:rgba(132, 194, 37, 1);
+    color:#fff;
+    padding: 10px 15px;
+    border-radius:7px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+  }
+  .modal-bg{
+    background:rgba(0, 0, 0, 0.6)
+  }
+  .form-bg{
+    background:rgba(132, 194, 37, 1);
+  }
+  .grid-4{
+    display:grid;
+    grid-template-columns: 23% 23% 23% 23%;
+  }
+  .menu{
+    position: absolute;
+    z-index:100;
+    background-color: white;
+    animation: menu .3s ease-in-out;
+  }
+  @keyframes menu {
+    from {
+      left:-400px;
+    }
+    to{
+      left:0px;
+    }
+    
+  }
+  .bg-fit{
+    background-size: 100% 100%;
+  }
+  .bg-gray{
+    background-color:rgba(246, 246, 246, 1)
+  }
+  .circle{
+    border-radius: 50%;
+  }
+  .track{
+    bottom:-30px;
+    margin: auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
