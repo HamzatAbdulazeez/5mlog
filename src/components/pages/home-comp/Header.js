@@ -11,7 +11,8 @@ export const Header = () => {
     }
     const activeStyle = {
         fontWeight: "700",
-        borderBottom: "4px solid rgba(132, 194, 37, 1)"
+        borderBottom: "4px solid rgba(132, 194, 37, 1)",
+        color: "rgba(132, 194, 37, 1)"
     };
 
     return (
@@ -25,7 +26,8 @@ export const Header = () => {
                         <div className="w-6/12 hidden lg:flex fw-500 justify-between items-center">
                             <NavLink 
                                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                to="/" className="text-primary">
+                                to="/" 
+                                >
                                 <button >Home</button>
                             </NavLink>
                             <NavLink 
@@ -40,7 +42,7 @@ export const Header = () => {
                             </NavLink>
                             <NavLink 
                                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                to="/blog" className="">
+                                to="/faqs" className="">
                                 <button >FAQs</button>
                             </NavLink>
                             <NavLink 
@@ -54,7 +56,7 @@ export const Header = () => {
                                 Sign In
                             </Link> */}
                             <Link to="/signin" className="text-white bg-black py-2 px-6 rounded-md fw-600">
-                                <button  >Sign In/Up</button>
+                                <button  >Sign In/Sign Up</button>
                             </Link>
                         </div>
                         <div className="text-black lg:hidden">

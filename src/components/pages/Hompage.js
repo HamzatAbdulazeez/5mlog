@@ -13,8 +13,8 @@ export const Hompage = () => {
         <div className='font-primary'>
             <Header/>
             {/* hero banner */}
-            <div className='py-10 relative'>
-                <div  className='box -03 '>
+            <div className='py-5 relative'>
+                <div  className='box'>
                     <div className=''>
                         <HeroSwipe/>
                     </div>
@@ -160,14 +160,21 @@ export const Hompage = () => {
             {/* reviws */}
             <div className='section'>
                 <div className='box'>
-                    <div>
-                        <Review/>
+                    <div className='lg:flex items-center'>
+                        <div className='w-5/12 text-center'>
+                            <p className='fs-400 text-gray-500'>Our Testimonials</p>
+                            <p className='lg:text-2xl fw-600 mb-6'>What are our customers saying</p>
+                            <p>Reprehenderit in irure non laborum enim sit adipisicing quis non et magna. Deserunt nostrud eiusmod Lorem sit. Do reprehenderit culpa irure adipisicing laborum incididunt do eiusmod velit. Qui labore cupidatat veniam enim officia eiusmod dolore elit commodo nisi.</p>
+                        </div>
+                        <div className='w-7/12'>
+                            <Review/>
+                        </div>
                     </div>
                 </div>
             </div>
             {/* newsletter */}
             <div className='section'>
-                <div className='box'>
+                <div className='box mb-12 lg:mb-24'>
                     <div>
                         <div>
                             <p className='lg:text-3xl text-lg fw-600 lg:fw-700 text-center'>Newsletter</p>

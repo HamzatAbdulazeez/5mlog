@@ -3,7 +3,7 @@ import React from 'react'
 export const Footer = () => {
   return (
     <div>
-        <div className='mt-12 lg:pt-16 lg:pb-10 bg-footer bg-cover xl:bg-fit lg:mt-24 w-full'>
+        <div className='lg:pt-16 lg:pb-10 bg-footer bg-cover xl:bg-fit w-full'>
             <div className='box'>
                 <div className='lg:flex justify-end'>
                   <div className='lg:w-3/12 relative -top-6'>

@@ -11,7 +11,7 @@ export const Register = () => {
             <form>
                 <div className='lg:flex'>
                     <div className='lg:w-6/12 lg:pr-6'>
-                        <label className='fw-500'>Full Nane</label>
+                        <label className='fw-500'>Full Name</label>
                         <input type="email" placeholder="Enter your full name" className="w-full p-2 lg:py-1 mt-2 rounded border border-gray-400"/>
                     </div>
                     <div className='lg:w-6/12 lg:pl-6 mt-6 lg:mt-0'>
