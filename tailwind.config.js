@@ -23,9 +23,10 @@ module.exports = withMT({
         service: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473612/5mlog/Group_237789_blmvss.png')",
         contact: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473623/5mlog/Group_237791_v5sgrf.png')",
         login: "linear-gradient(to right bottom, rgba(4, 43, 84, 0.9), rgba(4, 43, 84, 0.9)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1669646604/lazreb/login_p6smcr.jpg')",
-        register: "linear-gradient(to right bottom, rgba(4, 43, 84, 0.6), rgba(4, 43, 84, 0.9)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1669651462/lazreb/register_fhr2vv.jpg')",
+        register:  "linear-gradient(to right bottom, rgba(4, 43, 84, 0.6), rgba(4, 43, 84, 0.9)), url('https://img.freepik.com/premium-photo/we-dont-take-time-granted-shot-delivery-man-standing-by-his-van_590464-2929.jpg?w=2000')",
         contact2: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473602/5mlog/Group_237774_ejqqdn.png')",
         faq: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473607/5mlog/Group_237790_ktkvic.png')",
+
       },
     },
     fontFamily: {

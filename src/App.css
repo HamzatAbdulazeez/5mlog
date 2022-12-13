@@ -220,5 +220,42 @@
     margin: auto;
   }
 }
-
-
+.cont{
+  width: 60%;
+  position: absolute;
+  right: 0;
+  transition: 2s;
+  height:100%;
+  background-color: white;
+  z-index: 10;
+}
+.ban{
+  width: 40%;
+  position: absolute;
+  left: 0;
+  transition: 2s;
+  height:100%;
+  background-image: linear-gradient(to right bottom, rgba(4, 43, 84, 0.6), rgba(4, 43, 84, 0.9)), url('https://img.freepik.com/premium-photo/we-dont-take-time-granted-shot-delivery-man-standing-by-his-van_590464-2929.jpg?w=2000');
+  background-size: cover;
+  background-position: center;
+}
+.styles {
+  width: 60%;
+  position: absolute;
+  right: 40%;
+  transition: 2s;
+  height:100%;
+  background-color: white;
+  z-index: 10;
+}
+.bans{
+  width: 40%;
+  position: absolute;
+  background-color: blue;
+  right: 0;
+  transition: 2s;
+  height:100%;
+  background-image: linear-gradient(to right bottom, rgba(4, 43, 84, 0.6), rgba(4, 43, 84, 0.9)), url('https://media.istockphoto.com/id/1377893181/photo/shot-of-young-man-delivering-a-package-while-sitting-in-a-vehicle.jpg?b=1&s=170667a&w=0&k=20&c=XweAFF0r3bKaydPxQ5hT2B3RKnv5FiAAFRb9xya1nWI=');
+  background-size: cover;
+  background-position: center;
+}

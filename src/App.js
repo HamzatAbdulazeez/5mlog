@@ -3,9 +3,11 @@ import './App.css';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
 import { FAQs } from './components/pages/FAQs';
+import { Forget } from './components/pages/forms/Forget';
+import { Login } from './components/pages/forms/Login';
+import { Register } from './components/pages/forms/Register';
 import { Hompage } from './components/pages/Hompage';
 import { Services } from './components/pages/Services';
-import { SignUp } from './components/pages/SignUp';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Route path='/services' element={<Services/>} />
         <Route path='/faqs' element={<FAQs/>} />
         <Route path='/contact' element={<Contact/>} />
-        <Route path='/signin' element={<SignUp/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/signup' element={<Register/>} />
+        <Route path='/forget' element={<Forget/>} />
       </Routes>
     </div>
   );
