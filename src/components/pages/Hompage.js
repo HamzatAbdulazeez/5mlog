@@ -50,7 +50,7 @@ export const Hompage = () => {
                     <div>
                         <p className='lg:text-2xl text-lg fw-600 lg:fw-700 text-center text-white'>Stats and Recent Accomplishments.</p>
                         <div className='lg:grid-3s justify-between mt-10 lg:mt-16'>
-                            <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 rounded-lg'>
+                            <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 p-3 rounded-lg'>
                                 <TbTruckDelivery className='text-7xl'/>
                                 <p className='fw-600 text-2xl ml-4'>200</p>
                                 <div className='ml-4 mt-1 fs-700'>
@@ -58,7 +58,7 @@ export const Hompage = () => {
                                     <p className='relative -top-1'>Worldwide</p>
                                 </div>
                             </div>
-                            <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 rounded-lg'>
+                            <div className='flex mt-6 lg:mt-0 items-center justify-center bg-white p-3 lg:p-6 xl:px-12 rounded-lg'>
                                 <FaUsers className='text-7xl'/>
                                 <p className='fw-600 text-2xl ml-4'>3100</p>
                                 <div className='ml-4 mt-1 fs-700'>
@@ -66,9 +66,9 @@ export const Hompage = () => {
                                     <p className='relative -top-1'>Clients</p>
                                 </div>
                             </div>
-                            <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 rounded-lg'>
+                            <div className='flex mt-6 lg:mt-0 p-3 items-center justify-center bg-white lg:p-6 xl:px-12 rounded-lg'>
                                 <FiLayers  className='text-7xl'/>
-                                <p className='ml-4 mt-1 text-2xl fw-500'>1200</p>
+                                <p className='ml-4 mt-1 text-2xl fw-600'>1200</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Projects</p>
                                     <p className='relative -top-1'>Completed</p>
@@ -82,11 +82,11 @@ export const Hompage = () => {
             <div className='section'>
                 <div className='box lg:pt-12'>
                     <div className='lg:flex items-center'>
-                        <div className='w-6/12'>
+                        <div className='lg:w-6/12'>
                             <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904755/5mlog/Group_237727_pbqshc.png" alt="wwd" className='w-full lg:w-10/12 mx-auto' />
                         </div>
-                        <div className='w-6/12'>
-                            <p className='lg:text-2xl text-lg fw-600 lg:fw-700'>What we Do</p>
+                        <div className='lg:w-6/12'>
+                            <p className='lg:text-2xl text-xl fw-600 lg:fw-700'>What we Do</p>
                             <div className='mt-8'>
                                 <div className='flex'>
                                     <div className='w-2/12 grid place-content-center'>
@@ -134,21 +134,21 @@ export const Hompage = () => {
                 <div className='box'>
                     <div>
                         <div>
-                            <p  className='lg:text-2xl text-lg fw-600 lg:fw-700 text-center'>The Process</p>
+                            <p  className='lg:text-2xl text-xl fw-600 lg:fw-700 text-center'>The Process</p>
                             <p className='lg:w-6/12 mx-auto text-center fs-500 mt-2'>We have created a seamless process that you can follow to receive your orders and the process is explained below.</p>
                         </div>
                         <div className='mt-8 lg:mt-12 lg:grid-3 justify-evenly'>
-                            <div className='text-center shadow-md lg:py-12 px-5'>
+                            <div className='text-center shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237747_mriujj.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Sign Up</p>
                                 <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat.</p>
                             </div>
-                            <div className='text-center shadow-md lg:py-12 px-5'>
+                            <div className='text-center mt-6 lg:mt-0 shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237748_qdcoyz.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Select a Service</p>
                                 <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat.</p>
                             </div>
-                            <div className='text-center shadow-md lg:py-12 px-5'>
+                            <div className='text-center mt-6 lg:mt-0  shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237746_e8x861.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Await your Delivery</p>
                                 <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat.</p>
@@ -161,12 +161,12 @@ export const Hompage = () => {
             <div className='section'>
                 <div className='box'>
                     <div className='lg:flex items-center'>
-                        <div className='w-5/12 text-center'>
+                        <div className='lg:w-5/12 text-center'>
                             <p className='fs-400 text-gray-500'>Our Testimonials</p>
-                            <p className='lg:text-2xl fw-600 mb-6'>What are our customers saying</p>
+                            <p className='lg:text-2xl text-xl fw-600 mb-6'>What are our customers saying</p>
                             <p>Reprehenderit in irure non laborum enim sit adipisicing quis non et magna. Deserunt nostrud eiusmod Lorem sit. Do reprehenderit culpa irure adipisicing laborum incididunt do eiusmod velit. Qui labore cupidatat veniam enim officia eiusmod dolore elit commodo nisi.</p>
                         </div>
-                        <div className='w-7/12'>
+                        <div className='lg:w-7/12 w-full overflow-hidden mt-10 lg:mt-0'>
                             <Review/>
                         </div>
                     </div>
@@ -181,8 +181,8 @@ export const Hompage = () => {
                             <p  className='text-center fs-500 mt-2'>Be the first to get notified on our latest news and updates</p>
                         </div>
                         <div className='lg:w-10/12 flex mt-6 lg:mt-12 mx-auto rounded-lg bg-white shadow-lg px-2 lg:px-4 lg:py-4 py-2'>
-                            <input type="text" placeholder="your Email" className="py-3 px-6 bg-light lg:text-lg w-9/12"/>
-                            <div className='w-3/12 pl-4'>
+                            <input type="text" placeholder="your Email" className="py-3 px-6 bg-light lg:text-lg lg:w-9/12 w-8/12"/>
+                            <div className='w-4/12 lg:w-3/12 pl-4'>
                                 <button className='w-full lg:text-xl fw-600 py-3 bg-primary text-white pl-2'>Subscribe</button>
                             </div>
                         </div>

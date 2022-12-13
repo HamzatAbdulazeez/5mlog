@@ -18,13 +18,13 @@ export const Contact = () => {
         </div>
         <div className='section'>
             <div className='box'>
-                <div className='lg:flex w-11/12 mx-auto border shadow '>
-                    <div className='w-7/12 px-10 py-10'>
+                <div className='lg:flex lg:w-11/12 mx-auto border shadow '>
+                    <div className='lg:w-7/12 lg:px-10 px-4 py-10'>
                         <p className='lg:text-2xl text-lg fw-600'>Get in touch</p>
-                        <p className='py-4 w-8/12'>Fill in the placeholders below with the appropriate information to keep in touch with us.</p>
+                        <p className='py-4 lg:w-8/12'>Fill in the placeholders below with the appropriate information to keep in touch with us.</p>
                         <ContactForm/>
                     </div>
-                    <div className='w-5/12 flex items-center lg:px-10 bg-contact2 lg:bg-fit bg-cover'>
+                    <div className='lg:w-5/12 flex items-center py-12 px-5 lg:py-0 lg:px-10 bg-contact2 lg:bg-fit bg-cover'>
                         <div className='text-white'>
                             <p className='lg:text-2xl text-lg fw-600'>Contact Information</p>
                             <p className='fs-500 py-6'>Reach us via the following links and information provided below.</p>

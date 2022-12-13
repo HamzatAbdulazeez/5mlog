@@ -51,8 +51,8 @@ export const SignUp = () => {
 
   return (
     <div className='font-primary'>
-        <div className='h-screen bg-primary'>
-            <div className='flex h-full'>
+        <div className='lg:h-screen bg-primary'>
+            <div className='lg:flex block lg:h-full'>
                 <div style={sign? ban : bans} className="flex justify-center items-center text-white">
                     <div className='text-center'>
                         <p className='fw-700 text-center lg:text-4xl'>

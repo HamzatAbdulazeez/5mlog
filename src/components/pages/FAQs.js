@@ -19,7 +19,7 @@ export const FAQs = () => {
             <div className='box'>
                 <div>
                     <p className='text-center text-2xl fw-700 py-4'>Popular Questions</p>
-                    <div className='lg:mt-16 w-10/12 mx-auto'>
+                    <div className='lg:mt-16 lg:w-10/12 mt-10 mx-auto'>
                         <Accordion/>
                     </div>
                 </div>

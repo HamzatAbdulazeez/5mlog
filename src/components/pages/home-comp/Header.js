@@ -77,9 +77,8 @@ export const Header = () => {
                                         <li className="py-4"><Link to="/">Home</Link></li>
                                         <li className="py-4"><Link to="/about">About Us</Link></li>
                                         <li className="py-4"><Link to="/services">Our Services</Link></li>
-                                        <li className="py-4"><Link to="/blog">Blog</Link></li>
                                         <li className="py-4"><Link to="/contact">Contact Us</Link></li>
-                                        <li className="py-4"><Link to="/faq">FAQs</Link></li>
+                                        <li className="py-4"><Link to="/faqs">FAQs</Link></li>
                                         <li className="py-4 mt-7"><Link to="/login" className='bg-primary text-white px-6 py-2'>Login</Link></li>
                                         <li className="py-4 mt-3"><Link to="/register" className='border-primary fw-600 px-6 py-2'>Sign Up</Link></li>
                                     </ul>

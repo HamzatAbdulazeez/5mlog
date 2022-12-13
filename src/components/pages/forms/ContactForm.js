@@ -37,7 +37,7 @@ export const ContactForm = () => {
                 ref={captchaRef}
             />
         </div>
-        <div className='text-end'>
+        <div className='text-end mt-6'>
             <button className='btn-primary'>Send Message</button>
         </div>
     </div>
