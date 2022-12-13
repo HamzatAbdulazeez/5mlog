@@ -36,7 +36,7 @@ export const HeroSwipe = () => {
             <SwiperSlide>
                 <div className='w-full flex items-center font-primary'>
                     <div className='w-7/12 lg:relative top-5'>
-                        <p className='fw-600 lg:text-4xl lg:w-11/12 lg:tracking-wide'>Our efficient global logistics network and delivery service provides Air freight and logistics transportation services.</p>
+                        <p className='fw-600 lg:text-4xl lg:w-11/12 lg:tracking-wide'><sapn className="hidden lg:inline">Our efficient global logistics network and delivery service provides </sapn>Air freight and logistics transportation services.</p>
                         <button className='lg:px-10 px-5 shadow-md fw-600 text-white lg:py-4 py-2 rounded-md bg-primary mt-10'>Get Started</button>
                     </div>
                     <div className='w-5/12 relative -top-4 lg:top-0'>
