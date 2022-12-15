@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router';
 import './App.css';
+import ScrollToTop from './components/assets/ScrollTop';
+import ClientDashboard from './components/dashboard';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
 import { FAQs } from './components/pages/FAQs';
@@ -12,6 +14,7 @@ import { Services } from './components/pages/Services';
 function App() {
   return (
     <div className="">
+      <ScrollToTop/>
       <Routes>
         <Route path='/' element={<Hompage/>} />
         <Route path='/about' element={<About/>} />
@@ -21,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Register/>} />
         <Route path='/forget' element={<Forget/>} />
+        <Route path='/dashboard' element={<ClientDashboard/>} />
       </Routes>
     </div>
   );

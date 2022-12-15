@@ -18,7 +18,7 @@ export const Register = () => {
 
   return (
     <div className='flex lg:h-screen items-center'>
-        <div className='lg:w-7/12 px-8 lg:px-0 overflow-scroll py-3'>
+        <div className='lg:w-7/12 px-8 lg:px-0 overflow-y-scroll lg:py-8'>
             <div className='lg:w-10/12 xl:w-8/12 mx-auto'>
                 <Link to="/">
                     <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669899103/5mlog/Rectangle_19530_uity99.png" alt='register' className='lg:pt-12 relative -left-4 lg:left-0' />
