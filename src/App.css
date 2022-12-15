@@ -131,7 +131,6 @@
   }
   .bg-tertiary{
     background: #F6F6F6;
-    ;
   }
   .bg-input{
     background-color:rgba(240, 240, 255, 0.8);
@@ -204,23 +203,6 @@
     to{
       left:0px;
     }
-    
-  }
-  .track-ani{
-    position: relative;
-    z-index: 49;
-    animation: menu .8s ease-in-out;
-  }
-  @keyframes menu {
-    from {
-      left:-400px;
-      opacity: 0;
-    }
-    to{
-      left:0px;
-      opacity: 1;
-    }
-    
   }
   .bg-fit{
     background-size: 100% 100%;
@@ -252,6 +234,22 @@
   }
   .ar-32{
     aspect-ratio: 1 / 1
+  }
+  .track-ani{
+    position: relative;
+    z-index: 49;
+    animation: menu .8s ease-in-out;
+  }
+  @keyframes menu {
+    from {
+      left:-400px;
+      opacity: 0;
+    }
+    to{
+      left:0px;
+      opacity: 1;
+    }
+    
   }
 }
 .sub-menu{
