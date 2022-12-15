@@ -214,6 +214,44 @@
     bottom: -30px;
     margin: auto;
   }
+  .sidebar-w{
+    width:14%;
+  }
+  .head-grid{
+    display:grid;
+    grid-template-columns: 14% 86%;
+    justify-content:space-between;
+  }  
+  .main-p{
+    width:86%;
+    float:right;
+  }
+  .pt-21{
+    padding-top: 81px;
+  }
+  .ar-32{
+    aspect-ratio: 1 / 1
+  }
+  .track-ani{
+    position: relative;
+    z-index: 49;
+    animation: menu .8s ease-in-out;
+  }
+  @keyframes menu {
+    from {
+      left:-400px;
+      opacity: 0;
+    }
+    to{
+      left:0px;
+      opacity: 1;
+    }
+    
+  }
+}
+.sub-menu{
+  left: 15.5%;
+  top: 40px;
 }
 .cont {
   width: 60%;

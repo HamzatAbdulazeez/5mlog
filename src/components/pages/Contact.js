@@ -16,6 +16,31 @@ export const Contact = () => {
                 </div>
             </div>
         </div>
+        <div className='section pb-6'>
+            <div className='box'>
+                <div>
+                    <p className='fw-600 text-2xl'>Office Address</p>
+                    <div className='lg:grid-4 justify-between mt-6'>
+                        <div className='p-5 shadow'>
+                            <p className='mb-2 fw-500'>Houston Texas</p>
+                            <p>9898 Bissonnet Street Houston Texas 77038 United States</p>
+                        </div>
+                        <div className='p-5 shadow'>
+                            <p className='mb-2 fw-500'>Lagos Office</p>
+                            <p>19 Omotola plaza, Afolabi Aina street, off Awolowo way Ikeja, Lagos state.</p>
+                        </div>
+                        <div className='p-5 shadow'>
+                            <p className='mb-2 fw-500'>Abuja Office</p>
+                            <p>Suite A4 Danziyal plaza Central Business District Abuja.</p>
+                        </div>
+                        <div className='p-5 shadow'>
+                            <p className='mb-2 fw-500'>Ogbomosho Office</p>
+                            <p>3 D Place complex opposite Bovas filling station Aroje Area Ogbomosho Oyo state.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div className='section'>
             <div className='box'>
                 <div className='lg:flex lg:w-11/12 mx-auto border shadow '>
@@ -30,7 +55,7 @@ export const Contact = () => {
                             <p className='fs-500 py-6'>Reach us via the following links and information provided below.</p>
                             <div className='my-6'>
                                 <p className='fw-600 text-lg'>Address</p>
-                                <p className='fs-500 pt-4'>No 001 Company address, Web avenue. Nigeria.</p>
+                                <p className='fs-500 pt-4'>9898 Bissonnet Street Houston Texas 77038 United States.</p>
                             </div>
                             <div className='my-6'>
                                 <p className='fw-600 text-lg'>Phone</p>

@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { BsArrowRightShort } from 'react-icons/bs'
 import { FaUsers } from 'react-icons/fa'
 import { FiLayers } from 'react-icons/fi'
 import { TbTruckDelivery } from 'react-icons/tb'
+import { Link } from 'react-router-dom'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
 import { HeroSwipe } from './home-comp/HeroSwipe'
 import Review from './home-comp/Review'
 
 export const Hompage = () => {
+    const [track, setTrack] = useState(false)
+
   return (
     <div>
         <div className='font-primary'>
@@ -93,8 +97,8 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19547_cuxzyk.png" alt="wwd" />
                                     </div>
                                     <div className='w-10/12'>
-                                        <p className='fw-600'>Air Freight</p>
-                                        <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat. Morbi tristique magna non erat suscipit, vel aliquam elit iaculis.</p>
+                                        <p className='fw-600'>Freights</p>
+                                        <p className='fs-500'>We handle both your international freight forwarding and domestic delivery, all via air, sea and land shipping.</p>
                                     </div>
                                 </div>
                                 <div className='flex mt-6'>
@@ -102,8 +106,8 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Rectangle_19548_eyiogp.png" alt="wwd" />
                                     </div>
                                     <div  className='w-10/12'>
-                                        <p className='fw-600'>Ocean Freight</p>
-                                        <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat. Morbi tristique magna non erat suscipit, vel aliquam elit iaculis.</p>
+                                        <p className='fw-600'>Logistics</p>
+                                        <p className='fs-500'>We take care of the end-to-end logistics of your business so you can focus on your core business operation.</p>
                                     </div>
                                 </div>
                                 <div className='flex mt-6'>
@@ -111,8 +115,8 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19549_yolvyo.png" alt="wwd" />
                                     </div>
                                     <div  className='w-10/12'>
-                                        <p className='fw-600'>Ground Shipping</p>
-                                        <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat. Morbi tristique magna non erat suscipit, vel aliquam elit iaculis.</p>
+                                        <p className='fw-600'>Warehousing</p>
+                                        <p className='fs-500'>We provide safe warehouse management services to protect your goods in the meantime.</p>
                                     </div>
                                 </div>
                                 <div className='flex mt-6'>
@@ -120,9 +124,12 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Rectangle_19550_tcter1.png" alt="wwd" />
                                     </div>
                                     <div  className='w-10/12'>
-                                        <p className='fw-600'>Package Delivery</p>
-                                        <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat. Morbi tristique magna non erat suscipit, vel aliquam elit iaculis.</p>
+                                        <p className='fw-600'>Same Day Package Delivery</p>
+                                        <p className='fs-500'>We Provide relaible, quality and affordable daily delivery of your goods and products.</p>
                                     </div>
+                                </div>
+                                <div className='mt-3'>
+                                    <Link to="/services"><p className='justify-end flex items-center'>See more services <span><BsArrowRightShort/></span></p></Link>
                                 </div>
                             </div>
                         </div>
@@ -141,17 +148,17 @@ export const Hompage = () => {
                             <div className='text-center shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237747_mriujj.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Sign Up</p>
-                                <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat.</p>
+                                <p className='fs-500'>Provide your needed information and sign up to 5M Logistics.</p>
                             </div>
                             <div className='text-center mt-6 lg:mt-0 shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237748_qdcoyz.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Select a Service</p>
-                                <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat.</p>
+                                <p className='fs-500'>Select a service and fill in the required information for your delivery.</p>
                             </div>
                             <div className='text-center mt-6 lg:mt-0  shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237746_e8x861.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Await your Delivery</p>
-                                <p className='fs-500'>Duis ex mi, lacinia vel felis quis, sollicitudin fringilla odio. Integer quis viverra erat.</p>
+                                <p className='fs-500'>Relax and await your delivery whilst tracking your goods via a tracking id provided for you.</p>
                             </div>
                         </div>
                     </div>
@@ -190,6 +197,20 @@ export const Hompage = () => {
                 </div>
             </div>
             <Footer/>
+            <div className='fixed w-full lg:left-10 left-4 bottom-5 lg:bottom-10 flex items-center'>
+                <div className='bg-green-100 relative z-50 circle p-4 hover:bg-green-300' onClick={() => setTrack(!track)}>
+                    <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1671119130/5mlog/track1-removebg-preview_jiasst.png' alt="track" className='lg:w-12 w-6' />
+                </div>
+                {/* tracking */}
+                {track && (
+                    <div className='lg:w-8/12 w-9/12 track-ani pl-3'>
+                        <div className='mx-auto rounded-lg bg-green-200 fs-300 lg:fs-600 shadow-lg px-2 py-2'>
+                            <input type="text" placeholder="Enter your tracking ID" className="py-3 lg:px-6 px-3 lg:text-lg lg:w-10/12 w-9/12"/>
+                            <button className='lg:w-2/12 w-3/12 lg:text-xl fw-600 py-3 bg-primary rounded-lg text-white'>Track</button>
+                        </div>
+                </div>
+                )}
+            </div>
         </div>
     </div>
   )

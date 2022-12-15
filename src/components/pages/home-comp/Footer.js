@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -15,21 +16,21 @@ export const Footer = () => {
                     <div className='lg:w-3/12 mt-10 lg:mt-0'>
                       <p className='fw-600 text-xl mb-6 mt-4'>Links</p>
                       <ul>
-                        <li className='mb-4'>Home</li>
-                        <li className='mb-4'>About Us</li>
-                        <li className='mb-4'>Services</li>
-                        <li className='mb-4'>FAQs</li>
-                        <li className='mb-4'>Contact Us</li>
+                        <li className='mb-4'><Link to="/">Home</Link></li>
+                        <li className='mb-4'><Link to="/about">About Us</Link></li>
+                        <li className='mb-4'><Link to="/services">Services</Link></li>
+                        <li className='mb-4'><Link to="/faqs">FAQs</Link></li>
+                        <li className='mb-4'><Link to="/contact">Contact Us</Link></li>
                       </ul>
                     </div>
                     <div className='lg:w-3/12  mt-10 lg:mt-0'>
                       <p className='fw-600 text-xl mb-6 mt-4'>Company Policy</p>
                       <ul>
-                        <li className='mb-4'>Terms of Services</li>
-                        <li className='mb-4'>Privacy Policy</li>
+                        <li className='mb-4'><Link to="terms">Terms of Services</Link></li>
+                        <li className='mb-4'><Link to="privacy">Privacy Policy</Link></li>
                         <li className='mb-4'>Cookies</li>
-                        <li className='mb-4'>User Agreement</li>
-                        <li className='mb-4'>List of Contrabands</li>
+                        <li className='mb-4'><Link to="/">User Agreement</Link></li>
+                        <li className='mb-4'><Link>List of Contrabands</Link></li>
                       </ul>
                     </div>
                     <div className='lg:w-3/12  mt-10 lg:mt-0'>
