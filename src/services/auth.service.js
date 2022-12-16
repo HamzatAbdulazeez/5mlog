@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `${process.env.REACT_APP_BASE_URL}`;
+const API_URL = `https://5million.greenmouseproperties.com/api`;
 
 const register = (payload) => {
     return axios.post(API_URL + "/auth/register", payload);
