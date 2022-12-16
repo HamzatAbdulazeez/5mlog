@@ -17,12 +17,14 @@ export const Login = () => {
     }, [dispatch]);
 
     const [successful, setSuccessful] = useState(false);
+    const [disableBtn, setDisableBtn] = useState(false);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setDisableBtn(true);
 
         if (email === "" || password === "") {
             toast.error('All fields are required');
@@ -36,9 +38,11 @@ export const Login = () => {
             dispatch(login(formdata))
                 .then(() => {
                     setSuccessful(true)
+                    setDisableBtn(false);
                 })
                 .catch(() => {
                     setSuccessful(false)
+                    setDisableBtn(false);
                 });
         }
     }
@@ -86,10 +90,10 @@ export const Login = () => {
                             <label className='fw-500'>Password</label>
                             <Link to="/forget" className='fs-400 fw-500 text-primary'>Forget password ?</Link>
                         </div>
-                          <input type="password" name='password' placeholder="Enter your password" value={password} onChange={changePassword} className="w-full p-2 mt-2 rounded border border-gray-400"/>
+                          <input type="password" name='password' placeholder="Enter your password" value={password} onChange={changePassword} className="w-full p-2 mt-2 rounded border border-gray-400" required/>
                     </div>
                     <div className='mt-8'>
-                        <button className='w-full text-center py-2 bg-primary rounded-md text-white fw-600 fs-700'>
+                          <button className='w-full text-center py-2 bg-primary rounded-md text-white fw-600 fs-700' disabled={disableBtn}>
                             Login
                         </button>
                     </div>
