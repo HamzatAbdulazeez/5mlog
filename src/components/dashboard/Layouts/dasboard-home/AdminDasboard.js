@@ -6,16 +6,18 @@ import { AiOutlineDeliveredProcedure } from "react-icons/ai"
 import { GiBuyCard } from "react-icons/gi"
 import { TbLiveView} from "react-icons/tb"
 import { UserDashBoardHomeTable } from '../../assets/Tables/UserDashBoardHome'
-import OrdersChart from '../../assets/Charts/OrdersChart'
+import AdminChart from '../../assets/Charts/AdminOrders'
+import UsersChart from '../../assets/Charts/UserChart'
+import { FaUsers } from 'react-icons/fa'
 
-export const UserDashboard = () => {
+export const AdminDashboard = () => {
   return (
     <div>
         <div  className="min-h-screen fs-500 relative">
             {/* header */}
             <div className="w-full py-8 pl-6 bg-white px-4">
-                <p className="text-2xl fw-600">Hello User</p>
-                <p className="fs-400 text-gray-600 mt-2">Access our various services on your dashboard.</p>
+                <p className="text-2xl fw-600">Welcome SuperAdmin</p>
+                <p className="fs-400 text-gray-600 mt-2">Control and manage all services on this website.</p>
                 <Breadcrumbs className="bg-white pl-0 mt-4">
                     <Link to="/" className="opacity-60">
                         <svg
@@ -42,7 +44,7 @@ export const UserDashboard = () => {
                         </div>
                         <div className='w-8/12'>
                             <p className='text-4xl fw-600'>34</p>
-                            <p className='fs-400'>Total Deliveries</p>
+                            <p className='fs-400'>Total Users</p>
                         </div>
                     </div>
                     <div className='border shadow-xl flex py-8 rounded bg-blue-100'>
@@ -64,7 +66,7 @@ export const UserDashboard = () => {
                         </div>
                         <div className='w-8/12'>
                             <p className='text-4xl fw-600'>10</p>
-                            <p className='fs-400'>Ongoing Deliveries</p>
+                            <p className='fs-400'>Completed</p>
                         </div>
                     </div>
                     <div className='border shadow-xl flex py-8 rounded bg-red-100'>
@@ -75,23 +77,31 @@ export const UserDashboard = () => {
                         </div>
                         <div className='w-8/12'>
                             <p className='text-4xl fw-600'>14</p>
-                            <p className='fs-400'>Delivered Orders</p>
+                            <p className='fs-400'>Transactions</p>
                         </div>
                     </div>
                 </div>
                 {/* table and graph */}
-                <div className='lg:grid-64 mt-6 lg:mt-12'>
+                <div className='mt-6 lg:mt-12 '>
                     {/* table */}
                     <div className='bg-white lg:p-4 rounded-lg'>
-                        <div className='flex justify-between pb-2 mb-3 border-b border-gray-400'>
-                            <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><GiBuyCard/></span>Order Activity</p>
-                            <button className='btn-primary py-1 flex items-center'>view all <span className='pl-2 text-xl'><TbLiveView/></span></button>
-                        </div>
-                        <UserDashBoardHomeTable/>
+                        <p className='pb-2 mb-3 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><AiOutlineDeliveredProcedure/></span>Order/Delivery Analytics</p>
+                        <AdminChart/>
                     </div>
-                    <div className='bg-white lg:p-4 rounded-lg'>
-                        <p className='pb-2 mb-8 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><AiOutlineDeliveredProcedure/></span>Deliveries</p>
-                        <OrdersChart/>
+                     {/* table and graph */}
+                    <div className='lg:grid-64 mt-6 lg:mt-12'>
+                        {/* table */}
+                        <div className='bg-white lg:p-4 rounded-lg'>
+                            <div className='flex justify-between pb-2 mb-3 border-b border-gray-400'>
+                                <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><GiBuyCard/></span>Order Activity</p>
+                                <button className='btn-primary py-1 flex items-center'>view all <span className='pl-2 text-xl'><TbLiveView/></span></button>
+                            </div>
+                            <UserDashBoardHomeTable/>
+                        </div>
+                        <div className='bg-white lg:p-4 rounded-lg'>
+                            <p className='pb-2 mb-8 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><FaUsers/></span>Users</p>
+                            <UsersChart/>
+                        </div>
                     </div>
                 </div>
             </div>
