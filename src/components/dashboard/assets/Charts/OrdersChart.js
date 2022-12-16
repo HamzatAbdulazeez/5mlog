@@ -18,7 +18,7 @@ const series = [20, 16, 3,]; //our data
 
 return (
   <div className="">
-    <ReactApexChart options={options} series={series} type="polarArea" width="100%" />
+    <ReactApexChart options={options} series={series} type="pie" width="100%" />
   </div>
 );
   }
