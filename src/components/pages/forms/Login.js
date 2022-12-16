@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { login } from '../../../store/slices/auth';
 import { clearMessage } from "../../../store/slices/messages";
@@ -11,6 +11,8 @@ export const Login = () => {
     const { message } = useSelector((state) => state.message);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         dispatch(clearMessage());
@@ -54,6 +56,7 @@ export const Login = () => {
             }
             else {
                 toast.success(message.message);
+                navigate('/dashboard')
             }
         }
         setSuccessful(false);

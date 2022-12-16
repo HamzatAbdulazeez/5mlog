@@ -37,6 +37,15 @@ const resendVerification = async (payload) => {
     return response.data;
 };
 
+const forgetPassword = async (payload) => {
+    const response = await axios
+        .post(API_URL + "/auth/password/email",payload);
+    if (response.data.accessToken) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+    }
+    return response.data;
+};
+
 const logout = () => {
     localStorage.removeItem("user");
 };
@@ -46,7 +55,8 @@ const AuthService = {
     login,
     logout,
     verifyAccount,
-    resendVerification
+    resendVerification,
+    forgetPassword
 };
 
 export default AuthService;
