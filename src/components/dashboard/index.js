@@ -5,7 +5,10 @@ import Header from "./Layouts/Header";
 import ClientSidebar from "./Layouts/Sidebars/Users";
 // import { RequestService } from "./pages/RequestService";
 import { FaBars } from "react-icons/fa";
-import { UserDashboard } from "./Layouts/dasboard-home/UserDashboard";
+// import { UserDashboard } from "./Layouts/dasboard-home/UserDashboard";
+import { UserSettings } from "./pages/SettingsUser";
+// import AdminSidebar from "./Layouts/Sidebars/Admin";
+import { AdminDashboard } from "./Layouts/dasboard-home/AdminDasboard";
 
 export default function ClientDashboard() {
 
@@ -30,7 +33,8 @@ export default function ClientDashboard() {
                     }}
                     className="lg:main-p pt-21 home-bg pb-10 relative">
                     <Routes>
-                        <Route path="" element={<UserDashboard />} />
+                        <Route path="" element={<AdminDashboard />} />
+                        <Route path="settings" element={<UserSettings />} />
                     </Routes>
 
                 </div>

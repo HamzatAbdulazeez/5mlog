@@ -50,9 +50,9 @@ const ClientSidebar = () => {
         }
     }
     const activeStyle = {
-        backgroundColor: "rgba(234, 245, 255, 1)",
-        color: "rgba(63, 121, 173, 1)",
-        borderRight: "6px solid rgba(63, 121, 173, 1)"
+        backgroundColor: "rgba(132, 194, 37, .1)",
+        // color: "rgba(63, 121, 173, 1)",
+        borderRight: "5px solid rgba(132, 194, 37, 1)"
     };
 
     return (
@@ -166,7 +166,7 @@ const ClientSidebar = () => {
                 </div>
             )}
             {signOut && (
-                <div className="fixed font-primary left-0 top-0 w-full h-screen bg-op center-item z-40" onClick={CloseModal}>
+                <div className="fixed font-primary left-0 top-0 bg-op w-full h-screen bg-white flex justify-center items-center z-40" onClick={CloseModal}>
                     <div className="bg-white lg:w-5/12 rounded-md  overscroll-none  w-11/12 pt-8 shadow fw-500 scale-ani px-5" onClick={e => e.stopPropagation()}>
                         <div className="lg:px-6">
                             <div className="flex text-xl fw-600">

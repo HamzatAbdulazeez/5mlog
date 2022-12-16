@@ -5,6 +5,7 @@ import ClientDashboard from './components/dashboard';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
 import { FAQs } from './components/pages/FAQs';
+import { AdminLogin } from './components/pages/forms/AdminLogin';
 import { Forget } from './components/pages/forms/Forget';
 import { Login } from './components/pages/forms/Login';
 import { Register } from './components/pages/forms/Register';
@@ -22,9 +23,10 @@ function App() {
         <Route path='/faqs' element={<FAQs/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/login' element={<Login/>} />
+        <Route path='/admin' element={<AdminLogin/>} />
         <Route path='/signup' element={<Register/>} />
         <Route path='/forget' element={<Forget/>} />
-        <Route path='/dashboard' element={<ClientDashboard/>} />
+        <Route path='/dashboard*' element={<ClientDashboard/>} />
       </Routes>
     </div>
   );
