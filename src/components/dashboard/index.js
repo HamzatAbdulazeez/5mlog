@@ -7,8 +7,10 @@ import ClientSidebar from "./Layouts/Sidebars/Users";
 import { FaBars } from "react-icons/fa";
 // import { UserDashboard } from "./Layouts/dasboard-home/UserDashboard";
 import { UserSettings } from "./pages/SettingsUser";
-// import AdminSidebar from "./Layouts/Sidebars/Admin";
+import AdminSidebar from "./Layouts/Sidebars/Admin";
 import { AdminDashboard } from "./Layouts/dasboard-home/AdminDasboard";
+import DriverSidebar from "./Layouts/Sidebars/Driver";
+import { DriverDashboard } from "./Layouts/dasboard-home/DriverDashboard";
 
 export default function ClientDashboard() {
 
@@ -21,7 +23,7 @@ export default function ClientDashboard() {
             <div className="font-primary">
                 <Header />
                 <div className="" style={{ width: sidebarReduce ? "100px" : "200px" }}>
-                    <ClientSidebar />
+                    <DriverSidebar />
                 </div>
                 <div className="fixed top-0 hidden lg:block sub-menu z-50">
                     <FaBars  className="text-2xl lg:ml-4 cursor-pointer" onClick={() => setSidebarReduce(!sidebarReduce)} />
@@ -33,7 +35,7 @@ export default function ClientDashboard() {
                     }}
                     className="lg:main-p pt-21 home-bg pb-10 relative">
                     <Routes>
-                        <Route path="" element={<AdminDashboard />} />
+                        <Route path="" element={<DriverDashboard />} />
                         <Route path="settings" element={<UserSettings />} />
                     </Routes>
 
