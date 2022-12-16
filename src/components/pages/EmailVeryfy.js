@@ -9,7 +9,7 @@ import { clearMessage } from "../../store/slices/messages";
 export const EmailVeryfy = () => {
     const [value, setValue] = useState('');
     const email = localStorage.getItem('email');
-
+    // eslint-disable-next-line
     let formRef = useRef();
     const { message } = useSelector((state) => state.message);
 
