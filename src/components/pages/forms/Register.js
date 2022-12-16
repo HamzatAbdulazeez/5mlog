@@ -224,7 +224,7 @@ export const Register = () => {
                         <div className="mt-4 w-full overflow-hidden">
                             <form>
                             <ReCAPTCHA
-                                sitekey='6Lft0IUjAAAAAJJGsJvahiRqrwCX1tKDyCWvvfoB'
+                                sitekey='6Ldn9IUjAAAAAH89eGuKD2wq2OGK6ugV-zHXxeEA'
                                 ref={captchaRef}
                                 />
                                 </form>
