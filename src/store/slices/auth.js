@@ -85,6 +85,27 @@ export const resendVerification = createAsyncThunk(
     }
 );
 
+export const forgetPassword = createAsyncThunk(
+    `/auth/password/email`,
+    async (payload, thunkAPI) => {
+        try {
+            const response = await AuthService.forgetPassword(payload);
+            thunkAPI.dispatch(setMessage(response));
+            return response;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+
 export const logout = createAsyncThunk("/auth/logout", async () => {
     await AuthService.logout();
 });
