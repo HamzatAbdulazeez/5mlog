@@ -131,7 +131,7 @@ export const Register = () => {
 
     return (
         <div className='flex lg:h-screen items-center'>
-            <div className='lg:w-7/12 px-8 lg:px-0 overflow-scroll py-3'>
+            <div className='lg:w-7/12 px-8 lg:px-0 lg:mt-12 overflow-y-scroll py-3'>
                 <div className='lg:w-10/12 xl:w-8/12 mx-auto'>
                     <Link to="/">
                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669899103/5mlog/Rectangle_19530_uity99.png" alt='register' className='lg:pt-12 relative -left-4 lg:left-0' />
@@ -224,7 +224,7 @@ export const Register = () => {
                         <div className="mt-4 w-full overflow-hidden">
                             <form>
                             <ReCAPTCHA
-                                sitekey="6LfEooUjAAAAAMRPN_nwbpIFPcnsGHHffhsEM3YG"
+                                sitekey='6Lft0IUjAAAAAJJGsJvahiRqrwCX1tKDyCWvvfoB'
                                 ref={captchaRef}
                                 />
                                 </form>
