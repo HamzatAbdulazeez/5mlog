@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import ReCAPTCHA from 'react-google-recaptcha';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { register } from '../../../store/slices/auth';
 import { clearMessage } from "../../../store/slices/messages";
@@ -10,6 +10,10 @@ import { clearMessage } from "../../../store/slices/messages";
 
 export const Register = () => {
     const captchaRef = useRef(null);
+    const { message } = useSelector((state) => state.message);
+
+    const navigate = useNavigate();
+
     const [passwordType, setPasswordType] = useState("password");
     const togglePassword = () => {
         if (passwordType === "password") {
@@ -20,7 +24,6 @@ export const Register = () => {
     }
 
     let formRef = useRef();
-    const { message } = useSelector((state) => state.message);
 
     const dispatch = useDispatch();
 
@@ -47,12 +50,15 @@ export const Register = () => {
 
         if (fullNames === "" || gender === "" || email === "" || phone === "" || password === "" || password2 === "" || !agreement) {
             toast.error('All fields are required');
+            setDisableBtn(false)
         }
         else if (password !== password2) {
             toast.error('Passwords do not match');
+            setDisableBtn(false)
         }
         else if (password.length < 8) {
             toast.error('Password must be at least 8 characters.');
+            setDisableBtn(false)
         }
         else {
             const formdata = new FormData(formRef);
@@ -76,6 +82,8 @@ export const Register = () => {
             }
             else {
                 toast.success(message.message);
+                localStorage.setItem("email", email);
+                navigate("/email-verify");
             }
         }
         setSuccessful(false);
