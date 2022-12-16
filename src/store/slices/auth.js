@@ -45,6 +45,46 @@ export const login = createAsyncThunk(
     }
 );
 
+export const verifyAccount = createAsyncThunk(
+    "/auth/email/confirm",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await AuthService.verifyAccount(payload);
+            thunkAPI.dispatch(setMessage(response));
+            return response;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+export const resendVerification = createAsyncThunk(
+    `/auth/email/verify/resend/:id`,
+    async (email, thunkAPI) => {
+        try {
+            const response = await AuthService.resendVerification(email);
+            thunkAPI.dispatch(setMessage(response));
+            return response;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
 export const logout = createAsyncThunk("/auth/logout", async () => {
     await AuthService.logout();
 });

@@ -10,6 +10,7 @@ import { Login } from './components/pages/forms/Login';
 import { Register } from './components/pages/forms/Register';
 import { Hompage } from './components/pages/Hompage';
 import { Services } from './components/pages/Services';
+import { EmailVeryfy } from './components/pages/EmailVeryfy';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Register/>} />
         <Route path='/forget' element={<Forget/>} />
-        <Route path='/dashboard' element={<ClientDashboard/>} />
+        <Route path='/dashboard' element={<ClientDashboard />} />
+        <Route path="/email-verify" element={<EmailVeryfy />} />
       </Routes>
     </div>
   );
