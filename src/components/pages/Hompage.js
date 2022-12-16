@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import { BsArrowRightShort } from 'react-icons/bs'
+// import { BsArrowRightShort } from 'react-icons/bs'
 import { FaUsers } from 'react-icons/fa'
 import { FiLayers } from 'react-icons/fi'
 import { TbTruckDelivery } from 'react-icons/tb'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
 import { HeroSwipe } from './home-comp/HeroSwipe'
@@ -22,13 +22,6 @@ export const Hompage = () => {
                     <div className=''>
                         <HeroSwipe/>
                     </div>
-                    {/* tracking */}
-                    {/* <div className='absolute track w-full'>
-                        <div className='lg:w-7/12 mx-auto rounded-lg bg-white shadow-lg px-2 py-2'>
-                            <input type="text" placeholder="Enter your tracking ID" className="py-3 px-6 lg:text-lg w-10/12"/>
-                            <button className='w-2/12 lg:text-xl fw-600 py-3 bg-primary rounded-lg text-white'>Track</button>
-                        </div>
-                    </div> */}
                 </div>
             </div>
             {/* about us */}
@@ -86,18 +79,24 @@ export const Hompage = () => {
             <div className='section'>
                 <div className='box lg:pt-12'>
                     <div className='lg:flex items-center'>
-                        <div className='lg:w-6/12'>
-                            <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904755/5mlog/Group_237727_pbqshc.png" alt="wwd" className='w-full lg:w-10/12 mx-auto' />
-                        </div>
-                        <div className='lg:w-6/12'>
+                        <div className='lg:w-4/12 lg:px-2'>
                             <p className='lg:text-2xl text-xl fw-600 lg:fw-700'>What we Do</p>
                             <div className='mt-8'>
                                 <div className='flex'>
                                     <div className='w-2/12 grid place-content-center'>
+                                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Rectangle_19548_eyiogp.png" alt="wwd" />
+                                    </div>
+                                    <div  className='w-10/12'>
+                                        <p className='fw-600'>Logistics</p>
+                                        <p className='fs-500'>We take care of the end-to-end logistics of your business so you can focus on your core business operation.</p>
+                                    </div>
+                                </div>
+                                <div className='flex mt-6'>
+                                    <div className='w-2/12 grid place-content-center'>
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19547_cuxzyk.png" alt="wwd" />
                                     </div>
                                     <div className='w-10/12'>
-                                        <p className='fw-600'>Freights</p>
+                                        <p className='fw-600'>Air Freights</p>
                                         <p className='fs-500'>We handle both your international freight forwarding and domestic delivery, all via air, sea and land shipping.</p>
                                     </div>
                                 </div>
@@ -105,9 +104,9 @@ export const Hompage = () => {
                                     <div className='w-2/12 grid place-content-center'>
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Rectangle_19548_eyiogp.png" alt="wwd" />
                                     </div>
-                                    <div  className='w-10/12'>
-                                        <p className='fw-600'>Logistics</p>
-                                        <p className='fs-500'>We take care of the end-to-end logistics of your business so you can focus on your core business operation.</p>
+                                    <div className='w-10/12'>
+                                        <p className='fw-600'>Ocean Freights</p>
+                                        <p className='fs-500'>We handle both your international freight forwarding and domestic delivery, all via air, sea and land shipping.</p>
                                     </div>
                                 </div>
                                 <div className='flex mt-6'>
@@ -119,17 +118,58 @@ export const Hompage = () => {
                                         <p className='fs-500'>We provide safe warehouse management services to protect your goods in the meantime.</p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className='lg:w-4/12 lg:px-2'>
+                            <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904755/5mlog/Group_237727_pbqshc.png" alt="wwd" className='w-full lg:w-10/12 mx-auto' />
                                 <div className='flex mt-6'>
                                     <div className='w-2/12 grid place-content-center'>
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Rectangle_19550_tcter1.png" alt="wwd" />
                                     </div>
                                     <div  className='w-10/12'>
-                                        <p className='fw-600'>Same Day Package Delivery</p>
+                                        <p className='fw-600'>Door to Door Delivery</p>
                                         <p className='fs-500'>We Provide relaible, quality and affordable daily delivery of your goods and products.</p>
                                     </div>
                                 </div>
-                                <div className='mt-3'>
-                                    <Link to="/services"><p className='justify-end flex items-center'>See more services <span><BsArrowRightShort/></span></p></Link>
+                        </div>
+                        <div className='lg:w-4/12 lg:px-2'>
+                            {/* <p className='lg:text-2xl text-xl fw-600 lg:fw-700'>What we Do</p> */}
+                            <div className='mt-8'>
+                                <div className='flex'>
+                                    <div className='w-2/12 grid place-content-center'>
+                                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19547_cuxzyk.png" alt="wwd" />
+                                    </div>
+                                    <div className='w-10/12'>
+                                        <p className='fw-600'>Procurements</p>
+                                        <p className='fs-500'>We offer easy and cost-effective way to help do your procurement.</p>
+                                    </div>
+                                </div>
+                                <div className='flex mt-6'>
+                                    <div className='w-2/12 grid place-content-center'>
+                                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Rectangle_19548_eyiogp.png" alt="wwd" />
+                                    </div>
+                                    <div  className='w-10/12'>
+                                        <p className='fw-600'>Export Packaging</p>
+                                        <p className='fs-500'>We take care of the end-to-end logistics of your business so you can focus on your core business operation.</p>
+                                    </div>
+                                </div>
+                                <div className='flex mt-6'>
+                                    <div className='w-2/12 grid place-content-center'>
+                                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19549_yolvyo.png" alt="wwd" />
+                                    </div>
+                                    <div  className='w-10/12'>
+                                        <p className='fw-600'>Same-Day Delivery</p>
+                                        <p className='fs-500'>We provide safe warehouse management services to protect your goods in the meantime.</p>
+                                    </div>
+                                </div>
+                                <div className='flex mt-6'>
+                                    <div className='w-2/12 grid place-content-center'>
+                                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Rectangle_19550_tcter1.png" alt="wwd" />
+                                    </div>
+                                    <div  className='w-10/12'>
+                                        <p className='fw-600'>Express Shipping</p>
+                                        <p className='fs-500'>We Provide relaible, quality and affordable daily delivery of your goods and products.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
