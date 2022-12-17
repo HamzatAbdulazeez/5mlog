@@ -33,7 +33,7 @@ function App() {
         <Route path='/signup' element={<Register />} />
         <Route path='/reset-password' element={<ResetPassword />} />
         <Route path='/forget' element={<Forget/>} />
-        <Route path='/dashboard' element={<ClientDashboard />} />
+        <Route path='/dashboard/*' element={<ClientDashboard />} />
         <Route path="/email-verify" element={<EmailVeryfy />} />
       </Routes>
     </div>

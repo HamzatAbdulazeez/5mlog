@@ -28,7 +28,7 @@ export const HeroSwipe = () => {
                     <div className='box h-full flex items-center font-primary'>
                         <div className='lg:w-7/12 w-9/12 lg:relative text-white'>
                             <p className='fw-600 lg:text-4xl text-xl lg:w-11/12 lg:tracking-wide'>We provide end-to-end <span className='text-blue-600 fw-700'>Logistics</span> solutions for Individuals, Companies and Government Agencies.</p>
-                            <Link to="/dashboard"><button className='lg:px-10 px-5 shadow-md fw-600 text-white lg:py-4 py-2 rounded-md bg-primary mt-10'>Get Started</button></Link>
+                            <Link to="/"><button className='lg:px-10 px-5 shadow-md fw-600 text-white lg:py-4 py-2 rounded-md bg-primary mt-10'>Get Started</button></Link>
                         </div>
                         {/* <div className='w-5/12'>
                             <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669978350/5mlog/Group_237754_1_r1wmg8.png" alt="hero1" className='w-11/12' />
