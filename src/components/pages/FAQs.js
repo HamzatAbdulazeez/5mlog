@@ -2,6 +2,7 @@ import React from 'react'
 import Accordion from './home-comp/Accordion'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
+import { Track } from './home-comp/Track'
 
 export const FAQs = () => {
   return (
@@ -26,6 +27,7 @@ export const FAQs = () => {
             </div>
         </div>
         <Footer/>
+        <Track/>
     </div>
   )
 }

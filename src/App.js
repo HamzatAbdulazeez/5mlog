@@ -12,6 +12,8 @@ import { Register } from './components/pages/forms/Register';
 import { Hompage } from './components/pages/Hompage';
 import { Services } from './components/pages/Services';
 import { EmailVeryfy } from './components/pages/EmailVeryfy';
+import { Terms } from './components/pages/Terms';
+import { Privacy } from './components/pages/Privacy';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path='/services' element={<Services/>} />
         <Route path='/faqs' element={<FAQs/>} />
         <Route path='/contact' element={<Contact/>} />
+        <Route path='/terms' element={<Terms/>} />
+        <Route path='/privacy' element={<Privacy/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/admin' element={<AdminLogin/>} />
         <Route path='/signup' element={<Register/>} />
