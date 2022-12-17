@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router';
 import './App.css';
 import ScrollToTop from './components/assets/ScrollTop';
-import ClientDashboard from './components/dashboard';
+import Dashboard from './components/dashboard';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
 import { FAQs } from './components/pages/FAQs';
@@ -33,7 +33,7 @@ function App() {
         <Route path='/signup' element={<Register />} />
         <Route path='/reset-password' element={<ResetPassword />} />
         <Route path='/forget' element={<Forget/>} />
-        <Route path='/dashboard/*' element={<ClientDashboard />} />
+        <Route path='/dashboard/*' element={<Dashboard />} />
         <Route path="/email-verify" element={<EmailVeryfy />} />
       </Routes>
     </div>

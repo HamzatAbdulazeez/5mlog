@@ -74,6 +74,9 @@
   .fs-400 {
     font-size: 14px;
   }
+  .fs-200 {
+    font-size: 12px;
+  }
   .fs-300 {
     font-size: 13px;
   }
@@ -174,6 +177,11 @@
   }
   .menu-btn {
     left: 33%;
+  }
+  @media (max-width: 656px) {
+    .menu-btn {
+      left: 27%;
+    }
   }
   .btn-primary {
     background: rgba(132, 194, 37, 1);

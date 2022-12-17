@@ -13,7 +13,7 @@ module.exports = withMT({
         '100': '230%'
       },
       backgroundImage: {
-        hero: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1669209031/lazreb/hero_nw9ja9.png')",
+        pick: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .9), rgba(62, 78, 62, .5)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671294039/5mlog/pick_cdmyq4.jpg')",
         second: "linear-gradient(to right bottom, rgba(255, 120, 0, 0.7),rgba(255, 120, 0, 0.7)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1669195306/lazreb/abouthome_ma6irv.png')",
         stats: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473609/5mlog/Group_237788_qvqmns.png')",
         about2: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473609/5mlog/Group_237788_qvqmns.png')",

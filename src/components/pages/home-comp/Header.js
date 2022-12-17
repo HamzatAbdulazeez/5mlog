@@ -2,8 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import React, {useState} from "react";
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { FaRegWindowClose } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
+
+    const auth = useSelector((state) => state.auth);
     const [menuShow, setMenuShow] = useState(false)
 
     const CloseMenu = () => {
@@ -52,12 +55,22 @@ export const Header = () => {
                             </NavLink>
                         </div>
                         <div className='w-3/12 hidden lg:flex justify-end items-center'>
-                            <Link to="/login" className="text-black py-2 fs-700 px-6 rounded-lg fw-600 mr-3">
-                                Sign In
-                            </Link>
-                            <Link to="/signup" className="text-white bg-black py-2 px-6 rounded-md fw-600">
-                                <button  >Sign Up</button>
-                            </Link>
+                            { auth?.isLoggedIn? 
+                                <div>
+                                    <Link to="/dashboard" className="text-white bg-black py-2 px-6 rounded-md fw-600">
+                                        Dashboard
+                                    </Link>
+                                </div> : 
+                                <div>
+                                    <Link to="/login" className="text-black py-2 fs-700 px-6 rounded-lg fw-600 mr-3">
+                                        Sign In
+                                    </Link>
+                                    <Link to="/signup" className="text-white bg-black py-2 px-6 rounded-md fw-600">
+                                        <button  >Sign Up</button>
+                                    </Link>
+                                </div>
+
+                            }
                         </div>
                         <div className="text-black lg:hidden">
                             <HiMenuAlt3 className="text-4xl fw-700" onClick={() => {setMenuShow(true)}}/>
