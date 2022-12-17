@@ -105,6 +105,22 @@ export const forgetPassword = createAsyncThunk(
     }
 );
 
+export const resetPassword = createAsyncThunk(
+    `/auth/password/reset`,
+    async (payload, thunkAPI) => {
+        try {
+            const response = await AuthService.resetPassword(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                    error.response.data
+            console.log(message);
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
 
 export const logout = createAsyncThunk("/auth/logout", async () => {
     await AuthService.logout();
