@@ -28,6 +28,7 @@ export const Forget = () => {
 
         if (email === "") {
             toast.error('Email field is required');
+            setDisableBtn(false);
         }
         else {
             const formdata = new FormData(formRef);
