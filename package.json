@@ -1,7 +1,6 @@
 {
   "name": "5mlog",
   "version": "0.1.0",
-  "proxy": "http://5million.greenmouseproperties.com",
   "private": true,
   "dependencies": {
     "@material-tailwind/react": "^1.2.4",
