@@ -52,8 +52,7 @@ export const Forget = () => {
             }
             else {
                 toast.success(message.message);
-                navigate('/email-verify');
-                localStorage.setItem("email", email);
+                navigate('/reset-password');
             }
         }
         setSuccessful(false);

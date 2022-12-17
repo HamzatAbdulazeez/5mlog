@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `https://5million.greenmouseproperties.com/api`;
+const API_URL = `http://5million.greenmouseproperties.com/api`;
 
 const register = (payload) => {
     return axios.post(API_URL + "/auth/register", payload);
@@ -11,7 +11,7 @@ const login = async (payload) => {
         .post(API_URL + "/auth/login",
             payload
             );
-    if (response.data.accessToken) {
+    if (response.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
     }
     return response.data;
@@ -46,6 +46,11 @@ const forgetPassword = async (payload) => {
     return response.data;
 };
 
+const resetPassword = async (payload) => {
+    const response = await axios.post(API_URL + "/auth/password/reset", payload);
+    return response.data;
+};
+
 const logout = () => {
     localStorage.removeItem("user");
 };
@@ -56,7 +61,8 @@ const AuthService = {
     logout,
     verifyAccount,
     resendVerification,
-    forgetPassword
+    forgetPassword,
+    resetPassword
 };
 
 export default AuthService;
