@@ -2,17 +2,13 @@ import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Header from "./Layouts/Header";
-// import ClientSidebar from "./Layouts/Sidebars/Users";
-// import { RequestService } from "./pages/RequestService";
 import { FaBars } from "react-icons/fa";
-// import { UserDashboard } from "./Layouts/dasboard-home/UserDashboard";
 import { UserSettings } from "./pages/SettingsUser";
-// import AdminSidebar from "./Layouts/Sidebars/Admin";
-// import { AdminDashboard } from "./Layouts/dasboard-home/AdminDasboard";
-import DriverSidebar from "./Layouts/Sidebars/Driver";
-import { DriverDashboard } from "./Layouts/dasboard-home/DriverDashboard";
+import { IndexDashboard } from "./Layouts/dasboard-home/IndexDashboard";
+import { IndexSidebar } from "./Layouts/Sidebars/Index";
+import { Pickup } from "./pages/Pickup";
 
-export default function ClientDashboard() {
+export default function Dashboard() {
 
     const navigate = useNavigate()
     const [sidebarReduce, setSidebarReduce] = useState(false)
@@ -23,7 +19,7 @@ export default function ClientDashboard() {
             <div className="font-primary">
                 <Header />
                 <div className="" style={{ width: sidebarReduce ? "100px" : "200px" }}>
-                    <DriverSidebar />
+                    <IndexSidebar />
                 </div>
                 <div className="fixed top-0 hidden lg:block sub-menu z-50">
                     <FaBars  className="text-2xl lg:ml-4 cursor-pointer" onClick={() => setSidebarReduce(!sidebarReduce)} />
@@ -35,7 +31,8 @@ export default function ClientDashboard() {
                     }}
                     className="lg:main-p pt-21 home-bg pb-10 relative">
                     <Routes>
-                        <Route path="" element={<DriverDashboard />} />
+                        <Route path="" element={<IndexDashboard/>} />
+                        <Route path="pickup" element={<Pickup/>} />
                         <Route path="settings" element={<UserSettings />} />
                     </Routes>
 

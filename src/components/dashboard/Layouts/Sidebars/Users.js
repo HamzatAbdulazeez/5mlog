@@ -1,13 +1,14 @@
-import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
+import {  BsFillGrid1X2Fill, BsGear, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
 import { GrLocation, GrTransaction } from "react-icons/gr"
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { HiOutlineLogout } from "react-icons/hi";
 import { FaBars } from "react-icons/fa";
+import { TbTruckDelivery } from "react-icons/tb";
 
 
-const ClientSidebar = () => {
+const UsersSidebar = () => {
 
     const [signOut, setSignOut] = useState(false);
     const [trackDrop, setTrackDrop] = useState(false);
@@ -54,6 +55,12 @@ const ClientSidebar = () => {
         // color: "rgba(63, 121, 173, 1)",
         borderRight: "5px solid rgba(132, 194, 37, 1)"
     };
+    const activeStyles = {
+        backgroundColor: "rgba(132, 194, 37, .1)",
+        borderBottom: "5px solid rgba(132, 194, 37, 1)",
+        color: "rgba(132, 194, 37, 1)",
+        
+    };
 
     return (
         <div>
@@ -63,8 +70,8 @@ const ClientSidebar = () => {
                 }} />
             </div>
             {showSideBar && (
-                <div className="fixed z-20 fs-500 top-20 grid items-between w-6/12 lg:sidebar-w shadow min-h-screen pt-2 px-2">
-                    <div className="mt-6">
+                <div className="fixed z-50 fs-400 lg:fs-500 bg-white lg:top-20 top-20 grid items-between w-6/12 lg:sidebar-w shadow min-h-screen pt-2 px-2">
+                    <div className="lg:mt-6">
                         <NavLink
                             to=""
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
@@ -80,24 +87,45 @@ const ClientSidebar = () => {
                             onClick={unShow}
                         >
                             <div className="flex" onClick={e => e.stopPropagation()}>
-                                <BsBag className="text-xl" />
+                                <TbTruckDelivery className="text-2xl" />
                                 <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setTrackDrop(false)}}>
-                                    <p className="pl-3 pr-5">Orders</p>
+                                    <p className="pl-3 pr-5">Shipping</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
                             </div>
                             {orderDrop && (
                                 <div className="lg:ml-9 ml-4 fs-400 pt-2">
                                     <NavLink
-                                        to="ordersadmin"
-                                        // style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                                        to="pickup"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
-                                        <p className="py-2">All Orders</p>
+                                        <p className="py-2">PickUp Service</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="ordersadmin"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">Inter-State</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="ordersadmin"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">Oversea Shipping</p>
                                     </NavLink>
                                      
                                 </div>
                             )}
                         </div>
+                        <NavLink 
+                            to="transact"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                            onClick={unShow}
+                            >
+                                <GrTransaction className="text-xl" />
+                                <p className="pl-3">Express Drop-Off</p>
+                        </NavLink>
                         <div
                             
                             className="w-full items-center pl-2 py-2 fw-600 my-2"
@@ -187,4 +215,4 @@ const ClientSidebar = () => {
     )
 }
 
-export default ClientSidebar
+export default UsersSidebar

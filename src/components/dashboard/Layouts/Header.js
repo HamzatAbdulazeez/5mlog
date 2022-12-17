@@ -15,10 +15,10 @@ export default function Header() {
 
 
     return (
-        <div className="fixed w-full z-50  bg-gray-100">
+        <div className="fixed w-full z-50  bg-white">
             <div className="flex w-full justify-between lg:head-grid">
                 <div className="bg-white py-1  text-center">
-                    <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19530_wiuj5i.png" alt="boglogo" className="w-16 xl:w-24 mx-auto" /></Link>
+                    <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19530_wiuj5i.png" alt="boglogo" className="w-20 xl:w-24 mx-auto" /></Link>
                 </div>
                 <div className="lg:shadow bg-white py-2 px-5 flex lg:justify-between justify-end  items-center">
 
