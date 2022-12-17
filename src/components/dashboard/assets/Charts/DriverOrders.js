@@ -14,13 +14,14 @@ export default function DriverOrdersChart() {
           position: 'bottom'
         }
       }
-    }],radialBar: {
+    }],plotOptions: {
+      radialBar: {
         dataLabels: {
           name: {
             fontSize: '22px',
           },
           value: {
-            fontSize: '16px',
+            fontSize: '26px',
           },
           total: {
             show: true,
@@ -30,7 +31,9 @@ export default function DriverOrdersChart() {
               return 249
             }
           }
-        }} };
+        }
+      }
+    }, };
 const series = [20, 16, 3,]; //our data
 
 return (

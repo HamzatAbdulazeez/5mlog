@@ -1,5 +1,5 @@
 import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
-import { GrLocation, GrTransaction } from "react-icons/gr"
+import { GrTransaction } from "react-icons/gr"
 import { MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -11,7 +11,6 @@ import { FaBars } from "react-icons/fa";
 const DriverSidebar = () => {
 
     const [signOut, setSignOut] = useState(false);
-    const [trackDrop, setTrackDrop] = useState(false);
     const [orderDrop, setOrderDrop] = useState(false);
     function CloseModal() {
         setSignOut(false)
@@ -82,7 +81,7 @@ const DriverSidebar = () => {
                         >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <BsBag className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setTrackDrop(false)}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop)}}>
                                     <p className="pl-3 pr-5">Orders</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
@@ -93,13 +92,19 @@ const DriverSidebar = () => {
                                         to="ordersadmin"
                                         style={({ isActive }) => (isActive ? activeStyle : undefined)}
                                         >
-                                        <p className="pb-2 pt-1">Ongoing Orders</p>
+                                        <p className="pb-3 pt-1">Ongoing</p>
                                     </NavLink>
                                     <NavLink
                                         to="ordersadmin"
                                         style={({ isActive }) => (isActive ? activeStyle : undefined)}
                                         >
-                                        <p className="">Requested Orders</p>
+                                        <p className="">Requested</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="ordersadmin"
+                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                                        >
+                                        <p className="pt-3">Completed</p>
                                     </NavLink>
                                 </div>
                             )}
@@ -111,43 +116,8 @@ const DriverSidebar = () => {
                             onClick={unShow}
                             >
                                 <MdOutlineInventory className="text-xl" />
-                                <p className="pl-3">Inventory</p>
+                                <p className="pl-3">Order History</p>
                         </NavLink>
-                        <div
-                            
-                            className="w-full items-center pl-2 py-2 fw-600 my-2"
-                            onClick={unShow}
-                        >
-                            <div className="flex" onClick={e => e.stopPropagation()}>
-                                <GrLocation className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setTrackDrop(!trackDrop);setOrderDrop(false)}}>
-                                    <p className="pl-3 pr-5">Tracking</p>
-                                    <BsFillCaretDownFill className="text-black"/>
-                                </div>
-                            </div>
-                            {trackDrop && (
-                                <div className="lg:ml-9 ml-4 fs-400 pt-2">
-                                    <NavLink
-                                        to="projectsadmin"
-                                        // style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="py-2">All Projects</p>
-                                    </NavLink>
-                                    <NavLink
-                                        to="projectrequest"
-                                        // style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="py-2">Project Requests</p>
-                                    </NavLink>
-                                    <NavLink
-                                        to="servicecategory"
-                                        // style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="py-2">Service Category</p>
-                                    </NavLink>
-                                </div>
-                            )}
-                        </div>
                         <NavLink 
                             to="transact"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"

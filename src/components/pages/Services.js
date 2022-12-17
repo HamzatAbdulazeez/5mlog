@@ -1,6 +1,7 @@
 import React from 'react'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
+import { Track } from './home-comp/Track'
 
 export const Services = () => {
   return (
@@ -109,6 +110,7 @@ export const Services = () => {
             </div>
         </div>
         <Footer/>
+        <Track/>
     </div>
   )
 }

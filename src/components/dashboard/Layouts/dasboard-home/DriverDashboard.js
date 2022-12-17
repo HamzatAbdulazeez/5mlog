@@ -5,8 +5,8 @@ import { TbTruckDelivery, TbShoppingCartPlus } from "react-icons/tb"
 import {GiMoneyStack } from "react-icons/gi"
 import { TbLiveView} from "react-icons/tb"
 import { MdAnalytics, MdOutlineHouseSiding, MdOutlineInventory } from 'react-icons/md'
-import { InventDashBoardHomeTable } from '../../assets/Tables/DbInventoey'
 import DriverOrdersChart from '../../assets/Charts/DriverOrders'
+import { DashBoardPendingOrders } from '../../assets/Tables/DPendingOrders'
 
 export const DriverDashboard = () => {
   return (
@@ -53,7 +53,7 @@ export const DriverDashboard = () => {
                         </div>
                         <div className='w-8/12'>
                             <p className='text-4xl fw-600'>14</p>
-                            <p className='fs-400'>Warehouse Items</p>
+                            <p className='fs-400'>Pending Items</p>
                         </div>
                     </div>
                     <div className='border shadow-xl flex py-8 rounded bg-orange-100'>
@@ -81,20 +81,15 @@ export const DriverDashboard = () => {
                 </div>
                 {/* table and graph */}
                 <div className='mt-6 lg:mt-12 '>
-                    {/* table */}
-                    {/* <div className='bg-white lg:p-4 rounded-lg'>
-                        <p className='pb-2 mb-3 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><AiOutlineDeliveredProcedure/></span>Order/Delivery Analytics</p>
-                        <AdminChart/>
-                    </div> */}
                      {/* table and graph */}
                     <div className='lg:grid-64 mt-6 lg:mt-12'>
                         {/* table */}
                         <div className='bg-white lg:p-4 rounded-lg'>
                             <div className='flex mb-6 justify-between pb-2 border-b border-gray-400'>
-                                <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><MdOutlineInventory/></span>Inventory</p>
+                                <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><MdOutlineInventory/></span>Pending Orders</p>
                                 <button className='btn-primary py-1 flex items-center'>view all <span className='pl-2 text-xl'><TbLiveView/></span></button>
                             </div>
-                            <InventDashBoardHomeTable/>
+                            <DashBoardPendingOrders/>
                         </div>
                         <div className='bg-white lg:p-4 rounded-lg'>
                             <p className='pb-2 mb-8 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><MdAnalytics/></span>Delivery Analytics</p>

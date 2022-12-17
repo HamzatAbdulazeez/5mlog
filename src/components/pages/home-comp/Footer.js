@@ -12,7 +12,7 @@ export const Footer = () => {
                       <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237750_spbhv7.png" alt="logo" className='lg:w-44 w-36 mx-auto mt-8' />
                       <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237751_dqkaep.png" alt="logo" className='lg:w-44 w-36 mx-auto mt-2' />
                   </div>
-                  <div className='lg:w-8/12 lg:flex text-white'>
+                  <div className='lg:w-9/12 lg:flex justify-between text-white'>
                     <div className='lg:w-3/12 mt-10 lg:mt-0'>
                       <p className='fw-600 text-xl mb-6 mt-4'>Links</p>
                       <ul>
@@ -26,32 +26,26 @@ export const Footer = () => {
                     <div className='lg:w-3/12  mt-10 lg:mt-0'>
                       <p className='fw-600 text-xl mb-6 mt-4'>Company Policy</p>
                       <ul>
-                        <li className='mb-4'><Link to="terms">Terms of Services</Link></li>
-                        <li className='mb-4'><Link to="privacy">Privacy Policy</Link></li>
-                        <li className='mb-4'>Cookies</li>
+                        <li className='mb-4'><Link to="/terms">Terms of Services</Link></li>
+                        <li className='mb-4'><Link to="/privacy">Privacy Policy</Link></li>
+                        {/* <li className='mb-4'>Cookies</li>
                         <li className='mb-4'><Link to="/">User Agreement</Link></li>
-                        <li className='mb-4'><Link>List of Contrabands</Link></li>
+                        <li className='mb-4'><Link>List of Contrabands</Link></li> */}
                       </ul>
                     </div>
-                    <div className='lg:w-3/12  mt-10 lg:mt-0'>
-                      <p className='fw-600 text-xl mb-6 mt-4'>Our Services</p>
-                      <ul>
-                        <li className='mb-4'>Air Shipping</li>
-                        <li className='mb-4'>Ocean Shipping</li>
-                        <li className='mb-4'>Auto Shipping</li>
-                        <li className='mb-4'>Pakage Delivery</li>
-                        <li className='mb-4'>Clearing</li>
-                      </ul>
-                    </div>
-                    <div className='lg:w-3/12  mt-10 lg:mt-0'>
-                      <p className='fw-600 text-xl mb-6 mt-4'>Socials</p>
-                      <ul>
-                        <li className='mb-4'>Facebook</li>
-                        <li className='mb-4'>Instagram</li>
-                        <li className='mb-4'>Twitter</li>
-                        <li className='mb-4'>LinkedIn</li>
-                        <li className='mb-4'>Whatsapp</li>
-                      </ul>
+                    <div className='lg:w-5/12'>
+                      <div>
+                          <div>
+                              <p className='lg:text-xl text-lg fw-600 mt-4 mb-6 lg:fw-600 text-center'>Newsletter</p>
+                              <p  className='text-center fs-500 mt-2'>Be the first to get notified on our latest news and updates</p>
+                          </div>
+                          <div className='w-full flex mt-6 mx-auto rounded-lg bg-white shadow-lg px-1 lg:px-2 lg:py-2 py-1'>
+                              <input type="text" placeholder="your Email" className="py-2 px-3 text-black bg-light lg:w-9/12 w-8/12"/>
+                              <div className='w-4/12  pl-4'>
+                                  <button className='w-full fs-500 fw-600 py-3 bg-primary text-white text-center'>Subscribe</button>
+                              </div>
+                          </div>
+                      </div>
                     </div>
                   </div>
                 </div>

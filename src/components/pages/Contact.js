@@ -3,6 +3,7 @@ import { FaFacebookSquare, FaInstagramSquare, FaLinkedin, FaTwitterSquare } from
 import { ContactForm } from './forms/ContactForm'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
+import { Track } from './home-comp/Track'
 
 export const Contact = () => {
   return (
@@ -79,6 +80,7 @@ export const Contact = () => {
             </div>
         </div>
         <Footer/>
+        <Track/>
     </div>
   )
 }
