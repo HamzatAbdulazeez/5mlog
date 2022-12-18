@@ -56,7 +56,7 @@ export const Login = () => {
             }
             else {
                 toast.success(message.message);
-                navigate('/dashboard')
+                window.location.href = window.location.protocol + "//" + window.location.host + '/dashboard'
             }
         }
         setSuccessful(false);

@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const API_URL = `http://5million.greenmouseproperties.com/api`;
 
 const register = (payload) => {
@@ -12,7 +11,8 @@ const login = async (payload) => {
             payload
             );
     if (response.data.token) {
-        localStorage.setItem("user", JSON.stringify(response.data));
+        localStorage.setItem("user", JSON.stringify(response.data.data));
+        localStorage.setItem("lynchpin", JSON.stringify(response.data.token));
     }
     return response.data;
 };
@@ -31,18 +31,12 @@ const verifyAccount = async (payload) => {
 const resendVerification = async (payload) => {
     const response = await axios
         .post(API_URL + "/auth/email/verify/resend/" + payload);
-    if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-    }
     return response.data;
 };
 
 const forgetPassword = async (payload) => {
     const response = await axios
         .post(API_URL + "/auth/password/email",payload);
-    if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-    }
     return response.data;
 };
 

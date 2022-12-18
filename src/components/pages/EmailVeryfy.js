@@ -57,6 +57,7 @@ export const EmailVeryfy = () => {
             }
             else {
                 toast.success(message.message);
+                localStorage.removeItem("email");
                 navigate("/login");
             }
         }

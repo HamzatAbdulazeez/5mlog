@@ -59,7 +59,6 @@ export const ResetPassword = () => {
     }
 
     const displayMessage = (message) => {
-        console.log(message);
         if (message) {
             if (message.hasOwnProperty('errors')) {
                 toast.error(message.message);
