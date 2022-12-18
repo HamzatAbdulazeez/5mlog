@@ -4,13 +4,15 @@ import {
 } from "@material-tailwind/react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBell } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../store/slices/auth";
 
 
 
 export default function Header() {
 
     const navigate = useNavigate()
-
+    const dispatch = useDispatch();
     
 
 
@@ -51,7 +53,7 @@ export default function Header() {
                                     <MenuItem onClick={() => navigate("/dashboard/inbox")}>Inbox</MenuItem>
                                     <MenuItem onClick={() => navigate("/dashboard/meetings")}>Meetings</MenuItem>
                                     <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
-                                    <MenuItem>Sign Out</MenuItem>
+                                    <MenuItem >Sign Out</MenuItem>
                                 </MenuList>
                             </Menu>
                         </div>
@@ -65,11 +67,11 @@ export default function Header() {
                                     </Button>
                                 </MenuHandler>
                                 <MenuList>
-                                    <MenuItem onClick={() => navigate("/dashboard/transact")}>Transactions</MenuItem>
-                                    <MenuItem onClick={() => navigate("/dashboard/inbox")}>Inbox</MenuItem>
-                                    <MenuItem onClick={() => navigate("/dashboard/meetings")}>Meetings</MenuItem>
+                                    <MenuItem onClick={() => navigate("/dashboard/pickup")}>Logistics</MenuItem>
+                                    <MenuItem onClick={() => navigate("/dashboard/freight")}>Freights</MenuItem>
+                                    <MenuItem onClick={() => navigate("/dashboard/orders")}>My Orders</MenuItem>
                                     <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
-                                    <MenuItem>Sign Out</MenuItem>
+                                    <MenuItem onClick={()=> dispatch(logout())}>Sign Out</MenuItem>
                                 </MenuList>
                             </Menu>
                         </div>

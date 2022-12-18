@@ -10,7 +10,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 
 const UsersSidebar = () => {
 
-    const [signOut, setSignOut] = useState(false);
+    const [signOut, setSignOut] = useState(false); // eslint-disable-next-line 
     const [trackDrop, setTrackDrop] = useState(false);
     const [orderDrop, setOrderDrop] = useState(false);
     function CloseModal() {
@@ -184,7 +184,7 @@ const UsersSidebar = () => {
                 </div>
             )}
             {signOut && (
-                <div className="fixed font-primary left-0 top-0 bg-op w-full h-screen bg-white flex justify-center items-center z-40" onClick={CloseModal}>
+                <div className="fixed font-primary left-0 top-0 bg-op w-full h-screen bg-op flex justify-center items-center z-40" onClick={CloseModal}>
                     <div className="bg-white lg:w-5/12 rounded-md  overscroll-none  w-11/12 pt-8 shadow fw-500 scale-ani px-5" onClick={e => e.stopPropagation()}>
                         <div className="lg:px-6">
                             <div className="flex text-xl fw-600">

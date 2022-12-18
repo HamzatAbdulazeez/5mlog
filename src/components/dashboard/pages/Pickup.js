@@ -6,8 +6,8 @@ export const Pickup = () => {
     <div className='min-h-screen'>
         <div className='h-44 bg-pick bg-center bg-cover  text-white w-full bg-white flex items-center'>
             <div className='lg:pl-12 px-4'>
-                <p className='fw-600 text-2xl'>Pickup Services</p>
-                <p className='mt-2 lg:w-8/12'>Delivery is possible within 24 hours at your door-step. Please fill the form and select the most suitable vehicle to pick up your item(s)</p>
+                <p className='fw-600 text-xl lg:text-2xl'>Pickup Services</p>
+                <p className='mt-2 lg:w-8/12 fs-400 lg:fs-600'>Delivery is possible within 24 hours at your door-step. Please fill the form and select the most suitable vehicle to pick up your item(s)</p>
             </div>
         </div>
         {/* content */}

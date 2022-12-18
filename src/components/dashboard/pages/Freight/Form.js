@@ -21,10 +21,10 @@ export const FreightForm = () => {
                     <Input type="text" label="Address"/>
                 </div>
                 <div className='lg:flex'>
-                    <div className='mt-4 lg:w-6/12 pr-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
                         <Input type="text" label="Email"/>
                     </div>
-                    <div className='mt-4 lg:w-6/12 pl-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
                         <Input type="text" label="Phone Number"/>
                     </div>
                 </div>
@@ -39,18 +39,18 @@ export const FreightForm = () => {
                     <Input type="text" label="Street Address"/>
                 </div>
                 <div className='lg:flex'>
-                    <div className='mt-4 lg:w-6/12 pr-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
                         <Input type="text" label="City"/>
                     </div>
-                    <div className='mt-4 lg:w-6/12 pl-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
                         <Input type="text" label="State / Province / Region"/>
                     </div>
                 </div>
                 <div className='lg:flex'>
-                    <div className='mt-4 lg:w-6/12 pr-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
                         <Input type="text" label="Zip / Postal Code"/>
                     </div>
-                    <div className='mt-4 lg:w-6/12 pl-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
                         <Input type="text" label="Country"/>
                     </div>
                 </div>
@@ -59,18 +59,18 @@ export const FreightForm = () => {
                     <Input type="text" label="Street Address"/>
                 </div>
                 <div className='lg:flex'>
-                    <div className='mt-4 lg:w-6/12 pr-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
                         <Input type="text" label="City"/>
                     </div>
-                    <div className='mt-4 lg:w-6/12 pl-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
                         <Input type="text" label="State / Province / Region"/>
                     </div>
                 </div>
                 <div className='lg:flex'>
-                    <div className='mt-4 lg:w-6/12 pr-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
                         <Input type="text" label="Zip / Postal Code"/>
                     </div>
-                    <div className='mt-4 lg:w-6/12 pl-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
                         <Input type="text" label="Country"/>
                     </div>
                 </div>
