@@ -1,5 +1,4 @@
-import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
-import { GrTransaction } from "react-icons/gr"
+import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight } from "react-icons/bs";
 import { MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -11,7 +10,7 @@ import { FaBars } from "react-icons/fa";
 const DriverSidebar = () => {
 
     const [signOut, setSignOut] = useState(false);
-    const [orderDrop, setOrderDrop] = useState(false);
+    // const [orderDrop, setOrderDrop] = useState(false);
     function CloseModal() {
         setSignOut(false)
     }
@@ -74,7 +73,16 @@ const DriverSidebar = () => {
                             <BsFillGrid1X2Fill className="text-xl" />
                             <p className="pl-3"> Dashboard</p>
                         </NavLink>
-                        <div
+                        <NavLink 
+                            to="orders"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                            onClick={unShow}
+                            >
+                                <BsBag className="text-xl" />
+                                <p className="pl-3">Orders</p>
+                        </NavLink>
+                        {/* <div
                             
                             className="w-full items-center pl-2 py-2 fw-600 my-2"
                             onClick={unShow}
@@ -92,7 +100,7 @@ const DriverSidebar = () => {
                                         to="ordersadmin"
                                         style={({ isActive }) => (isActive ? activeStyle : undefined)}
                                         >
-                                        <p className="pb-3 pt-1">Ongoing</p>
+                                        <p className="pb-3 pt-1">New Orders</p>
                                     </NavLink>
                                     <NavLink
                                         to="ordersadmin"
@@ -104,11 +112,11 @@ const DriverSidebar = () => {
                                         to="ordersadmin"
                                         style={({ isActive }) => (isActive ? activeStyle : undefined)}
                                         >
-                                        <p className="pt-3">Completed</p>
+                                        <p className="">Completed Orders</p>
                                     </NavLink>
                                 </div>
                             )}
-                        </div>
+                        </div> */}
                         <NavLink 
                             to="transact"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
@@ -118,7 +126,7 @@ const DriverSidebar = () => {
                                 <MdOutlineInventory className="text-xl" />
                                 <p className="pl-3">Order History</p>
                         </NavLink>
-                        <NavLink 
+                        {/* <NavLink 
                             to="transact"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -126,7 +134,7 @@ const DriverSidebar = () => {
                             >
                                 <GrTransaction className="text-xl" />
                                 <p className="pl-3">Transactions</p>
-                        </NavLink>
+                        </NavLink> */}
                     </div>
                     <div>
                         <NavLink 
