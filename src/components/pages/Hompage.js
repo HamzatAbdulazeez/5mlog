@@ -45,7 +45,7 @@ export const Hompage = () => {
                         <div className='lg:grid-3s justify-between mt-10 lg:mt-16'>
                             <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 p-3 rounded-lg'>
                                 <TbTruckDelivery className='text-7xl'/>
-                                <p className='fw-600 text-2xl ml-4'>200</p>
+                                <p className='fw-600 text-2xl ml-4'>4000</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Deliveries</p>
                                     <p className='relative -top-1'>Worldwide</p>
