@@ -1,5 +1,5 @@
 import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
-import { GrDeliver, GrLocation, GrTransaction, GrUserAdmin } from "react-icons/gr"
+import { GrDeliver, GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
 import { MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -75,6 +75,15 @@ const AdminSidebar = () => {
                         >
                             <BsFillGrid1X2Fill className="text-xl" />
                             <p className="pl-3"> Dashboard</p>
+                        </NavLink>
+                        <NavLink 
+                            to="staff"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                            onClick={unShow}
+                            >
+                                <GrUserWorker className="text-xl" />
+                                <p className="pl-3">Staff</p>
                         </NavLink>
                         <div
                             
@@ -165,7 +174,7 @@ const AdminSidebar = () => {
                                     )}
                         </div>
                         <NavLink 
-                            to="transact"
+                            to="riders"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
@@ -179,26 +188,26 @@ const AdminSidebar = () => {
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
+                                <GrTransaction className="text-xl" />
+                                <p className="pl-3">Transactions</p>
+                        </NavLink>
+                        <NavLink 
+                            to="inventory"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                            onClick={unShow}
+                            >
                                 <MdOutlineInventory className="text-xl" />
                                 <p className="pl-3">Inventory</p>
                         </NavLink>
                         <NavLink 
-                            to="transact"
+                            to="sub-admin"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
                                 <GrUserAdmin className="text-xl" />
                                 <p className="pl-3">Sub-admins</p>
-                        </NavLink>
-                        <NavLink 
-                            to="transact"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
-                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                            onClick={unShow}
-                            >
-                                <GrTransaction className="text-xl" />
-                                <p className="pl-3">Transactions</p>
                         </NavLink>
                     </div>
                     <div>

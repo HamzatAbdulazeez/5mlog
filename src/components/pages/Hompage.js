@@ -45,7 +45,7 @@ export const Hompage = () => {
                         <div className='lg:grid-3s justify-between mt-10 lg:mt-16'>
                             <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 p-3 rounded-lg'>
                                 <TbTruckDelivery className='text-7xl'/>
-                                <p className='fw-600 text-2xl ml-4'>200</p>
+                                <p className='fw-600 text-2xl ml-4'>4000</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Deliveries</p>
                                     <p className='relative -top-1'>Worldwide</p>
@@ -181,17 +181,17 @@ export const Hompage = () => {
                             <p className='lg:w-6/12 mx-auto text-center fs-500 mt-2'>We have created a seamless process that you can follow to receive your orders and the process is explained below.</p>
                         </div>
                         <div className='mt-8 lg:mt-12 lg:grid-3 justify-evenly'>
-                            <div className='text-center shadow-md lg:py-12 py-6 px-5'>
+                            <div className='text-center bg-white shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237747_mriujj.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Sign Up</p>
                                 <p className='fs-500'>Provide your needed information and sign up to 5M Logistics.</p>
                             </div>
-                            <div className='text-center mt-6 lg:mt-0 shadow-md lg:py-12 py-6 px-5'>
+                            <div className='text-center bg-white mt-6 lg:mt-0 shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237748_qdcoyz.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Select a Service</p>
                                 <p className='fs-500'>Select a service and fill in the required information for your delivery.</p>
                             </div>
-                            <div className='text-center mt-6 lg:mt-0  shadow-md lg:py-12 py-6 px-5'>
+                            <div className='text-center bg-white mt-6 lg:mt-0  shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237746_e8x861.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Await your Delivery</p>
                                 <p className='fs-500'>Relax and await your delivery whilst tracking your goods via a tracking id provided for you.</p>

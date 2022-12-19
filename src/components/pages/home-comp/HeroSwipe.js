@@ -66,7 +66,7 @@ export const HeroSwipe = () => {
                <div className='bg-ware lg:bg-fit bg-cover bg-center h-full'>
                     <div className='box h-full flex items-center font-primary'>
                         <div className='w-9/12 lg:w-6/12 relative text-white'>
-                            <p className='fw-600 text-xl lg:text-4xl lg:w-11/12 lg:tracking-wide'>We provide safe <span className='fw-700 text-blue-700'>warehouse management</span> services to protect your goods in the meantime.</p>
+                            <p className='fw-600 text-xl lg:text-4xl lg:w-11/12 lg:tracking-wide'>We provide safe <span className='fw-700 text-pink-700'>warehouse management</span> services to protect your goods in the meantime.</p>
                             <button className='lg:px-10 px-5 shadow-md fw-600 text-white lg:py-4 py-2 rounded-md bg-primary mt-10'>Get Started</button>
                         </div>
                         {/* <div className='w-6/12 relative -top-6'>
