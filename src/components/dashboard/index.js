@@ -7,6 +7,8 @@ import { UserSettings } from "./pages/SettingsUser";
 import { IndexDashboard } from "./Layouts/dasboard-home/IndexDashboard";
 import { IndexSidebar } from "./Layouts/Sidebars/Index";
 import { Pickup } from "./pages/Pickup";
+import { Freight } from "./pages/Freight";
+import { InterState } from "./pages/InterState";
 
 export default function Dashboard() {
 
@@ -33,6 +35,8 @@ export default function Dashboard() {
                     <Routes>
                         <Route path="" element={<IndexDashboard/>} />
                         <Route path="pickup" element={<Pickup/>} />
+                        <Route path="freight" element={<Freight />} />
+                        <Route path="inter-state" element={<InterState />} />
                         <Route path="settings" element={<UserSettings />} />
                     </Routes>
 
