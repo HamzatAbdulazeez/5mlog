@@ -2,10 +2,12 @@ import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill
 import { GrTransaction } from "react-icons/gr"
 import { MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { HiOutlineLogout } from "react-icons/hi";
 import { FaBars } from "react-icons/fa";
+import { useDispatch } from 'react-redux'
+import { logout } from "../../../../store/slices/auth";
 
 
 const DriverSidebar = () => {
@@ -16,7 +18,8 @@ const DriverSidebar = () => {
         setSignOut(false)
     }
     const [showSideBar, setShowSideBar] = useState(true);
-
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -36,6 +39,15 @@ const DriverSidebar = () => {
 
 
     }, []);
+
+    const signOutAction = () => {
+        dispatch(logout())
+            .then(() => {
+                localStorage.removeItem("user");
+                navigate('/');
+            })
+            .catch(() => {});
+    }
 
     function unShow() {
         if (window.innerWidth < 900) {
@@ -162,7 +174,7 @@ const DriverSidebar = () => {
                         </div>
                         <div className="text-end px-4 my-5">
                             <button className="btn py-1 border-pri text-primary" onClick={CloseModal}>No</button>
-                            <button className="btn py-1 ml-5 border border-red-600 text-red-600">Yes</button>
+                            <button className="btn py-1 ml-5 border border-red-600 text-red-600" onClick={signOutAction}>Yes</button>
                         </div>
                     </div>
                 </div>
