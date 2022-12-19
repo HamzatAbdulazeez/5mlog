@@ -8,7 +8,6 @@ import SettingsIndex from './Settings/Index'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateProfilePhoto } from '../../../store/slices/settings';
 import { clearMessage } from "../../../store/slices/messages";
-import axios from "axios";
 
 
 export const UserSettings = () => {
@@ -23,6 +22,7 @@ export const UserSettings = () => {
 
     const [successful, setSuccessful] = useState(false);
     const [disableBtn, setDisableBtn] = useState(false);
+    const [photo, setPhoto] = useState(user?.photo);
 
     const [images, setImage] = useState(null);
 
@@ -33,10 +33,21 @@ export const UserSettings = () => {
         setDisableBtn(true)
 
         const formData = new FormData();
-        formData.set('file', imageData);
-        formData.append("upload_preset", "do2sxxwq");
+        formData.set('avatar', imageData);
 
-        axios.post(`${process.env.REACT_APP_CLOUDINARY}`, formData).then((response) => {
+        dispatch(updateProfilePhoto(formData))
+            .then(() => {
+                setSuccessful(true)
+                setDisableBtn(false)
+            })
+            .catch(() => {
+                setSuccessful(false)
+                setDisableBtn(false)
+            });
+
+        // formData.append("upload_preset", "do2sxxwq");
+
+       /* axios.post(`${process.env.REACT_APP_CLOUDINARY}`, formData).then((response) => {
             const newFormData = new FormData();
             newFormData.set('avatar', response.data.secure_url);
 
@@ -49,7 +60,7 @@ export const UserSettings = () => {
                     setSuccessful(false)
                     setDisableBtn(false)
                 });
-        })
+        }) */
     }
 
         const displayMessage = (message) => {
@@ -60,6 +71,9 @@ export const UserSettings = () => {
                 }
                 else {
                     toast.success(message.message);
+                    localStorage.setItem("user", JSON.stringify(message.data));
+                    setPhoto(message.data.photo);
+                    setImage(null);
                 }
             }
             setSuccessful(false);
@@ -96,7 +110,7 @@ export const UserSettings = () => {
                 <div className='lg:flex justify-between'>
                     <div className='bg-white rounded-md lg:w-4/12 lg:px-5 lg:py-12 py-6 px-3'>
                           <div className='w-28 relative mx-auto'>
-                              <Avatar src={user?.photo ? user?.photo : 'https://i.stack.imgur.com/l60Hf.png'}
+                              <Avatar src={photo ? `${process.env.REACT_APP_MEDIA_URL+photo}` : 'https://i.stack.imgur.com/l60Hf.png'}
                                   alt="profifepic"
                                   variant='circular'
                                   size='xxl'
