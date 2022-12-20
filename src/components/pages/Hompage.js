@@ -45,7 +45,7 @@ export const Hompage = () => {
                         <div className='lg:grid-3s justify-between mt-10 lg:mt-16'>
                             <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 p-3 rounded-lg'>
                                 <TbTruckDelivery className='text-7xl'/>
-                                <p className='fw-600 text-2xl ml-4'>4000</p>
+                                <p className='fw-600 text-2xl ml-4'>4000+</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Deliveries</p>
                                     <p className='relative -top-1'>Worldwide</p>
@@ -53,7 +53,7 @@ export const Hompage = () => {
                             </div>
                             <div className='flex mt-6 lg:mt-0 items-center justify-center bg-white p-3 lg:p-6 xl:px-12 rounded-lg'>
                                 <FaUsers className='text-7xl'/>
-                                <p className='fw-600 text-2xl ml-4'>3100</p>
+                                <p className='fw-600 text-2xl ml-4'>3100+</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Satisfied</p>
                                     <p className='relative -top-1'>Clients</p>
@@ -61,7 +61,7 @@ export const Hompage = () => {
                             </div>
                             <div className='flex mt-6 lg:mt-0 p-3 items-center justify-center bg-white lg:p-6 xl:px-12 rounded-lg'>
                                 <FiLayers  className='text-7xl'/>
-                                <p className='ml-4 mt-1 text-2xl fw-600'>1200</p>
+                                <p className='ml-4 mt-1 text-2xl fw-600'>1200+</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Orders</p>
                                     <p className='relative -top-1'>Completed</p>
@@ -207,7 +207,7 @@ export const Hompage = () => {
                         <div className='lg:w-5/12 text-center'>
                             <p className='fs-400 text-gray-500'>Our Testimonials</p>
                             <p className='lg:text-2xl text-xl fw-600 mb-6'>What are our customers saying</p>
-                            <p>Reprehenderit in irure non laborum enim sit adipisicing quis non et magna. Deserunt nostrud eiusmod Lorem sit. Do reprehenderit culpa irure adipisicing laborum incididunt do eiusmod velit. Qui labore cupidatat veniam enim officia eiusmod dolore elit commodo nisi.</p>
+                            <p>Join thousands of people today who make use of services to enjoy seamless and hassle-free logistic services.</p>
                         </div>
                         <div className='lg:w-7/12 w-full overflow-hidden mt-10 lg:mt-0'>
                             <Review/>
