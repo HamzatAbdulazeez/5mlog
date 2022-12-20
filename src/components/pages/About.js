@@ -21,7 +21,7 @@ export const About = () => {
                 <div>
                     <div>
                         <p className='w-1 h-12 mx-auto bg-black'></p>
-                        <p className='text-center font-light text-xl lg:tracking-wide mt-3'>ABOUT 5M LOGISTICS</p>
+                        <p className='text-center font-light text-xl lg:tracking-wide mt-3'>ABOUT 5M</p>
                     </div>
                     <div className='lg:flex items-center lg:mt-16 mt-8'>
                         <div className='lg:w-6/12 grid-2'>
@@ -37,7 +37,7 @@ export const About = () => {
                         </div>
                         <div className='lg:w-6/12 mt-8 lg:mt-0'>
                             <p className='lg:text-2xl lg:fw-600 text-xl'>Who We Are</p>
-                            <p className='my-6'>5M Logistics is a team providing top notch services in Freight, transportation and delivery to clients and users globally hereby boosting businesses and increasing sales and exchange between users worldwide.</p>
+                            <p className='my-6'>5M Logistics is a subsidiary of 5M global services whose goal is to provide top notch services in Freight, transportation and delivery to clients and users globally hereby boosting businesses and increasing sales and exchange between users worldwide.</p>
                             <Link to="/login" className="text-primary mt-3 lg:mt-5 fw-600">Get Started</Link>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ export const About = () => {
                                     <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1670490204/5mlog/Rectangle_67_cmhnux.png" alt="corevalues" className='w-12 mx-auto' />
                                 </div>
                                 <div className='w-9/12'>
-                                    <p className='text-lg fw-600'>Our Mission</p>
+                                    <p className='text-lg fw-600'>Our Vission</p>
                                     <p className='fs-500'>To become the no #1 Freight and Logistics service providers.</p>
                                 </div>
                             </div>

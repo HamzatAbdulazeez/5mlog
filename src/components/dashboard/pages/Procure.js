@@ -1,5 +1,5 @@
 import React from 'react'
-import { PickupForm } from './Pickup/form'
+import { ProcureForm } from './Procurement/Form'
 
 export const Procurement = () => {
   return (
@@ -13,7 +13,7 @@ export const Procurement = () => {
         {/* content */}
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
             <div className='bg-white lg:w-10/12 p-5 mx-auto mt-8 lg:p-10 rounded-lg'>
-                <PickupForm/>
+                <ProcureForm/>
             </div>
         </div>
     </div>

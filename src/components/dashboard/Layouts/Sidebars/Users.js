@@ -134,7 +134,7 @@ const UsersSidebar = () => {
                             )}
                         </div>
                         <NavLink 
-                            to="orders"
+                            to="myorders"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}

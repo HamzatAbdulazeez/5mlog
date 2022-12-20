@@ -175,6 +175,11 @@
     grid-template-columns: 59% 39%;
     justify-content: space-between;
   }
+  .grid-83 {
+    display: grid;
+    grid-template-columns: 70% 27%;
+    justify-content: space-between;
+  }
   .menu-btn {
     left: 33%;
   }
