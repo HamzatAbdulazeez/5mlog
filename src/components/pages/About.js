@@ -83,7 +83,7 @@ export const About = () => {
                 </div>
                 <div className='lg:flex lg:mt-16 mt-10'>
                     <div className='lg:w-4/12 text-center'>
-                        <p className='text-2xl fw-600'>203+</p>
+                        <p className='text-2xl fw-600'>903+</p>
                         <p className='fs-500 mt-4'>Land Deliveries</p>
                     </div>
                     <div className='lg:w-4/12 text-center mt-6 lg:mt-0'>
