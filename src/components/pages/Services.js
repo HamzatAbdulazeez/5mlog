@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
 import { Track } from './home-comp/Track'
@@ -19,7 +20,7 @@ export const Services = () => {
             <div className='box'>
                 <div>
                     <div className='text-center relative lg:py-6' >
-                        <p className='fw-600 lg:text-2xl'>Our Services</p>
+                        <p className='fw-600 lg:text-2xl'>What We Do</p>
                         <p className='w-8 mx-auto h-1 mt-2 bg-black'></p>
                         <p className='absolute hidden lg:block w-02 border text-8xl top-0 left-1/4 opacity-10 fw-600 text-gray-400'>SERVICES</p>
                     </div>
@@ -30,7 +31,8 @@ export const Services = () => {
                             </div>
                             <div className='lg:w-8/12 lg:pr-8'>
                                 <p className='text-lg fw-600'>Logistics</p>
-                                <p className='my-7 fs-500 lg:mt-7 mt-4'>When you need your shipment at any destination of your choice in the shortest possible time; then be rest assured we will fly it for you. Forget about paying outrageous shipping fees as we offer fast, affordable and stress shipping and free package forwarding services. </p>
+                                <p className='my-7 fs-500 lg:mt-7 mt-4'>Daily delivery to clients at any destination seamlessly and without damaging through trucking or bike shipping to your doorstep is made possible in the shortest possible time available to clients.</p>
+                                <Link to="/dashboard" className="text-primary mt-3 lg:mt-5 fw-600">Get Started</Link>
                             </div>
                         </div>
                         <div className='border lg:flex flex-row-reverse p-5 bg-white shadow-md mt-6 lg:mt-0'>
@@ -48,7 +50,8 @@ export const Services = () => {
                             </div>
                             <div className='lg:w-8/12 lg:pr-8'>
                                 <p className='text-lg fw-600 lg:mt-0 mt-4'>Ocean Freight</p>
-                                <p className='my-7 fs-500 lg:mt-7 mt-4'>When you need your shipment at any destination of your choice in the shortest possible time; then be rest assured we will fly it for you. Forget about paying outrageous shipping fees as we offer fast, affordable and stress shipping and free package forwarding services. </p>
+                                <p className='my-7 fs-500 lg:mt-7 mt-4'>We offer ocean freight, depending on your choice of transportation shipping containers worth of goods from 20ft to 40ft to their final destination without hassle or risks involved.</p>
+                                <Link to="/dashboard" className="text-primary mt-3 lg:mt-5 fw-600">Get Started</Link>
                             </div>
                         </div>
                         <div className='border lg:flex flex-row-reverse p-5 bg-white shadow-md mt-6 lg:mt-10'>

@@ -24,7 +24,7 @@ export const Header = () => {
                 <div className="box">
                     <div className="justify-between items-center flex py-3 pb-3">
                         <div className="w-3/12 flex">
-                            <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669899103/5mlog/Rectangle_19530_uity99.png" alt="logo" className="lg:w-24 w-16"/></Link>
+                            <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671522002/5mlog/new_p2j2j6.png" alt="logo" className="lg:w-24 w-16"/></Link>
                         </div>
                         <div className="w-6/12 hidden lg:flex fw-500 justify-between items-center">
                             <NavLink 
