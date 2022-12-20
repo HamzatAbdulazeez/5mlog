@@ -33,7 +33,7 @@ export const ContactForm = () => {
         </div>
         <div className="mt-4 w-full overflow-hidden">
             <ReCAPTCHA
-                sitekey="6Lc2fk4jAAAAALrd7ZbSKm0sFi9DH4XH1DMdFwzo"
+                sitekey='6Ldn9IUjAAAAAH89eGuKD2wq2OGK6ugV-zHXxeEA'
                 ref={captchaRef}
             />
         </div>

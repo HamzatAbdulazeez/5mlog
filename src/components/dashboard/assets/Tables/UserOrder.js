@@ -1,6 +1,9 @@
+import { Button, Menu, MenuHandler, MenuItem, MenuList } from '@material-tailwind/react'
 import React from 'react'
+import { BsThreeDotsVertical } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
-export const UserDashBoardHomeTable = () => {
+export const UserOrderTable = () => {
   return (
     <div>
         <div className="overflow-x-auto">
@@ -28,6 +31,9 @@ export const UserDashBoardHomeTable = () => {
                     <th className="px-2 text-primary align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap text-left">
                     Location
                     </th>
+                    <th className="px-2 text-primary align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap text-left">
+                        Action
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,6 +58,19 @@ export const UserDashBoardHomeTable = () => {
                     </td>
                     <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                         London, England
+                    </td>
+                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                        <Menu placement='left'>
+                            <MenuHandler>
+                                <Button className='p-0 bg-trnasparent shadow-none'>
+                                    <BsThreeDotsVertical className='text-xl text-black'/>
+                                </Button>
+                            </MenuHandler>
+                            <MenuList>
+                                <MenuItem><Link to="/dashboard/orderdetail">View Details</Link></MenuItem>
+                                <MenuItem>Cancel</MenuItem>
+                            </MenuList>
+                        </Menu>
                     </td>
                 </tr>
                 <tr>

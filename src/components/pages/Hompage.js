@@ -30,8 +30,8 @@ export const Hompage = () => {
                         <div className='lg:w-6/12'>
                             <p className='lg:text-2xl text-lg fw-600 lg:fw-700'>About Us</p>
                             <div className='mt-8'>
-                                <p>Lorem laborum esse magna nulla officia ea incididunt in magna. Irure proident veniam reprehenderit reprehenderit pariatur laboris sunt aute ea laboris. Sit laboris sunt minim adipisicing ullamco excepteur est magna. Ex et consectetur voluptate sunt est.</p>
-                                <p className='mt-4'>Fugiat ad sit velit anim. Do veniam deserunt irure adipisicing. Cillum proident consequat non ipsum enim voluptate voluptate consectetur consequat amet commodo ut adipisicing. Fugiat proident dolor cillum laborum ipsum minim mollit ex cupidatat proident qui consectetur.</p>
+                                <p>5M Logistics is a subsidiary of 5M global services whose goal is to provide top notch services in Freight, transportation and delivery to clients and users globally hereby boosting businesses and increasing sales and exchange between users worldwide.</p>
+                                <p className='mt-4'>We offer wide range of services which includes logistics, freights, warehousing, procurements, export packaging and express shipping to clients in different part of the world.</p>
                                 <button className='mt-4 lg:mt-8 text-primary fw-600'>Read more</button>
                             </div>
                         </div>

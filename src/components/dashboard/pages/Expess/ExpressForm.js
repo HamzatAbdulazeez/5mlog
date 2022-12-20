@@ -79,6 +79,14 @@ export const ExpressForm = () => {
             </div>
             <div className='border-b border-gray-400 py-6'>
                 <p className='fw-600'>Package Information</p>
+                <div className='lg:flex'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
+                        <Input type="text" label="Package Name"/>
+                    </div>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
+                        <Input type="number" label="Pakage Quantity"/>
+                    </div>
+                </div>
                 <div className='mt-4'>
                     <Input type="text" label="Dimensions (L*W*H)"/>
                 </div>
