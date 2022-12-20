@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
 import { Track } from './home-comp/Track'
@@ -20,7 +21,7 @@ export const About = () => {
                 <div>
                     <div>
                         <p className='w-1 h-12 mx-auto bg-black'></p>
-                        <p className='text-center font-light text-xl lg:tracking-wide mt-3'>ABOUT 5M LOGISTICS</p>
+                        <p className='text-center font-light text-xl lg:tracking-wide mt-3'>ABOUT 5M</p>
                     </div>
                     <div className='lg:flex items-center lg:mt-16 mt-8'>
                         <div className='lg:w-6/12 grid-2'>
@@ -36,8 +37,8 @@ export const About = () => {
                         </div>
                         <div className='lg:w-6/12 mt-8 lg:mt-0'>
                             <p className='lg:text-2xl lg:fw-600 text-xl'>Who We Are</p>
-                            <p className='my-6'>Cupidatat ut pariatur veniam aliquip minim deserunt eu. Cillum laborum eu anim exercitation fugiat ipsum laboris eu ullamco deserunt ea sint. Occaecat sint eiusmod non Lorem ullamco eiusmod irure exercitation irure. Pariatur Lorem magna minim ut tempor labore esse in adipisicing duis labore ea. Cupidatat tempor anim ut consectetur exercitation occaecat cupidatat ipsum minim velit.</p>
-                            <button className='btn-primary'>Get Started</button>
+                            <p className='my-6'>5M Logistics is a subsidiary of 5M global services whose goal is to provide top notch services in Freight, transportation and delivery to clients and users globally hereby boosting businesses and increasing sales and exchange between users worldwide.</p>
+                            <Link to="/login" className="text-primary mt-3 lg:mt-5 fw-600">Get Started</Link>
                         </div>
                     </div>
                 </div>
@@ -48,14 +49,14 @@ export const About = () => {
                 <div className='grid h-full items-center justify-center'>
                     <p className='lg:text-3xl text-xl fw-600 text-white text-center'>Core Values</p>
                     <div>
-                        <div className='lg:flex lg:w-11/12 mt-8 lg:mt-0 justify-evenly mx-auto'>
+                        <div className='lg:flex lg:w-full mt-8 lg:mt-0 justify-evenly mx-auto'>
                             <div className='lg:w-5/12 bg-white lg:px-5 py-3 lg:py-6 rounded-md flex items-center'>
                                 <div className='w-3/12'>
                                     <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1670490204/5mlog/Rectangle_66_phnh1h.png" alt="corevalues" className='w-12 mx-auto' />
                                 </div>
                                 <div className='w-9/12'>
                                     <p className='text-lg fw-600'>Our Mission</p>
-                                    <p className='fs-500'>Nulla labore veniam cupidatat velit commodo et mollit. Non excepteur culpa deserunt voluptate.</p>
+                                    <p className='fs-500'>Deliver value through quality freight and transportation services.</p>
                                 </div>
                             </div>
                             <div className='lg:w-5/12  mt-6 lg:mt-0 bg-white lg:px-5 py-3 rounded-md flex items-center'>
@@ -63,8 +64,8 @@ export const About = () => {
                                     <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1670490204/5mlog/Rectangle_67_cmhnux.png" alt="corevalues" className='w-12 mx-auto' />
                                 </div>
                                 <div className='w-9/12'>
-                                    <p className='text-lg fw-600'>Our Mission</p>
-                                    <p className='fs-500'>Nulla labore veniam cupidatat velit commodo et mollit. Non excepteur culpa deserunt voluptate.</p>
+                                    <p className='text-lg fw-600'>Our Vission</p>
+                                    <p className='fs-500'>To become the no #1 Freight and Logistics service providers.</p>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +83,7 @@ export const About = () => {
                 </div>
                 <div className='lg:flex lg:mt-16 mt-10'>
                     <div className='lg:w-4/12 text-center'>
-                        <p className='text-2xl fw-600'>203+</p>
+                        <p className='text-2xl fw-600'>903+</p>
                         <p className='fs-500 mt-4'>Land Deliveries</p>
                     </div>
                     <div className='lg:w-4/12 text-center mt-6 lg:mt-0'>

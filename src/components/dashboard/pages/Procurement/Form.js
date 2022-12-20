@@ -1,16 +1,43 @@
 import { Input, Option, Select, Textarea } from '@material-tailwind/react'
 import React from 'react'
 
-export const FreightForm = () => {
+export const ProcureForm = () => {
   return (
     <div>
         <form>
-            <div className='border-b border-gray-400 pb-6'>
-                <label className='block fw-600 mb-4'>Preffered Freight Service</label>
-                <Select label='Select Freight'>
-                    <Option>Air Freight</Option>
-                    <Option>Oceean Freight</Option>
-                </Select>
+            <div className='border-b border-gray-400 py-6'>
+                <p className='fw-600'>Item Information</p>
+                <div className='lg:flex'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
+                        <Input type="text" label="Item Name (as inputted during item purchase)"/>
+                    </div>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
+                        <Input type="number" label="Item Quantity"/>
+                    </div>
+                </div>
+                <div className='lg:flex'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
+                        <Select label='Item type'>
+                            <Option>Mobile Gadgets</Option>
+                            <Option>Electronics</Option>
+                            <Option>Bags</Option>
+                            <Option>Clothings</Option>
+                            <Option>Working tools</Option>
+                        </Select>
+                    </div>
+                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
+                        <Input type="text" label="Store Name (e.g Amazon)"/>
+                    </div>
+                </div>
+                <div className='mt-4'>
+                    <Textarea type="text" label="Description"/>
+                </div>
+                <div className='mt-4'>
+                    <Input type="text" label="Tracking ID (optional)"/>
+                </div>
+                <div className='mt-4'>
+                    <Input type="text" label="Value ($)"/>
+                </div>
             </div>
             <div className='border-b border-gray-400 py-6'>
                 <p className='fw-600'>Owner's Infomation</p>
@@ -33,10 +60,6 @@ export const FreightForm = () => {
                 <p className='fw-600'>Shipment Information</p>
                 <div className='mt-4'>
                     <Input type="date" label="Date of Shipment"/>
-                </div>
-                <p className='mt-4 fw-600'>Shipping From</p>
-                <div className='mt-2'>
-                    <Input type="text" label="Street Address"/>
                 </div>
                 <div className='lg:flex'>
                     <div className='mt-4 lg:w-6/12 lg:pr-3'>
@@ -73,29 +96,6 @@ export const FreightForm = () => {
                     <div className='mt-4 lg:w-6/12 lg:pl-3'>
                         <Input type="text" label="Country"/>
                     </div>
-                </div>
-            </div>
-            <div className='border-b border-gray-400 py-6'>
-                <p className='fw-600'>Package Information</p>
-                <div className='lg:flex'>
-                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
-                        <Input type="text" label="Package Name"/>
-                    </div>
-                    <div className='mt-4 lg:w-6/12 lg:pl-3'>
-                        <Input type="number" label="Pakage Quantity"/>
-                    </div>
-                </div>
-                <div className='mt-4'>
-                    <Input type="text" label="Dimensions (L*W*H)"/>
-                </div>
-                <div className='mt-4'>
-                    <Input type="text" label="Weight (LBS)"/>
-                </div>
-                <div className='mt-4'>
-                    <Input type="text" label="Value ($)"/>
-                </div>
-                <div className='mt-4'>
-                    <Textarea type="text" label="Description"/>
                 </div>
             </div>
             <div className='mt-6 text-end'>

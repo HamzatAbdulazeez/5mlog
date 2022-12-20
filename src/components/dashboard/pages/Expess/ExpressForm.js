@@ -1,15 +1,17 @@
 import { Input, Option, Select, Textarea } from '@material-tailwind/react'
 import React from 'react'
 
-export const FreightForm = () => {
+export const ExpressForm = () => {
   return (
     <div>
         <form>
             <div className='border-b border-gray-400 pb-6'>
-                <label className='block fw-600 mb-4'>Preffered Freight Service</label>
+                <label className='block fw-600 mb-4'>Type of Service</label>
                 <Select label='Select Freight'>
                     <Option>Air Freight</Option>
                     <Option>Oceean Freight</Option>
+                    <Option>Procurement</Option>
+                    <Option>Others</Option>
                 </Select>
             </div>
             <div className='border-b border-gray-400 py-6'>

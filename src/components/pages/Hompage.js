@@ -30,8 +30,8 @@ export const Hompage = () => {
                         <div className='lg:w-6/12'>
                             <p className='lg:text-2xl text-lg fw-600 lg:fw-700'>About Us</p>
                             <div className='mt-8'>
-                                <p>Lorem laborum esse magna nulla officia ea incididunt in magna. Irure proident veniam reprehenderit reprehenderit pariatur laboris sunt aute ea laboris. Sit laboris sunt minim adipisicing ullamco excepteur est magna. Ex et consectetur voluptate sunt est.</p>
-                                <p className='mt-4'>Fugiat ad sit velit anim. Do veniam deserunt irure adipisicing. Cillum proident consequat non ipsum enim voluptate voluptate consectetur consequat amet commodo ut adipisicing. Fugiat proident dolor cillum laborum ipsum minim mollit ex cupidatat proident qui consectetur.</p>
+                                <p>5M Logistics is a subsidiary of 5M global services whose goal is to provide top notch services in Freight, transportation and delivery to clients and users globally hereby boosting businesses and increasing sales and exchange between users worldwide.</p>
+                                <p className='mt-4'>We offer wide range of services which includes logistics, freights, warehousing, procurements, export packaging and express shipping to clients in different part of the world.</p>
                                 <button className='mt-4 lg:mt-8 text-primary fw-600'>Read more</button>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ export const Hompage = () => {
                         <div className='lg:grid-3s justify-between mt-10 lg:mt-16'>
                             <div className='flex items-center justify-center bg-white lg:p-6 xl:px-12 p-3 rounded-lg'>
                                 <TbTruckDelivery className='text-7xl'/>
-                                <p className='fw-600 text-2xl ml-4'>200</p>
+                                <p className='fw-600 text-2xl ml-4'>4000+</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Deliveries</p>
                                     <p className='relative -top-1'>Worldwide</p>
@@ -53,7 +53,7 @@ export const Hompage = () => {
                             </div>
                             <div className='flex mt-6 lg:mt-0 items-center justify-center bg-white p-3 lg:p-6 xl:px-12 rounded-lg'>
                                 <FaUsers className='text-7xl'/>
-                                <p className='fw-600 text-2xl ml-4'>3100</p>
+                                <p className='fw-600 text-2xl ml-4'>3100+</p>
                                 <div className='ml-4 mt-1 fs-700'>
                                     <p>Satisfied</p>
                                     <p className='relative -top-1'>Clients</p>
@@ -61,9 +61,9 @@ export const Hompage = () => {
                             </div>
                             <div className='flex mt-6 lg:mt-0 p-3 items-center justify-center bg-white lg:p-6 xl:px-12 rounded-lg'>
                                 <FiLayers  className='text-7xl'/>
-                                <p className='ml-4 mt-1 text-2xl fw-600'>1200</p>
+                                <p className='ml-4 mt-1 text-2xl fw-600'>1200+</p>
                                 <div className='ml-4 mt-1 fs-700'>
-                                    <p>Projects</p>
+                                    <p>Orders</p>
                                     <p className='relative -top-1'>Completed</p>
                                 </div>
                             </div>
@@ -181,17 +181,17 @@ export const Hompage = () => {
                             <p className='lg:w-6/12 mx-auto text-center fs-500 mt-2'>We have created a seamless process that you can follow to receive your orders and the process is explained below.</p>
                         </div>
                         <div className='mt-8 lg:mt-12 lg:grid-3 justify-evenly'>
-                            <div className='text-center shadow-md lg:py-12 py-6 px-5'>
+                            <div className='text-center bg-white shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237747_mriujj.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Sign Up</p>
                                 <p className='fs-500'>Provide your needed information and sign up to 5M Logistics.</p>
                             </div>
-                            <div className='text-center mt-6 lg:mt-0 shadow-md lg:py-12 py-6 px-5'>
+                            <div className='text-center bg-white mt-6 lg:mt-0 shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237748_qdcoyz.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Select a Service</p>
                                 <p className='fs-500'>Select a service and fill in the required information for your delivery.</p>
                             </div>
-                            <div className='text-center mt-6 lg:mt-0  shadow-md lg:py-12 py-6 px-5'>
+                            <div className='text-center bg-white mt-6 lg:mt-0  shadow-md lg:py-12 py-6 px-5'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237746_e8x861.png' alt="process" className='mx-auto w-20' />
                                 <p className='my-6 fs-700 fw-600'>Await your Delivery</p>
                                 <p className='fs-500'>Relax and await your delivery whilst tracking your goods via a tracking id provided for you.</p>
@@ -207,7 +207,7 @@ export const Hompage = () => {
                         <div className='lg:w-5/12 text-center'>
                             <p className='fs-400 text-gray-500'>Our Testimonials</p>
                             <p className='lg:text-2xl text-xl fw-600 mb-6'>What are our customers saying</p>
-                            <p>Reprehenderit in irure non laborum enim sit adipisicing quis non et magna. Deserunt nostrud eiusmod Lorem sit. Do reprehenderit culpa irure adipisicing laborum incididunt do eiusmod velit. Qui labore cupidatat veniam enim officia eiusmod dolore elit commodo nisi.</p>
+                            <p>Join thousands of people today who make use of services to enjoy seamless and hassle-free logistic services.</p>
                         </div>
                         <div className='lg:w-7/12 w-full overflow-hidden mt-10 lg:mt-0'>
                             <Review/>

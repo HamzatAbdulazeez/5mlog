@@ -9,6 +9,11 @@ import { IndexSidebar } from "./Layouts/Sidebars/Index";
 import { Pickup } from "./pages/Pickup";
 import { Freight } from "./pages/Freight";
 import { InterState } from "./pages/InterState";
+import { Express } from "./pages/Express";
+import { Procurement } from "./pages/Procure";
+import { Warehouse } from "./pages/Warehouse";
+import { OrderUser } from "./pages/OrderUser";
+import { OrderDetailUser } from "./pages/OrderDetailUser";
 
 export default function Dashboard() {
 
@@ -37,6 +42,11 @@ export default function Dashboard() {
                         <Route path="pickup" element={<Pickup/>} />
                         <Route path="freight" element={<Freight />} />
                         <Route path="inter-state" element={<InterState />} />
+                        <Route path="express" element={<Express />} />
+                        <Route path="procurement" element={<Procurement />} />
+                        <Route path="warehouse" element={<Warehouse />} />
+                        <Route path="myorders" element={<OrderUser />} />
+                        <Route path="orderdetail" element={<OrderDetailUser />} />
                         <Route path="settings" element={<UserSettings />} />
                     </Routes>
 
