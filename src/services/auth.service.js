@@ -41,7 +41,7 @@ const forgetPassword = async (payload) => {
 
 const resetPassword = async (payload) => {
     const response = await axios.post(process.env.REACT_APP_BASE_URL + "/auth/password/reset", payload);
-    return response.data;
+    return response;
 };
 
 const logout = () => {
