@@ -7,14 +7,16 @@ import { FaBell } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/slices/auth";
 
-
+let user = JSON.parse(localStorage.getItem("user"));
 
 export default function Header() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    
 
+    setInterval(() => {
+        user = JSON.parse(localStorage.getItem("user"));
+    }, 1000);
 
     return (
         <div className="fixed w-full z-50  bg-white">
@@ -62,7 +64,7 @@ export default function Header() {
                             >
                                 <MenuHandler>
                                     <Button className="p-0">
-                                        <Avatar src="https://i.stack.imgur.com/l60Hf.png"
+                                        <Avatar src={user?.photo ? `${process.env.REACT_APP_MEDIA_URL + user?.photo}` : "https://i.stack.imgur.com/l60Hf.png"}
                                     alt="profifepic" />
                                     </Button>
                                 </MenuHandler>
