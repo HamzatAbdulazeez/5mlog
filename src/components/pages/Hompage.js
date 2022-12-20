@@ -63,7 +63,7 @@ export const Hompage = () => {
                                 <FiLayers  className='text-7xl'/>
                                 <p className='ml-4 mt-1 text-2xl fw-600'>1200</p>
                                 <div className='ml-4 mt-1 fs-700'>
-                                    <p>Projects</p>
+                                    <p>Orders</p>
                                     <p className='relative -top-1'>Completed</p>
                                 </div>
                             </div>
