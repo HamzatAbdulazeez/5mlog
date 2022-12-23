@@ -93,7 +93,7 @@ export const Register = () => {
         setFullNames(event.target.value);
         setSuccessful(false)
     }
-
+// eslint-disable-next-line 
     const changeGender = (event) => {
         setGender(event.target.value);
         setSuccessful(false)
@@ -134,26 +134,24 @@ export const Register = () => {
             <div className='lg:w-7/12 px-8 lg:px-0 lg:mt-12 overflow-y-scroll py-3'>
                 <div className='lg:w-10/12 xl:w-8/12 mx-auto'>
                     <Link to="/">
-                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669899103/5mlog/Rectangle_19530_uity99.png" alt='register' className='lg:pt-12 relative -left-4 lg:left-0' />
+                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt='register' className='lg:pt-12 w-24 lg:w-28 relative -left-4 lg:-left-4' />
                     </Link>
-                    <p className='my-6 fw-600 text-xl lg:text-2xl'>Sign Up!</p>
+                    <p className='my-4 fw-600 text-xl lg:text-2xl'>Sign Up!</p>
                 </div>
                 <div className='lg:w-10/12 xl:w-8/12 mx-auto'>
                     <form ref={el => (formRef = el)} onSubmit={handleSubmit}>
                         <div className='lg:flex'>
                             <div className='lg:w-6/12 lg:pr-6'>
-                                <label className='fw-500'>Full Name</label>
+                                <label className='fw-500'>First Name</label>
                                 <input type="text" name='name' value={fullNames} onChange={changeFullNames} placeholder="Enter your full name" className="w-full p-2 lg:py-1 mt-2 rounded border border-gray-400"
                                 required
                                 />
                             </div>
                             <div className='lg:w-6/12 lg:pl-6 mt-6 lg:mt-0'>
-                                <label className='fw-500'>Sex</label>
-                                <select name='sex' value={gender} className="w-full p-2 mt-2 lg:py-1 rounded border border-gray-400" onChange={changeGender} required>
-                                    <option disabled>Select gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
+                                <label className='fw-500'>Last Name</label>
+                                <input type="text" name='name' value={fullNames} onChange={changeFullNames} placeholder="Enter your full name" className="w-full p-2 lg:py-1 mt-2 rounded border border-gray-400"
+                                required
+                                />
                             </div>
                         </div>
                         <div className='lg:flex mt-6 lg:mt-4'>
@@ -175,8 +173,8 @@ export const Register = () => {
                                 <label className='fw-500'>Account User Typpe</label>
                                 <select name='account_type' value={accountType} onChange={changeAccount} className="w-full p-2 mt-2 lg:py-1 rounded border border-gray-400">
                                     <option disabled>Select UserType</option>
-                                    <option>Dispatch</option>
-                                    <option>Driver</option>
+                                    <option>Customer</option>
+                                    <option>Partner</option>
                                 </select>
                             </div>
                         </div>

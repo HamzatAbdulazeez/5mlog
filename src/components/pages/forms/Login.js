@@ -79,7 +79,7 @@ export const Login = () => {
         <div className='lg:w-7/12 px-8 pt-4 lg:p-0 w-full lg:absolute right-0'>
             <div className='lg:w-8/12 xl:w-7/10 mx-auto'>
                 <Link to="/">
-                    <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669899103/5mlog/Rectangle_19530_uity99.png" alt='register' className='lg:pt-12 relative -left-4 lg:left-0' />
+                    <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt='register' className='lg:pt-12 w-24 lg:w-28 relative -left-4' />
                 </Link>
                 <p className='my-6 fw-600 text-xl lg:text-xl'>Log Into Your Account</p>
                   <form ref={el => (formRef = el)} onSubmit={handleSubmit}>
