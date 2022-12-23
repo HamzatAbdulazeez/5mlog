@@ -1,5 +1,6 @@
 import React from 'react'
-import { FaFacebookSquare, FaInstagramSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa'
+import { FaFacebookSquare, FaInstagramSquare, FaLinkedin, FaTwitterSquare, FaWhatsapp } from 'react-icons/fa'
+import { BsTelephoneForward } from 'react-icons/bs'
 import { ContactForm } from './forms/ContactForm'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
@@ -25,10 +26,13 @@ export const Contact = () => {
                         <div className='p-5 shadow'>
                             <p className='mb-2 fw-500'>Houston Texas</p>
                             <p>9898 Bissonnet Street Houston Texas 77038 United States</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+18328203994 </p>
                         </div>
                         <div className='p-5 shadow'>
                             <p className='mb-2 fw-500'>Lagos Office</p>
                             <p>19 Omotola plaza, Afolabi Aina street, off Awolowo way Ikeja, Lagos state.</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2348060168209</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2349013272111 </p>
                         </div>
                         <div className='p-5 shadow'>
                             <p className='mb-2 fw-500'>Abuja Office</p>

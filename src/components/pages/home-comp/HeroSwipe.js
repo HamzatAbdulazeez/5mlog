@@ -75,6 +75,19 @@ export const HeroSwipe = () => {
                     </div>
                </div>
             </SwiperSlide>
+            <SwiperSlide>
+                <div className='bg-log bg-cover bg-center h-full'>
+                    <div className='box h-full flex items-center font-primary'>
+                        <div className='lg:w-7/12 w-9/12 lg:relative text-white'>
+                            <p className='fw-600 lg:text-4xl text-xl lg:w-11/12 lg:tracking-wide'><span className='text-primary fw-700'>Shop and Ship</span> items from USA to Nigeria with ease using our services.</p>
+                            <Link to="/login"><button className='lg:px-10 px-5 shadow-md fw-600 text-white lg:py-4 py-2 rounded-md bg-primary mt-10'>Get Started</button></Link>
+                        </div>
+                        {/* <div className='w-5/12'>
+                            <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669978350/5mlog/Group_237754_1_r1wmg8.png" alt="hero1" className='w-11/12' />
+                        </div> */}
+                    </div>
+                </div>
+            </SwiperSlide>
     </Swiper>
   )
 }

@@ -8,7 +8,7 @@ export const Footer = () => {
             <div className='box'>
                 <div className='lg:flex justify-end text-center lg:text-left'>
                   <div className='lg:w-3/12 relative pt-6 lg:pt-0 lg:-top-6'>
-                      <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669981185/5mlog/Rectangle_19575_c9zqi4.png" alt="logo" className='lg:w-auto mx-auto w-44 ' />
+                      <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671792219/5mlog/logo-white_nxy7zm.png" alt="logo" className='lg:w-auto mx-auto w-44 ' />
                       <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237750_spbhv7.png" alt="logo" className='lg:w-44 w-36 mx-auto mt-8' />
                       <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904665/5mlog/Group_237751_dqkaep.png" alt="logo" className='lg:w-44 w-36 mx-auto mt-2' />
                   </div>
@@ -50,7 +50,7 @@ export const Footer = () => {
                   </div>
                 </div>
                 <div className='mt-6 border-t-2 text-center text-white fw-500 fs-500 pt-4 opacity-60'>
-                  <p className='pb-6'>© {new Date().getFullYear() }  5M Logistics ltd. All rights reserved.</p>
+                  <p className='pb-6'>© {new Date().getFullYear() }  5M global services. All rights reserved.</p>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ export default function Header() {
         <div className="fixed w-full z-50  bg-white">
             <div className="flex w-full justify-between lg:head-grid">
                 <div className="bg-white py-1  text-center">
-                    <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671522002/5mlog/new_p2j2j6.png" alt="boglogo" className="w-20 xl:w-24 mx-auto" /></Link>
+                    <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt="boglogo" className="w-16 xl:w-20 mx-auto" /></Link>
                 </div>
                 <div className="lg:shadow bg-white py-2 px-5 flex lg:justify-between justify-end  items-center">
 

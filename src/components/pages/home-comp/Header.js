@@ -22,9 +22,9 @@ export const Header = () => {
         <div className="w-full">
             <div className="relative z-10">
                 <div className="box">
-                    <div className="justify-between items-center flex py-3 pb-3">
+                    <div className="justify-between items-center flex py-1 pb-3">
                         <div className="w-3/12 flex">
-                            <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671522002/5mlog/new_p2j2j6.png" alt="logo" className="lg:w-24 w-16"/></Link>
+                            <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt="logo" className="lg:w-24 w-16"/></Link>
                         </div>
                         <div className="w-6/12 hidden lg:flex fw-500 justify-between items-center">
                             <NavLink 
@@ -82,7 +82,7 @@ export const Header = () => {
                         <div className="w-full bg-op absolute lg:hidden z-40 top-0 min-h-screen" onClick={CloseMenu}>
                             <div className="absolute menu lg:hidden w-10/12 bg-white px-6 top-0 min-h-screen">
                                 <div className="flex justify-between pt-5">
-                                    <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669899103/5mlog/Rectangle_19530_uity99.png" alt="logo" className="w-16" />
+                                    <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt="logo" className="w-16" />
                                     <FaRegWindowClose onClick={() => {setMenuShow(false)}}/>
                                 </div>
                                 <div className="mt-10">
