@@ -76,7 +76,7 @@ export const HeroSwipe = () => {
                </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='bg-log bg-cover bg-center h-full'>
+                <div className='bg-shop bg-cover bg-center h-full'>
                     <div className='box h-full flex items-center font-primary'>
                         <div className='lg:w-7/12 w-9/12 lg:relative text-white'>
                             <p className='fw-600 lg:text-4xl text-xl lg:w-11/12 lg:tracking-wide'><span className='text-primary fw-700'>Shop and Ship</span> items from USA to Nigeria with ease using our services.</p>

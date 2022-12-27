@@ -31,7 +31,7 @@ module.exports = withMT({
         ocean: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671275590/5mlog/Rectangle_19587_xdzbln.png')",
         ware: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671275590/5mlog/Rectangle_19630_ewlard.png')",
         log: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671800768/5mlog/log_x4spd8.jpg')",
-        shop: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671800768/5mlog/log_x4spd8.jpg')",
+        shop: "linear-gradient(to right ,rgba(33, 40, 33, .7), rgba(62, 78, 62, .6), rgba(62, 78, 62, .4)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1672139239/5mlog/Group_237790_1_1_kwp6bd.png')",
 
       },
     },
