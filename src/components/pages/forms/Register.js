@@ -172,7 +172,7 @@ export const Register = () => {
                                 <input type="text" name='referrer_code' value={referrer} onChange={setReferrer} placeholder="Enter referral code (if any)" className="w-full lg:py-1 p-2 mt-2 rounded border border-gray-400" />
                             </div>
                             <div className='lg:w-6/12 lg:pl-6 mt-6 lg:mt-0'>
-                                <label className='fw-500'>Account User Typpe</label>
+                                <label className='fw-500'>Account User Type</label>
                                 <select name='account_type' value={accountType} onChange={changeAccount} className="w-full p-2 mt-2 lg:py-1 rounded border border-gray-400">
                                     <option disabled>Select UserType</option>
                                     <option>Dispatch</option>
