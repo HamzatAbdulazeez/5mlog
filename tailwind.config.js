@@ -10,7 +10,8 @@ module.exports = withMT({
         '02': '440px',
         '03': '500px',
         '05': '150%',
-        '100': '230%'
+        '100': '230%',
+        '18': '74px'
       },
       backgroundImage: {
         pick: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .9), rgba(62, 78, 62, .5)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671294039/5mlog/pick_cdmyq4.jpg')",
