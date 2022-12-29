@@ -6,7 +6,7 @@ import { OrderProgress } from './OrderItems/OrderProgress'
 export const OrderDetailUser = () => {
   return (
     <div className='min-h-screen'>
-        <div className='shadow-lg lg:mt-3 p-4 bg-white'>
+        <div className='shadow-lg p-4 bg-white'>
             <div>
                 <Link to="/dashboard/myorders"><p className='flex items-center text-gray-600 '><span className='pr-4'><FaArrowLeft/></span>Orders</p></Link>
             </div>

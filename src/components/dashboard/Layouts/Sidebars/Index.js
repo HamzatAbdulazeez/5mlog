@@ -10,7 +10,7 @@ export const IndexSidebar = () => {
 
     let sidebar = null;
 
-    if (auth?.user?.account_type === "Dispatch") {
+    if (auth?.user?.account_type === "Customer") {
       sidebar = <UsersSidebar />
     }else if(auth?.user?.account_type === "Driver"){
       sidebar = <DriverSidebar />

@@ -68,6 +68,7 @@ export const UserOrderTable = () => {
                             </MenuHandler>
                             <MenuList>
                                 <MenuItem><Link to="/dashboard/orderdetail">View Details</Link></MenuItem>
+                                <MenuItem><Link to="/dashboard/orderdetail">Payment Details</Link></MenuItem>
                                 <MenuItem>Cancel</MenuItem>
                             </MenuList>
                         </Menu>

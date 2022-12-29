@@ -10,7 +10,8 @@ module.exports = withMT({
         '02': '440px',
         '03': '500px',
         '05': '150%',
-        '100': '230%'
+        '100': '230%',
+        '18': '74px'
       },
       backgroundImage: {
         pick: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .9), rgba(62, 78, 62, .5)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671294039/5mlog/pick_cdmyq4.jpg')",
@@ -32,6 +33,7 @@ module.exports = withMT({
         ware: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671275590/5mlog/Rectangle_19630_ewlard.png')",
         log: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671800768/5mlog/log_x4spd8.jpg')",
         shop: "linear-gradient(to right ,rgba(33, 40, 33, .7), rgba(62, 78, 62, .6), rgba(62, 78, 62, .4)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1672139239/5mlog/Group_237790_1_1_kwp6bd.png')",
+        track: "linear-gradient(to right ,rgba(33, 40, 33, 0), rgba(62, 78, 62, 0), rgba(62, 78, 62, 0)), url('https://i.pinimg.com/736x/92/af/83/92af838d576c73138a52b5ad29412347--high-resolution-wallpapers-desktop-wallpapers.jpg')",
 
       },
     },

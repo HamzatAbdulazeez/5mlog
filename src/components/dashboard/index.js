@@ -14,6 +14,13 @@ import { Procurement } from "./pages/Procure";
 import { Warehouse } from "./pages/Warehouse";
 import { OrderUser } from "./pages/OrderUser";
 import { OrderDetailUser } from "./pages/OrderDetailUser";
+import { PickUpUser } from "./pages/OrderItems/PickupOrder";
+import { InterStateOrderUser } from "./pages/OrderItems/InterStateOrder";
+import { OverseaOrderUser } from "./pages/OrderItems/OverseaOrder";
+import { ProcureOrderUser } from "./pages/OrderItems/ProcureOrder";
+import { ExpressOrderUser } from "./pages/OrderItems/ExpressOrder";
+import { WarehouseOrderUser } from "./pages/OrderItems/WarehouseOrder";
+import { Tracking } from "./pages/Tracking";
 
 export default function Dashboard() {
 
@@ -46,7 +53,14 @@ export default function Dashboard() {
                         <Route path="procurement" element={<Procurement />} />
                         <Route path="warehouse" element={<Warehouse />} />
                         <Route path="myorders" element={<OrderUser />} />
+                        <Route path="pickup-order" element={<PickUpUser />} />
+                        <Route path="interstate-order" element={<InterStateOrderUser />} />
+                        <Route path="oversea-order" element={<OverseaOrderUser />} />
+                        <Route path="procure-order" element={<ProcureOrderUser />} />
+                        <Route path="express-order" element={<ExpressOrderUser />} />
+                        <Route path="warehouse-order" element={<WarehouseOrderUser />} />
                         <Route path="orderdetail" element={<OrderDetailUser />} />
+                        <Route path="track" element={<Tracking />} />
                         <Route path="settings" element={<UserSettings />} />
                     </Routes>
 

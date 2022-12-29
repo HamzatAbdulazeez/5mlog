@@ -97,9 +97,25 @@ export const PersonalInfo = () => {
             <form ref={el => (formRef = el)} onSubmit={handleSubmit}>
                 <div className='lg:flex'>
                     <div className='mt-6 lg:pr-2 lg:w-6/12'>
-                        <label className='fw-500'>Full Name</label>
+                        <label className='fw-500'>First Name</label>
                         <input type="text" name='name' value={name} onChange={changeName} required className='w-full p-2 border border-gray-400 rounded mt-2' />
                     </div>
+                    <div className='mt-6 lg:pl-2 lg:w-6/12'>
+                        <label className='fw-500'>Last Name</label>
+                        <input type="text" name='name' value={name} onChange={changeName} required className='w-full p-2 border border-gray-400 rounded mt-2' />
+                    </div>
+                </div>
+                <div className='lg:flex'>
+                    <div className='mt-6 lg:pr-2 lg:w-6/12'>
+                        <label className='fw-500'>Email</label>
+                        <input type="text" name='email' value={email} onChange={changeEmail} required className='w-full p-2 border border-gray-400 rounded mt-2' />
+                    </div>
+                    <div className='mt-6 lg:pl-2 lg:w-6/12'>
+                        <label className='fw-500'>Phone Number</label>
+                        <input type="text" name='phone_number' value={phone} onChange={changePhone} required className='w-full p-2 border border-gray-400 rounded mt-2' />
+                    </div>
+                </div>
+                <div className='lg:flex '>
                     <div className='mt-6 lg:pr-2 lg:w-6/12'>
                         <label className='fw-500'>Gender</label>
                         <select name='sex' value={gender} className="w-full p-2 mt-2 rounded border border-gray-400" onChange={changeGender} required>
@@ -108,29 +124,17 @@ export const PersonalInfo = () => {
                             <option>Female</option>
                         </select>
                     </div>
-                </div>
-                <div className='lg:flex'>
-                    <div className='mt-6 lg:pr-2 lg:w-6/12'>
-                        <label className='fw-500'>Email</label>
-                        <input type="text" name='email' value={email} onChange={changeEmail} required className='w-full p-2 border border-gray-400 rounded mt-2' />
-                    </div>
-                    <div className='mt-6 lg:pr-2 lg:w-6/12'>
-                        <label className='fw-500'>Phone Number</label>
-                        <input type="text" name='phone_number' value={phone} onChange={changePhone} required className='w-full p-2 border border-gray-400 rounded mt-2' />
-                    </div>
-                </div>
-                <div className='lg:flex '>
-                    <div className='mt-6 lg:pr-2 lg:w-6/12'>
+                    <div className='mt-6 lg:pl-2 lg:w-6/12'>
                         <label className='fw-500'>City</label>
                         <input type="text" name='city' value={city} onChange={changeCity} className='w-full p-2 border border-gray-400 rounded mt-2' />
                     </div>
+                </div>
+                <div className='lg:flex'>
                     <div className='mt-6 lg:pr-2 lg:w-6/12'>
                         <label className='fw-500'>State</label>
                         <input type="text" name='state' value={state} onChange={changeState} className='w-full p-2 border border-gray-400 rounded mt-2' />
                     </div>
-                </div>
-                <div className='lg:flex'>
-                    <div className='mt-6 lg:pr-2 lg:w-6/12'>
+                    <div className='mt-6 lg:pl-2 lg:w-6/12'>
                         <label className='fw-500'>Country</label>
                         <input type="text" name='country' value={country} onChange={changeCountry} className='w-full p-2 border border-gray-400 rounded mt-2' />
                     </div>

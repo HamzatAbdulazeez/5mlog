@@ -34,8 +34,8 @@ export const Register = () => {
     const [successful, setSuccessful] = useState(false);
     const [disableBtn, setDisableBtn] = useState(false);
 
-    const [fullNames, setFullNames] = useState('');
-    const [gender, setGender] = useState('Male');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
@@ -48,7 +48,7 @@ export const Register = () => {
         event.preventDefault();
         setDisableBtn(true);
 
-        if (fullNames === "" || gender === "" || email === "" || phone === "" || password === "" || password2 === "" || !agreement) {
+        if (firstName === "" || lastName === "" || email === "" || phone === "" || password === "" || password2 === "" || !agreement) {
             toast.error('All fields are required');
             setDisableBtn(false)
         }
@@ -89,13 +89,13 @@ export const Register = () => {
         setSuccessful(false);
     }
 
-    const changeFullNames = (event) => {
-        setFullNames(event.target.value);
+    const changeFirstName = (event) => {
+        setFirstName(event.target.value);
         setSuccessful(false)
     }
 // eslint-disable-next-line 
-    const changeGender = (event) => {
-        setGender(event.target.value);
+    const changeLastName = (event) => {
+        setLastName(event.target.value);
         setSuccessful(false)
     }
 
@@ -143,13 +143,13 @@ export const Register = () => {
                         <div className='lg:flex'>
                             <div className='lg:w-6/12 lg:pr-6'>
                                 <label className='fw-500'>First Name</label>
-                                <input type="text" name='name' value={fullNames} onChange={changeFullNames} placeholder="Enter your full name" className="w-full p-2 lg:py-1 mt-2 rounded border border-gray-400"
+                                <input type="text" name='first_name' value={firstName} onChange={changeFirstName} placeholder="Enter your first name" className="w-full p-2 lg:py-1 mt-2 rounded border border-gray-400"
                                 required
                                 />
                             </div>
                             <div className='lg:w-6/12 lg:pl-6 mt-6 lg:mt-0'>
                                 <label className='fw-500'>Last Name</label>
-                                <input type="text" name='name' value={fullNames} onChange={changeFullNames} placeholder="Enter your full name" className="w-full p-2 lg:py-1 mt-2 rounded border border-gray-400"
+                                <input type="text" name='last_name' value={lastName} onChange={changeLastName} placeholder="Enter your last name" className="w-full p-2 lg:py-1 mt-2 rounded border border-gray-400"
                                 required
                                 />
                             </div>
@@ -166,7 +166,7 @@ export const Register = () => {
                         </div>
                         <div className='lg:flex mt-6 lg:mt-4'>
                             <div className='lg:w-6/12 lg:pr-6'>
-                                <label className='fw-500'>Refferal</label>
+                                <label className='fw-500'>Referral</label>
                                 <input type="text" name='referrer_code' value={referrer} onChange={setReferrer} placeholder="Enter referral code (if any)" className="w-full lg:py-1 p-2 mt-2 rounded border border-gray-400" />
                             </div>
                             <div className='lg:w-6/12 lg:pl-6 mt-6 lg:mt-0'>
