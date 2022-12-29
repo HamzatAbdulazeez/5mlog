@@ -23,7 +23,7 @@ export const Header = () => {
             <div className="relative z-10">
                 <div className="box">
                     <div className="justify-between items-center flex py-1 pb-3">
-                        <div className="w-3/12 flex">
+                        <div className="w-2/12 xl:w-3/12 flex">
                             <Link to="/"><img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt="logo" className="lg:w-24 w-16"/></Link>
                         </div>
                         <div className="w-6/12 hidden lg:flex fw-500 justify-between items-center">
@@ -54,7 +54,7 @@ export const Header = () => {
                                 <button >Contact Us</button>
                             </NavLink>
                         </div>
-                        <div className='w-3/12 hidden lg:flex justify-end items-center'>
+                        <div className='w-4/12 xxl:w-3/12 hidden lg:flex justify-end items-center'>
                             { auth?.isLoggedIn? 
                                 <div>
                                     <Link to="/dashboard" className="text-white bg-black py-2 px-6 rounded-md fw-600">
