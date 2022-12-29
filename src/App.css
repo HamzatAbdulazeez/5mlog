@@ -170,6 +170,11 @@
     display: grid;
     grid-template-columns: 40% 40%;
   }
+  .grid-3sm {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-evenly;
+  }
   .grid-64 {
     display: grid;
     grid-template-columns: 59% 39%;
@@ -179,6 +184,9 @@
     display: grid;
     grid-template-columns: 70% 27%;
     justify-content: space-between;
+  }
+  .triangle{
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   }
   .menu-btn {
     left: 33%;
@@ -275,7 +283,7 @@
 }
 .sub-menu {
   left: 15.5%;
-  top: 40px;
+  top: 32px;
 }
 .cont {
   width: 60%;

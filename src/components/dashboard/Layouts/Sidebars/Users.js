@@ -70,8 +70,8 @@ const UsersSidebar = () => {
                 }} />
             </div>
             {showSideBar && (
-                <div className="fixed z-20 fs-400 lg:fs-500 bg-white top-20 grid items-between w-6/12 lg:sidebar-w shadow min-h-screen pt-2 px-2">
-                    <div className="lg:mt-6">
+                <div className="fixed z-20 fs-400 lg:fs-500 bg-white top-20 grid items-between w-6/12 lg:sidebar-w overflow-x-hidden shadow min-h-screen pt-2 px-2">
+                    <div className="">
                         <NavLink
                             to=""
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
@@ -110,7 +110,7 @@ const UsersSidebar = () => {
                                         to="freight"
                                         style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
-                                        <p className="py-2">Freights</p>
+                                        <p className="py-2">Oversea shipping</p>
                                     </NavLink>
                                     <NavLink
                                         to="procurement"

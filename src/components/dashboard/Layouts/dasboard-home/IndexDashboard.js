@@ -10,7 +10,7 @@ export const IndexDashboard = () => {
 
     let dashboard = null;
 
-    if (auth?.user?.account_type === "Dispatch") {
+    if (auth?.user?.account_type === "Customer") {
       dashboard = <UserDashboard />
     }else if(auth?.user?.account_type === "Driver"){
       dashboard = <DriverDashboard />
