@@ -26,6 +26,25 @@ export const pickupService = createAsyncThunk(
 );
 
 
+export const addFreight = createAsyncThunk(
+    "/add/freight",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.addFreight(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
 
 const initialState = user;
 
@@ -34,6 +53,9 @@ const apiServicesSlice = createSlice({
     initialState,
     extraReducers: {
         [pickupService.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [addFreight.fulfilled]: (state, action) => {
             state.user = action.payload.user;
         },
     },
