@@ -122,7 +122,7 @@ export const UserSettings = () => {
                         </div>
                           <div className='text-center mt-4'>
                               {images ? <span className='fs-400 text-sm' style={{ color: 'green' }}>Loading Photo...</span> : ''}
-                              <p className='fw-600 text-lg'>{ user?.name }</p>
+                              <p className='fw-600 text-lg'>{user?.first_name} { user?.last_name }</p>
                             <p className='fs-400'>User</p>
                         </div>
                         <div className='fw-500 fs-500 lg:mt-10 mt-5'>
