@@ -16,7 +16,7 @@ export const DriverDashboard = () => {
         <div  className="min-h-screen fs-500 relative">
             {/* header */}
             <div className="w-full py-8 pl-6 bg-white px-4">
-                  <p className="text-2xl fw-600">Hello {user?.name}</p>
+                  <p className="text-2xl fw-600">Hello {user?.first_name} {user?.last_name}</p>
                 <p className="fs-400 text-gray-600 mt-2">Render logistic services to vendors/users.</p>
                 <Breadcrumbs className="bg-white pl-0 mt-4">
                     <Link to="/" className="opacity-60">

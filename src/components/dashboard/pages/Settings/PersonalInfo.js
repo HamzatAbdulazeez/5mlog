@@ -19,7 +19,8 @@ export const PersonalInfo = () => {
     const [successful, setSuccessful] = useState(false);
     const [disableBtn, setDisableBtn] = useState(false);
 
-    const [name, setFullNames] = useState(user?.name);
+    const [firstName, setFirstName] = useState(user?.first_name);
+    const [lastName, setLastName] = useState(user?.last_name);
     const [email, setEmail] = useState(user?.email);
     const [gender, setGender] = useState(user?.sex);
     const [phone, setPhone] = useState(user?.phone_number);
@@ -27,8 +28,13 @@ export const PersonalInfo = () => {
     const [state, setState] = useState(user?.state);
     const [country, setCountry] = useState(user?.country);
 
-    const changeName = (event) => {
-        setFullNames(event.target.value);
+    const changeFirstName = (event) => {
+        setFirstName(event.target.value);
+        setSuccessful(false)
+    }
+
+    const changeLastName = (event) => {
+        setLastName(event.target.value);
         setSuccessful(false)
     }
 
@@ -98,11 +104,11 @@ export const PersonalInfo = () => {
                 <div className='lg:flex'>
                     <div className='mt-6 lg:pr-2 lg:w-6/12'>
                         <label className='fw-500'>First Name</label>
-                        <input type="text" name='name' value={name} onChange={changeName} required className='w-full p-2 border border-gray-400 rounded mt-2' />
+                        <input type="text" name='first_name' value={firstName} onChange={changeFirstName} required className='w-full p-2 border border-gray-400 rounded mt-2' />
                     </div>
                     <div className='mt-6 lg:pl-2 lg:w-6/12'>
                         <label className='fw-500'>Last Name</label>
-                        <input type="text" name='name' value={name} onChange={changeName} required className='w-full p-2 border border-gray-400 rounded mt-2' />
+                        <input type="text" name='last_name' value={lastName} onChange={changeLastName} required className='w-full p-2 border border-gray-400 rounded mt-2' />
                     </div>
                 </div>
                 <div className='lg:flex'>
