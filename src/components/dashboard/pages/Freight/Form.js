@@ -43,7 +43,6 @@ export const FreightForm = () => {
                               formRef.reset();
                         })
                         .catch(() => {
-                              console.log('me');
                               setSuccessful(true)
                               setDisableBtn(false);
                         });

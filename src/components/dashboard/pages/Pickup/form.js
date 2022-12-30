@@ -33,7 +33,7 @@ export const PickupForm = () => {
                 formRef.reset();
             })
             .catch(() => {
-                setSuccessful(false)
+                setSuccessful(true)
                 setDisableBtn(false);
             });
     }

@@ -10,9 +10,15 @@ const addFreight = async (payload) => {
     return response;
 }
 
+const addInterState = async (payload) => {
+    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/add/inter-state/service`, payload, { headers: authHeader() });
+    return response;
+}
+
 const apiFactory = {
     pickupService,
-    addFreight
+    addFreight,
+    addInterState
 };
 
 export default apiFactory;
