@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { clearMessage } from "../../../../store/slices/messages";
 import { addWarehousing } from "../../../../store/slices/apiServices";
 
+
 export const WarehouseForm = () => {
     let formRef = useRef(null);
 
@@ -65,6 +66,7 @@ export const WarehouseForm = () => {
         setSuccessful(false);
     }
 
+    
   return (
     <div>
           <form ref={el => (formRef = el)} onSubmit={handleSubmit}>
