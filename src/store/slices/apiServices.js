@@ -89,6 +89,27 @@ export const addExpress = createAsyncThunk(
 );
 
 
+export const addWarehousing = createAsyncThunk(
+    "/add/warehousing",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.addWarehousing(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+
 
 const initialState = user;
 
@@ -106,6 +127,9 @@ const apiServicesSlice = createSlice({
             state.user = action.payload.user;
         },
         [addExpress.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [addWarehousing.fulfilled]: (state, action) => {
             state.user = action.payload.user;
         },
     },

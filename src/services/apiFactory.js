@@ -20,12 +20,17 @@ const addExpress = async (payload) => {
     return response;
 }
 
+const addWarehousing = async (payload) => {
+    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/add/warehousing`, payload, { headers: authHeader() });
+    return response;
+}
 
 const apiFactory = {
     pickupService,
     addFreight,
     addInterState,
-    addExpress
+    addExpress,
+    addWarehousing
 };
 
 export default apiFactory;
