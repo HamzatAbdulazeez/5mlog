@@ -277,7 +277,7 @@
     }
   }
   .bg-op {
-    background-color: rgba(176, 236, 176, 0.2);
+    background-color: rgba(176, 236, 176, 0.5);
     z-index: 120;
   }
 }
