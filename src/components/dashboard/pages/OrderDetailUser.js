@@ -51,8 +51,8 @@ export const OrderDetailUser = () => {
                                 <p className='mt-1'>Mobile Gadget from Computer Village</p>
                             </div>
                             <div className='mt-4'>
-                                <p className='fw-600'>Package Weight</p>
-                                <p className='mt-1'>405 grams</p>
+                                <p className='fw-600'>Preferred Transport</p>
+                                <p className='mt-1'>Motor Bike</p>
                             </div>
                         </div>
                         <div>
@@ -70,6 +70,38 @@ export const OrderDetailUser = () => {
                         <div className='text-'>
                             <p className='fw-600'>Price</p>
                             <p className='text-xl fw-600'>NGN 60,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='lg:grid-2 justify-between mt-8 lg:mt-12'>
+                    <div className='bg-light lg:p-6 shadow-md rounded'>
+                        <p className='fw-600 pb-4'>Sender's Information</p>
+                        <div className='py-2 border-b border-gray-300 flex'>
+                            <p className='w-3/12 fw-500'>Name:</p>
+                            <p>Green Mouse</p>
+                        </div>
+                        <div className='py-2 border-b border-gray-300 flex'>
+                            <p className='w-3/12 fw-500'>Phone:</p>
+                            <p>08123456789</p>
+                        </div>
+                        <div className='py-2 border-b border-gray-300 flex'>
+                            <p className='w-3/12 fw-500'>Address:</p>
+                            <p>Green Mouse</p>
+                        </div>
+                    </div>
+                    <div className='bg-light lg:p-6 shadow-md rounded'>
+                        <p className='fw-600 pb-4'>Receiver's Information</p>
+                        <div className='py-2 border-b border-gray-300 flex'>
+                            <p className='w-3/12 fw-500'>Name:</p>
+                            <p>MetalBox</p>
+                        </div>
+                        <div className='py-2 border-b border-gray-300 flex'>
+                            <p className='w-3/12 fw-500'>Phone:</p>
+                            <p>08123456789</p>
+                        </div>
+                        <div className='py-2 border-b border-gray-300 flex'>
+                            <p className='w-3/12 fw-500'>Address:</p>
+                            <p>Green Mouse</p>
                         </div>
                     </div>
                 </div>
