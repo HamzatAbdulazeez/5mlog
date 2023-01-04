@@ -56,20 +56,26 @@ const AdminSidebar = () => {
         // color: "rgba(63, 121, 173, 1)",
         borderRight: "5px solid rgba(132, 194, 37, 1)"
     };
+    const activeStyles = {
+        backgroundColor: "rgba(132, 194, 37, .1)",
+        borderBottom: "5px solid rgba(132, 194, 37, 1)",
+        color: "rgba(132, 194, 37, 1)",
+        
+    };
 
     return (
-        <div>
+        <div className="overflow-auto">
             <div>
                 <FaBars className="text-2xl fixed top-6 z-50 menu-btn lg:hidden" onClick={() => {
                     setShowSideBar(current => !current);
                 }} />
             </div>
             {showSideBar && (
-                <div className="fixed z-20 fs-500 bg-white top-20 grid items-between w-6/12 lg:sidebar-w shadow min-h-screen pt-2 px-2">
-                    <div className="mt-6">
+                <div className="fixed z-20 fs-500 bg-white grid items-between w-6/12 lg:sidebar-w shadow h-screen pt-2 px-2">
+                    <div className="mt-20 overflow-auto">
                         <NavLink
                             to=""
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
 
                             onClick={unShow}
                         >
@@ -78,7 +84,7 @@ const AdminSidebar = () => {
                         </NavLink>
                         <NavLink 
                             to="staff"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
@@ -92,7 +98,7 @@ const AdminSidebar = () => {
                         >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <BsBag className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setTrackDrop(false)}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setTrackDrop(false);setUserDrop(false);}}>
                                     <p className="pl-3 pr-5">Orders</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
@@ -100,12 +106,41 @@ const AdminSidebar = () => {
                             {orderDrop && (
                                 <div className="lg:ml-9 ml-4 fs-400 pt-2">
                                     <NavLink
-                                        to="ordersadmin"
-                                        // style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                                        to="admin-pickup"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
-                                        <p className="py-2">All Orders</p>
+                                        <p className="py-2">PickUp</p>
                                     </NavLink>
-                                     
+                                    <NavLink
+                                        to="admin-interstate"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="pb-2">Inter-State</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="admin-freight"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="pb-2">Oversea</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="admin-procurement"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="pb-2">Procurements</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="admin-express"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="pb-2">Express</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="admin-warehouse"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="pb-2">Warehousing</p>
+                                    </NavLink>
                                 </div>
                             )}
                         </div>
@@ -116,7 +151,7 @@ const AdminSidebar = () => {
                         >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <GrLocation className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setTrackDrop(!trackDrop);setOrderDrop(false)}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setTrackDrop(!trackDrop);setOrderDrop(false);setUserDrop(false);}}>
                                     <p className="pl-3 pr-5">Tracking</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
@@ -156,7 +191,7 @@ const AdminSidebar = () => {
                                         to="projectsadmin"
                                         style={({ isActive }) => (isActive ? activeStyle : undefined)}
                                         >
-                                        <p className="py-2">Dispatch</p>
+                                        <p className="py-2">Customers</p>
                                     </NavLink>
                                     {/* <NavLink
                                         to="projectrequest"
@@ -175,7 +210,7 @@ const AdminSidebar = () => {
                         </div>
                         <NavLink 
                             to="riders"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
@@ -184,7 +219,7 @@ const AdminSidebar = () => {
                         </NavLink>
                         <NavLink 
                             to="transact"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
@@ -193,7 +228,7 @@ const AdminSidebar = () => {
                         </NavLink>
                         <NavLink 
                             to="inventory"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
@@ -202,7 +237,7 @@ const AdminSidebar = () => {
                         </NavLink>
                         <NavLink 
                             to="sub-admin"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
@@ -213,7 +248,7 @@ const AdminSidebar = () => {
                     <div>
                         <NavLink 
                             to="settings"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >

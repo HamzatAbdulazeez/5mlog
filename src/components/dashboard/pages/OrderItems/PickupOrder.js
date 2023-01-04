@@ -4,6 +4,7 @@ import { FaListAlt, FaSearch } from 'react-icons/fa'
 import { UserOrderTable } from '../../assets/Tables/UserOrder'
 
 export const PickUpUser = () => {
+   
   return (
     <div className='min-h-screen'>
         <div className='h-44 bg-inter lg:bg-fill bg-center bg-cover  text-white w-full bg-white flex items-center'>
@@ -32,6 +33,7 @@ export const PickUpUser = () => {
                 </div>
                 <div>
                     <UserOrderTable/>
+                    {}
                 </div>
             </div>
         </div>
