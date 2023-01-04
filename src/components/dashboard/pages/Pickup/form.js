@@ -81,34 +81,34 @@ export const PickupForm = () => {
             <div className='border-b border-gray-400 py-4'>
                 <p className='fw-600'>Pick Location</p>
                 <div className='mt-4'>
-                      <Input type="text" label="Pickup Address" name="pickup_address" />
+                      <Input type="text" label="Pickup Address" name="pickup_address" required />
                 </div>
                 <div className='mt-4'>
-                      <Input type="text" label="Drop-off Address" name="dropoff_address" />
+                      <Input type="text" label="Drop-off Address" name="dropoff_address" required />
                 </div>
             </div>
             <div className='border-b border-gray-400 py-4'>
                 <p className='fw-600'>Sender's Info</p>
                 <div className='mt-4'>
-                      <Input type="text" name="sender_address" label="Enter complete address of sender"/>
+                      <Input type="text" name="sender_address" label="Enter complete address of sender" required />
                 </div>
                 <div className='mt-4'>
-                      <Input type="text" name="sender_name" label="Sender's Name"/>
+                      <Input type="text" name="sender_name" label="Sender's Name" required />
                 </div>
                 <div className='mt-4'>
-                      <Input type="text" name="sender_phone_number" label="Sender's Phone Number"/>
+                      <Input type="text" name="sender_phone_number" label="Sender's Phone Number" required />
                 </div>
             </div>
             <div className='border-b border-gray-400 py-4'>
                 <p className='fw-600'>Receiver's Info</p>
                 <div className='mt-4'>
-                      <Input type="text" name="receiver_address" label="Enter complete address of receiver"/>
+                      <Input type="text" name="receiver_address" label="Enter complete address of receiver" required />
                 </div>
                 <div className='mt-4'>
-                      <Input type="text" name="receiver_name" label="Receiver's Name"/>
+                      <Input type="text" name="receiver_name" label="Receiver's Name" required />
                 </div>
                 <div className='mt-4'>
-                      <Input type="text" name="receiver_phone_number" label="Receiver's Phone Number"/>
+                      <Input type="text" name="receiver_phone_number" label="Receiver's Phone Number" required />
                 </div>
             </div>
             <div className='mt-6 text-end'>
