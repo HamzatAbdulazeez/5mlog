@@ -27,7 +27,7 @@ export const pickupService = createAsyncThunk(
 
 
 export const addFreight = createAsyncThunk(
-    "/add/freight",
+    "/add/oversea/shipping",
     async (payload, thunkAPI) => {
         try {
             const response = await apiFactory.addFreight(payload);
@@ -48,7 +48,7 @@ export const addFreight = createAsyncThunk(
 
 
 export const addInterState = createAsyncThunk(
-    "/add/freight",
+    "/add/inter-state/service",
     async (payload, thunkAPI) => {
         try {
             const response = await apiFactory.addInterState(payload);
@@ -68,6 +68,69 @@ export const addInterState = createAsyncThunk(
 );
 
 
+export const addExpress = createAsyncThunk(
+    "/add/express/shipping",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.addExpress(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+
+export const addProcurement = createAsyncThunk(
+    "/add/procurement",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.addProcurement(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+export const addWarehousing = createAsyncThunk(
+    "/add/warehousing",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.addWarehousing(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+
+
 const initialState = user;
 
 const apiServicesSlice = createSlice({
@@ -81,6 +144,15 @@ const apiServicesSlice = createSlice({
             state.user = action.payload.user;
         },
         [addInterState.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [addExpress.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [addWarehousing.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [addProcurement.fulfilled]: (state, action) => {
             state.user = action.payload.user;
         },
     },

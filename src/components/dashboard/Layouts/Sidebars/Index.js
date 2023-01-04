@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import AdminSidebar from './Admin';
 import DriverSidebar from './Driver';
-// import UsersSidebar from './Users';
+import UsersSidebar from './Users';
 
 export const IndexSidebar = () => {
   
@@ -11,7 +11,7 @@ export const IndexSidebar = () => {
     let sidebar = null;
 
     if (auth?.user?.account_type === "Customer") {
-      sidebar = <AdminSidebar />
+      sidebar = <UsersSidebar />
     }else if(auth?.user?.account_type === "Driver"){
       sidebar = <DriverSidebar />
     }else if(auth?.user?.account_type === "Admin"){
