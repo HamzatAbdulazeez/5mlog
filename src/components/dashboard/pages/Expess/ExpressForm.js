@@ -72,7 +72,7 @@ export const ExpressForm = () => {
                 <label className='block fw-600 mb-4'>Type of Service</label>
                   <Select label='Select Freight' value={freight} onChange={changeFreight}>
                       <Option value='Air Freight'>Air Freight</Option>
-                      <Option value='Ocean Freight'>Oceean Freight</Option>
+                      <Option value='Ocean Freight'>Ocean Freight</Option>
                       <Option value='Procurement'>Procurement</Option>
                       <Option value='Others'>Others</Option>
                 </Select>
