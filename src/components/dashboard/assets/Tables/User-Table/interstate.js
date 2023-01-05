@@ -17,7 +17,7 @@ import {
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import { useExportData } from "react-table-plugins";
+// import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
@@ -32,7 +32,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
     const csvString = Papa.unparse({ fields: headerNames, data });
     return new Blob([csvString], { type: "text/csv" });
   } else if (fileType === "xlsx") {
-    
+
     // XLSX example
 
     const header = columns // eslint-disable-next-line
@@ -224,7 +224,7 @@ const Table = ({columns, data}) => {
       getExportFileBlob,
     }, 
     useFilters,
-    useGlobalFilter, usePagination, useExportData );
+    useGlobalFilter, usePagination );
 
     
 
