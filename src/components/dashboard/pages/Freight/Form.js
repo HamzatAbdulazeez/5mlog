@@ -29,6 +29,7 @@ export const FreightForm = () => {
 
 
       const handleSubmit = (event) => {
+            event.preventDefault();
             if (freight !== '') {
                   event.preventDefault();
                   setDisableBtn(true);
