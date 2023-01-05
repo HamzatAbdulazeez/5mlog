@@ -8,7 +8,7 @@ export const ProcureForm = () => {
             <div className='border-b border-gray-400 py-6'>
                 <p className='fw-600'>Item Information</p>
                 <div className='lg:flex'>
-                    <div className='mt-4 lg:w-6/12 lg:pr-3'>
+                    <div className='mt-4 lg:w-6/12 lg:pr-3 overflow-hidden'>
                         <Input type="text" label="Item Name (as inputted during item purchase)"/>
                     </div>
                     <div className='mt-4 lg:w-6/12 lg:pl-3'>

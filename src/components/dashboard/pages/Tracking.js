@@ -12,7 +12,7 @@ export const Tracking = () => {
         </div>
         {/* content */}
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
-            <div className='h-80 shadow-lg lg:w-9/12 mx-auto rounded-lg bg-track bg-cover flex items-center lg:p-8'>
+            <div className='lg:h-80 h-56 shadow-lg lg:w-9/12 mx-auto rounded-lg bg-track bg-cover flex items-center lg:p-8 p-3'>
                 <div className='w-full text-white'>
                     <p className='w-6/12 lg:text-xl xl:text-2xl fw-600'>Enter your tracking number to track your deliveries</p>
                     <div className='grid-83 mt-8 lg:mt-12'>

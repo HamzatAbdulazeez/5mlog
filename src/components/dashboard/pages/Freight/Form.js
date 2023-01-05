@@ -73,7 +73,7 @@ export const FreightForm = () => {
                               <label className='block fw-600 mb-4'>Preffered Freight Service</label>
                               <Select label='Select Freight' value={freight} onChange={changeFreight} >
                                     <Option value='Air Freight' selected>Air Freight</Option>
-                                    <Option value='Ocean Freight'>Oceean Freight</Option>
+                                    <Option value='Ocean Freight'>Ocean Freight</Option>
                               </Select>
                         </div>
                         <div className='border-b border-gray-400 py-6'>

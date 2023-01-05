@@ -6,7 +6,7 @@ const pickupService = (payload) => {
 };
 
 const addFreight = async (payload) => {
-    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/add/freight`, payload, { headers: authHeader() });
+    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/add/oversea/shipping`, payload, { headers: authHeader() });
     return response;
 }
 
