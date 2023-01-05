@@ -32,6 +32,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
     const csvString = Papa.unparse({ fields: headerNames, data });
     return new Blob([csvString], { type: "text/csv" });
   } else if (fileType === "xlsx") {
+    
     // XLSX example
 
     const header = columns // eslint-disable-next-line
