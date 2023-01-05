@@ -22,7 +22,6 @@ import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
 
-// export table files
 
 function getExportFileBlob({ columns, data, fileType, fileName }) {
   if (fileType === "csv") {
