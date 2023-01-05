@@ -1,9 +1,24 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
+import { getPickupOrder } from '../../../store/slices/userOrder'
 
 export const OrderUser = () => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+
+    const success = useSelector((state) => state.order.success);
+    let order = useSelector((state) => state.order.userOrder);
+
+    useEffect(() => {
+        dispatch(getPickupOrder())
+    }, [dispatch])
+    const pickup = order.length;
+    const pickupNew = order.filter(where => where.status === "Pending" );
+    const pickupNews = pickupNew.length
+
   return (
     <div className='min-h-screen'>
         <div className='h-44 bg-inter lg:bg-fill bg-center bg-cover  text-white w-full bg-white flex items-center'>
@@ -27,8 +42,8 @@ export const OrderUser = () => {
                             </div>
                         </div>
                         <div className='w-4/12 py-8 px-4 bg-orange-200 fs-500 fw-500'>
-                            <div className='flex justify-between items-center'><p>New</p><p className='fw-600 text-red-600 text-lg'>1</p></div>
-                            <div className='flex justify-between items-center'><p>Total</p><p className='fw-600 text-red-600 text-lg'>10</p></div>
+                            <div className='flex justify-between items-center'><p>New</p><p className='fw-600 text-red-600 text-lg'>{ success === false?  "" : pickupNews}</p></div>
+                            <div className='flex justify-between items-center'><p>Total</p><p className='fw-600 text-red-600 text-lg'>{ success === false?  "" : pickup}</p></div>
                         </div>
                     </div>
                     <div className='bg-blue-200  mt-6 lg:mt-0  flex hover:scale-105 duration-500  items-center triangle cursor-pointer' onClick={() => {navigate("/dashboard/interstate-order")}}>
