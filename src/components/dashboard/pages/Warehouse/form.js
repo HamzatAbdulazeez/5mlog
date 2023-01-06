@@ -121,10 +121,10 @@ export const WarehouseForm = () => {
                       <Input type="text" name='owner_full_name' required label="Name"/>
                 </div>
                 <div className='mt-4'>
-                      <Input type="text" name='owner_address' required label="Phone Number"/>
+                      <Input type="text" name='owner_phone_number' required label="Phone Number"/>
                 </div>
                 <div className='mt-4'>
-                      <Input type="text" name='owner_phone_number' required label="Enter complete address"/>
+                      <Input type="text" name='owner_address' required label="Enter complete address"/>
                 </div>
             </div>
             <div className='mt-6 text-end'>

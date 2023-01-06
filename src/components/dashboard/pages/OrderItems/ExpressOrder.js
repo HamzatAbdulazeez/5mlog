@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { FaListAlt, FaTimes } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProcureOrder } from '../../../../store/slices/userOrder'
-import { Spinner } from '../../../assets/Spinner'
+import { getExpressOrder } from '../../../../store/slices/userOrder'
+import { Spinner2 } from '../../../assets/Spinner'
 import { ExpressTable } from '../../assets/Tables/User-Table/express'
 
 export const ExpressOrderUser = () => {
@@ -20,7 +20,7 @@ export const ExpressOrderUser = () => {
     const success = useSelector((state) => state.order.success);
 
     useEffect(() => {
-        dispatch(getProcureOrder())
+        dispatch(getExpressOrder())
     }, [dispatch])
 
   return (
@@ -33,12 +33,12 @@ export const ExpressOrderUser = () => {
         </div>
         {/* content */}
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
-            <div className='bg-white p-10 rounded'>
+            <div className='bg-white p-5 lg:p-10 rounded'>
                 <div className='mb-6'>
                     <p className='fw-600 flex items-center'><sapn className="pr-2"><FaListAlt/></sapn>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner/> : <ExpressTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <ExpressTable paymentModal={paymentModal}/>}
                 </div>
             </div>
         </div>

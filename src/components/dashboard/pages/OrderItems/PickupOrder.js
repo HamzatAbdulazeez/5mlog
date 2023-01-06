@@ -4,7 +4,7 @@ import { getPickupOrder } from '../../../../store/slices/userOrder'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { PickupTable } from '../../assets/Tables/User-Table/PickupOrder'
-import { Spinner } from '../../../assets/Spinner'
+import { Spinner2 } from '../../../assets/Spinner'
 
 export const PickUpUser = () => {
 
@@ -40,7 +40,7 @@ export const PickUpUser = () => {
                     <p className='fw-600 flex items-center'><sapn className="pr-2"><FaListAlt/></sapn>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner/> : <PickupTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <PickupTable paymentModal={paymentModal}/>}
                 </div>
             </div>
         </div>

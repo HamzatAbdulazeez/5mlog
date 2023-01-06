@@ -83,7 +83,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
 
 export function ExpressTable({status, paymentModal}) {
 
-  let order = useSelector((state) => state.order.procureOrder);
+  let order = useSelector((state) => state.order.expressOrder);
 
   console.log(order)
   
@@ -128,7 +128,11 @@ export function ExpressTable({status, paymentModal}) {
           },
           {
             Header: "Item Name",
-            accessor: "item_name",
+            accessor: "package_name",
+          },
+          {
+            Header: "Service Type",
+            accessor: "freight_service",
           },
           {
             Header: "Order Date",
