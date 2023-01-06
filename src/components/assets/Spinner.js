@@ -7,3 +7,11 @@ export const Spinner = () => {
     </div>
   )
 }
+
+export const Spinner2 = () => {
+    return (
+        <div className='w-full grid place-content-center'>
+            <img src="https://flevix.com/wp-content/uploads/2019/07/Color-Loading-2.gif" alt="spinner" className='w-full' />
+        </div>
+    )
+}

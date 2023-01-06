@@ -17,67 +17,67 @@ const initialState = {
 
 export const getPickupOrder = createAsyncThunk( 
     "/get/pickup/service",
-    async () => {
+    async (thunkAPI) => {
         try {
             const response = await userOrders.pickupOrder();
             return response.data.data;
         } catch (error) {
-            console.log(error)
+            return thunkAPI.rejectWithValue(error)
         }
     }
 );
 export const getInterstateOrder = createAsyncThunk( 
     "/get/inter-state/service",
-    async () => {
+    async (thunkAPI) => {
         try {
             const response = await userOrders.interstateOrder();
             return response.data.data;
         } catch (error) {
-            console.log(error)
+            return thunkAPI.rejectWithValue(error)
         }
     }
 );
 export const getOverseaOrder = createAsyncThunk( 
     "/get/oversea/service",
-    async () => {
+    async (thunkAPI) => {
         try {
             const response = await userOrders.overseaOrder();
             return response.data.data;
         } catch (error) {
-            console.log(error)
+            return thunkAPI.rejectWithValue(error)
         }
     }
 );
 export const getProcureOrder = createAsyncThunk( 
     "/get/procurement",
-    async () => {
+    async (thunkAPI) => {
         try {
             const response = await userOrders.procureOrder();
             return response.data.data;
         } catch (error) {
-            console.log(error)
+            return thunkAPI.rejectWithValue(error)
         }
     }
 );
 export const getExpressOrder = createAsyncThunk( 
     "/get/express/shipping",
-    async () => {
+    async (thunkAPI) => {
         try {
             const response = await userOrders.expressOrder();
             return response.data.data;
         } catch (error) {
-            console.log(error)
+            return thunkAPI.rejectWithValue(error)
         }
     }
 );
 export const getWarehouseOrder = createAsyncThunk( 
     "/get/warehousing",
-    async () => {
+    async (thunkAPI) => {
         try {
             const response = await userOrders.warehouseOrder();
             return response.data.data;
         } catch (error) {
-            console.log(error)
+            return thunkAPI.rejectWithValue(error)
         }
     }
 );
@@ -87,6 +87,9 @@ const userOrderSlice = createSlice({
     name: "/get",
     initialState,
     extraReducers: {
+        [getPickupOrder.pending]: (state, action) => {
+            state.success = false;
+        },
         [getPickupOrder.fulfilled]: (state, action) => {
             state.userOrder = action.payload;
             state.success = true;

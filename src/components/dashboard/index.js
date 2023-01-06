@@ -25,6 +25,9 @@ import { PickupOrders } from "./pages/admin-pages/PickupOrders";
 import { ViewRequest } from "./pages/admin-pages/ViewRequest";
 import { InterStateOrder } from "./pages/admin-pages/InterStateOrder";
 import { OverseaOrder } from "./pages/admin-pages/OverseaOrder";
+import { ProcureDetailUser } from "./pages/Order-details-user/ProcureDetails";
+import { WarehouseDetailUser } from "./pages/Order-details-user/warehouseDetail";
+import { TransactionUser } from "./pages/Transaction";
 
 export default function Dashboard() {
 
@@ -64,6 +67,9 @@ export default function Dashboard() {
                         <Route path="express-order" element={<ExpressOrderUser />} />
                         <Route path="warehouse-order" element={<WarehouseOrderUser />} />
                         <Route path="orderdetail" element={<OrderDetailUser />} />
+                        <Route path="procuredetail" element={<ProcureDetailUser />} />
+                        <Route path="warehousedetail" element={<WarehouseDetailUser/>} />
+                        <Route path="transact" element={<TransactionUser />} />
                         <Route path="track" element={<Tracking />} />
                         {/* admin routes */}
                         <Route path="admin-pickup" element={<PickupOrders />} />

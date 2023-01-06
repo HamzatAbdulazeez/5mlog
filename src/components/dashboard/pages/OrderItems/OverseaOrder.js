@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { FaListAlt, FaTimes } from 'react-icons/fa'
 import { getOverseaOrder } from '../../../../store/slices/userOrder'
 import { useDispatch, useSelector } from 'react-redux'
-import { Spinner } from '../../../assets/Spinner'
+import { Spinner2 } from '../../../assets/Spinner'
 import { OverseaTable } from '../../assets/Tables/User-Table/oversea'
 
 export const OverseaOrderUser = () => {
@@ -38,7 +38,7 @@ export const OverseaOrderUser = () => {
                     <p className='fw-600 flex items-center'><sapn className="pr-2"><FaListAlt/></sapn>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner/> : <OverseaTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <OverseaTable paymentModal={paymentModal}/>}
                 </div>
             </div>
         </div>

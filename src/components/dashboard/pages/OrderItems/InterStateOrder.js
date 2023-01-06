@@ -3,7 +3,7 @@ import { FaListAlt, FaTimes } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { getInterstateOrder } from '../../../../store/slices/userOrder'
 import { InterstateTable } from '../../assets/Tables/User-Table/interstate'
-import { Spinner } from '../../../assets/Spinner'
+import { Spinner2 } from '../../../assets/Spinner'
 
 export const InterStateOrderUser = () => {
 
@@ -38,7 +38,7 @@ export const InterStateOrderUser = () => {
                     <p className='fw-600 flex items-center'><sapn className="pr-2"><FaListAlt/></sapn>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner/> : <InterstateTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <InterstateTable paymentModal={paymentModal}/>}
                 </div>
             </div>
         </div>

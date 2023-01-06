@@ -81,9 +81,9 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function ProcureTable({status, paymentModal}) {
+export function WarehouseTable({status, paymentModal}) {
 
-  let order = useSelector((state) => state.order.procureOrder);
+  let order = useSelector((state) => state.order.warehouseOrder);
 
   console.log(order)
   
@@ -93,7 +93,7 @@ export function ProcureTable({status, paymentModal}) {
 
     const formatStatus = (status) => {
       switch (status) {
-          case "Pending":
+          case "New":
               return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
         case "Ongoing":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
@@ -106,7 +106,7 @@ export function ProcureTable({status, paymentModal}) {
   }
   const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
-        navigate(`/dashboard/procuredetail?orderId=${id}`)
+        navigate(`/dashboard/warehousedetail?orderId=${id}`)
     }
 
 
@@ -118,17 +118,15 @@ export function ProcureTable({status, paymentModal}) {
           },
           {
             Header: "Order ID",
-            accessor: "id",
+            accessor: "order_id",
           },
           {
-            Header: "Tracking ID",
-            accessor: "tracking_number",
-            id: "track"
-            
+            Header: "Package Name",
+            accessor: "package_name",
           },
           {
-            Header: "Item Name",
-            accessor: "item_name",
+            Header: "Package Quantity",
+            accessor: "package_quantity",
           },
           {
             Header: "Order Date",
@@ -149,11 +147,11 @@ export function ProcureTable({status, paymentModal}) {
           },
           {
             Header: "Location",
-            accessor: "shipping_to_state_province_region",
+            accessor: "warehouse_location",
           },
           {
             Header: 'Action',
-            accessor: "tracking_number",
+            accessor: "order_id",
             id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>
