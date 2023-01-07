@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaBell } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/slices/auth";
+import { ProfileAvatar } from "../../assets/Profilepic";
 
 let user = JSON.parse(localStorage.getItem("user"));
 
@@ -45,7 +46,7 @@ export default function Header() {
                                 <MenuHandler>
                                     <Button className="p-2 bg-transparent shadow-none">
                                         <div className="bg-gray-100 px-2 rounded-sm py-2 relative">
-                                            <FaBell className="lg:text-xl  text-primary" />
+                                            <FaBell className="lg:text-xl text-lg text-primary" />
                                             <p className="absolute -top-2 left-3/4 border circle px-1 text-white text-xs bg-primary">6</p>
                                         </div>
                                     </Button>
@@ -64,8 +65,8 @@ export default function Header() {
                             >
                                 <MenuHandler>
                                     <Button className="p-0">
-                                        <Avatar src={user?.photo ? `${process.env.REACT_APP_MEDIA_URL + user?.photo}` : "https://i.stack.imgur.com/l60Hf.png"}
-                                    alt="profifepic" />
+                                        {user?.photo? <Avatar src={`${process.env.REACT_APP_MEDIA_URL + user?.photo}`}
+                                    alt="profifepic" /> : <ProfileAvatar/>}
                                     </Button>
                                 </MenuHandler>
                                 <MenuList>

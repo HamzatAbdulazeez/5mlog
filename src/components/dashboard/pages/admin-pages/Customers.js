@@ -24,10 +24,10 @@ export const Customers = () => {
             </div>
         </div>
         {/* content */}
-        <div className='lg:p-5 px-3'>
+        <div className='lg:p-5 px-3 mt-6'>
             <div className='bg-white p-5 lg:p-10 rounded'>
                 <div className='mb-6'>
-                    <p className='fw-600 flex items-center text-lg'><span className="pr-2 text-2xl text-blue-400"><FaUsers/></span>Users Listing</p>
+                    <p className='fw-600 flex items-center text-lg'><span className="pr-2 text-2xl text-blue-400"><FaUsers/></span>Customers Listing</p>
                 </div>
                 <div>
                     { success === false?  <Spinner2/> : <CustomerTable />}

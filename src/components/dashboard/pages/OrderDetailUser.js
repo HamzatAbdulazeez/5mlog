@@ -44,7 +44,7 @@ export const OrderDetailUser = () => {
                 <Link to="/dashboard/myorders"><p className='flex items-center text-gray-600 '><span className='pr-4'><FaArrowLeft/></span>Orders</p></Link>
             </div>
             <div className='pt-4 pr-4'>
-                <p className='flex items-center fw-600 text-xl'><span className='pr-1'><FaListOl/></span> Order Id: <span>{order?.order_id}</span><span className='text-primary pl-6'></span></p>
+                <p className='flex items-center fw-600 lg:text-xl'><span className='pr-1'><FaListOl/></span> Order Id: <span className='pl-2 text-primary'>{order?.order_id}</span><span className='text-primary pl-6'></span></p>
             </div>
         </div>
         {/* content */}
@@ -53,14 +53,14 @@ export const OrderDetailUser = () => {
                 <div className='bg-white lg:grid-3s justify-between '>
                     <div className='shadow-lg lg:p-6 p-3 rounded-lg bg-red-100'>
                         <p className='flex items-center text-gray-600 fs-500'><span className='pr-1'><FaListOl/></span> PickUp</p>
-                        <p className='flex items-center fw-600 text-xl'>ORD-R456-56782</p>
+                        <p className='flex items-center fw-600 text-xl'>{order?.order_id}</p>
                         <p className='flex fs-500 mt-6'><span className='pr-1 mt-1'><FaSearchLocation/></span>{order?.pickup_address? order?.pickup_address : order?.package_address? order?.package_address : order?.shipping_from_street_address? order?.shipping_from_street_address + " " + order?.shipping_from_city : "Null" }</p>
                         <p className='flex fs-500 mt-2'>{order?.shipping_from_state_province_region? order?.shipping_from_state_province_region : "Lagos"} {order?.shipping_from_country? order?.shipping_from_country : "Nigeria"}.</p>
                         <p className='flex fs-500 mt-2 flex items-center'><span className='pr-2'><FaPhoneAlt/></span>{order?.sender_phone_number? order?.sender_phone_number : "Null"}</p>
                     </div>
                     <div className='shadow-lg lg:p-6 p-3 mt-6 lg:mt-0 rounded-lg bg-green-100'>
                         <p className='flex items-center text-gray-600 fs-500'><span className='pr-1'><FaListOl/></span>Dropoff</p>
-                        <p className='flex items-center fw-600 text-xl'>ORD-R456-56782</p>
+                        <p className='flex items-center fw-600 text-xl'>{order?.order_id}</p>
                         <p className='flex fs-500 mt-6'><span className='pr-1 mt-1'><FaSearchLocation/></span> {order?.dropoff_address? order?.dropoff_address : order?.shipping_to_street_address? order?.shipping_to_street_address + " " + order?.shipping_to_city : "Null"}</p>
                         <p className='flex fs-500 mt-2'>{order?.shipping_to_state_province_region? order?.shipping_to_state_province_region : "Lagos"} {order?.shipping_to_country? order?.shipping_to_country : "Nigeria"}.</p>
                         <p className='flex fs-500 mt-2 flex items-center'><span className='pr-2'><FaPhoneAlt/></span>{order?.receiver_phone_number? order?.receiver_phone_number : "Null"}</p>
@@ -116,31 +116,31 @@ export const OrderDetailUser = () => {
                         <div className='bg-light lg:p-6 p-5 shadow-md rounded'>
                             <p className='fw-600 pb-4'>Sender's Information</p>
                             <div className='py-2 border-b border-gray-300 flex'>
-                                <p className='w-3/12 fw-500'>Name:</p>
+                                <p className='w-4/12 lg:w-3/12 fw-500'>Name:</p>
                                 <p>{order?.sender_name}</p>
                             </div>
                             <div className='py-2 border-b border-gray-300 flex'>
-                                <p className='w-3/12 fw-500'>Phone:</p>
+                                <p className='w-4/12 lg:w-3/12 fw-500'>Phone:</p>
                                 <p>{order?.sender_phone_number}</p>
                             </div>
                             <div className='py-2 border-b border-gray-300 flex'>
-                                <p className='w-3/12 fw-500'>Address:</p>
-                                <p>{order?.sender_address}</p>
+                                <p className='w-4/12 lg:w-3/12 fw-500'>Address:</p>
+                                <p className='w-8/12 lg:w-9/12'>{order?.sender_address}</p>
                             </div>
                         </div>
                         <div className='bg-light lg:p-6 mt-6 lg:mt-0 p-5 shadow-md rounded'>
                             <p className='fw-600 pb-4'>Receiver's Information</p>
                             <div className='py-2 border-b border-gray-300 flex'>
-                                <p className='w-3/12 fw-500'>Name:</p>
+                                <p className='w-4/12 lg:w-3/12 fw-500'>Name:</p>
                                 <p>{order?.receiver_name}</p>
                             </div>
                             <div className='py-2 border-b border-gray-300 flex'>
-                                <p className='w-3/12 fw-500'>Phone:</p>
+                                <p className='w-4/12 lg:w-3/12 fw-500'>Phone:</p>
                                 <p>{order?.receiver_phone_number}</p>
                             </div>
                             <div className='py-2 border-b border-gray-300 flex'>
-                                <p className='w-3/12 fw-500'>Address:</p>
-                                <p>{order?.receiver_address}</p>
+                                <p className='w-4/12 lg:w-3/12 fw-500'>Address:</p>
+                                <p className='w-8/12 lg:w-9/12'>{order?.receiver_address}</p>
                             </div>
                         </div>
                     </div>

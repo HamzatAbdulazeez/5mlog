@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { FaRegWindowClose } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import { HomepageProfile } from "../../assets/HomepageProfile";
 
 export const Header = () => {
 
@@ -57,9 +58,7 @@ export const Header = () => {
                         <div className='w-4/12 xxl:w-3/12 hidden lg:flex justify-end items-center'>
                             { auth?.isLoggedIn? 
                                 <div>
-                                    <Link to="/dashboard" className="text-white bg-black py-2 px-6 rounded-md fw-600">
-                                        Dashboard
-                                    </Link>
+                                    <HomepageProfile/>
                                 </div> : 
                                 <div>
                                     <Link to="/login" className="text-black py-2 fs-700 px-6 rounded-lg fw-600 mr-3">
@@ -92,8 +91,19 @@ export const Header = () => {
                                         <li className="py-4"><Link to="/services">Our Services</Link></li>
                                         <li className="py-4"><Link to="/contact">Contact Us</Link></li>
                                         <li className="py-4"><Link to="/faqs">FAQs</Link></li>
-                                        <li className="py-4 mt-7"><Link to="/login" className='bg-primary text-white px-6 py-2'>Login</Link></li>
-                                        <li className="py-4 mt-3"><Link to="/signup" className='border-primary fw-600 px-6 py-2'>Sign Up</Link></li>
+                                        {
+                                            auth?.isLoggedIn?
+                                            <li className="mt-8">
+                                                <Link to="/dashboard" className="text-white bg-black py-2 px-6 rounded-md fw-600">
+                                                    Dashboard
+                                                </Link>
+                                            </li>
+                                            :
+                                            <ul>
+                                                <li className="py-4 mt-7"><Link to="/login" className='bg-primary text-white px-6 py-2'>Login</Link></li>
+                                                <li className="py-4 mt-3"><Link to="/signup" className='border-primary fw-600 px-6 py-2'>Sign Up</Link></li>
+                                            </ul>
+                                        }
                                     </ul>
                                 </div>
                             </div>

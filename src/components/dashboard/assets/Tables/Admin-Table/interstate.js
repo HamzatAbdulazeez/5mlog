@@ -328,19 +328,19 @@ const Table = ({columns, data}) => {
                     </span>
                 </div>
                 <div className='w-20'>
-                    <Select
+                    <select
                     value={state.pageSize}
                     onChange={e => {
                         setPageSize(Number(e.target.value))
                     }}
-                    className=""
+                    className="rounded p-1"
                     >
                     {[5, 10, 20].map(pageSize => (
-                        <Option key={pageSize} value={pageSize}>
+                        <option key={pageSize} value={pageSize}>
                         Show {pageSize}
-                        </Option>
+                        </option>
                     ))}
-                    </Select>
+                    </select>
                 </div>
             </div>
             <div className='flex lg:mt-0 mt-4 justify-center gap-2'>
