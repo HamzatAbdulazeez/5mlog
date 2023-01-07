@@ -16,7 +16,7 @@ export const TransactionUser = () => {
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
             <div className='bg-white p-5 lg:p-10 rounded'>
                 <div className='mb-6'>
-                    <p className='fw-600 flex items-center'><sapn className="pr-2 text-primary text-xl"><GiPayMoney/></sapn>Transaction Listing</p>
+                    <p className='fw-600 flex items-center'><span className="pr-2 text-primary text-xl"><GiPayMoney/></span>Transaction Listing</p>
                 </div>
                 <div>
                     <AdminOrderTable/>

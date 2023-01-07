@@ -35,7 +35,7 @@ export const ExpressOrderUser = () => {
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
             <div className='bg-white p-5 lg:p-10 rounded'>
                 <div className='mb-6'>
-                    <p className='fw-600 flex items-center'><sapn className="pr-2"><FaListAlt/></sapn>Orders Listing</p>
+                    <p className='fw-600 flex items-center'><span className="pr-2"><FaListAlt/></span>Orders Listing</p>
                 </div>
                 <div>
                     { success === false?  <Spinner2/> : <ExpressTable paymentModal={paymentModal}/>}

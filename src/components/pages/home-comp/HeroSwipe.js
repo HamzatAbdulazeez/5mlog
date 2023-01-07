@@ -40,7 +40,7 @@ export const HeroSwipe = () => {
                 <div className='bg-air lg:bg-fit bg-cover bg-center h-full'>
                     <div className='box h-full flex items-center font-primary'>
                         <div className='w-8/12 lg:w-7/12 text-white lg:relative top-5'>
-                            <p className='fw-600 text-xl lg:text-4xl lg:w-11/12 lg:tracking-wide'><sapn className="hidden lg:inline">Our efficient global logistics network and delivery service provides </sapn><span className='fw-700 text-primary'>Air Freight</span> and logistics transportation services.</p>
+                            <p className='fw-600 text-xl lg:text-4xl lg:w-11/12 lg:tracking-wide'><span className="hidden lg:inline">Our efficient global logistics network and delivery service provides </span><span className='fw-700 text-primary'>Air Freight</span> and logistics transportation services.</p>
                             <Link to="/login"><button className='lg:px-10 px-5 shadow-md fw-600 text-white lg:py-4 py-2 rounded-md bg-primary mt-10'>Get Started</button></Link>
                         </div>
                         {/* <div className='w-5/12 relative -top-4 lg:top-0'>
