@@ -31,6 +31,9 @@ import { TransactionUser } from "./pages/Transaction";
 import { ProcureOrderAdmin } from "./pages/admin-pages/ProcureOrder";
 import { ExpressOrder } from "./pages/admin-pages/ExpressOrder";
 import { WarehouseOrder } from "./pages/admin-pages/WarehouseOrder";
+import { Customers } from "./pages/admin-pages/Customers";
+import { Partners } from "./pages/admin-pages/Partners";
+import { Subadmin } from "./pages/admin-pages/Subadmin";
 
 export default function Dashboard() {
 
@@ -82,6 +85,9 @@ export default function Dashboard() {
                         <Route path="admin-express" element={<ExpressOrder />} />
                         <Route path="admin-warehouse" element={<WarehouseOrder />} />
                         <Route path="driver-request" element={<ViewRequest />} />
+                        <Route path="customers" element={<Customers />} />
+                        <Route path="partners" element={<Partners />} />
+                        <Route path="sub-admin" element={<Subadmin />} />
                         <Route path="settings" element={<UserSettings />} />
                     </Routes>
 

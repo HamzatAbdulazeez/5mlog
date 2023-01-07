@@ -4,13 +4,15 @@ import messageReducer from "./slices/messages";
 import userReducer from "./slices/apiServices";
 import orderReducer from "./slices/userOrder";
 import orderAdminReducer from "./slices/adminOrder";
+import usersReducer from "./slices/users";
 
 const reducer = {
     auth: authReducer,
     message: messageReducer,
     user: userReducer,
     order: orderReducer,
-    orderAdmin: orderAdminReducer
+    orderAdmin: orderAdminReducer,
+    userlist: usersReducer
 }
 
 const store = configureStore({

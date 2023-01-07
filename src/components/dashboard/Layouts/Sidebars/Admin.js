@@ -188,20 +188,14 @@ const AdminSidebar = () => {
                             {userDrop && (
                                 <div className="lg:ml-9 ml-4 fs-400 pt-2">
                                     <NavLink
-                                        to="projectsadmin"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                                        to="customers"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
                                         <p className="py-2">Customers</p>
                                     </NavLink>
-                                    {/* <NavLink
-                                        to="projectrequest"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="py-2">Riders</p>
-                                    </NavLink> */}
                                     <NavLink
-                                        to="servicecategory"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                                        to="partners"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
                                         <p className="py-2">Partners</p>
                                     </NavLink>
