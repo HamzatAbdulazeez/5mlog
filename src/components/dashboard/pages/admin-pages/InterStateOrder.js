@@ -1,7 +1,10 @@
 import { Input, Option, Select, Button } from '@material-tailwind/react'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { AdminOrderTable } from '../../assets/Tables/adminOrder'
+import { useDispatch, useSelector } from 'react-redux'
+import { getInterstateOrder } from '../../../../store/slices/adminOrder'
+import { Spinner2 } from '../../../assets/Spinner'
+import { InterstateTable } from '../../assets/Tables/Admin-Table/interstate'
 
 export const InterStateOrder = () => {
     const[payment, setPayment] = useState(false)
@@ -11,6 +14,13 @@ export const InterStateOrder = () => {
     const CloseModal = () => {
         setPayment(false)
     }
+    const dispatch = useDispatch()
+
+    const success = useSelector((state) => state.orderAdmin.success);
+
+    useEffect(() => {
+        dispatch(getInterstateOrder())
+    }, [dispatch])
 
   return (
     <div className='min-h-screen'>
@@ -23,7 +33,7 @@ export const InterStateOrder = () => {
         {/* content */}
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
             <div className='bg-white p-10 rounded'>
-                <AdminOrderTable paymentModal={paymentModal}/>
+                { success === false?  <Spinner2/> : <InterstateTable paymentModal={paymentModal}/>}
             </div>
         </div>
         {

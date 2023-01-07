@@ -1,7 +1,10 @@
 import { Input, Option, Select, Button } from '@material-tailwind/react'
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { AdminOrderTable } from '../../assets/Tables/adminOrder'
+import { useDispatch, useSelector } from 'react-redux'
+import { getOverseaOrder } from '../../../../store/slices/adminOrder'
+import { Spinner2 } from '../../../assets/Spinner'
+import { OverseaTable } from '../../assets/Tables/Admin-Table/oversea'
 
 export const OverseaOrder = () => {
 
@@ -12,6 +15,16 @@ export const OverseaOrder = () => {
     const CloseModal = () => {
         setPayment(false)
     }
+
+    const dispatch = useDispatch()
+
+    const success = useSelector((state) => state.orderAdmin.success);
+
+    useEffect(() => {
+        dispatch(getOverseaOrder())
+    }, [dispatch])
+
+
   return (
     <div className='min-h-screen'>
         <div className='h-44 bg-ocean lg:bg-fill bg-center bg-cover  text-white w-full bg-white flex items-center'>
@@ -23,7 +36,7 @@ export const OverseaOrder = () => {
         {/* content */}
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
             <div className='bg-white p-10 rounded'>
-                <AdminOrderTable paymentModal={paymentModal}/>
+                { success === false?  <Spinner2/> : <OverseaTable paymentModal={paymentModal}/>}
             </div>
         </div>
         {

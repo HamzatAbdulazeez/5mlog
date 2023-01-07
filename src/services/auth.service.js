@@ -16,6 +16,18 @@ const login = async (payload) => {
     return response.data;
 };
 
+const adminLogin = async (payload) => {
+    const response = await axios
+        .post(process.env.REACT_APP_BASE_URL + "/auth/admin/login",
+            payload
+            );
+        if (response.data.token) {
+            localStorage.setItem("user", JSON.stringify(response.data.data));
+            localStorage.setItem("lynchpin", JSON.stringify(response.data.token));
+        }
+    return response.data;
+};
+
 const verifyAccount = async (payload) => {
     const response = await axios
         .post(process.env.REACT_APP_BASE_URL + "/auth/email/confirm",
@@ -55,7 +67,8 @@ const AuthService = {
     verifyAccount,
     resendVerification,
     forgetPassword,
-    resetPassword
+    resetPassword,
+    adminLogin
 };
 
 export default AuthService;

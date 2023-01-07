@@ -110,38 +110,42 @@ export const OrderDetailUser = () => {
                         </div>
                     </div>
                 </div>
-                <div className='lg:grid-2 justify-between mt-8 lg:mt-12'>
-                    <div className='bg-light lg:p-6 p-5 shadow-md rounded'>
-                        <p className='fw-600 pb-4'>Sender's Information</p>
-                        <div className='py-2 border-b border-gray-300 flex'>
-                            <p className='w-3/12 fw-500'>Name:</p>
-                            <p>{order?.sender_name}</p>
+                {
+                    order?.service_type === "Pickup" || order?.service_type === "Interstate" ? 
+                    <div className='lg:grid-2 justify-between mt-8 lg:mt-12'>
+                        <div className='bg-light lg:p-6 p-5 shadow-md rounded'>
+                            <p className='fw-600 pb-4'>Sender's Information</p>
+                            <div className='py-2 border-b border-gray-300 flex'>
+                                <p className='w-3/12 fw-500'>Name:</p>
+                                <p>{order?.sender_name}</p>
+                            </div>
+                            <div className='py-2 border-b border-gray-300 flex'>
+                                <p className='w-3/12 fw-500'>Phone:</p>
+                                <p>{order?.sender_phone_number}</p>
+                            </div>
+                            <div className='py-2 border-b border-gray-300 flex'>
+                                <p className='w-3/12 fw-500'>Address:</p>
+                                <p>{order?.sender_address}</p>
+                            </div>
                         </div>
-                        <div className='py-2 border-b border-gray-300 flex'>
-                            <p className='w-3/12 fw-500'>Phone:</p>
-                            <p>{order?.sender_phone_number}</p>
-                        </div>
-                        <div className='py-2 border-b border-gray-300 flex'>
-                            <p className='w-3/12 fw-500'>Address:</p>
-                            <p>{order?.sender_address}</p>
+                        <div className='bg-light lg:p-6 mt-6 lg:mt-0 p-5 shadow-md rounded'>
+                            <p className='fw-600 pb-4'>Receiver's Information</p>
+                            <div className='py-2 border-b border-gray-300 flex'>
+                                <p className='w-3/12 fw-500'>Name:</p>
+                                <p>{order?.receiver_name}</p>
+                            </div>
+                            <div className='py-2 border-b border-gray-300 flex'>
+                                <p className='w-3/12 fw-500'>Phone:</p>
+                                <p>{order?.receiver_phone_number}</p>
+                            </div>
+                            <div className='py-2 border-b border-gray-300 flex'>
+                                <p className='w-3/12 fw-500'>Address:</p>
+                                <p>{order?.receiver_address}</p>
+                            </div>
                         </div>
                     </div>
-                    <div className='bg-light lg:p-6 mt-6 lg:mt-0 p-5 shadow-md rounded'>
-                        <p className='fw-600 pb-4'>Receiver's Information</p>
-                        <div className='py-2 border-b border-gray-300 flex'>
-                            <p className='w-3/12 fw-500'>Name:</p>
-                            <p>{order?.receiver_name}</p>
-                        </div>
-                        <div className='py-2 border-b border-gray-300 flex'>
-                            <p className='w-3/12 fw-500'>Phone:</p>
-                            <p>{order?.receiver_phone_number}</p>
-                        </div>
-                        <div className='py-2 border-b border-gray-300 flex'>
-                            <p className='w-3/12 fw-500'>Address:</p>
-                            <p>{order?.receiver_address}</p>
-                        </div>
-                    </div>
-                </div>
+                    : ""
+                }
                 { order?.service_type === "Pickup" || order?.service_type === "Interstate" ?  "" :
                     <div className='bg-light lg:p-6 mt-7 lg:mt-12 p-5 shadow-md rounded'>
                         <p className='fw-600 pb-4'>Owner's Information</p>
@@ -157,7 +161,7 @@ export const OrderDetailUser = () => {
                         </div>
                         <div className='py-2 lg:flex border-b border-gray-300'>
                             <div className='lg:w-6/12  mt-6 lg:mt-0'>
-                                <p className='lg:w-3/12 fw-500'>Phone Number:</p>
+                                <p className='fw-500'>Phone Number:</p>
                                 <p>{order?.owner_phone_number? order?.owner_phone_number : "Null"}</p>
                             </div>
                             <div className='lg:w-6/12 mt-6 lg:mt-0'>

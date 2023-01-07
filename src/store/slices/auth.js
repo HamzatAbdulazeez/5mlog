@@ -45,6 +45,26 @@ export const login = createAsyncThunk(
     }
 );
 
+export const adminLogin = createAsyncThunk(
+    "/admin/login",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await AuthService.adminLogin(payload);
+            thunkAPI.dispatch(setMessage(response));
+            return response;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
 export const verifyAccount = createAsyncThunk(
     "/auth/email/confirm",
     async (payload, thunkAPI) => {
@@ -153,6 +173,14 @@ const authSlice = createSlice({
             state.isLoggedIn = false;
             state.user = null;
         },
+        [adminLogin.fulfilled]: (state, action) => {
+            state.isLoggedIn = true;
+            state.user = action.payload
+        },
+        [adminLogin.rejected]: (state, action) => {
+            state.isLoggedIn = false;
+            state.user = null
+        }
     },
 });
 

@@ -85,8 +85,6 @@ export function PickupTable({status, paymentModal}) {
 
   // const isLoading = useSelector((state) => state.users.isLoading);
   let order = useSelector((state) => state.order.userOrder);
-
-  console.log(order)
   
     if (status) {
     order = order.filter(where => where.status === status)
