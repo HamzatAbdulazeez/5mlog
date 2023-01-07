@@ -1,10 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import adminOrders from "../../services/admin-order";
 
-
-import userOrders from "../../services/user-order";
 
 const initialState = {
-    userOrder: [],
+    pickupOrder: [],
     interstateOrder: [],
     overseaOrder: [],
     procureOrder: [],
@@ -18,7 +17,7 @@ export const getPickupOrder = createAsyncThunk(
     "/get/pickup/service",
     async (thunkAPI) => {
         try {
-            const response = await userOrders.pickupOrder();
+            const response = await adminOrders.pickupOrder();
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -29,7 +28,7 @@ export const getInterstateOrder = createAsyncThunk(
     "/get/inter-state/service",
     async (thunkAPI) => {
         try {
-            const response = await userOrders.interstateOrder();
+            const response = await adminOrders.interstateOrder();
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -40,7 +39,7 @@ export const getOverseaOrder = createAsyncThunk(
     "/get/oversea/service",
     async (thunkAPI) => {
         try {
-            const response = await userOrders.overseaOrder();
+            const response = await adminOrders.overseaOrder();
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -51,7 +50,7 @@ export const getProcureOrder = createAsyncThunk(
     "/get/procurement",
     async (thunkAPI) => {
         try {
-            const response = await userOrders.procureOrder();
+            const response = await adminOrders.procureOrder();
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -62,7 +61,7 @@ export const getExpressOrder = createAsyncThunk(
     "/get/express/shipping",
     async (thunkAPI) => {
         try {
-            const response = await userOrders.expressOrder();
+            const response = await adminOrders.expressOrder();
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -73,7 +72,7 @@ export const getWarehouseOrder = createAsyncThunk(
     "/get/warehousing",
     async (thunkAPI) => {
         try {
-            const response = await userOrders.warehouseOrder();
+            const response = await adminOrders.warehouseOrder();
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -82,7 +81,7 @@ export const getWarehouseOrder = createAsyncThunk(
 );
 
 
-const userOrderSlice = createSlice({
+const adminOrderSlice = createSlice({
     name: "/get",
     initialState,
     extraReducers: {
@@ -90,7 +89,7 @@ const userOrderSlice = createSlice({
             state.success = false;
         },
         [getPickupOrder.fulfilled]: (state, action) => {
-            state.userOrder = action.payload;
+            state.pickupOrder = action.payload;
             state.success = true;
         },
         [getInterstateOrder.fulfilled]: (state, action) => {
@@ -116,5 +115,5 @@ const userOrderSlice = createSlice({
     },
 });
 
-const { reducer } = userOrderSlice;
+const { reducer } = adminOrderSlice;
 export default reducer;

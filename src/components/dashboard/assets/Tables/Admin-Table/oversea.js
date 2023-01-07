@@ -81,9 +81,10 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function WarehouseTable({status, paymentModal}) {
+export function OverseaTable({status, paymentModal}) {
 
-  let order = useSelector((state) => state.order.warehouseOrder);
+  // const isLoading = useSelector((state) => state.users.isLoading);
+  let order = useSelector((state) => state.orderAdmin.overseaOrder);
   
     if (status) {
     order = order.filter(where => where.status === status)
@@ -104,7 +105,7 @@ export function WarehouseTable({status, paymentModal}) {
   }
   const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
-        navigate(`/dashboard/warehousedetail?orderId=${id}`)
+        navigate(`/dashboard/orderdetail?orderId=${id}`)
     }
 
 
@@ -119,17 +120,19 @@ export function WarehouseTable({status, paymentModal}) {
             accessor: "order_id",
           },
           {
-            Header: "Package Name",
-            accessor: "package_name",
-          },
-          {
-            Header: "Package Quantity",
-            accessor: "package_quantity",
+            Header: "Tracking ID",
+            accessor: "tracking_number",
+            id: "track"
+            
           },
           {
             Header: "Order Date",
             accessor: "created_at",
             Cell: (props) => dayjs(props.value).format('DD/MM/YYYY') 
+          },
+          {
+            Header: "Freight Type",
+            accessor: "freight_service",
           },
           {
             Header: "Amount",
@@ -144,8 +147,12 @@ export function WarehouseTable({status, paymentModal}) {
             
           },
           {
-            Header: "Location",
-            accessor: "warehouse_location",
+            Header: "Shipping From",
+            accessor: "shipping_from_country",
+          },
+          {
+            Header: "Shipping To",
+            accessor: "shipping_to_country",
           },
           {
             Header: 'Action',
@@ -157,8 +164,9 @@ export function WarehouseTable({status, paymentModal}) {
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
-                      <MenuItem className="bg-red-600 text-white">Delete</MenuItem>
+                      <MenuItem onClick={paymentModal}>Update Details</MenuItem>
+                      <MenuItem>Dispatch / View Requests</MenuItem>
+                      <MenuItem className="bg-red-600 text-white hover:bg-red-500">Delete</MenuItem>
                     </MenuList>
                   </Menu>,
           },
@@ -183,8 +191,8 @@ function GlobalFilter({
     preGlobalFilteredRows,
     globalFilter,
     setGlobalFilter,
-  }) {
-    // const count = preGlobalFilteredRows.length
+  }) { // eslint-disable-next-line
+    const count = preGlobalFilteredRows.length
     const [value, setValue] = React.useState(globalFilter)
     const onChange = useAsyncDebounce(value => {
       setGlobalFilter(value || undefined)

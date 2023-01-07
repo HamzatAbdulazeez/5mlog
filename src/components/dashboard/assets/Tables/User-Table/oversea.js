@@ -85,8 +85,6 @@ export function OverseaTable({status, paymentModal}) {
 
   // const isLoading = useSelector((state) => state.users.isLoading);
   let order = useSelector((state) => state.order.overseaOrder);
-
-  console.log(order)
   
     if (status) {
     order = order.filter(where => where.status === status)
@@ -94,7 +92,7 @@ export function OverseaTable({status, paymentModal}) {
 
     const formatStatus = (status) => {
       switch (status) {
-          case "Pending":
+          case "New":
               return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
         case "Ongoing":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
@@ -119,7 +117,7 @@ export function OverseaTable({status, paymentModal}) {
           },
           {
             Header: "Order ID",
-            accessor: "id",
+            accessor: "order_id",
           },
           {
             Header: "Tracking ID",
@@ -154,7 +152,7 @@ export function OverseaTable({status, paymentModal}) {
           },
           {
             Header: 'Action',
-            accessor: "tracking_number",
+            accessor: "order_id",
             id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>

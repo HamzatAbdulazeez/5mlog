@@ -21,6 +21,7 @@ import "jspdf-autotable";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
+import { lastTwo } from '../../RegexFormat/Format';
 
 // export table files
 
@@ -81,9 +82,10 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function WarehouseTable({status, paymentModal}) {
+export function PickupTable({status, paymentModal}) {
 
-  let order = useSelector((state) => state.order.warehouseOrder);
+  // const isLoading = useSelector((state) => state.users.isLoading);
+  let order = useSelector((state) => state.orderAdmin.pickupOrder);
   
     if (status) {
     order = order.filter(where => where.status === status)
@@ -104,7 +106,7 @@ export function WarehouseTable({status, paymentModal}) {
   }
   const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
-        navigate(`/dashboard/warehousedetail?orderId=${id}`)
+        navigate(`/dashboard/orderdetail?orderId=${id}`)
     }
 
 
@@ -117,14 +119,13 @@ export function WarehouseTable({status, paymentModal}) {
           {
             Header: "Order ID",
             accessor: "order_id",
+            id: "order",
           },
           {
-            Header: "Package Name",
-            accessor: "package_name",
-          },
-          {
-            Header: "Package Quantity",
-            accessor: "package_quantity",
+            Header: "Tracking ID",
+            accessor: "tracking_number",
+            id: "track"
+            
           },
           {
             Header: "Order Date",
@@ -144,21 +145,27 @@ export function WarehouseTable({status, paymentModal}) {
             
           },
           {
-            Header: "Location",
-            accessor: "warehouse_location",
+            Header: "Pickup Location",
+            accessor: "pickup_address",
+            Cell: (props) => lastTwo(props.value),
+          },
+          {
+            Header: "Dropoff Location",
+            accessor: "dropoff_address",
+            Cell: (props) => lastTwo(props.value),
           },
           {
             Header: 'Action',
             accessor: "order_id",
-            id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>
                       <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><button className="lg:text-xl"><BsThreeDotsVertical /></button></Button>
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
-                      <MenuItem className="bg-red-600 text-white">Delete</MenuItem>
+                      <MenuItem onClick={paymentModal}>Update Details</MenuItem>
+                      <MenuItem>Dispatch / View Requests</MenuItem>
+                      <MenuItem className="bg-red-600 text-white hover:bg-red-500">Reject Order</MenuItem>
                     </MenuList>
                   </Menu>,
           },

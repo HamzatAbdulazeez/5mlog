@@ -1,12 +1,12 @@
-import { Button, Input, Option, Select } from '@material-tailwind/react'
+import { Input, Select, Option, Button } from '@material-tailwind/react'
 import React, {useState, useEffect} from 'react'
-import { FaTimes } from 'react-icons/fa'
+import { FaListAlt, FaTimes } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPickupOrder } from '../../../../store/slices/adminOrder'
+import { getExpressOrder } from '../../../../store/slices/adminOrder'
 import { Spinner2 } from '../../../assets/Spinner'
-import { PickupTable } from '../../assets/Tables/Admin-Table/PickupOrder'
+import { ExpressTable } from '../../assets/Tables/Admin-Table/express'
 
-export const PickupOrders = () => {
+export const ExpressOrder = () => {
 
     const[payment, setPayment] = useState(false)
     const paymentModal = () => {
@@ -15,27 +15,32 @@ export const PickupOrders = () => {
     const CloseModal = () => {
         setPayment(false)
     }
-
+   
     const dispatch = useDispatch()
 
-    const success = useSelector((state) => state.orderAdmin.success);
+    const success = useSelector((state) => state.order.success);
 
     useEffect(() => {
-        dispatch(getPickupOrder())
+        dispatch(getExpressOrder())
     }, [dispatch])
 
   return (
     <div className='min-h-screen'>
-        <div className='h-44 bg-pick bg-center bg-cover  text-white w-full bg-white flex items-center'>
+        <div className='h-44 bg-inter lg:bg-fill bg-center bg-cover  text-white w-full bg-white flex items-center'>
             <div className='lg:pl-12 px-4'>
-                <p className='fw-600 text-xl lg:text-2xl'>Pickup Orders</p>
-                <p className='mt-2 lg:w-8/12 fs-400 lg:fs-600'>Manage all the pickup orders received from customers/partners. view details of the order and add a price tag for payment to enable fast delivery of item(s)</p>
+                <p className='fw-600 lg:text-2xl text-xl'>Express Shipping Orders</p>
+                <p className='mt-2 lg:w-10/12 fs-400 lg:fs-600'>Monitor orders for express shipping to reduce delivery time and increase efficiency.</p>
             </div>
         </div>
         {/* content */}
-        <div className='lg:p-5 px-3'>
-            <div className='bg-white lg:p-6 lg:py-10 px-3 py-6 shadow-lg rounded-lg'>
-                { success === false?  <Spinner2/> : <PickupTable paymentModal={paymentModal}/>}
+        <div className='mt-6 lg:p-5 px-3 mx-auto'>
+            <div className='bg-white p-5 lg:p-10 rounded'>
+                <div className='mb-6'>
+                    <p className='fw-600 flex items-center'><sapn className="pr-2"><FaListAlt/></sapn>Orders Listing</p>
+                </div>
+                <div>
+                    { success === false?  <Spinner2/> : <ExpressTable paymentModal={paymentModal}/>}
+                </div>
             </div>
         </div>
         {
