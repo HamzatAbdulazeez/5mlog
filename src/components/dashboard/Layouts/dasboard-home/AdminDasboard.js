@@ -48,7 +48,7 @@ export const AdminDashboard = () => {
                             <p className='fs-400'>Total Users</p>
                         </div>
                     </div>
-                    <div className='border shadow-xl flex py-8 rounded bg-blue-100'>
+                    <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-blue-100'>
                         <div className='w-4/12 grid place-content-center'>
                             <div className='bg-blue-400 text-3xl w-12 h-12 circle grid place-content-center'>
                                 <TbPackgeExport/>
@@ -59,7 +59,7 @@ export const AdminDashboard = () => {
                             <p className='fs-400'>Delivery Request</p>
                         </div>
                     </div>
-                    <div className='border shadow-xl flex py-8 rounded bg-orange-100'>
+                    <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-orange-100'>
                         <div className='w-4/12 grid place-content-center'>
                             <div className='bg-orange-400 text-3xl w-12 h-12 circle grid place-content-center'>
                                 <TbTruckDelivery/>
@@ -70,7 +70,7 @@ export const AdminDashboard = () => {
                             <p className='fs-400'>Completed</p>
                         </div>
                     </div>
-                    <div className='border shadow-xl flex py-8 rounded bg-red-100'>
+                    <div className='border shadow-xl flex mt-6 lg:mt-0  py-8 rounded bg-red-100'>
                         <div className='w-4/12 grid place-content-center'>
                             <div className='bg-red-400 text-3xl w-12 h-12 circle grid place-content-center'>
                                 <GiMoneyStack/>
@@ -85,21 +85,21 @@ export const AdminDashboard = () => {
                 {/* table and graph */}
                 <div className='mt-6 lg:mt-12 '>
                     {/* table */}
-                    <div className='bg-white lg:p-4 rounded-lg'>
+                    <div className='bg-white lg:p-4 p-4 rounded-lg'>
                         <p className='pb-2 mb-3 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><AiOutlineDeliveredProcedure/></span>Order/Delivery Analytics</p>
                         <AdminChart/>
                     </div>
                      {/* table and graph */}
                     <div className='lg:grid-64 mt-6 lg:mt-12'>
                         {/* table */}
-                        <div className='bg-white lg:p-4 rounded-lg'>
+                        <div className='bg-white lg:p-4 px-3 py-4 rounded-lg'>
                             <div className='flex justify-between pb-2 mb-3 border-b border-gray-400'>
                                 <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><MdOutlineInventory/></span>Inventory</p>
                                 <button className='btn-primary py-1 flex items-center'>view all <span className='pl-2 text-xl'><TbLiveView/></span></button>
                             </div>
                             <InventDashBoardHomeTable/>
                         </div>
-                        <div className='bg-white lg:p-4 rounded-lg'>
+                        <div className='bg-white lg:p-4 mt-6 lg:mt-0  px-3 py-4 rounded-lg'>
                             <p className='pb-2 mb-8 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><FaUsers/></span>Users</p>
                             <UsersChart/>
                         </div>

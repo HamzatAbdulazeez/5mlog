@@ -35,7 +35,7 @@ export const OverseaOrder = () => {
         </div>
         {/* content */}
         <div className='mt-6 lg:p-5 px-3 mx-auto'>
-            <div className='bg-white p-10 rounded'>
+            <div className='bg-white p-5 lg:p-10 rounded'>
                 { success === false?  <Spinner2/> : <OverseaTable paymentModal={paymentModal}/>}
             </div>
         </div>

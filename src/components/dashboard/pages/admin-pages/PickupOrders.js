@@ -33,7 +33,7 @@ export const PickupOrders = () => {
             </div>
         </div>
         {/* content */}
-        <div className='lg:p-5 px-3'>
+        <div className='lg:p-5 px-3 mt-6'>
             <div className='bg-white lg:p-6 lg:py-10 px-3 py-6 shadow-lg rounded-lg'>
                 { success === false?  <Spinner2/> : <PickupTable paymentModal={paymentModal}/>}
             </div>

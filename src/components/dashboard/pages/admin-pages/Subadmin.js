@@ -24,11 +24,11 @@ export const Subadmin = () => {
             </div>
         </div>
         {/* content */}
-        <div className='lg:p-5 px-3'>
-          <div className='lg:p-10 bg-green-100 shadow-lg rounded-lg'>
-              <p className='fw-600 text-center text-xl'>Create Dispatchers and Drivers for efficent rendering of services</p>
+        <div className='lg:p-5 mt-6 px-3'>
+          <div className='lg:p-10 p-5 bg-green-100 shadow-lg rounded-lg'>
+              <p className='fw-600 text-center text-lg lg:text-xl'>Create Dispatchers and Drivers for efficent rendering of services</p>
               <div className='text-center mt-6'>
-                <button className='lg:px-12 btn bg-black text-white text-lg fw-600' onClick={adminModal}>Create Now</button>
+                <button className='lg:px-12 btn bg-black text-white lg:text-lg fw-600' onClick={adminModal}>Create Now</button>
               </div>
           </div>
           <div className='lg:p-10 p-5 mt-8 bg-white rounded-lg'>
