@@ -1,13 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { adminLogin } from '../../../store/slices/auth';
 import { clearMessage } from "../../../store/slices/messages";
 
 export const AdminLogin = () => {
-
-    const navigate = useNavigate()
 
     let formRef = useRef();
     const  message  = useSelector((state) => state.message);
@@ -57,8 +55,8 @@ export const AdminLogin = () => {
             }
             else {
                 toast.success(message.message);
-                // window.location.href = window.location.protocol + "//" + window.location.host + '/dashboard'
-                navigate("/dashboard")
+                window.location.href = window.location.protocol + "//" + window.location.host + '/dashboard'
+                // navigate("/dashboard")
             }
         }
         setSuccessful(false);

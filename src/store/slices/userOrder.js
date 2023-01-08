@@ -81,6 +81,28 @@ export const getWarehouseOrder = createAsyncThunk(
     }
 );
 
+export const deleteInterstateOrder = createAsyncThunk(
+    "/cancel/interstate",
+    async ( id, thunkAPI) => {
+        try {
+            const response = await userOrders.deleteInterstate(id);
+            // thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            console.log(error)
+            return thunkAPI.rejectWithValue(error)
+            // const message =
+            //     (error.response &&
+            //         error.response.data &&
+            //         error.response.data.message) ||
+            //     error.message ||
+            //     error.toString();
+            // thunkAPI.dispatch(setMessage(message));
+            // return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
 
 const userOrderSlice = createSlice({
     name: "/get",
