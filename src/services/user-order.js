@@ -19,6 +19,12 @@ const expressOrder = () => {
 const warehouseOrder = () => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}/get/warehousing`,  { headers: authHeader() });
 };
+const deletePickup = (id) => {
+    return axios.post(process.env.REACT_APP_BASE_URL + "/cancel/pickup/service/" + id, { headers: authHeader() });
+};
+const deleteInterstate = (id) => {
+    return axios.post(process.env.REACT_APP_BASE_URL + "/cancel/inter-state/service/" + id, { headers: authHeader() });
+};
 
 const userOrders = {
     pickupOrder,
@@ -26,7 +32,9 @@ const userOrders = {
     overseaOrder,
     procureOrder,
     expressOrder,
-    warehouseOrder
+    warehouseOrder,
+    deleteInterstate,
+    deletePickup
 };
 
 export default userOrders;

@@ -20,7 +20,7 @@ export const HomepageProfile = () => {
     <div className='flex items-center'>
         <Menu placement="bottom-end">
             <MenuHandler>
-                <Button className="py-2 flex items-center fw-500 text-black fs-500 bg-transparent shadow-lg">
+                <Button className="py-2 flex items-center fw-500 text-black fs-500 bg-transparent shadow-md">
                     <p className='pr-1'>{user?.first_name + " " + user?.last_name}</p>
                     <MdArrowDropDown className='text-2xl'/>
                 </Button>
@@ -33,7 +33,7 @@ export const HomepageProfile = () => {
                 <MenuItem onClick={()=> dispatch(logout())}>Sign Out</MenuItem>
             </MenuList>
         </Menu>
-        <div className='circle shadow-md overflow-hidden ml-2'>
+        <div className='circle shadow-lg overflow-hidden ml-2'>
             {user?.photo? <Avatar src={`${process.env.REACT_APP_MEDIA_URL + user?.photo}`} alt="profifepic" /> : <ProfileAvatar/>}
         </div>
     </div>

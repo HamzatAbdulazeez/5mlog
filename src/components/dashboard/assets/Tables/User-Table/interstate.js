@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch} from 'react-redux';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight, FaFileDownload, FaSearch } from "react-icons/fa";
 import { useTable, useGlobalFilter, useAsyncDebounce, useFilters, usePagination } from "react-table";
 import { useNavigate } from "react-router-dom";
@@ -21,6 +21,9 @@ import "jspdf-autotable";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
+import { deleteInterstateOrder } from '../../../../../store/slices/userOrder';
+// import axios from 'axios';
+// import authHeader from '../../../../../services/auth-header';
 
 
 function getExportFileBlob({ columns, data, fileType, fileName }) {
@@ -83,7 +86,8 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
 
 export function InterstateTable({status, paymentModal}) {
 
-  // const isLoading = useSelector((state) => state.users.isLoading);
+  const dispatch = useDispatch()
+
   let order = useSelector((state) => state.order.interstateOrder);
   
     if (status) {
@@ -107,7 +111,15 @@ export function InterstateTable({status, paymentModal}) {
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/orderdetail?orderId=${id}`)
     }
-
+    // const deleteOrder = (id) => {
+    //   axios.post(`${process.env.REACT_APP_BASE_URL }/cancel/inter-state/service/${id}`, { headers: authHeader() })
+    //   .then(res => {
+    //     console.log(res.data);
+    //   })
+    // }
+    const deleteOrder = (id) => {
+      dispatch(deleteInterstateOrder(id))
+  }
 
     const columns = useMemo(
         () => [
@@ -157,7 +169,7 @@ export function InterstateTable({status, paymentModal}) {
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
-                      <MenuItem className="bg-red-600 text-white">Delete</MenuItem>
+                      <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,
           },

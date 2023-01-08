@@ -84,9 +84,8 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
 
 export function InterstateTable({status, paymentModal}) {
 
-  // const isLoading = useSelector((state) => state.users.isLoading);
-  let order = useSelector((state) => state.orderAdmin.interstateOrder);
-  
+    let order = useSelector((state) => state.orderAdmin.interstateOrder);
+
     if (status) {
     order = order.filter(where => where.status === status)
     }
@@ -104,6 +103,7 @@ export function InterstateTable({status, paymentModal}) {
       }
 
   }
+  
   const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/orderdetail?orderId=${id}`)
@@ -145,7 +145,7 @@ export function InterstateTable({status, paymentModal}) {
           },
           {
             Header: "Pickup Location",
-            accessor: "pickup_address",
+            accessor: "package_address",
             Cell: (props) => lastTwo(props.value),
           },
           {
@@ -165,7 +165,7 @@ export function InterstateTable({status, paymentModal}) {
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={paymentModal}>Update Details</MenuItem>
                       <MenuItem>Dispatch / View Requests</MenuItem>
-                      <MenuItem className="bg-red-600 text-white hover:bg-red-500">Delete</MenuItem>
+                      <MenuItem className="bg-red-600 text-white hover:bg-red-500">Reject Order</MenuItem>
                     </MenuList>
                   </Menu>,
           },
