@@ -3,7 +3,7 @@ import {
     Menu, MenuHandler, MenuItem, MenuList, Button, Avatar,
 } from "@material-tailwind/react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaBell } from "react-icons/fa";
+import { FaBell, FaInfoCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/slices/auth";
 import { ProfileAvatar } from "../../assets/Profilepic";
@@ -47,16 +47,35 @@ export default function Header() {
                                     <Button className="p-2 bg-transparent shadow-none">
                                         <div className="bg-gray-100 px-2 rounded-sm py-2 relative">
                                             <FaBell className="lg:text-xl text-lg text-primary" />
-                                            <p className="absolute -top-2 left-3/4 border circle px-1 text-white text-xs bg-primary">6</p>
+                                            <p className="absolute -top-2 left-3/4 border circle px-1 text-white text-xs bg-primary">4</p>
                                         </div>
                                     </Button>
                                 </MenuHandler>
-                                <MenuList>
-                                    <MenuItem onClick={() => navigate("/dashboard/transact")}>Transactions</MenuItem>
-                                    <MenuItem onClick={() => navigate("/dashboard/inbox")}>Inbox</MenuItem>
-                                    <MenuItem onClick={() => navigate("/dashboard/meetings")}>Meetings</MenuItem>
-                                    <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
-                                    <MenuItem >Sign Out</MenuItem>
+                                <MenuList className="lg:w-60">
+                                    <MenuItem>
+                                        <div className="flex">
+                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
+                                            <p>A new order from a Customer</p>
+                                        </div>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <div className="flex">
+                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
+                                            <p>A new order from a Partner</p>
+                                        </div>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <div className="flex">
+                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
+                                            <p>Request to deliver a product has been made</p>
+                                        </div>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <div className="flex">
+                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
+                                            <p>Request to deliver a product has been made</p>
+                                        </div>
+                                    </MenuItem>
                                 </MenuList>
                             </Menu>
                         </div>

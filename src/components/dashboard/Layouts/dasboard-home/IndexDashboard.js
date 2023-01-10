@@ -10,9 +10,9 @@ export const IndexDashboard = () => {
 
     let dashboard = null;
 
-    if (auth?.user?.account_type === "Customer" || auth?.user?.account_type === "Partner") {
+    if (auth?.user?.account_type === "Customer" ) {
       dashboard = <UserDashboard />
-    }else if(auth?.user?.account_type === "Driver"){
+    }else if(auth?.user?.account_type === "Partner"){
       dashboard = <DriverDashboard />
     }else if(auth?.user?.account_type === "Administrator"){
       dashboard = <AdminDashboard />
@@ -20,3 +20,5 @@ export const IndexDashboard = () => {
 
     return dashboard;
 }
+
+// || auth?.user?.account_type === "Partner"

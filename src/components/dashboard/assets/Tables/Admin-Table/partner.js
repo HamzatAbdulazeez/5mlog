@@ -91,8 +91,8 @@ export function PartnerTable({status}) {
 
     const formatStatus = (status) => {
       switch (status) {
-          case "New":
-              return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
+          case "Active":
+              return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Active</p>
         case "Ongoing":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
         case "Completed":
