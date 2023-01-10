@@ -7,6 +7,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { FaBars } from "react-icons/fa";
 import { useDispatch } from 'react-redux'
 import { logout } from "../../../../store/slices/auth";
+import { AiOutlineForm } from "react-icons/ai";
 
 
 const DriverSidebar = () => {
@@ -75,7 +76,7 @@ const DriverSidebar = () => {
             </div>
             {showSideBar && (
                 <div className="fixed z-20 fs-500 top-20 grid items-between w-6/12 lg:sidebar-w shadow min-h-screen pt-2 px-2">
-                    <div className="mt-6">
+                    <div className="">
                         <NavLink
                             to=""
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
@@ -86,67 +87,32 @@ const DriverSidebar = () => {
                             <p className="pl-3"> Dashboard</p>
                         </NavLink>
                         <NavLink 
-                            to="orders"
+                            to="new-orders"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
                                 <BsBag className="text-xl" />
-                                <p className="pl-3">Orders</p>
+                                <p className="pl-3">New Orders</p>
                         </NavLink>
-                        {/* <div
-                            
-                            className="w-full items-center pl-2 py-2 fw-600 my-2"
-                            onClick={unShow}
-                        >
-                            <div className="flex" onClick={e => e.stopPropagation()}>
-                                <BsBag className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop)}}>
-                                    <p className="pl-3 pr-5">Orders</p>
-                                    <BsFillCaretDownFill className="text-black"/>
-                                </div>
-                            </div>
-                            {orderDrop && (
-                                <div className="lg:ml-9 ml-4 fs-400 pt-2">
-                                    <NavLink
-                                        to="ordersadmin"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="pb-3 pt-1">New Orders</p>
-                                    </NavLink>
-                                    <NavLink
-                                        to="ordersadmin"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="">Requested</p>
-                                    </NavLink>
-                                    <NavLink
-                                        to="ordersadmin"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="">Completed Orders</p>
-                                    </NavLink>
-                                </div>
-                            )}
-                        </div> */}
                         <NavLink 
-                            to="transact"
+                            to="my-orders"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
                                 <MdOutlineInventory className="text-xl" />
-                                <p className="pl-3">Order History</p>
+                                <p className="pl-3">My Orders</p>
                         </NavLink>
-                        {/* <NavLink 
-                            to="transact"
+                        <NavLink 
+                            to="rider-form"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
-                                <GrTransaction className="text-xl" />
-                                <p className="pl-3">Transactions</p>
-                        </NavLink> */}
+                                <AiOutlineForm className="text-xl" />
+                                <p className="pl-3">Rider Info</p>
+                        </NavLink>
                     </div>
                     <div>
                         <NavLink 

@@ -3,7 +3,7 @@ import ReactApexChart from "react-apexcharts";
 
 export default function UsersChart() {
     
-    const options = { labels: ["Vendors", "Drivers", "Users"],responsive: [{
+    const options = { labels: ["Customers", "Partners", "Riders"],responsive: [{
       breakpoint: 480,
       options: {
         chart: {
@@ -14,7 +14,7 @@ export default function UsersChart() {
         }
       }
     }] };
-const series = [120, 100, 53,]; //our data
+const series = [120, 60, 53,]; //our data
 
 return (
   <div className="">

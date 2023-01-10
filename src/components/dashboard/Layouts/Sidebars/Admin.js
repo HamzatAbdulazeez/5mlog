@@ -1,5 +1,5 @@
 import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
-import { GrDeliver, GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
+import { GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
 import { MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -11,7 +11,6 @@ import { FaBars, FaUsers } from "react-icons/fa";
 const AdminSidebar = () => {
 
     const [signOut, setSignOut] = useState(false);
-    const [trackDrop, setTrackDrop] = useState(false);
     const [orderDrop, setOrderDrop] = useState(false);
     const [userDrop, setUserDrop] = useState(false);
     function CloseModal() {
@@ -98,7 +97,7 @@ const AdminSidebar = () => {
                         >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <BsBag className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setTrackDrop(false);setUserDrop(false);}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setUserDrop(false);}}>
                                     <p className="pl-3 pr-5">Orders</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
@@ -148,39 +147,10 @@ const AdminSidebar = () => {
                             
                             className="w-full items-center pl-2 py-2 fw-600 my-2"
                             onClick={unShow}
-                        >
-                            <div className="flex" onClick={e => e.stopPropagation()}>
-                                <GrLocation className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setTrackDrop(!trackDrop);setOrderDrop(false);setUserDrop(false);}}>
-                                    <p className="pl-3 pr-5">Tracking</p>
-                                    <BsFillCaretDownFill className="text-black"/>
-                                </div>
-                            </div>
-                            {trackDrop && (
-                                <div className="lg:ml-9 ml-4 fs-400 pt-2">
-                                    <NavLink
-                                        to="projectsadmin"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="py-2">Local</p>
-                                    </NavLink>
-                                    <NavLink
-                                        to="projectrequest"
-                                        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                                        >
-                                        <p className="py-2">international</p>
-                                    </NavLink>
-                                </div>
-                            )}
-                        </div>
-                        <div
-                            
-                            className="w-full items-center pl-2 py-2 fw-600 my-2"
-                            onClick={unShow}
                             >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <FaUsers className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setUserDrop(!userDrop);setOrderDrop(false);setTrackDrop(false)}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setUserDrop(!userDrop);setOrderDrop(false)}}>
                                     <p className="pl-3 pr-5">Users</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
@@ -203,13 +173,13 @@ const AdminSidebar = () => {
                                     )}
                         </div>
                         <NavLink 
-                            to="riders"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
+                            to="track"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-3"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}
                             >
-                                <GrDeliver className="text-xl" />
-                                <p className="pl-3">Riders</p>
+                                <GrLocation className="text-xl" />
+                                <p className="pl-3">Tracking</p>
                         </NavLink>
                         <NavLink 
                             to="transact"

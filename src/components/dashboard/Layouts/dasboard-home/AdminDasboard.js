@@ -94,7 +94,7 @@ export const AdminDashboard = () => {
                         {/* table */}
                         <div className='bg-white lg:p-4 px-3 py-4 rounded-lg'>
                             <div className='flex justify-between pb-2 mb-3 border-b border-gray-400'>
-                                <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><MdOutlineInventory/></span>Inventory</p>
+                                <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><MdOutlineInventory/></span>New Orders</p>
                                 <button className='btn-primary py-1 flex items-center'>view all <span className='pl-2 text-xl'><TbLiveView/></span></button>
                             </div>
                             <InventDashBoardHomeTable/>

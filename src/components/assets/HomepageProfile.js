@@ -21,7 +21,7 @@ export const HomepageProfile = () => {
         <Menu placement="bottom-end">
             <MenuHandler>
                 <Button className="py-2 flex items-center fw-500 text-black fs-500 bg-transparent shadow-md">
-                    <p className='pr-1'>{user?.first_name + " " + user?.last_name}</p>
+                    <p className='pr-1 fw-500 fs-500 normal-case'>{user?.first_name + " " + user?.last_name}</p>
                     <MdArrowDropDown className='text-2xl'/>
                 </Button>
             </MenuHandler>

@@ -34,6 +34,9 @@ import { WarehouseOrder } from "./pages/admin-pages/WarehouseOrder";
 import { Customers } from "./pages/admin-pages/Customers";
 import { Partners } from "./pages/admin-pages/Partners";
 import { Subadmin } from "./pages/admin-pages/Subadmin";
+import { RiderInfo } from "./pages/RiderInfo";
+import { NewOrder } from "./pages/NewOrder";
+import { MyOrder } from "./pages/rider-items/MyOrder";
 
 export default function Dashboard() {
 
@@ -89,6 +92,10 @@ export default function Dashboard() {
                         <Route path="partners" element={<Partners />} />
                         <Route path="sub-admin" element={<Subadmin />} />
                         <Route path="settings" element={<UserSettings />} />
+                        {/* Rider routes */}
+                        <Route path="rider-form" element={<RiderInfo />} />
+                        <Route path="new-orders" element={<NewOrder />} />
+                        <Route path="my-orders" element={<MyOrder />} />
                     </Routes>
 
                 </div>
