@@ -81,7 +81,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function WarehouseTable({status, paymentModal}) {
+export function WarehouseTable({status, paymentModal, deleteOrder}) {
 
   let order = useSelector((state) => state.order.warehouseOrder);
   
@@ -93,16 +93,20 @@ export function WarehouseTable({status, paymentModal}) {
       switch (status) {
           case "New":
               return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
-        case "Ongoing":
-            return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
-        case "Completed":
+          case "Updated":
+              return <p className="px-2 py-1 text-pink-700 bg-pink-100 w-24 rounded-md fw-600">Updated</p>
+          case "Dispatch":
+            return <p className="px-2 py-1 text-purple-700 bg-purple-100 w-28 rounded-md fw-600">Processing</p>
+            case "Ongoing":
+            return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-28 rounded-md fw-600">Ongoing</p>
+          case "Completed":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Completed</p>
         
             default: return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-24 rounded-md fw-600">Inactive</p>
-      }
+        }
+    }
 
-  }
-  const navigate = useNavigate()
+    const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/warehousedetail?orderId=${id}`)
     }
@@ -124,7 +128,8 @@ export function WarehouseTable({status, paymentModal}) {
           },
           {
             Header: "Package Quantity",
-            accessor: "package_quantity",
+            accessor: "package_quantity", // eslint-disable-next-line 
+            Cell: (props) => (props.value) + " " + "Unit(s)"
           },
           {
             Header: "Order Date",
@@ -153,12 +158,12 @@ export function WarehouseTable({status, paymentModal}) {
             id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>
-                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><button className="lg:text-xl"><BsThreeDotsVertical /></button></Button>
+                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
-                      <MenuItem className="bg-red-600 text-white">Delete</MenuItem>
+                      <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,
           },
@@ -321,19 +326,19 @@ const Table = ({columns, data}) => {
                     </span>
                 </div>
                 <div className='w-20'>
-                    <Select
+                    <select
                     value={state.pageSize}
                     onChange={e => {
                         setPageSize(Number(e.target.value))
                     }}
-                    className=""
+                    className="p-1 rounded"
                     >
                     {[5, 10, 20].map(pageSize => (
-                        <Option key={pageSize} value={pageSize}>
+                        <option key={pageSize} value={pageSize}>
                         Show {pageSize}
-                        </Option>
+                        </option>
                     ))}
-                    </Select>
+                    </select>
                 </div>
             </div>
             <div className='flex lg:mt-0 mt-4 justify-center gap-2'>

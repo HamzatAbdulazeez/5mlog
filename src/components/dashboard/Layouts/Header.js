@@ -51,7 +51,7 @@ export default function Header() {
                                         </div>
                                     </Button>
                                 </MenuHandler>
-                                <MenuList className="lg:w-60">
+                                <MenuList className="lg:w-60 w-56">
                                     <MenuItem>
                                         <div className="flex">
                                             <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>

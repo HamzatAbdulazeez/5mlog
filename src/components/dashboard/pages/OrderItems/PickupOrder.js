@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { FaListAlt, FaTimes } from 'react-icons/fa'
-import { getPickupOrder } from '../../../../store/slices/userOrder'
+import { deleteOrders, getPickupOrder } from '../../../../store/slices/userOrder'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { PickupTable } from '../../assets/Tables/User-Table/PickupOrder'
@@ -19,6 +19,13 @@ export const PickUpUser = () => {
     const dispatch = useDispatch()
 
     const success = useSelector((state) => state.order.success);
+
+    const deleteOrder = (id) => {
+        dispatch(deleteOrders(id))
+        setTimeout(() => {
+            dispatch(getPickupOrder())
+        }, 3000);
+    }
 
     useEffect(() => {
         dispatch(getPickupOrder())
@@ -40,7 +47,7 @@ export const PickUpUser = () => {
                     <p className='fw-600 flex items-center'><span className="pr-2"><FaListAlt/></span>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner2/> : <PickupTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <PickupTable paymentModal={paymentModal} deleteOrder={deleteOrder}/>}
                 </div>
             </div>
         </div>

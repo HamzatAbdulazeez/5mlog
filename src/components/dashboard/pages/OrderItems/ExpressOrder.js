@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { FaListAlt, FaTimes } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { getExpressOrder } from '../../../../store/slices/userOrder'
+import { deleteOrders, getExpressOrder } from '../../../../store/slices/userOrder'
 import { Spinner2 } from '../../../assets/Spinner'
 import { ExpressTable } from '../../assets/Tables/User-Table/express'
 
@@ -18,6 +18,13 @@ export const ExpressOrderUser = () => {
     const dispatch = useDispatch()
 
     const success = useSelector((state) => state.order.success);
+
+    const deleteOrder = (id) => {
+        dispatch(deleteOrders(id))
+        setTimeout(() => {
+            dispatch(getExpressOrder())
+        }, 3000);
+    }
 
     useEffect(() => {
         dispatch(getExpressOrder())
@@ -38,7 +45,7 @@ export const ExpressOrderUser = () => {
                     <p className='fw-600 flex items-center'><span className="pr-2"><FaListAlt/></span>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner2/> : <ExpressTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <ExpressTable paymentModal={paymentModal} deleteOrder={deleteOrder}/>}
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch} from 'react-redux';
+import { useSelector} from 'react-redux';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight, FaFileDownload, FaSearch } from "react-icons/fa";
 import { useTable, useGlobalFilter, useAsyncDebounce, useFilters, usePagination } from "react-table";
 import { useNavigate } from "react-router-dom";
@@ -21,10 +21,6 @@ import "jspdf-autotable";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
-import { deleteInterstateOrder } from '../../../../../store/slices/userOrder';
-// import axios from 'axios';
-// import authHeader from '../../../../../services/auth-header';
-
 
 function getExportFileBlob({ columns, data, fileType, fileName }) {
   if (fileType === "csv") {
@@ -84,9 +80,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function InterstateTable({status, paymentModal}) {
-
-  const dispatch = useDispatch()
+export function InterstateTable({status, paymentModal, deleteOrder}) {
 
   let order = useSelector((state) => state.order.interstateOrder);
   
@@ -98,28 +92,24 @@ export function InterstateTable({status, paymentModal}) {
       switch (status) {
           case "New":
               return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
-        case "Ongoing":
-            return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
-        case "Completed":
+          case "Updated":
+              return <p className="px-2 py-1 text-pink-700 bg-pink-100 w-24 rounded-md fw-600">Updated</p>
+          case "Dispatch":
+            return <p className="px-2 py-1 text-purple-700 bg-purple-100 w-28 rounded-md fw-600">Processing</p>
+            case "Ongoing":
+            return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-28 rounded-md fw-600">Ongoing</p>
+          case "Completed":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Completed</p>
         
             default: return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-24 rounded-md fw-600">Inactive</p>
-      }
+        }
+    }
 
-  }
-  const navigate = useNavigate()
+    const navigate = useNavigate()
+
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/orderdetail?orderId=${id}`)
     }
-    // const deleteOrder = (id) => {
-    //   axios.post(`${process.env.REACT_APP_BASE_URL }/cancel/inter-state/service/${id}`, { headers: authHeader() })
-    //   .then(res => {
-    //     console.log(res.data);
-    //   })
-    // }
-    const deleteOrder = (id) => {
-      dispatch(deleteInterstateOrder(id))
-  }
 
     const columns = useMemo(
         () => [
@@ -140,7 +130,7 @@ export function InterstateTable({status, paymentModal}) {
           {
             Header: "Order Date",
             accessor: "created_at",
-            Cell: (props) => dayjs(props.value).format('DD/MM/YYYY') 
+            Cell: (props) => dayjs(props.value).format('DD/MM/YYYY h:mm A') 
           },
           {
             Header: "Amount",
@@ -169,7 +159,7 @@ export function InterstateTable({status, paymentModal}) {
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
-                      <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
+                      <MenuItem className="bg-red-600 hover:bg-red-500 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,
           },

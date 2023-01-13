@@ -21,7 +21,7 @@ import "jspdf-autotable";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
-import { lastTwo } from '../../RegexFormat/Format';
+import { formatPriceNgn, lastTwo } from '../../RegexFormat/Format';
 
 
 function getExportFileBlob({ columns, data, fileType, fileName }) {
@@ -82,7 +82,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function InterstateTable({status, paymentModal}) {
+export function InterstateTable({status, paymentModal, dispatchOrder}) {
 
     let order = useSelector((state) => state.orderAdmin.interstateOrder);
 
@@ -94,19 +94,25 @@ export function InterstateTable({status, paymentModal}) {
       switch (status) {
           case "New":
               return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
-        case "Ongoing":
-            return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
-        case "Completed":
+          case "Updated":
+              return <p className="px-2 py-1 text-pink-700 bg-pink-100 w-24 rounded-md fw-600">Updated</p>
+          case "Dispatch":
+            return <p className="px-2 py-1 text-purple-700 bg-purple-100 w-28 rounded-md fw-600">Processing</p>
+            case "Ongoing":
+            return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-28 rounded-md fw-600">Ongoing</p>
+          case "Completed":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Completed</p>
         
             default: return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-24 rounded-md fw-600">Inactive</p>
-      }
-
-  }
+        }
+    }
   
-  const navigate = useNavigate()
+    const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/orderdetail?orderId=${id}`)
+    }
+    const gotoDriverRequest = () => {
+      navigate(`/dashboard/driver-request`)
     }
 
 
@@ -134,6 +140,9 @@ export function InterstateTable({status, paymentModal}) {
           {
             Header: "Amount",
             accessor: "price",
+            Cell: (props) => {
+              return props.value === null ? "" : formatPriceNgn(props.value);
+           }
           },
           {
             Header: "Status",
@@ -159,12 +168,14 @@ export function InterstateTable({status, paymentModal}) {
             id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>
-                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><button className="lg:text-xl"><BsThreeDotsVertical /></button></Button>
+                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={paymentModal}>Update Details</MenuItem>
-                      <MenuItem>Dispatch / View Requests</MenuItem>
+                      <MenuItem onClick={() => paymentModal(row.value)}>Update Details</MenuItem>
+                      {
+                        row.row.original?.status === "New" || row.row.original?.status === "Updated" ? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className=""  onClick={() => gotoDriverRequest(row.value)}>View Requests</MenuItem>
+                      }
                       <MenuItem className="bg-red-600 text-white hover:bg-red-500">Reject Order</MenuItem>
                     </MenuList>
                   </Menu>,

@@ -1,6 +1,8 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 
+const token = JSON.parse(localStorage.getItem('lynchpin'));
+
 const pickupOrder = () => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}/get/pickup/service`,  { headers: authHeader() });
 };
@@ -19,12 +21,17 @@ const expressOrder = () => {
 const warehouseOrder = () => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}/get/warehousing`,  { headers: authHeader() });
 };
-const deletePickup = (id) => {
-    return axios.post(process.env.REACT_APP_BASE_URL + "/cancel/pickup/service/" + id, { headers: authHeader() });
+const deleteOrder = (id) => {
+    const config = {
+        method: 'post',
+        url: `${process.env.REACT_APP_BASE_URL }/cancel/order/${id}`,
+        headers: { 
+            'Authorization': 'Bearer ' + token 
+        }
+    }
+    return axios(config);
 };
-const deleteInterstate = (id) => {
-    return axios.post(process.env.REACT_APP_BASE_URL + "/cancel/inter-state/service/" + id, { headers: authHeader() });
-};
+
 
 const userOrders = {
     pickupOrder,
@@ -33,8 +40,7 @@ const userOrders = {
     procureOrder,
     expressOrder,
     warehouseOrder,
-    deleteInterstate,
-    deletePickup
+    deleteOrder,
 };
 
 export default userOrders;

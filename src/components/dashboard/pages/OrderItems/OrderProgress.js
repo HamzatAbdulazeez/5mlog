@@ -3,11 +3,12 @@ import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 
 
-export const OrderProgress = () => {
+export const OrderProgress = ({order}) => {
+  const progress = order?.progress
   return (
     <div className='md:w-full w-96 pb-8 lg:pb-0 px-6 lg:px-4 md:px-6'>
         <ProgressBar
-        percent={2}
+        percent={progress}
         filledBackground="linear-gradient(to right, orange, #f0bb31)"
       >
         <Step transition="scale">

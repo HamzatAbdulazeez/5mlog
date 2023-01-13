@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { FaListAlt, FaTimes } from 'react-icons/fa'
-import { getOverseaOrder } from '../../../../store/slices/userOrder'
+import { deleteOrders, getOverseaOrder } from '../../../../store/slices/userOrder'
 import { useDispatch, useSelector } from 'react-redux'
 import { Spinner2 } from '../../../assets/Spinner'
 import { OverseaTable } from '../../assets/Tables/User-Table/oversea'
@@ -18,6 +18,13 @@ export const OverseaOrderUser = () => {
     const dispatch = useDispatch()
 
     const success = useSelector((state) => state.order.success);
+
+    const deleteOrder = (id) => {
+        dispatch(deleteOrders(id))
+        setTimeout(() => {
+            dispatch(getOverseaOrder())
+        }, 3000);
+    }
 
     useEffect(() => {
         dispatch(getOverseaOrder())
@@ -38,7 +45,7 @@ export const OverseaOrderUser = () => {
                     <p className='fw-600 flex items-center'><span className="pr-2"><FaListAlt/></span>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner2/> : <OverseaTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <OverseaTable paymentModal={paymentModal} deleteOrder={deleteOrder}/>}
                 </div>
             </div>
         </div>

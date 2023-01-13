@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { FaListAlt, FaTimes } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
-import { getWarehouseOrder } from '../../../../store/slices/userOrder'
+import { deleteOrders, getWarehouseOrder } from '../../../../store/slices/userOrder'
 import { Spinner2 } from '../../../assets/Spinner'
 import { WarehouseTable } from '../../assets/Tables/User-Table/warehouse'
 
@@ -18,6 +18,13 @@ export const WarehouseOrderUser = () => {
     const dispatch = useDispatch()
 
     const success = useSelector((state) => state.order.success);
+
+    const deleteOrder = (id) => {
+        dispatch(deleteOrders(id))
+        setTimeout(() => {
+            dispatch(getWarehouseOrder())
+        }, 3000);
+    }
 
     useEffect(() => {
         dispatch(getWarehouseOrder())
@@ -39,7 +46,7 @@ export const WarehouseOrderUser = () => {
                     <p className='fw-600 flex items-center'><span className="pr-2"><FaListAlt/></span>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner2/> : <WarehouseTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <WarehouseTable paymentModal={paymentModal} deleteOrder={deleteOrder} />}
                 </div>
             </div>
         </div>
@@ -60,7 +67,7 @@ export const WarehouseOrderUser = () => {
                                 <button className='bg-primary lg:px-12 py-2 rounded-lg fw-600 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-600 fs-500 lg:fs-700 px-6'>Pay Now</button>
                             </div>
                         </div>
-                        <FaTimes className='absolute text-red-500 top-3 bg-white right-5 cursor-pointer' onClick={CloseModal}/>
+                        <FaTimes className='absolute text-red-500 top-3 bg-white right-5 cursor-pointer' onClick={CloseModal} deleteOrder={deleteOrder}/>
                     </div>
                 </div>
             )

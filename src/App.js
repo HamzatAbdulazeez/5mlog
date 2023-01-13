@@ -15,6 +15,7 @@ import { EmailVeryfy } from './components/pages/EmailVeryfy';
 import { ResetPassword } from './components/pages/forms/ResetPassword';
 import { Terms } from './components/pages/Terms';
 import { Privacy } from './components/pages/Privacy';
+import { TrackDetails } from './components/pages/TrackDetails';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         <Route path='/terms' element={<Terms/>} />
         <Route path='/privacy' element={<Privacy/>} />
+        <Route path='/tracking' element={<TrackDetails/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/admin' element={<AdminLogin/>} />
         <Route path='/signup' element={<Register />} />

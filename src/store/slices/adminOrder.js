@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import adminOrders from "../../services/admin-order";
+import { toast } from "react-toastify";
 
 
 const initialState = {
@@ -9,6 +10,7 @@ const initialState = {
     procureOrder: [],
     expressOrder: [],
     warehouseOrder: [],
+    dispatchOrder: [],
     error: null,
     success: false,
 }
@@ -79,6 +81,40 @@ export const getWarehouseOrder = createAsyncThunk(
         }
     }
 );
+export const getDispatchOrder = createAsyncThunk( 
+    "/get/warehousing",
+    async (thunkAPI) => {
+        try {
+            const response = await adminOrders.dispatchedOrder();
+            return response.data.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error)
+        }
+    }
+);
+export const dispatchOrders = createAsyncThunk(
+    "/cancel/order",
+    async ( id, thunkAPI) => {
+        try {
+            const response = await adminOrders.dispatchOrder(id);
+            toast.success(response.data.message)
+        } catch (error) {
+            toast.error(error.message)
+        }
+    }
+);
+export const updateOrders = createAsyncThunk(
+    "/update/order",
+    async (myData) => {
+        try {
+            console.log({myData})
+            const response = await adminOrders.updateOrder(myData);
+            toast.success(response.data.message)
+        } catch (error) {
+            toast.error(error.message)
+        }
+    }
+);
 
 
 const adminOrderSlice = createSlice({
@@ -110,6 +146,10 @@ const adminOrderSlice = createSlice({
         },
         [getWarehouseOrder.fulfilled]: (state, action) => {
             state.warehouseOrder = action.payload;
+            state.success = true;
+        },
+        [getDispatchOrder.fulfilled]: (state, action) => {
+            state.dispatchOrder = action.payload;
             state.success = true;
         },
     },
