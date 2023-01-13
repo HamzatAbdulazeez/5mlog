@@ -73,9 +73,9 @@ export const UpdateDetails = ({CloseModal, id}) => {
             <p className='mb-4'>Order Id: <span>PKP-9758-3444</span></p>
             <div>
                 <form  onSubmit={handleSubmit}>
-                    <Input type="number" label="Enter Amount(naira)" name='price' value={price} {...register("price")} onChange={changePrice} />
+                    <Input type="number" label="Enter Amount(naira)" name='price' value={price} {...register("price")} onChange={changePrice} required/>
                     <div  className='my-5'>
-                        <select label='Order status' name='status' value={status} {...register("status")} onChange={changeStatus} className="p-2 font-light fs-500 rounded-lg border border-gray-400 w-full text-gray-600">
+                        <select label='Order status' name='status' value={status} {...register("status")} onChange={changeStatus} className="p-2 font-light fs-500 rounded-lg border border-gray-400 w-full text-gray-600" required>
                             <option value='New' selected>New</option>
                             <option value='Updated'>Updated</option>
                             <option value='Ongoing'>Ongoing</option>
