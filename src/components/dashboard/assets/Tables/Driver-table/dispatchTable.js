@@ -11,8 +11,6 @@ import {
   MenuItem,
   Button,
   Input,
-  Select,
-  Option,
 } from "@material-tailwind/react";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import jsPDF from "jspdf";
@@ -81,15 +79,14 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function PickupTable({status, paymentModal, deleteOrder}) {
+export function DispatchTable({status}) {
 
-  // const isLoading = useSelector((state) => state.users.isLoading);
-  let order = useSelector((state) => state.order.userOrder);
+  let order = useSelector((state) => state.orderAdmin.dispatchOrder);
   
     if (status) {
     order = order.filter(where => where.status === status)
     }
-
+     // eslint-disable-next-line 
     const formatStatus = (status) => {
       switch (status) {
           case "New":
@@ -108,7 +105,7 @@ export function PickupTable({status, paymentModal, deleteOrder}) {
     }
   const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
-        navigate(`/dashboard/orderdetail?orderId=${id}`)
+        navigate(`/dashboard/warehousedetail?orderId=${id}`)
     }
 
 
@@ -120,47 +117,55 @@ export function PickupTable({status, paymentModal, deleteOrder}) {
           },
           {
             Header: "Order ID",
-            accessor: "order_id",
-            id: "order",
+            accessor: "order[0].order_id",
           },
           {
-            Header: "Tracking ID",
-            accessor: "tracking_number",
-            id: "track"
-            
+            Header: "Service Type",
+            accessor: "order[0].service_type",
+            Filter: SelectColumnFilter, 
+            filter: 'includes',
+          },
+          {
+            Header: "Preffered Vehicle",
+            accessor: "order[0].pickup_vehicle",
           },
           {
             Header: "Order Date",
-            accessor: "created_at",
+            accessor: "order.created_at",
             Cell: (props) => dayjs(props.value).format('DD/MM/YYYY') 
           },
           {
-            Header: "Amount",
-            accessor: "price",
+            Header: "Shipping From",
+            accessor: "order[0].package_address",
+            Cell: (props) => (
+                <>
+                  <p className="item title">{props.row.original.order[0].pickup_address}</p>
+                  <p className="item desc">{props.row.original.order[0].package_address}</p>
+                </>
+            ),
           },
           {
-            Header: "Status",
-            accessor:  'status',
-            Cell: (props) => formatStatus(props.value),
-            Filter: SelectColumnFilter, 
-            filter: 'includes',
+            Header: "Shipping To",
+            accessor:  'order[0].dropoff_address',
+            Cell: (props) => (
+                <>
+                  <p className="item title">{props.row.original.order[0].dropoff_address}</p>
+                  <p className="item desc">{props.row.original.desc}</p>
+                </>
+            ),
             
-          },
-          {
-            Header: "Location",
-            accessor: "dropoff_address",
           },
           {
             Header: 'Action',
             accessor: "order_id",
+            id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>
-                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><button className="lg:text-xl"><BsThreeDotsVertical /></button></Button>
+                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
+                        <MenuItem>Request Order</MenuItem>
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
-                      <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,
           },
@@ -323,19 +328,19 @@ const Table = ({columns, data}) => {
                     </span>
                 </div>
                 <div className='w-20'>
-                    <Select
+                    <select
                     value={state.pageSize}
                     onChange={e => {
                         setPageSize(Number(e.target.value))
                     }}
-                    className=""
+                    className="p-1 rounded"
                     >
                     {[5, 10, 20].map(pageSize => (
-                        <Option key={pageSize} value={pageSize}>
+                        <option key={pageSize} value={pageSize}>
                         Show {pageSize}
-                        </Option>
+                        </option>
                     ))}
-                    </Select>
+                    </select>
                 </div>
             </div>
             <div className='flex lg:mt-0 mt-4 justify-center gap-2'>
@@ -374,22 +379,24 @@ export function SelectColumnFilter({
   
     // Render a multi-select box
     return (
-      <Select
+      <div className='border border-gray-300 rounded-lg pr-2'>
+        <select
         name={id}
-        id={id}
-        value={filterValue}
-        onChange={(e) => {
-          setFilter(e.target.value || undefined);
-        }}
-        className="text-black"
-        label='Filter by Status'
-      >
-        <Option value="">All</Option>
-        {options.map((option, i) => (
-          <Option key={i} value={option}>
-            {option}
-          </Option>
-        ))}
-      </Select>
+            id={id}
+            value={filterValue}
+            onChange={(e) => {
+            setFilter(e.target.value || undefined);
+            }}
+            className="text-gray-8000 px-6 p-2 outline-none "
+            label='Filter by Status'
+        >
+            <option value="">Service Type</option>
+            {options.map((option, i) => (
+            <option key={i} value={option}>
+                {option}
+            </option>
+            ))}
+        </select>
+      </div>
     );
   }

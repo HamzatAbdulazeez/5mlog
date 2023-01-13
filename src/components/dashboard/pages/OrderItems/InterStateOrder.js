@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { FaListAlt, FaTimes } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { getInterstateOrder } from '../../../../store/slices/userOrder'
+import { deleteOrders, getInterstateOrder } from '../../../../store/slices/userOrder'
 import { InterstateTable } from '../../assets/Tables/User-Table/interstate'
 import { Spinner2 } from '../../../assets/Spinner'
 
@@ -16,6 +16,13 @@ export const InterStateOrderUser = () => {
     }
    
     const dispatch = useDispatch()
+
+    const deleteOrder = (id) => {
+        dispatch(deleteOrders(id))
+        setTimeout(() => {
+            dispatch(getInterstateOrder())
+        }, 3000);
+    }
 
     const success = useSelector((state) => state.order.success);
 
@@ -38,7 +45,7 @@ export const InterStateOrderUser = () => {
                     <p className='fw-600 flex items-center'><span className="pr-2"><FaListAlt/></span>Orders Listing</p>
                 </div>
                 <div>
-                    { success === false?  <Spinner2/> : <InterstateTable paymentModal={paymentModal}/>}
+                    { success === false?  <Spinner2/> : <InterstateTable paymentModal={paymentModal} deleteOrder={deleteOrder} />}
                 </div>
             </div>
         </div>

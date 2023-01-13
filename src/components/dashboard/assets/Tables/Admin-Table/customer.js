@@ -104,7 +104,7 @@ export function CustomerTable({status, paymentModal}) {
   }
   const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
-        navigate(`/dashboard/userdetail?userId=${id}`)
+        navigate(`/dashboard/user-detail?userId=${id}`)
     }
 
 

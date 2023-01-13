@@ -81,7 +81,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function ExpressTable({status, paymentModal}) {
+export function ExpressTable({status, paymentModal, deleteOrder}) {
 
   let order = useSelector((state) => state.order.expressOrder);
   
@@ -93,15 +93,18 @@ export function ExpressTable({status, paymentModal}) {
       switch (status) {
           case "New":
               return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
-        case "Ongoing":
-            return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
-        case "Completed":
+          case "Updated":
+              return <p className="px-2 py-1 text-pink-700 bg-pink-100 w-24 rounded-md fw-600">Updated</p>
+          case "Dispatch":
+            return <p className="px-2 py-1 text-purple-700 bg-purple-100 w-28 rounded-md fw-600">Processing</p>
+            case "Ongoing":
+            return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-28 rounded-md fw-600">Ongoing</p>
+          case "Completed":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Completed</p>
         
             default: return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-24 rounded-md fw-600">Inactive</p>
-      }
-
-  }
+        }
+    }
   const navigate = useNavigate()
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/orderdetail?orderId=${id}`)
@@ -164,7 +167,7 @@ export function ExpressTable({status, paymentModal}) {
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
-                      <MenuItem className="bg-red-600 text-white">Delete</MenuItem>
+                      <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,
           },

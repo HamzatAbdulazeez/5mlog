@@ -1,8 +1,21 @@
-import React from 'react'
-import { DashBoardPendingOrders } from '../assets/Tables/DPendingOrders'
+import React, {useEffect} from 'react'
 import { GiHandTruck } from 'react-icons/gi'
+import { useDispatch, useSelector } from 'react-redux'
+import { getDispatchOrder } from '../../../store/slices/adminOrder'
+import { Spinner2 } from '../../assets/Spinner'
+import { DispatchTable } from '../assets/Tables/Driver-table/dispatchTable'
 
 export const NewOrder = () => {
+
+    const dispatch = useDispatch()
+
+    const success = useSelector((state) => state.orderAdmin.success);
+
+    useEffect(() => {
+        dispatch(getDispatchOrder())
+    }, [dispatch])
+
+
   return (
     <div className='min-h-screen fs-500'>
         <div className='h-44 bg-freight bg-center bg-cover  text-white w-full bg-white flex items-center'>
@@ -18,7 +31,7 @@ export const NewOrder = () => {
                     <p className='fw-600 flex items-center text-lg'><span className="pr-2 text-primary text-2xl"><GiHandTruck/></span>New Orders Listing</p>
                 </div>
                 <div>
-                    <DashBoardPendingOrders/>
+                    {success === false? <Spinner2/> : <DispatchTable /> }
                 </div>
             </div>
         </div>

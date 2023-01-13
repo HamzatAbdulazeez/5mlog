@@ -70,11 +70,11 @@ export const OrderDetailUser = () => {
                     <p className='flex items-center fw-600 text-xl'>{order?.tracking_number}</p>
                     <p className='mt-6'><span>Order Status:</span><span className='pl-2'>{order?.status}</span></p>
                     <p className='mt-2'><span>Vehicle Type:</span><span className='pl-2'>{order?.pickup_vehicle}</span></p>
-                    <p className='mt-2'><span>Estimated Delivery Time:</span><span className='pl-2'>{ order?.delivery_time? order?.delivery_time : "In view"}</span></p>
+                    <p className='mt-2'><span>Estimated Delivery Time:</span><span className='pl-2'>{ order?.estimated_delivery_time? order?.estimated_delivery_time : "In view"}</span></p>
                     </div>
                 </div>
                 <div className='lg:w-11/12 mx-auto mt-8 py-10 overflow-scroll md:overflow-visible lg:py-20'>
-                    <OrderProgress/>
+                    <OrderProgress order={order}/>
                 </div>
                 <div className='lg:grid-83 mt-8 lg:mt-12'>
                     <div  className='lg:p-6 p-5 lg:grid-2 text-black rounded-lg shadow-lg bg-light'>
@@ -111,7 +111,7 @@ export const OrderDetailUser = () => {
                     </div>
                 </div>
                 {
-                    order?.service_type === "Pickup" || order?.service_type === "Interstate" ? 
+                    order?.service_type === "Pickup" || order?.service_type === "InterState" ? 
                     <div className='lg:grid-2 justify-between mt-8 lg:mt-12'>
                         <div className='bg-light lg:p-6 p-5 shadow-md rounded'>
                             <p className='fw-600 pb-4'>Sender's Information</p>
@@ -146,7 +146,7 @@ export const OrderDetailUser = () => {
                     </div>
                     : ""
                 }
-                { order?.service_type === "Pickup" || order?.service_type === "Interstate" ?  "" :
+                { order?.service_type === "Pickup" || order?.service_type === "InterState" ?  "" :
                     <div className='bg-light lg:p-6 mt-7 lg:mt-12 p-5 shadow-md rounded'>
                         <p className='fw-600 pb-4'>Owner's Information</p>
                         <div className='py-2 lg:flex border-b border-gray-300'>

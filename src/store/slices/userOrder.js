@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+
 
 
 import userOrders from "../../services/user-order";
@@ -81,24 +83,14 @@ export const getWarehouseOrder = createAsyncThunk(
     }
 );
 
-export const deleteInterstateOrder = createAsyncThunk(
-    "/cancel/interstate",
+export const deleteOrders = createAsyncThunk(
+    "/cancel/order",
     async ( id, thunkAPI) => {
         try {
-            const response = await userOrders.deleteInterstate(id);
-            // thunkAPI.dispatch(setMessage(response.data));
-            return response.data;
+            const response = await userOrders.deleteOrder(id);
+            toast.success(response.data.message)
         } catch (error) {
-            console.log(error)
-            return thunkAPI.rejectWithValue(error)
-            // const message =
-            //     (error.response &&
-            //         error.response.data &&
-            //         error.response.data.message) ||
-            //     error.message ||
-            //     error.toString();
-            // thunkAPI.dispatch(setMessage(message));
-            // return thunkAPI.rejectWithValue();
+            toast.error(error.message)
         }
     }
 );
