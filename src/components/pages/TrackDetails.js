@@ -1,9 +1,14 @@
 import { Button } from '@material-tailwind/react'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Footer } from './home-comp/Footer'
 import { Header } from './home-comp/Header'
+import { FaListOl, FaPhoneAlt, FaSearchLocation } from 'react-icons/fa'
+
 
 export const TrackDetails = () => {
+    const auth = useSelector((state) => state.auth);
+
   return (
     <div className='font-primary fs-500 lg:fs-600'>
         <Header/>
@@ -53,8 +58,8 @@ export const TrackDetails = () => {
                     <div className='bg-light mt-6 lg:mt-0 shadow-lg lg:p-6 px-3 py-4'>
                         <div>
                             <div>
-                                <p className='fw-500'>Vehicle Type:</p>
-                                <p className='fs-500'>Mini Van</p>
+                                <p className='fw-500'>Service Type:</p>
+                                <p className='fs-500'>Pickup Service</p>
                             </div>
                             <div className='mt-3'>
                                 <p className='fw-500'>Tracking Number:</p>
@@ -70,6 +75,30 @@ export const TrackDetails = () => {
                         </div>
                     </div>
                 </div>
+                {auth.isLoggedIn? 
+                    <div className='bg-white lg:grid-3s justify-between mt-8 lg:mt-12'>
+                        <div className='shadow-lg lg:p-6 p-3 rounded-lg bg-red-100'>
+                            <p className='flex items-center text-gray-600 fs-500'><span className='pr-1'><FaListOl/></span> PickUp</p>
+                            <p className='flex items-center fw-600 text-xl'></p>
+                            <p className='flex fs-500 mt-6'><span className='pr-1 mt-1'><FaSearchLocation/></span></p>
+                            <p className='flex fs-500 mt-2'>.</p>
+                            <p className='flex fs-500 mt-2 flex items-center'><span className='pr-2'><FaPhoneAlt/></span></p>
+                        </div>
+                        <div className='shadow-lg lg:p-6 p-3 mt-6 lg:mt-0 rounded-lg bg-green-100'>
+                            <p className='flex items-center text-gray-600 fs-500'><span className='pr-1'><FaListOl/></span>Dropoff</p>
+                            <p className='flex items-center fw-600 text-xl'></p>
+                            <p className='flex fs-500 mt-6'><span className='pr-1 mt-1'><FaSearchLocation/></span> </p>
+                            <p className='flex fs-500 mt-2'>.</p>
+                            <p className='flex fs-500 mt-2 flex items-center'><span className='pr-2'><FaPhoneAlt/></span></p>
+                        </div>
+                        <div className='shadow-lg lg:p-6 p-3 mt-6 lg:mt-0 rounded-lg bg-blue-100'>
+                        <p className='flex items-center text-gray-600 fs-500'><span className='pr-1'><FaListOl/></span>Logistics Info</p>
+                        <p className='flex items-center fw-600 text-xl'></p>
+                        <p className='mt-6'><span>Order Status:</span><span className='pl-2'></span></p>
+                        <p className='mt-2'><span>Vehicle Type:</span><span className='pl-2'></span></p>
+                        <p className='mt-2'><span>Current Location:</span><span className='pl-2'></span></p>
+                        </div>
+                    </div> : null} 
             </div>
         </div>
         <Footer/>

@@ -55,8 +55,8 @@ export const adminLogin = createAsyncThunk(
         } catch (error) {
             const message =
                 (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
+                    error.response &&
+                    error.response.message) ||
                 error.message ||
                 error.toString();
             thunkAPI.dispatch(setMessage(message));

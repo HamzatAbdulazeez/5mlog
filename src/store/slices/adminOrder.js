@@ -107,7 +107,6 @@ export const updateOrders = createAsyncThunk(
     "/update/order",
     async (myData) => {
         try {
-            console.log({myData})
             const response = await adminOrders.updateOrder(myData);
             toast.success(response.data.message)
         } catch (error) {

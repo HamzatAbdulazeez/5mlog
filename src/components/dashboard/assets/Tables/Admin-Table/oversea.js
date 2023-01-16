@@ -177,7 +177,7 @@ export function OverseaTable({status, paymentModal, dispatchOrder}) {
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={() => paymentModal(row.value)}>Update Details</MenuItem>
                       {
-                        row.row.original?.status === "New"|| row.row.original?.status === "Updateed"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className="" onClick={() => gotoDriverRequest(row.value)}>View Requests</MenuItem>
+                        row.row.original?.status === "New"|| row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className="" onClick={() => gotoDriverRequest(row.value)}>View Requests</MenuItem>
                       }
                       <MenuItem className="bg-red-600 text-white hover:bg-red-500">Delete</MenuItem>
                     </MenuList>

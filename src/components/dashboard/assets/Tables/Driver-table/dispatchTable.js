@@ -141,8 +141,9 @@ export function DispatchTable({status}) {
                 <>
                   <p className="item title">{props.row.original.order[0].pickup_address}</p>
                   <p className="item desc">{props.row.original.order[0].package_address}</p>
+                  <p className="item desc">{props.row.original.order[0].shipping_from_country}{props.row.original.order[0].shipping_from_state_province_region}</p>
                 </>
-            ),
+            )
           },
           {
             Header: "Shipping To",
@@ -150,7 +151,7 @@ export function DispatchTable({status}) {
             Cell: (props) => (
                 <>
                   <p className="item title">{props.row.original.order[0].dropoff_address}</p>
-                  <p className="item desc">{props.row.original.desc}</p>
+                  <p className="item desc">{props.row.original.order[0].shipping_to_country}{props.row.original.order[0].shipping_to_state_province_region}</p>
                 </>
             ),
             
