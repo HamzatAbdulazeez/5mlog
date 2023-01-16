@@ -14,7 +14,7 @@ export const Contact = () => {
          <div className='bg-contact lg:bg-fit bg-cover lg:h-80 h-44'>
             <div className='box h-full'>
                 <div className='grid h-full items-center'>
-                    <p className='lg:text-3xl fw-700 text-white'>Contact Us</p>
+                    <p className='lg:text-3xl text-xl fw-700 text-white'>Contact Us</p>
                 </div>
             </div>
         </div>
@@ -22,25 +22,37 @@ export const Contact = () => {
             <div className='box'>
                 <div>
                     <p className='fw-600 text-2xl'>Office Address</p>
-                    <div className='lg:grid-4 justify-between mt-6'>
+                    <div className='lg:grid-3s justify-between mt-6'>
                         <div className='p-5 shadow'>
                             <p className='mb-2 fw-500'>Houston Texas</p>
                             <p>9898 Bissonnet Street Houston Texas 77038 United States</p>
-                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+18328203994 </p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+1832 820 3994 </p>
                         </div>
-                        <div className='p-5 shadow'>
+                        <div className='p-5 mt-8 lg:mt-0 shadow'>
                             <p className='mb-2 fw-500'>Lagos Office</p>
                             <p>19 Omotola plaza, Afolabi Aina street, off Awolowo way Ikeja, Lagos state.</p>
                             <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2348060168209</p>
                             <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2349013272111 </p>
                         </div>
-                        <div className='p-5 shadow'>
+                        <div className='p-5 mt-8 lg:mt-0 shadow'>
                             <p className='mb-2 fw-500'>Abuja Office</p>
                             <p>Suite A4 Danziyal plaza Central Business District Abuja.</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2348060168209</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2349013272111 </p>
                         </div>
-                        <div className='p-5 shadow'>
-                            <p className='mb-2 fw-500'>Ogbomosho Office</p>
-                            <p>3 D Place complex opposite Bovas filling station Aroje Area Ogbomosho Oyo state.</p>
+                    </div>
+                    <div className='mt-8 lg:flex justify-evenly'>
+                        <div className='p-5 lg:w-4/12 shadow'>
+                            <p className='mb-2 fw-500'>Ogbomoso Office</p>
+                            <p>3 D Place complex opposite Bovas filling station Aroje Area Ogbomoso Oyo state.</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2348060168209</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2349013272111 </p>
+                        </div>
+                        <div className='p-5 lg:w-4/12 mt-8 lg:mt-0 shadow'>
+                            <p className='mb-2 fw-500'>Kaduna Office</p>
+                            <p>9 Ahafsusan Plaza Jos road by Ibadan street junction, Kaduna State.</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2348060168209</p>
+                            <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+2349013272111 </p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +72,7 @@ export const Contact = () => {
                             <p className='fs-500 py-6'>Reach us via the following links and information provided below.</p>
                             <div className='my-6'>
                                 <p className='fw-600 text-lg'>Address</p>
-                                <p className='fs-500 pt-4'>9898 Bissonnet Street Houston Texas 77038 United States.</p>
+                                <p className='fs-500 pt-4'>9898 Bissonnet Street Houston Texas 77036 United States.</p>
                             </div>
                             <div className='my-6'>
                                 <p className='fw-600 text-lg'>Phone</p>
@@ -68,7 +80,7 @@ export const Contact = () => {
                             </div>
                             <div className='my-6'>
                                 <p className='fw-600 text-lg'>Email</p>
-                                <p className='fs-500 pt-4'>info@company.com</p>
+                                <p className='fs-500 pt-4'>info@5mlogistics.com</p>
                             </div>
                             <div className='mt-6'>
                                 <ul className='flex text-xl'>

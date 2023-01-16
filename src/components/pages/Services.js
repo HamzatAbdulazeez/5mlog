@@ -12,7 +12,7 @@ export const Services = () => {
         <div className='bg-service lg:bg-fit bg-cover lg:h-80 h-44'>
             <div className='box h-full'>
                 <div className='grid h-full items-center'>
-                    <p className='lg:text-3xl fw-700 text-white'>Our Services</p>
+                    <p className='lg:text-3xl text-xl fw-700 text-white'>Our Services</p>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@ export const Services = () => {
                         </div>
                         <div className='border lg:flex flex-row-reverse p-5 bg-white shadow-md mt-6 lg:mt-10 lg:h-64'>
                             <div className='lg:w-4/12 grid place-content-center'>
-                                <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1670492401/5mlog/Rectangle_10_1_orf93q.png" alt="services" className='lg:w-9/12 ar-32' />
+                                <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1673885325/5mlog/procure_hpvpmx.jpg" alt="services" className='lg:w-9/12 rounded-md ar-32' />
                             </div>
                             <div className='lg:w-8/12 lg:pr-8'>
                                 <p className='text-lg fw-600 lg:mt-0 mt-4'>Procurement</p>
@@ -87,7 +87,7 @@ export const Services = () => {
                         </div>
                         <div className='border lg:flex flex-row-reverse p-5 bg-white shadow-md mt-6 lg:mt-10 lg:h-64'>
                             <div className='lg:w-4/12 grid place-content-center'>
-                                <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671135374/5mlog/Rectangle_186_wdnw5d.png" alt="services" className='lg:w-9/12 ar-32' />
+                                <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1673885142/5mlog/5mlog_jybe2u.jpg" alt="services" className='lg:w-9/12 rounded-md ar-32' />
                             </div>
                             <div className='lg:w-8/12 lg:pr-8'>
                                 <p className='text-lg fw-600 lg:mt-0 mt-4'>Same-Day delivery</p>

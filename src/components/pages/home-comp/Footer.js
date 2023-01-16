@@ -50,7 +50,7 @@ export const Footer = () => {
                   </div>
                 </div>
                 <div className='mt-6 border-t-2 text-center text-white fw-500 fs-500 pt-4 opacity-60'>
-                  <p className='pb-6'>© {new Date().getFullYear() }  5M global services. All rights reserved.</p>
+                  <p className='pb-6'>© {new Date().getFullYear() }  5M Logistics. All rights reserved.</p>
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ export const Customers = () => {
     <div className='min-h-screen fs-500'>
         <div className='h-44 bg-users  lg:bg-fill bg-cover  text-white w-full bg-white flex items-center'>
             <div className='lg:pl-12 px-4'>
-                <p className='fw-600 lg:text-2xl text-xl'>5M Global Customers</p>
+                <p className='fw-600 lg:text-2xl text-xl'>5M Logistics Customers</p>
                 <p className='mt-2 lg:w-10/12 fs-400 lg:fs-600'>View details and monitors users (customers) on your this site.</p>
             </div>
         </div>
