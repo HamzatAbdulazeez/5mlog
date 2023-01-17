@@ -47,16 +47,23 @@ export const RiderForm = () => {
             <div className='border-b border-gray-400 py-4'>
                 <p className='fw-600'>Account Information</p>
                 <div className='mt-4'>
-                    <Input type="text" name="sender_address" label="Bank Name" required />
+                    <Input type="text" label="Account Name" required />
                 </div>
                 <div className='mt-4'>
-                    <Input type="text" name="sender_name" label="Account Holder Full Name" required />
+                    <Select label='Account Currency'>
+                        <Option>NGN</Option>
+                        <Option>USD</Option>
+                        <Option>EUR</Option>
+                    </Select>
                 </div>
                 <div className='mt-4'>
-                    <Input type="number" name="sender_phone_number" label="Bank Account Number" required />
+                    <Input type="text" label="Bank Name" required />
                 </div>
                 <div className='mt-4'>
-                    <Input type="number" name="sender_phone_number" label="NIN" required />
+                    <Input type="number" label="Bank Account Number (IBAN)" required />
+                </div>
+                <div className='mt-4'>
+                    <Input type="number" label="Routing Number" required />
                 </div>
             </div>
             <div className='mt-6 text-end'>
