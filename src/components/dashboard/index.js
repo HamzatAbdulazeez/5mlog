@@ -38,6 +38,8 @@ import { RiderInfo } from "./pages/RiderInfo";
 import { NewOrder } from "./pages/NewOrder";
 import { MyOrder } from "./pages/rider-items/MyOrder";
 import { UserDetails } from "./pages/admin-pages/UserDetails";
+import { Inventory } from "./pages/admin-pages/Inventory";
+import { Staff } from "./pages/admin-pages/Staff";
 
 export default function Dashboard() {
 
@@ -91,6 +93,8 @@ export default function Dashboard() {
                         <Route path="driver-request" element={<ViewRequest />} />
                         <Route path="customers" element={<Customers />} />
                         <Route path="partners" element={<Partners />} />
+                        <Route path="inventory" element={<Inventory />} />
+                        <Route path="staff" element={<Staff />} />
                         <Route path="user-detail" element={<UserDetails />} />
                         <Route path="sub-admin" element={<Subadmin />} />
                         <Route path="settings" element={<UserSettings />} />
