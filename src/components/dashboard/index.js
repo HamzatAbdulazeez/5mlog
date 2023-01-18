@@ -40,6 +40,7 @@ import { MyOrder } from "./pages/rider-items/MyOrder";
 import { UserDetails } from "./pages/admin-pages/UserDetails";
 import { Inventory } from "./pages/admin-pages/Inventory";
 import { Staff } from "./pages/admin-pages/Staff";
+import { DriverOrderDetails } from "./pages/rider-items/driver-detail";
 
 export default function Dashboard() {
 
@@ -102,6 +103,7 @@ export default function Dashboard() {
                         <Route path="rider-form" element={<RiderInfo />} />
                         <Route path="new-orders" element={<NewOrder />} />
                         <Route path="my-orders" element={<MyOrder />} />
+                        <Route path="order-details" element={<DriverOrderDetails />} />
                     </Routes>
 
                 </div>

@@ -5,6 +5,7 @@ import getUser from "../../services/getUsers";
 const initialState = {
     customers: [],
     partners: [],
+    subAdmin: [],
     error: null,
     success: false,
 }
@@ -31,6 +32,17 @@ export const getPartners = createAsyncThunk(
         }
     }
 );
+export const getSubAdmin = createAsyncThunk( 
+    "/get/user/subadmin",
+    async (thunkAPI) => {
+        try {
+            const response = await getUser.getSubAdmin();
+            return response.data.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error)
+        }
+    }
+);
 
 
 const usersSlice = createSlice({
@@ -47,6 +59,10 @@ const usersSlice = createSlice({
         },
         [getPartners.fulfilled]: (state, action) => {
             state.partners = action.payload;
+            state.success = true;
+        },
+        [getSubAdmin.fulfilled]: (state, action) => {
+            state.subAdmin = action.payload;
             state.success = true;
         },
     },

@@ -132,6 +132,9 @@ export const addWarehousing = createAsyncThunk(
 
 
 const initialState = user;
+// const initialState = {
+//     user:null
+// };
 
 const apiServicesSlice = createSlice({
     name: "settings",

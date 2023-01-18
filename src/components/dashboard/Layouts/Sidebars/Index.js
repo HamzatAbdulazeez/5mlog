@@ -12,9 +12,9 @@ export const IndexSidebar = () => {
 
     if (auth?.user?.account_type === "Customer") {
       sidebar = <UsersSidebar />
-    }else if(auth?.user?.account_type === "Partner"){
+    }else if(auth?.user?.account_type === "Driver"){
       sidebar = <DriverSidebar />
-    }else if(auth?.user?.account_type === "Administrator"){
+    }else if(auth?.user?.account_type === "Administrator" || auth?.user?.account_type === "Dispatcher"){
       sidebar = <AdminSidebar />
     }
 

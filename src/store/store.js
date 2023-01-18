@@ -5,6 +5,9 @@ import userReducer from "./slices/apiServices";
 import orderReducer from "./slices/userOrder";
 import orderAdminReducer from "./slices/adminOrder";
 import usersReducer from "./slices/users";
+import subAdminReducer from "./slices/subAdmin";
+import driverReducer from "./slices/driverOrder";
+
 
 const reducer = {
     auth: authReducer,
@@ -12,7 +15,9 @@ const reducer = {
     user: userReducer,
     order: orderReducer,
     orderAdmin: orderAdminReducer,
-    userlist: usersReducer
+    userlist: usersReducer,
+    subAdmin: subAdminReducer,
+    driver: driverReducer,
 }
 
 const store = configureStore({

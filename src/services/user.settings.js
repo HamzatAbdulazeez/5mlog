@@ -22,12 +22,21 @@ const updatePassword = async (payload) => {
         );
     return response;
 };
+const updateDriver = async (payload) => {
+    const response = await axios
+        .post(process.env.REACT_APP_BASE_URL + "/driver/add/service/information",
+            payload,
+            { headers: authHeader() }
+        );
+    return response;
+};
 
 
 const UserSettings = {
     updateProfilePhoto,
     updateProfile,
-    updatePassword
+    updatePassword,
+    updateDriver
 };
 
 export default UserSettings;
