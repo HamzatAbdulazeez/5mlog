@@ -1,19 +1,73 @@
 import React, {useState} from 'react'
 import { BsPeople } from 'react-icons/bs'
-import { AdminOrderTable } from '../../assets/Tables/adminOrder'
-import { Input, Select, Option, Button } from '@material-tailwind/react'
-import { FaTimes } from 'react-icons/fa'
+import { Input, Button } from '@material-tailwind/react'
+import { FaRegEye, FaRegEyeSlash, FaTimes } from 'react-icons/fa'
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from 'react-redux'
+import { createAdmin } from '../../../../store/slices/subAdmin'
+import { toast } from 'react-toastify'
+import { Spinner2 } from '../../../assets/Spinner'
+import { SubAdminTable } from '../../assets/Tables/Admin-Table/sub-admin'
+import { useEffect } from 'react'
+import { getSubAdmin } from '../../../../store/slices/users'
 
 
 export const Subadmin = () => {
 
+  const { message } = useSelector((state) => state.message);
+  const success = useSelector((state) => state.userlist.success);
+
+  const dispatch = useDispatch()
+  const [passwordType, setPasswordType] = useState("password");
   const[admin, setAdmin] = useState(false)
+  const [disableBtn, setDisableBtn] = useState(false);
+  const [successful, setSuccessful] = useState(false);
+  const { register, getValues } = useForm();
     const adminModal = () => {
         setAdmin(true)
     }
     const CloseModal = () => {
         setAdmin(false)
     }
+    const togglePassword = () => {
+        if (passwordType === "password") {
+            setPasswordType("text")
+            return;
+        }
+        setPasswordType("password")
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setDisableBtn(true);
+        const values = getValues()
+        dispatch(createAdmin(values))
+                .then(() => {
+                    setSuccessful(true)
+                    setDisableBtn(false)
+                    CloseModal()
+                })
+                .catch(() => {
+                    setSuccessful(false)
+                    setDisableBtn(false)
+                });
+        
+    }
+    const displayMessage = (message) => {
+        if (message) {
+            if (!message.success) {
+                toast.error((Object.values(message.errors).toString()));
+            }
+            else {
+                toast.success(message.message);
+                dispatch(getSubAdmin())
+            }
+        }
+        setSuccessful(false);
+    }
+    useEffect(() => {
+        dispatch(getSubAdmin())
+    }, [dispatch])
 
   return (
     <div className='min-h-screen fs-500'>
@@ -33,9 +87,9 @@ export const Subadmin = () => {
           </div>
           <div className='lg:p-10 p-5 mt-8 bg-white rounded-lg'>
             <div className='mb-6'>
-                    <p className='fw-600 flex items-center'><span className="pr-2 text-xl text-orange-600"><BsPeople/></span>Sub-admin(s) Listing</p>
-                </div>
-              <AdminOrderTable/>
+                <p className='fw-600 flex items-center'><span className="pr-2 text-xl text-orange-600"><BsPeople/></span>Sub-admin(s) Listing</p>
+            </div>
+              {success === "false"? <Spinner2/> : <SubAdminTable/>}
           </div>
         </div>
         {
@@ -45,24 +99,37 @@ export const Subadmin = () => {
                         <p className='text-center fw-600 border-b border-gray-300 lg:text-xl pb-4'>Create New Admin</p>
                         <div className='lg:px-6 py-6'>
                             <div>
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div>
                                       <label className='fs-500 mb-2 block'>Email</label>
-                                      <Input type="email" label="Enter email" />
+                                      <Input type="email" label="Enter email" name='email'  {...register("email")} />
                                     </div>
                                     <div className='mt-5'>
                                       <label className='fs-500 mb-2 block'>Password</label>
-                                      <Input type="password" label="Enter password" />
+                                      <div className="flex items-center bg-input border border-gray-400 mt-1 text-light rounded">
+                                            <input
+                                                type={passwordType}
+                                                placeholder="Enter your password"
+                                                className="w-full border-0 py-2 px-2 text-light rounded"
+                                                name='password'
+                                                {...register("password")} 
+                                                required
+                                            />
+                                            <div onClick={togglePassword} className="px-3">
+                                                {passwordType === "password" ? <FaRegEyeSlash className="text-xl" /> : <FaRegEye className="text-xl" />}
+                                            </div>
+                                        </div>
+                                      {/* <Input type="password" label="Enter password" name='password'  {...register("password")} /> */}
                                     </div>
                                     <div  className='my-5'>
                                         <label className='fs-500 mb-2 block'>Admin Type</label>
-                                        <Select label='Select Type'>
-                                            <Option>Dispatcher</Option>
-                                            <Option>Driver</Option>
-                                        </Select>
+                                        <select label='Select Type' name='admin_type' {...register("admin_type")} className="p-2 font-light fs-500 rounded-lg border border-gray-400 w-full text-gray-600" >
+                                            <option value='Dispatcher'>Dispatcher</option>
+                                            <option value='Driver'>Driver</option>
+                                        </select>
                                     </div>
                                     <div className='text-end mt-6'>
-                                        <Button className='bg-primary lg:px-10'>Create Admin</Button>
+                                        <Button className='bg-primary lg:px-10' disabled={disableBtn} onClick={handleSubmit}>Create Admin</Button>
                                     </div>
                                 </form>
                             </div>
@@ -72,6 +139,7 @@ export const Subadmin = () => {
                 </div>
             )
         }
+        {successful ? displayMessage(message) : ''}
     </div>
   )
 }

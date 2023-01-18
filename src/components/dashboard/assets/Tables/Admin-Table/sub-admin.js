@@ -11,8 +11,6 @@ import {
   MenuItem,
   Button,
   Input,
-  Select,
-  Option,
 } from "@material-tailwind/react";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import jsPDF from "jspdf";
@@ -21,7 +19,6 @@ import "jspdf-autotable";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
-import { formatPriceNgn, lastTwo } from '../../RegexFormat/Format';
 
 // export table files
 
@@ -82,10 +79,9 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function PickupTable({status, paymentModal, dispatchOrder}) {
+export function SubAdminTable({status}) {
 
-  // const isLoading = useSelector((state) => state.users.isLoading);
-  let order = useSelector((state) => state.orderAdmin.pickupOrder);
+  let order = useSelector((state) => state.userlist.subAdmin);
   
     if (status) {
     order = order.filter(where => where.status === status)
@@ -93,27 +89,21 @@ export function PickupTable({status, paymentModal, dispatchOrder}) {
 
     const formatStatus = (status) => {
       switch (status) {
-          case "New":
-              return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
-          case "Updated":
-              return <p className="px-2 py-1 text-pink-700 bg-pink-100 w-24 rounded-md fw-600">Updated</p>
-          case "Dispatch":
-            return <p className="px-2 py-1 text-purple-700 bg-purple-100 w-28 rounded-md fw-600">Processing</p>
-            case "Ongoing":
-            return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-28 rounded-md fw-600">Ongoing</p>
-          case "Completed":
+          case "Active":
+              return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Active</p>
+        case "Ongoing":
+            return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Ongoing</p>
+        case "Completed":
             return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Completed</p>
         
             default: return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-24 rounded-md fw-600">Inactive</p>
-        }
-    }
-    const navigate = useNavigate()
-    const gotoDetailsPage = (id) => {
-        navigate(`/dashboard/orderdetail?orderId=${id}`)
-    }
-    const gotoDriverRequest = (id) => {
-      navigate(`/dashboard/driver-request?requestId=${id}`)
+      }
+
   }
+  const navigate = useNavigate()
+    const gotoDetailsPage = (id) => {
+        navigate(`/dashboard/user-detail?userId=${id}`)
+    }
 
 
     const columns = useMemo(
@@ -123,60 +113,51 @@ export function PickupTable({status, paymentModal, dispatchOrder}) {
             accessor: ( row, index) => index + 1  //RDT provides index by default
           },
           {
-            Header: "Order ID",
-            accessor: "order_id",
-            id: "order",
+            Header: "Admin Type",
+            accessor: "account_type",
+            Filter: SelectColumnFilter, 
+            filter: 'includes',
           },
           {
-            Header: "Tracking ID",
-            accessor: "tracking_number",
-            id: "track"
+            Header: "First Name",
+            accessor: "first_name",
+          },
+          {
+            Header: "Last Name",
+            accessor: "last_name",
             
           },
           {
-            Header: "Order Date",
-            accessor: "created_at",
-            Cell: (props) => dayjs(props.value).format('DD/MM/YYYY') 
+            Header: "Email",
+            accessor: "email",
           },
           {
-            Header: "Amount",
-            accessor: "price",
-            Cell: (props) => {
-              return props.value === null ? "" : formatPriceNgn(props.value);
-           }
+            Header: "Phone Number",
+            accessor: "phone_number",
+          },
+          {
+            Header: "Register Date",
+            accessor: "email_verified_at",
+            Cell: (props) => dayjs(props.value).format('DD/MM/YYYY') 
           },
           {
             Header: "Status",
             accessor:  'status',
             Cell: (props) => formatStatus(props.value),
-            Filter: SelectColumnFilter, 
-            filter: 'includes',
+            // Filter: SelectColumnFilter, 
+            // filter: 'includes',
             
           },
           {
-            Header: "Pickup Location",
-            accessor: "pickup_address",
-            Cell: (props) => lastTwo(props.value),
-          },
-          {
-            Header: "Dropoff Location",
-            accessor: "dropoff_address",
-            Cell: (props) => lastTwo(props.value),
-          },
-          {
             Header: 'Action',
-            accessor: "order_id",
+            accessor: "id",
+            id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>
                       <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><button className="lg:text-xl"><BsThreeDotsVertical /></button></Button>
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={() => paymentModal(row.value)}>Update Details</MenuItem>
-                      {
-                        row.row.original?.status === "New" || row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>
-                      }
-                      <MenuItem className="bg-red-600 text-white hover:bg-red-500">Reject Order</MenuItem>
                     </MenuList>
                   </Menu>,
           },
@@ -247,7 +228,7 @@ const Table = ({columns, data}) => {
 
     return (
         <>
-            <div className="lg:flex items-center mb-5 justify-between">
+            <div className="lg:flex items-center mb-5 py-2 justify-between">
                 <GlobalFilter
                     preGlobalFilteredRows={preGlobalFilteredRows}
                     globalFilter={state.globalFilter}
@@ -339,19 +320,19 @@ const Table = ({columns, data}) => {
                     </span>
                 </div>
                 <div className='w-20'>
-                    <Select
+                    <select
                     value={state.pageSize}
                     onChange={e => {
                         setPageSize(Number(e.target.value))
                     }}
-                    className=""
+                    className="p-1 rounded-lg"
                     >
                     {[5, 10, 20].map(pageSize => (
-                        <Option key={pageSize} value={pageSize}>
+                        <option key={pageSize} value={pageSize}>
                         Show {pageSize}
-                        </Option>
+                        </option>
                     ))}
-                    </Select>
+                    </select>
                 </div>
             </div>
             <div className='flex lg:mt-0 mt-4 justify-center gap-2'>
@@ -388,24 +369,26 @@ export function SelectColumnFilter({
       return [...options.values()];
     }, [id, preFilteredRows]);
   
-    // Render a multi-select box
+    // Render a multi-select box 
     return (
-      <Select
+     <div className='border border-gray-300 rounded-lg pr-2'>
+       <select
         name={id}
         id={id}
         value={filterValue}
         onChange={(e) => {
           setFilter(e.target.value || undefined);
         }}
-        className="text-black"
+        className="text-gray-8000 px-6 p-2 outline-none rounded-lg"
         label='Filter by Status'
       >
-        <Option value="">All</Option>
+        <option value="">All Sub-Admins</option>
         {options.map((option, i) => (
-          <Option key={i} value={option}>
+          <option key={i} value={option}>
             {option}
-          </Option>
+          </option>
         ))}
-      </Select>
+      </select>
+     </div>
     );
   }

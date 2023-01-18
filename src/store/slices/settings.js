@@ -66,9 +66,31 @@ export const updatePassword = createAsyncThunk(
         }
     }
 );
+export const updateDriver = createAsyncThunk(
+    "/profile/update/driver",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await UserSettings.updateDriver(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
 
 
 const initialState = user;
+// const initialState ={
+//     user: null
+// }
 
 const settingsSlice = createSlice({
     name: "settings",
@@ -78,6 +100,9 @@ const settingsSlice = createSlice({
             state.user = action.payload.user;
         },
         [updateProfile.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [updateDriver.fulfilled]: (state, action) => {
             state.user = action.payload.user;
         },
     },

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight, FaFileDownload, FaSearch } from "react-icons/fa";
 import { useTable, useGlobalFilter, useAsyncDebounce, useFilters, usePagination } from "react-table";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import {useMemo } from "react";
 import {
   Menu,
@@ -79,7 +79,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function DispatchTable({status}) {
+export function DispatchTable({status, requestDeliver}) {
 
   let order = useSelector((state) => state.orderAdmin.dispatchOrder);
   
@@ -103,10 +103,10 @@ export function DispatchTable({status}) {
             default: return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-24 rounded-md fw-600">Inactive</p>
         }
     }
-  const navigate = useNavigate()
-    const gotoDetailsPage = (id) => {
-        navigate(`/dashboard/warehousedetail?orderId=${id}`)
-    }
+  // const navigate = useNavigate()
+    // const gotoDetailsPage = (id) => {
+    //     navigate(`/dashboard/warehousedetail?orderId=${id}`)
+    // }
 
 
     const columns = useMemo(
@@ -158,15 +158,15 @@ export function DispatchTable({status}) {
           },
           {
             Header: 'Action',
-            accessor: "order_id",
+            accessor: "order[0].order_id",
             id: "details",
             Cell: (row) => <Menu placement="left-start" className="w-16">
                     <MenuHandler>
                       <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
-                        <MenuItem>Request Order</MenuItem>
-                      <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
+                        <MenuItem onClick={() => requestDeliver(row.value)}>Request Order</MenuItem>
+                      {/* <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem> */}
                     </MenuList>
                   </Menu>,
           },
@@ -388,7 +388,7 @@ export function SelectColumnFilter({
             onChange={(e) => {
             setFilter(e.target.value || undefined);
             }}
-            className="text-gray-8000 px-6 p-2 outline-none "
+            className="text-gray-8000 px-6 p-2 rounded-lg outline-none "
             label='Filter by Status'
         >
             <option value="">Service Type</option>

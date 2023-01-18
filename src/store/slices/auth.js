@@ -2,8 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setMessage } from "./messages";
 
 import AuthService from "../../services/auth.service";
-
+// user: localStorage.getItem("user") !== undefined ? JSON.parse(localStorage.getItem("user")) : null,
 const user = JSON.parse(localStorage.getItem("user"));
+  
 
 export const register = createAsyncThunk(
     "/auth/register",
@@ -147,7 +148,9 @@ export const logout = createAsyncThunk("/auth/logout", async () => {
     window.location.href = "/login";
 });
 
-const initialState = user
+const initialState = 
+    // user: localStorage.getItem("user") !== undefined ? JSON.parse(localStorage.getItem("user")) : null,
+    user
     ? { isLoggedIn: true, user }
     : { isLoggedIn: false, user: null };
 

@@ -75,7 +75,7 @@ const DriverSidebar = () => {
                 }} />
             </div>
             {showSideBar && (
-                <div className="fixed z-20 fs-500 top-20 grid items-between w-6/12 lg:sidebar-w shadow min-h-screen pt-2 px-2">
+                <div className="fixed z-20 fs-500 bg-white top-20 grid items-between w-6/12 lg:sidebar-w shadow min-h-screen pt-2 px-2">
                     <div className="">
                         <NavLink
                             to=""
