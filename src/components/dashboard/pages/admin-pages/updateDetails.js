@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
-import { getOverseaOrder, updateOrders } from '../../../../store/slices/adminOrder';
+import { updateOrders } from '../../../../store/slices/adminOrder';
 
 
 export const UpdateDetails = ({CloseModal, id}) => {
@@ -25,7 +25,6 @@ export const UpdateDetails = ({CloseModal, id}) => {
         setDisableBtn(true);
 
         const values = getValues();
-        console.log(values)
         const myData = {...values, id}
 
             dispatch(updateOrders(myData))
@@ -33,7 +32,6 @@ export const UpdateDetails = ({CloseModal, id}) => {
                     setSuccessful(true)
                     setDisableBtn(false)
                     CloseModal()
-                    dispatch(getOverseaOrder())
                 })
                 .catch(() => {
                     setSuccessful(false)
