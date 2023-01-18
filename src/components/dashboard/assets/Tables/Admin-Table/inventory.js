@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight, FaFileDownload, FaSearch } from "react-icons/fa";
 import { useTable, useGlobalFilter, useAsyncDebounce, useFilters, usePagination } from "react-table";
-// import { useNavigate } from "react-router-dom";
 import {useMemo } from "react";
 import {
   Menu,
@@ -12,13 +11,13 @@ import {
   Button,
   Input,
 } from "@material-tailwind/react";
-import { BsThreeDotsVertical } from 'react-icons/bs';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 // import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
+import { formatPriceUs } from '../../RegexFormat/Format';
 
 // export table files
 
@@ -79,31 +78,9 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function DispatchTable({status, requestDeliver}) {
+export function InventoryTable() {
 
-  let order = useSelector((state) => state.orderAdmin.dispatchOrder);
-  
-    if (status) {
-    order = order.filter(where => where.status === status)
-    }
-     // eslint-disable-next-line 
-    const formatStatus = (status) => {
-      switch (status) {
-          case "New":
-              return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">New</p>
-          case "Updated":
-              return <p className="px-2 py-1 text-pink-700 bg-pink-100 w-24 rounded-md fw-600">Updated</p>
-          case "Dispatch":
-            return <p className="px-2 py-1 text-purple-700 bg-purple-100 w-28 rounded-md fw-600">Processing</p>
-            case "Ongoing":
-            return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-28 rounded-md fw-600">Ongoing</p>
-          case "Completed":
-            return <p className="px-2 py-1 text-blue-700 bg-blue-100 w-24 rounded-md fw-600">Completed</p>
-        
-            default: return <p className="px-2 py-1 text-orange-700 bg-orange-100 w-24 rounded-md fw-600">Inactive</p>
-        }
-    }
-  
+  let order = useSelector((state) => state.inventory.inventory);
 
 
     const columns = useMemo(
@@ -113,59 +90,28 @@ export function DispatchTable({status, requestDeliver}) {
             accessor: ( row, index) => index + 1  //RDT provides index by default
           },
           {
-            Header: "Order ID",
-            accessor: "order[0].order_id",
+            Header: "Item Name",
+            accessor: "name",
           },
           {
-            Header: "Service Type",
-            accessor: "order[0].service_type",
-            Filter: SelectColumnFilter, 
-            filter: 'includes',
+            Header: "Item Quantity (unit)",
+            accessor: "quantity",
           },
           {
-            Header: "Preffered Vehicle",
-            accessor: "order[0].pickup_vehicle",
+            Header: "Value",
+            accessor: "total_cost",
+            Cell: (props) => formatPriceUs(props.value)
+            // Filter: SelectColumnFilter, 
+            // filter: 'includes',
           },
           {
-            Header: "Order Date",
-            accessor: "order.created_at",
+            Header: "Date Recorded",
+            accessor: "date_of_purchase",
             Cell: (props) => dayjs(props.value).format('DD/MM/YYYY') 
           },
           {
-            Header: "Shipping From",
-            accessor: "order[0].package_address",
-            Cell: (props) => (
-                <>
-                  <p className="item title">{props.row.original.order[0].pickup_address}</p>
-                  <p className="item desc">{props.row.original.order[0].package_address}</p>
-                  <p className="item desc">{props.row.original.order[0].shipping_from_country}{props.row.original.order[0].shipping_from_state_province_region}</p>
-                </>
-            )
-          },
-          {
-            Header: "Shipping To",
-            accessor:  'order[0].dropoff_address',
-            Cell: (props) => (
-                <>
-                  <p className="item title">{props.row.original.order[0].dropoff_address}</p>
-                  <p className="item desc">{props.row.original.order[0].shipping_to_country}{props.row.original.order[0].shipping_to_state_province_region}</p>
-                </>
-            ),
-            
-          },
-          {
-            Header: 'Action',
-            accessor: "order[0].order_id",
-            id: "details",
-            Cell: (row) => <Menu placement="left-start" className="w-16">
-                    <MenuHandler>
-                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
-                    </MenuHandler>
-                    <MenuList className="w-16 bg-gray-100 fw-600 text-black">
-                        <MenuItem onClick={() => requestDeliver(row.value)}>Request Order</MenuItem>
-                      {/* <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem> */}
-                    </MenuList>
-                  </Menu>,
+            Header: "Description",
+            accessor: "description",
           },
         ],  // eslint-disable-next-line 
         []
@@ -385,10 +331,10 @@ export function SelectColumnFilter({
             onChange={(e) => {
             setFilter(e.target.value || undefined);
             }}
-            className="text-gray-8000 px-6 p-2 rounded-lg outline-none "
+            className="text-gray-8000 px-6 p-2 outline-none rounded-lg "
             label='Filter by Status'
         >
-            <option value="">Service Type</option>
+            <option value="">All Location</option>
             {options.map((option, i) => (
             <option key={i} value={option}>
                 {option}
