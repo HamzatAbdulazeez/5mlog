@@ -73,7 +73,7 @@ export const Login = () => {
 
   return (
     <div  className='flex lg:h-screen items-center'>
-        <div className='lg:w-5/12 lg:block hidden border h-screen bg-register bg-cover fixed'>
+        <div className='lg:w-5/12 lg:block hidden border h-screen bg-login bg-cover fixed'>
 
         </div>
         <div className='lg:w-7/12 px-8 pt-4 lg:p-0 w-full lg:absolute right-0'>

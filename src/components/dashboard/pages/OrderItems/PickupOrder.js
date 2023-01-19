@@ -9,8 +9,9 @@ import { Spinner2 } from '../../../assets/Spinner'
 export const PickUpUser = () => {
 
     const[payment, setPayment] = useState(false)
-    const paymentModal = () => {
+    const paymentModal = (id) => {
         setPayment(true)
+        console.log(id)
     }
     const CloseModal = () => {
         setPayment(false)
@@ -65,7 +66,7 @@ export const PickUpUser = () => {
                                 NGN 34,000
                             </p>
                             <div className='text-end mt-6'>
-                                <button className='bg-primary lg:px-12 py-2 rounded-lg fw-600 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-600 fs-700'>Pay Now</button>
+                                <button className='bg-primary lg:px-12 px-6 py-2 rounded-lg fw-600 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-600 fs-700'>Pay Now</button>
                             </div>
                         </div>
                         <FaTimes className='absolute text-red-500 top-3 bg-white right-5 cursor-pointer' onClick={CloseModal}/>

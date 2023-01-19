@@ -159,7 +159,7 @@ export function PickupTable({status, paymentModal, deleteOrder}) {
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
+                      <MenuItem onClick={() => paymentModal(row.value)}>Payment Details </MenuItem>
                       <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,
@@ -374,22 +374,24 @@ export function SelectColumnFilter({
   
     // Render a multi-select box
     return (
-      <Select
-        name={id}
-        id={id}
-        value={filterValue}
-        onChange={(e) => {
-          setFilter(e.target.value || undefined);
-        }}
-        className="text-black"
-        label='Filter by Status'
-      >
-        <Option value="">All</Option>
-        {options.map((option, i) => (
-          <Option key={i} value={option}>
-            {option}
-          </Option>
-        ))}
-      </Select>
+      <div className='border border-gray-300 rounded-lg pr-2'>
+        <select
+          name={id}
+          id={id}
+          value={filterValue}
+          onChange={(e) => {
+            setFilter(e.target.value || undefined);
+          }}
+          className="text-gray-8000 px-6 p-2 rounded-lg outline-none "
+          label='Filter by Status'
+        >
+          <option value="">All</option>
+          {options.map((option, i) => (
+            <option key={i} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
     );
   }
