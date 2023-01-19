@@ -24,7 +24,7 @@ module.exports = withMT({
         footer: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904755/5mlog/Group_237743_dxp9ev.png')",
         service: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473612/5mlog/Group_237789_blmvss.png')",
         contact: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473623/5mlog/Group_237791_v5sgrf.png')",
-        login: "linear-gradient(to right bottom, rgba(4, 43, 84, 0.9), rgba(4, 43, 84, 0.9)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671811441/5mlog/login_lg2kib.jpg')",
+        login: "linear-gradient(to right bottom, rgba(4, 43, 84, 0.7), rgba(4, 43, 84, 0.7)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1673885325/5mlog/procure_hpvpmx.jpg')",
         register:  "linear-gradient(to right bottom, rgba(4, 43, 84, 0.6), rgba(4, 43, 84, 0.9)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1671811441/5mlog/login_lg2kib.jpg')",
         contact2: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473602/5mlog/Group_237774_ejqqdn.png')",
         faq: "url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473607/5mlog/Group_237790_ktkvic.png')",
@@ -36,6 +36,7 @@ module.exports = withMT({
         track: "linear-gradient(to right ,rgba(33, 40, 33, 0), rgba(62, 78, 62, 0), rgba(62, 78, 62, 0)), url('https://i.pinimg.com/736x/92/af/83/92af838d576c73138a52b5ad29412347--high-resolution-wallpapers-desktop-wallpapers.jpg')",
         users: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .9), rgba(62, 78, 62, .4)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1673087813/5mlog/customer_xp35pn.jpg')",
         partner: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .9), rgba(62, 78, 62, .4)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1673087782/5mlog/vendor_pheiux.jpg')",
+        mlog: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1674118621/5mlog/5mlog-1_rsmdx7.png')",
 
       },
     },

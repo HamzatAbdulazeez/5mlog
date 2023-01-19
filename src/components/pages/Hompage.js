@@ -25,7 +25,7 @@ export const Hompage = () => {
                 <div className='box'>
                     <div className='lg:w-11/12 mx-auto lg:flex items-center flex-row-reverse'>
                         <div className='lg:w-6/12'>
-                            <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904736/5mlog/Group_237745_xdhv41.png" alt="img" className='w-9/12 mx-auto'/>
+                            <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1674117207/5mlog/about-us_cukwra.png" alt="img" className='w-9/12 mx-auto'/>
                         </div>
                         <div className='lg:w-6/12'>
                             <p className='lg:text-2xl text-lg fw-600 lg:fw-700'>About Us</p>
