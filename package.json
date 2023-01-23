@@ -1,5 +1,6 @@
 {
   "name": "5mlog",
+  "homepage": "https://5mlogistics.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
