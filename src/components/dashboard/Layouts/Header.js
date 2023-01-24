@@ -89,9 +89,6 @@ export default function Header() {
                                     </Button>
                                 </MenuHandler>
                                 <MenuList>
-                                    <MenuItem onClick={() => navigate("/dashboard/pickup")}>Logistics</MenuItem>
-                                    <MenuItem onClick={() => navigate("/dashboard/freight")}>Freights</MenuItem>
-                                    <MenuItem onClick={() => navigate("/dashboard/orders")}>My Orders</MenuItem>
                                     <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
                                     <MenuItem onClick={()=> dispatch(logout())}>Sign Out</MenuItem>
                                 </MenuList>

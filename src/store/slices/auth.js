@@ -145,7 +145,7 @@ export const resetPassword = createAsyncThunk(
 
 export const logout = createAsyncThunk("/auth/logout", async () => {
     await AuthService.logout();
-    window.location.href = "/login";
+    window.location.href = "/";
 });
 
 const initialState = 

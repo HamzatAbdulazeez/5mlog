@@ -9,7 +9,7 @@ export const AdminLogin = () => {
 
     let formRef = useRef();
     // const  auth  = useSelector((state) => state.auth);
-    const  message  = useSelector((state) => state.message);
+    const  {message}  = useSelector((state) => state.message);
 
     const dispatch = useDispatch();
 
@@ -40,7 +40,7 @@ export const AdminLogin = () => {
             dispatch(adminLogin(formdata))
                 .then(() => {
                     setSuccessful(true)
-                    setDisableBtn(true);
+                    setDisableBtn(false);
                 })
                 .catch(() => {
                     setSuccessful(false)
@@ -50,14 +50,12 @@ export const AdminLogin = () => {
     }
     const displayMessage = (message) => {
         if (message) {
-            if (message.success) {
+            if (!message.success) {
                 toast.error(message.message);
-                // window.location.href = window.location.protocol + "//" + window.location.host + '/dashboard'
             }
             else {
                 toast.success(message.message);
                 window.location.href = window.location.protocol + "//" + window.location.host + '/dashboard'
-                // navigate("/dashboard")
             }
         }
         setSuccessful(false);
