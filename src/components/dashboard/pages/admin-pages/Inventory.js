@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Input, Textarea } from '@material-tailwind/react'
 import { FaTimes } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
-import { createItem, getInventories } from '../../../../store/slices/inventService'
+import { createItem, deleteInventory, getInventories } from '../../../../store/slices/inventService'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { clearMessage } from '../../../../store/slices/messages'
@@ -14,11 +14,19 @@ import { Spinner2 } from '../../../assets/Spinner'
 export const Inventory = () => {
 
     const[invent, setInvent] = useState(false)
+    const[details, setDetails] = useState(false)
+    const[item, setItem] = useState(false)
+
+    const ViewMore = (id) => {
+        setItem(id)
+        setDetails(true)
+    }
     const inventModal = () => {
         setInvent(true)
     }
     const CloseModal = () => {
         setInvent(false)
+        setDetails(false)
     }
     const { message } = useSelector((state) => state.message);
     const success =  useSelector((state) => state.inventory.success);
@@ -66,6 +74,12 @@ export const Inventory = () => {
             }
             setSuccessful(false);
         }
+        const DeleteInventory = (id) => {
+            dispatch(deleteInventory(id))
+            setTimeout(() => {
+                dispatch(getInventories())
+            }, 3000);
+        }
 
   return (
     <div className='min-h-screen fs-500'>
@@ -86,7 +100,7 @@ export const Inventory = () => {
                 <div className='mb-6'>
                     <p className='fw-600 flex items-center text-lg'><span className="pr-2 text-primary text-2xl"><BsListTask/></span>My Inventory(ies) Listing</p>
                 </div>
-                {success === false? <Spinner2/> : <InventoryTable/>}
+                {success === false? <Spinner2/> : <InventoryTable inventDelete={DeleteInventory} detailModal={ViewMore}/>}
             </div>
         </div>
         {
@@ -116,9 +130,9 @@ export const Inventory = () => {
                                             <label className='fs-500 mb-2 block'>Enter Date</label>
                                             <Input type="date" label="item storage duration" name='date_of_purchase' {...register('date_of_purchase')} />
                                         </div>
-                                        <div  className='mt-5'>
+                                        <div  className='mt-5 lg:pl-2 lg:w-6/12'>
                                             <label className='fs-500 mb-2 block'>Storage location</label>
-                                            <select label='Select Type' name='location' {...register('location')}>
+                                            <select label='Select Type' name='location' {...register('location')} className='p-2 border rounded border-gray-400 w-full'>
                                                 <option value='Houston Texas'>Houston Texas</option>
                                                 <option value='Ikeja Lagos'>Ikeja Lagos</option>
                                                 <option value='Abuja'>Abuja</option>
@@ -135,6 +149,26 @@ export const Inventory = () => {
                                         <button className='btn-primary lg:px-8' disabled={disableBtn}>Add New Item</button>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                        <FaTimes className='absolute top-5 right-5 cursor-pointer' onClick={CloseModal}/>
+                    </div>
+                </div>
+            )
+        }
+        {
+            details && (
+                <div className='fixed font-primary left-0 top-0 w-full h-screen bg-op flex justify-center items-center z-40' onClick={CloseModal}>
+                    <div className="bg-white relative lg:w-5/12 max-h-03 overflow-scroll rounded-md overscroll-none w-11/12 py-6 shadow scale-ani px-5" onClick={e => e.stopPropagation()}>
+                        <p className='text-center fw-600 border-b border-gray-300 lg:text-xl pb-2'>{item?.name}</p>
+                        <div className='lg:px-6 py-6'>
+                            <div className='flex'>
+                                <p  className='fw-500'>Storage Location:</p>
+                                <p className='pl-2'>{item?.location}</p>
+                            </div>
+                            <div className='mt-4'>
+                                <p className='fw-500'>Description:</p>
+                                <p className='max-h-48'>{item?.description}</p>
                             </div>
                         </div>
                         <FaTimes className='absolute top-5 right-5 cursor-pointer' onClick={CloseModal}/>

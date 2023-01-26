@@ -3,7 +3,7 @@ import { Input } from '@material-tailwind/react'
 import { FaTimes } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { createStaffs, getStaffs } from '../../../../store/slices/staffService'
+import { createStaffs, deleteStaffs, getStaffs } from '../../../../store/slices/staffService'
 import { toast } from 'react-toastify'
 import { clearMessage } from '../../../../store/slices/messages'
 import { Spinner2 } from '../../../assets/Spinner'
@@ -60,6 +60,12 @@ export const Staff = () => {
             }
             setSuccessful(false);
         }
+        const DeleteStaff = (id) => {
+            dispatch(deleteStaffs(id))
+            setTimeout(() => {
+                dispatch(getStaffs())
+            }, 3000);
+        }
 
   return (
     <div className='min-h-screen fs-500'>
@@ -79,7 +85,7 @@ export const Staff = () => {
                 <div className='mb-6'>
                     <p className='fw-600 flex items-center text-lg'><span className="pr-2 text-primary text-2xl"><BsListTask/></span>My Staff(s) Listing</p>
                 </div>
-                {success === false? <Spinner2/> : <StaffTable/>}
+                {success === false? <Spinner2/> : <StaffTable staffDelete={DeleteStaff}/>}
             </div>
         </div>
         {

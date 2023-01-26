@@ -24,21 +24,28 @@ export const About = () => {
                         <p className='text-center font-light text-xl lg:tracking-wide mt-3'>ABOUT 5M</p>
                     </div>
                     <div className='lg:flex items-center lg:mt-16 mt-8'>
-                        <div className='lg:w-6/12 grid-2'>
+                        <div className='lg:w-6/12 grid-2 lg:h-03'>
                             <div className='row-span-2 px-2'>
-                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473614/5mlog/Rectangle_19599_q73ooh.png' alt="wwa" className='w-full' />
+                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473614/5mlog/Rectangle_19599_q73ooh.png' alt="wwa" className='w-full h-full' />
                             </div>
                             <div className='px-2 pb-1'>
-                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473610/5mlog/Rectangle_19600_hfc0wv.png' alt="wwa" className='w-full' />
+                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473610/5mlog/Rectangle_19600_hfc0wv.png' alt="wwa" className='w-full h-full' />
                             </div>
                             <div className='px-2 pt-1'>
-                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473595/5mlog/Rectangle_19601_mtu4i5.png' alt="wwa" className='w-full' />
+                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473595/5mlog/Rectangle_19601_mtu4i5.png' alt="wwa" className='w-full h-full' />
                             </div>
                         </div>
                         <div className='lg:w-6/12 mt-8 lg:mt-0'>
-                            <p className='lg:text-2xl lg:fw-600 text-xl'>Who We Are</p>
-                            <p className='my-6'>5M Logistics is a subsidiary of 5M global services whose goal is to provide top notch services in Freight, transportation and delivery to clients and users globally hereby boosting businesses and increasing sales and exchange between users worldwide.</p>
-                            <Link to="/login" className="text-primary mt-3 lg:mt-5 fw-600">Get Started</Link>
+                            <div>
+                                <p className='lg:text-2xl lg:fw-600 text-xl'>Who We Are</p>
+                                <p className='my-6'>5M Logistics is a subsidiary of 5M global services whose goal is to provide top notch services in Freight, transportation and delivery to clients and users globally hereby boosting businesses and increasing sales and exchange between users worldwide.</p>
+                                <Link to="/login" className="text-primary mt-3 lg:mt-4 fw-600">Get Started</Link>
+                            </div>
+                            <div className='mt-6'>
+                                <p className='lg:text-2xl lg:fw-600 text-xl'>What We Do</p>
+                                <p className='my-6'>We specialize in truck acquisitions, lease originations, we offer you more and Better options to move freight in every lane, we offer exact truck loads freight services  for all  trucks shipping needs.We Offer dispatch services , dry van  services , flat bell services , bus truck services , LTL trucking across United and Nigeria</p>
+                                <Link to="/login" className="text-primary mt-3 lg:mt-5 fw-600">Get Started</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

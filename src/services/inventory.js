@@ -15,10 +15,21 @@ const newInventory = async (payload) => {
 const getInventory = () => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}/admin/get/inventory`,  { headers: authHeader() });
 };
+const deleteInventory = (id) => {
+    const config = {
+        method: 'post',
+        url: `${process.env.REACT_APP_BASE_URL }/admin/delete/inventory/${id}`,
+        headers: { 
+            'Authorization': 'Bearer ' + token 
+        }
+    }
+    return axios(config);
+};
 
 const invent = {
    newInventory,
-   getInventory
+   getInventory,
+   deleteInventory
 };
 
 export default invent;

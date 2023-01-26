@@ -163,7 +163,7 @@ export function PickupTable({status, paymentModal, deleteOrder}) {
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={() => paymentModal(row.value)}>Payment Details </MenuItem>
+                      <MenuItem onClick={() => paymentModal(row.row.original)}>Payment Details </MenuItem>
                       <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,

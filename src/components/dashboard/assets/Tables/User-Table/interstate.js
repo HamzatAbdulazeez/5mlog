@@ -21,6 +21,7 @@ import "jspdf-autotable";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
+import { formatPriceNgn } from '../../RegexFormat/Format';
 
 function getExportFileBlob({ columns, data, fileType, fileName }) {
   if (fileType === "csv") {
@@ -135,6 +136,9 @@ export function InterstateTable({status, paymentModal, deleteOrder}) {
           {
             Header: "Amount",
             accessor: "price",
+            Cell: (props) => (
+              props.value?  formatPriceNgn(props.value) : null
+            )
           },
           {
             Header: "Status",
@@ -158,7 +162,7 @@ export function InterstateTable({status, paymentModal, deleteOrder}) {
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={paymentModal}>Payment Details</MenuItem>
+                      <MenuItem onClick={() => paymentModal(row.row.original)}>Payment Details</MenuItem>
                       <MenuItem className="bg-red-600 hover:bg-red-500 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,

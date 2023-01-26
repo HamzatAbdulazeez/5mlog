@@ -17,6 +17,7 @@ import "jspdf-autotable";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
 // export table files
 
@@ -77,7 +78,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function StaffTable() {
+export function StaffTable({staffDelete}) {
 
   let order = useSelector((state) => state.staff.staff);
 
@@ -110,6 +111,19 @@ export function StaffTable() {
           {
             Header: "Contact Number",
             accessor: "contact_number",
+          },
+          {
+            Header: 'Action',
+            accessor: "id",
+            id: "details",
+            Cell: (row) => <Menu placement="left-start" className="w-16">
+                    <MenuHandler>
+                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
+                    </MenuHandler>
+                    <MenuList className="w-16 bg-gray-100 fw-600 text-black">
+                      <MenuItem className='bg-red-600 text-white hover:bg-red-500' onClick={() => staffDelete(row.value)}>Delete Staff</MenuItem>
+                    </MenuList>
+                  </Menu>,
           },
         ],  // eslint-disable-next-line 
         []

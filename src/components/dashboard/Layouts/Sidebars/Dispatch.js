@@ -1,20 +1,19 @@
 import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
-import { GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
+import { GrLocation} from "react-icons/gr"
 import { MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { HiOutlineLogout } from "react-icons/hi";
-import { FaBars, FaUsers } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../../store/slices/auth";
 
 
-const AdminSidebar = () => {
+const DispatchSidebar = () => {
 
     const [signOut, setSignOut] = useState(false);
     const [orderDrop, setOrderDrop] = useState(false);
-    const [userDrop, setUserDrop] = useState(false);
     function CloseModal() {
         setSignOut(false)
     }
@@ -92,15 +91,6 @@ const AdminSidebar = () => {
                             <BsFillGrid1X2Fill className="text-xl" />
                             <p className="pl-3"> Dashboard</p>
                         </NavLink>
-                        <NavLink 
-                            to="staff"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
-                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                            onClick={unShow}
-                            >
-                                <GrUserWorker className="text-xl" />
-                                <p className="pl-3">Staff</p>
-                        </NavLink>
                         <div
                             
                             className="w-full items-center pl-2 py-2 fw-600 my-2"
@@ -108,7 +98,7 @@ const AdminSidebar = () => {
                         >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <BsBag className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setUserDrop(false);}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop)}}>
                                     <p className="pl-3 pr-5">Orders</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
@@ -154,7 +144,7 @@ const AdminSidebar = () => {
                                 </div>
                             )}
                         </div>
-                        <div
+                        {/* <div
                             
                             className="w-full items-center pl-2 py-2 fw-600 my-2"
                             onClick={unShow}
@@ -182,7 +172,7 @@ const AdminSidebar = () => {
                                     </NavLink>
                                 </div>
                                     )}
-                        </div>
+                        </div> */}
                         <NavLink 
                             to="track"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-3"
@@ -192,7 +182,7 @@ const AdminSidebar = () => {
                                 <GrLocation className="text-xl" />
                                 <p className="pl-3">Tracking</p>
                         </NavLink>
-                        <NavLink 
+                        {/* <NavLink 
                             to="transact"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -200,7 +190,7 @@ const AdminSidebar = () => {
                             >
                                 <GrTransaction className="text-xl" />
                                 <p className="pl-3">Transactions</p>
-                        </NavLink>
+                        </NavLink> */}
                         <NavLink 
                             to="inventory"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-2"
@@ -209,15 +199,6 @@ const AdminSidebar = () => {
                             >
                                 <MdOutlineInventory className="text-xl" />
                                 <p className="pl-3">Inventory</p>
-                        </NavLink>
-                        <NavLink 
-                            to="sub-admin"
-                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
-                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                            onClick={unShow}
-                            >
-                                <GrUserAdmin className="text-xl" />
-                                <p className="pl-3">Sub-admins</p>
                         </NavLink>
                     </div>
                     <div>
@@ -264,4 +245,4 @@ const AdminSidebar = () => {
     )
 }
 
-export default AdminSidebar
+export default DispatchSidebar

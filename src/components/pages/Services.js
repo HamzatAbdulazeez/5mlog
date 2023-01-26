@@ -67,7 +67,7 @@ export const Services = () => {
                         </div>
                         <div className='border lg:flex flex-row-reverse p-5 bg-white shadow-md mt-6 lg:mt-10 lg:h-64'>
                             <div className='lg:w-4/12 grid place-content-center'>
-                                <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1673885325/5mlog/procure_hpvpmx.jpg" alt="services" className='lg:w-9/12 rounded-md ar-32' />
+                                <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671811441/5mlog/login_lg2kib.jpg" alt="services" className='lg:w-9/12 rounded-md ar-32' />
                             </div>
                             <div className='lg:w-8/12 lg:pr-8'>
                                 <p className='text-lg fw-600 lg:mt-0 mt-4'>Procurement</p>

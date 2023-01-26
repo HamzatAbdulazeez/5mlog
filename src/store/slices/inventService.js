@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import invent from "../../services/inventory";
 import { setMessage } from "./messages";
 
@@ -37,6 +38,19 @@ export const getInventories = createAsyncThunk(
         }
     }
 );
+export const deleteInventory = createAsyncThunk(
+    "/delete/inventory",
+    async ( id, thunkAPI) => {
+        try {
+            const response = await invent.deleteInventory(id);
+            toast.success(response.data.message)
+        } catch (error) {
+            toast.error(error.message)
+            return thunkAPI.rejectWithValue(error)
+        }
+    }
+);
+
 
 const inventSlice = createSlice({
     name: "inventory",

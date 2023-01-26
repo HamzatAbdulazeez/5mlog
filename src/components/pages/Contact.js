@@ -25,7 +25,7 @@ export const Contact = () => {
                     <div className='lg:grid-3s justify-between mt-6'>
                         <div className='p-5 shadow'>
                             <p className='mb-2 fw-500'>Houston Texas</p>
-                            <p>9898 Bissonnet Street Houston Texas 77038 United States</p>
+                            <p>9898 Bissonnet Street Houston Texas 77036 United States</p>
                             <p className='flex items-center mt-2'><span className='pr-2'><BsTelephoneForward/></span><span className='pr-3 text-green-700'><FaWhatsapp/></span>+1832 820 3994 </p>
                         </div>
                         <div className='p-5 mt-8 lg:mt-0 shadow'>
@@ -76,7 +76,7 @@ export const Contact = () => {
                             </div>
                             <div className='my-6'>
                                 <p className='fw-600 text-lg'>Phone</p>
-                                <p className='fs-500 pt-4'>+17135185513</p>
+                                <p className='fs-500 pt-4'>+18328203994</p>
                             </div>
                             <div className='my-6'>
                                 <p className='fw-600 text-lg'>Email</p>

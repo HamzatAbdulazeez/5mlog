@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { updateOrders } from '../../../../store/slices/adminOrder';
 
 
-export const UpdateDetails = ({CloseModal, id}) => {
+export const UpdateDetails = ({CloseModal, id, reload}) => {
 
     const dispatch = useDispatch();
     // eslint-disable-next-line
@@ -32,6 +32,7 @@ export const UpdateDetails = ({CloseModal, id}) => {
                     setSuccessful(true)
                     setDisableBtn(false)
                     CloseModal()
+                    reload()
                 })
                 .catch(() => {
                     setSuccessful(false)
