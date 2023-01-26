@@ -24,7 +24,7 @@ export const About = () => {
                         <p className='text-center font-light text-xl lg:tracking-wide mt-3'>ABOUT 5M</p>
                     </div>
                     <div className='lg:flex items-center lg:mt-16 mt-8'>
-                        <div className='lg:w-6/12 grid-2 h-03'>
+                        <div className='lg:w-6/12 grid-2 lg:h-03'>
                             <div className='row-span-2 px-2'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1670473614/5mlog/Rectangle_19599_q73ooh.png' alt="wwa" className='w-full h-full' />
                             </div>
