@@ -15,10 +15,21 @@ const createStaff = async (payload) => {
 const getStaff = () => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}/admin/get/staff`,  { headers: authHeader() });
 };
+const deleteStaff = (id) => {
+    const config = {
+        method: 'post',
+        url: `${process.env.REACT_APP_BASE_URL }/admin/delete/staff/${id}`,
+        headers: { 
+            'Authorization': 'Bearer ' + token 
+        }
+    }
+    return axios(config);
+};
 
 const Staffs = {
     createStaff,
-    getStaff
+    getStaff,
+    deleteStaff
 };
 
 export default Staffs;

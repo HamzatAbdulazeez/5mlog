@@ -25,7 +25,7 @@ export const UserDetails = () => {
             const  data  = response.data.data
             setUser(data);
             setLoading(false);
-            console.log(data)
+            console.log(data);
         } catch (error) {
             console.log(error);
             setLoading(false);

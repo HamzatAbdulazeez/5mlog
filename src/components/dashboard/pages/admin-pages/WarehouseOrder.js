@@ -27,6 +27,12 @@ export const WarehouseOrder = () => {
         dispatch(getWarehouseOrder())
     }, [dispatch])
 
+    // const Reload = () => {
+    //     setTimeout(() => {
+    //         dispatch(getWarehouseOrder())
+    //     }, 3000);
+    // }
+
 
   return (
     <div className='min-h-screen'>

@@ -134,7 +134,7 @@ export const Register = () => {
             <div className='lg:w-7/12 px-8 lg:px-0 lg:mt-12 overflow-y-scroll py-3'>
                 <div className='lg:w-10/12 xl:w-8/12 mx-auto'>
                     <Link to="/">
-                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt='register' className='lg:pt-12 w-24 lg:w-28 relative -left-4 lg:-left-4' />
+                        <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671522002/5mlog/new_p2j2j6.png" alt='register' className='lg:pt-12 w-24 lg:w-28 relative -left-4 lg:-left-4' />
                     </Link>
                     <p className='my-4 fw-600 text-xl lg:text-2xl'>Sign Up!</p>
                 </div>

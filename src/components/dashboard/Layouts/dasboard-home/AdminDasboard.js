@@ -10,14 +10,18 @@ import UsersChart from '../../assets/Charts/UserChart'
 import { FaUsers } from 'react-icons/fa'
 import { MdOutlineInventory } from 'react-icons/md'
 import { InventDashBoardHomeTable } from '../../assets/Tables/DbInventoey'
+import { useSelector } from 'react-redux'
 
 export const AdminDashboard = () => {
+
+    const user = useSelector((state) => state.auth.user)
+
   return (
     <div>
         <div  className="min-h-screen fs-500 relative">
             {/* header */}
             <div className="w-full py-8 pl-6 bg-white px-4">
-                <p className="text-2xl fw-600">Welcome SuperAdmin</p>
+                <p className="text-2xl fw-600">Welcome {user?.account_type === "Administrator"? "SuperAdmin" : user?.first_name}</p>
                 <p className="fs-400 text-gray-600 mt-2">Control and manage all services on this website.</p>
                 <Breadcrumbs className="bg-white pl-0 mt-4">
                     <Link to="/" className="opacity-60">
@@ -67,7 +71,7 @@ export const AdminDashboard = () => {
                         </div>
                         <div className='w-8/12'>
                             <p className='text-4xl fw-600'>10</p>
-                            <p className='fs-400'>Completed</p>
+                            <p className='fs-400'>Completed Deliveries</p>
                         </div>
                     </div>
                     <div className='border shadow-xl flex mt-6 lg:mt-0  py-8 rounded bg-red-100'>

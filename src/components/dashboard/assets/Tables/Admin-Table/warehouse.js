@@ -143,6 +143,13 @@ export function WarehouseTable({status, paymentModal}) {
            }
           },
           {
+            Header: "Paid",
+            accessor: "paid",
+            Cell: (props) => {
+              return props.value === null ? "No" : "Yes";
+           }
+          },
+          {
             Header: "Status",
             accessor:  'status',
             Cell: (props) => formatStatus(props.value),

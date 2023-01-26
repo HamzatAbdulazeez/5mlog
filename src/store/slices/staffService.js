@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import Staffs from "../../services/staffs";
 import { setMessage } from "./messages";
 
@@ -33,6 +34,18 @@ export const getStaffs = createAsyncThunk(
             const response = await Staffs.getStaff();
             return response.data.data;
         } catch (error) {
+            return thunkAPI.rejectWithValue(error)
+        }
+    }
+);
+export const deleteStaffs = createAsyncThunk(
+    "/delete/staffs",
+    async ( id, thunkAPI) => {
+        try {
+            const response = await Staffs.deleteStaff(id);
+            toast.success(response.data.message)
+        } catch (error) {
+            toast.error(error.message)
             return thunkAPI.rejectWithValue(error)
         }
     }

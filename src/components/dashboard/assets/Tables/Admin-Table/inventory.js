@@ -18,6 +18,7 @@ import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
 import { formatPriceUs } from '../../RegexFormat/Format';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
 // export table files
 
@@ -78,7 +79,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function InventoryTable() {
+export function InventoryTable ({inventDelete, detailModal}) {
 
   let order = useSelector((state) => state.inventory.inventory);
 
@@ -112,6 +113,21 @@ export function InventoryTable() {
           {
             Header: "Description",
             accessor: "description",
+            Cell: (props) => <p className='w-48 truncate'>{props.value}</p>
+          },
+          {
+            Header: 'Action',
+            accessor: "id",
+            id: "details",
+            Cell: (row) => <Menu placement="left-start" className="w-16">
+                    <MenuHandler>
+                      <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
+                    </MenuHandler>
+                    <MenuList className="w-16 bg-gray-100 fw-600 text-black">
+                      <MenuItem onClick={() => detailModal(row.row.original)}>View More</MenuItem>
+                      <MenuItem className='bg-red-600 text-white hover:bg-red-500' onClick={() => inventDelete(row.value)}>Delete Item</MenuItem>
+                    </MenuList>
+                  </Menu>,
           },
         ],  // eslint-disable-next-line 
         []

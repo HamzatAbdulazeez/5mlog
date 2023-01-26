@@ -73,13 +73,13 @@ export const Login = () => {
 
   return (
     <div  className='flex lg:h-screen items-center'>
-        <div className='lg:w-5/12 lg:block hidden border h-screen bg-login bg-cover fixed'>
+        <div className='lg:w-5/12 lg:block hidden h-screen bg-register bg-cover fixed'>
 
         </div>
         <div className='lg:w-7/12 px-8 pt-4 lg:p-0 w-full lg:absolute right-0'>
             <div className='lg:w-8/12 xl:w-7/10 mx-auto'>
                 <Link to="/">
-                    <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png" alt='register' className='lg:pt-12 w-24 lg:w-28 relative -left-4' />
+                    <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671522002/5mlog/new_p2j2j6.png" alt='register' className='lg:pt-12 w-24 lg:w-28 relative -left-4' />
                 </Link>
                 <p className='my-6 fw-600 text-xl lg:text-xl'>Log Into Your Account</p>
                   <form ref={el => (formRef = el)} onSubmit={handleSubmit}>
