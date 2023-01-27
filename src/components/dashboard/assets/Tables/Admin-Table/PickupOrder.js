@@ -11,8 +11,6 @@ import {
   MenuItem,
   Button,
   Input,
-  Select,
-  Option,
 } from "@material-tailwind/react";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import jsPDF from "jspdf";
@@ -181,8 +179,8 @@ export function PickupTable({status, paymentModal, dispatchOrder}) {
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={() => paymentModal(row.value)}>Update Details</MenuItem>
                       {
-                        row.row.original?.paid  === "" ?
-                        "hey"
+                        row?.row.original.paid === null ?
+                        ""
                         :
                         row.row.original?.status === "New" || row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>         
                       }
@@ -194,7 +192,7 @@ export function PickupTable({status, paymentModal, dispatchOrder}) {
         []
       );
 
-    
+      console.log(order)
       const data = useMemo(() => order, [order]);
     
       return (
@@ -349,19 +347,19 @@ const Table = ({columns, data}) => {
                     </span>
                 </div>
                 <div className='w-20'>
-                    <Select
+                    <select
                     value={state.pageSize}
                     onChange={e => {
                         setPageSize(Number(e.target.value))
                     }}
-                    className=""
+                    className="bg-light border border-gray-400 rounded-md p-1"
                     >
                     {[5, 10, 20].map(pageSize => (
-                        <Option key={pageSize} value={pageSize}>
+                        <option key={pageSize} value={pageSize}>
                         Show {pageSize}
-                        </Option>
+                        </option>
                     ))}
-                    </Select>
+                    </select>
                 </div>
             </div>
             <div className='flex lg:mt-0 mt-4 justify-center gap-2'>
@@ -400,22 +398,22 @@ export function SelectColumnFilter({
   
     // Render a multi-select box
     return (
-      <Select
+      <select
         name={id}
         id={id}
         value={filterValue}
         onChange={(e) => {
           setFilter(e.target.value || undefined);
         }}
-        className="text-black"
+        className="text-gray-700 outline-none font-light border border-gray-400 rounded-md p-2"
         label='Filter by Status'
       >
-        <Option value="">All</Option>
+        <option value="">Filter by Status</option>
         {options.map((option, i) => (
-          <Option key={i} value={option}>
+          <option key={i} value={option}>
             {option}
-          </Option>
+          </option>
         ))}
-      </Select>
+      </select>
     );
   }

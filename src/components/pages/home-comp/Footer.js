@@ -1,7 +1,9 @@
 import React from 'react'
+import {  FaTiktok } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 export const Footer = () => {
+
   return (
     <div>
         <div className='lg:pt-16 lg:pb-10 bg-footer bg-cover xl:bg-fit w-full'>
@@ -45,12 +47,20 @@ export const Footer = () => {
                                   <button className='w-full fs-500 fw-600 py-3 bg-primary text-white text-center'>Subscribe</button>
                               </div>
                           </div>
+                          <div className='mt-8 flex justify-end'>
+                            <ul className='flex items-center w-full justify-between w-6/12 lg:w-6/12'>
+                              <li><a href='https://www.facebook.com/profile.php?id=100088570011053&mibextid=LQQJ4d' target='_blank' rel="noreferrer"><img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1674808835/5mlog/facebook_k3hzd5.png' alt='social' className='hover:scale-105 w-7 lg:w-auto'/></a></li>
+                              <li><a href='https://www.instagram.com/5mlogistics/' target='_blank' rel="noreferrer"><img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1674808841/5mlog/insta_jzwq3z.png' alt='social' className='hover:scale-105 w-7 lg:w-auto'/></a></li>
+                              <li><a href='https://twitter.com/5m_global' target='_blank' rel="noreferrer"><img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1674808859/5mlog/twitter_kp3atw.png' alt='social' className='hover:scale-105 w-7 lg:w-auto'/></a></li>
+                              <li><a href='https://5mlogistics.com/' target='_blank' rel="noreferrer"><FaTiktok className='lg:text-gray-800 text-2xl lg:text-4xl'/></a></li>
+                            </ul>
+                          </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className='mt-6 border-t-2 text-center text-white fw-500 fs-500 pt-4 opacity-60'>
-                  <p className='pb-6'>© {new Date().getFullYear() }  5M Logistics. All rights reserved.  <a href={'https://greenmousetech.com/'}>site credit</a></p>
+                  <p className='pb-6'>© {new Date().getFullYear() }  5M Logistics. All rights reserved. <span><a href='https://greenmousetech.com/' target='_blank' rel="noreferrer">site credit</a></span></p>
                 </div>
             </div>
         </div>
