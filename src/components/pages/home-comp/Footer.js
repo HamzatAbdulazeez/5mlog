@@ -1,5 +1,4 @@
 import React from 'react'
-import {  FaTiktok } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 export const Footer = () => {

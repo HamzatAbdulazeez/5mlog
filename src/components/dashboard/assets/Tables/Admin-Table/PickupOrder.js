@@ -177,7 +177,7 @@ export function PickupTable({status, paymentModal, dispatchOrder}) {
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={() => paymentModal(row.value)}>Update Details</MenuItem>
+                      <MenuItem onClick={() => paymentModal(row.row.original)}>Update Details</MenuItem>
                       {
                         row?.row.original.paid === null ?
                         ""

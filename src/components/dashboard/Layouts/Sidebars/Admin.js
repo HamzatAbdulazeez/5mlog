@@ -1,6 +1,6 @@
 import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
-import { GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
-import { MdOutlineInventory } from "react-icons/md"
+import { GrDeliver, GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
+import { MdNotificationAdd, MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -202,6 +202,15 @@ const AdminSidebar = () => {
                                 <p className="pl-3">Transactions</p>
                         </NavLink>
                         <NavLink 
+                            to="vehicles"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
+                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                            onClick={unShow}
+                            >
+                                <GrDeliver className="text-xl" />
+                                <p className="pl-3">Vehicles</p>
+                        </NavLink>
+                        <NavLink 
                             to="inventory"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -218,6 +227,15 @@ const AdminSidebar = () => {
                             >
                                 <GrUserAdmin className="text-xl" />
                                 <p className="pl-3">Sub-admins</p>
+                        </NavLink>
+                        <NavLink 
+                            to="notification"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
+                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                            onClick={unShow}
+                            >
+                                <MdNotificationAdd className="text-xl" />
+                                <p className="pl-3">Notification</p>
                         </NavLink>
                     </div>
                     <div>

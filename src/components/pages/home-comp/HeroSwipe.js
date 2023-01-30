@@ -27,7 +27,7 @@ export const HeroSwipe = () => {
                 <div className='bg-mlog bg-cover bg-center h-full'>
                     <div className='box h-full flex items-center font-primary'>
                         <div className='lg:w-7/12 w-9/12 lg:relative text-white'>
-                            <p className='fw-600 lg:text-4xl text-xl lg:w-11/12 lg:tracking-wide'>We provide end-to-end <span className='text-primary fw-700'>Logistics</span> solutions for Individuals, Companies and Government Agencies.</p>
+                            <p className='fw-600 lg:text-4xl text-xl lg:w-11/12 lg:tracking-wide'>We provide end-to-end <span className='text-primary fw-700'>Logistics</span> solutions, International shipping, Interstate <span className='hidden lg:inline'>and Intra</span> state delivery, Express<span className='hidden lg:inline'>/Same day</span> delivery<span className='hidden lg:inline'>, Door step delivery</span> and Auto shipping.</p>
                             <Link to="/login"><button className='lg:px-10 px-5 shadow-md fw-600 text-white lg:py-4 py-2 rounded-md bg-primary mt-10'>Get Started</button></Link>
                         </div>
                         {/* <div className='w-5/12'>

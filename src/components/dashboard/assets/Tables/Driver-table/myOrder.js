@@ -79,7 +79,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function MyOrderTable({status}) {
+export function MyOrderTable({status, endOrder}) {
 
   let order = useSelector((state) => state.driver.myOrder);
   
@@ -168,6 +168,7 @@ export function MyOrderTable({status}) {
                         {/* <MenuItem onClick={() => requestDeliver(row.value)}>Request Order</MenuItem> */}
                       {/* <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem> */}
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>More Details</MenuItem>
+                      <MenuItem className='bg-green-400 text-white fw-500 hover:bg-green-500' onClick={() => endOrder(row.value)}>End Order</MenuItem>
                     </MenuList>
                   </Menu>,
           },

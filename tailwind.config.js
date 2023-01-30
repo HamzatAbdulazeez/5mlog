@@ -37,6 +37,7 @@ module.exports = withMT({
         users: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .9), rgba(62, 78, 62, .4)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1673087813/5mlog/customer_xp35pn.jpg')",
         partner: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .9), rgba(62, 78, 62, .4)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1673087782/5mlog/vendor_pheiux.jpg')",
         mlog: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://res.cloudinary.com/greenmouse-tech/image/upload/v1674118621/5mlog/5mlog-1_rsmdx7.png')",
+        vehicle: "linear-gradient(to right ,rgba(33, 40, 33, 1), rgba(62, 78, 62, .6), rgba(62, 78, 62, 0)), url('https://blog.ipleaders.in/wp-content/uploads/2017/04/BV-Acharya-7.jpg')",
 
       },
     },
