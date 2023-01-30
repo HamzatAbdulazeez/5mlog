@@ -46,6 +46,7 @@ export const ViewRequest = () => {
             const response = await axios(config)
             toast.success("sucessfull")
             setDisableBtn(false)
+            setRequestData(false)
             return response
         }catch (error){
             toast.error(error.message)

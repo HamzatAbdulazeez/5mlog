@@ -6,24 +6,26 @@ import { useForm } from "react-hook-form";
 import { updateOrders } from '../../../../store/slices/adminOrder';
 
 
-export const UpdateDetails = ({CloseModal, id, reload}) => {
+export const UpdateDetails = ({CloseModal, order, reload}) => {
 
     const dispatch = useDispatch();
+    console.log(order.price)
     // eslint-disable-next-line
     const [successful, setSuccessful] = useState(false);
     const [disableBtn, setDisableBtn] = useState(false);
     const { register, getValues } = useForm();
 
-    const [price, setPrice] = useState('');
-    const [status, setStatus] = useState('');
-    const [progress, setProgress] = useState('');
-    const [location, setLocation] = useState('');
-    const [time, setTime] = useState('');
+    const [price, setPrice] = useState(order.price);
+    const [status, setStatus] = useState(order.status);
+    const [progress, setProgress] = useState(order.progress);
+    const [location, setLocation] = useState(order.current_location);
+    const [time, setTime] = useState(order.estimated_delivery_time);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         setDisableBtn(true);
-
+        
+        const id = order.order_id
         const values = getValues();
         const myData = {...values, id}
 

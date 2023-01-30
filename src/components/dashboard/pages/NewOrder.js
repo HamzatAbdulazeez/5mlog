@@ -33,7 +33,7 @@ export const NewOrder = () => {
     const displayMessage = (message) => {
         if (message) {
             if (!message.success) {
-                toast.error((Object.values(message.errors).toString()));
+                toast.error(message.message);
             }
             else {
                 toast.success(message.message);

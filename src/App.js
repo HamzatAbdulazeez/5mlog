@@ -16,6 +16,7 @@ import { ResetPassword } from './components/pages/forms/ResetPassword';
 import { Terms } from './components/pages/Terms';
 import { Privacy } from './components/pages/Privacy';
 import { TrackDetails } from './components/pages/TrackDetails';
+import { Protected } from './components/assets/Protected';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
         <Route path='/signup' element={<Register />} />
         <Route path='/reset-password' element={<ResetPassword />} />
         <Route path='/forget' element={<Forget/>} />
-        <Route path='/dashboard/*' element={<Dashboard />} />
+        <Route path='/dashboard/*' element={<Protected><Dashboard /></Protected>} />
         <Route path="/email-verify" element={<EmailVeryfy />} />
       </Routes>
     </div>

@@ -41,6 +41,8 @@ import { UserDetails } from "./pages/admin-pages/UserDetails";
 import { Inventory } from "./pages/admin-pages/Inventory";
 import { Staff } from "./pages/admin-pages/Staff";
 import { DriverOrderDetails } from "./pages/rider-items/driver-detail";
+import { Notification } from "./pages/admin-pages/Notify";
+import { Vehicles } from "./pages/admin-pages/Vehicle";
 
 export default function Dashboard() {
 
@@ -96,6 +98,8 @@ export default function Dashboard() {
                         <Route path="partners" element={<Partners />} />
                         <Route path="inventory" element={<Inventory />} />
                         <Route path="staff" element={<Staff />} />
+                        <Route path="vehicles" element={<Vehicles />} />
+                        <Route path="notification" element={<Notification />} />
                         <Route path="user-detail" element={<UserDetails />} />
                         <Route path="sub-admin" element={<Subadmin />} />
                         <Route path="settings" element={<UserSettings />} />

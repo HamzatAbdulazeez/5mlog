@@ -111,9 +111,9 @@ export function InterstateTable({status, paymentModal, dispatchOrder}) {
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/orderdetail?orderId=${id}`)
     }
-    const gotoDriverRequest = () => {
-      navigate(`/dashboard/driver-request`)
-    }
+    const gotoDriverRequest = (id) => {
+      navigate(`/dashboard/driver-request?requestId=${id}`)
+  ``}
 
 
     const columns = useMemo(
@@ -179,7 +179,7 @@ export function InterstateTable({status, paymentModal, dispatchOrder}) {
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={() => paymentModal(row.value)}>Update Details</MenuItem>
+                      <MenuItem onClick={() => paymentModal(row.row.original)}>Update Details</MenuItem>
                       {
                         row.row.original?.status === "New" || row.row.original?.status === "Updated" ? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className=""  onClick={() => gotoDriverRequest(row.value)}>View Requests</MenuItem>
                       }

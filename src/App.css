@@ -292,6 +292,9 @@
       scale: 1;
     }
   }
+  .unread{
+    border-left: 4px solid rgba(132, 194, 37, 1)
+  }
 }
 .sub-menu {
   left: 15.5%;
