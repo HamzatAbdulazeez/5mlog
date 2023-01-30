@@ -48,11 +48,10 @@ export const Footer = () => {
                               </div>
                           </div>
                           <div className='mt-8 flex justify-end'>
-                            <ul className='flex items-center w-full justify-between w-6/12 lg:w-6/12'>
+                            <ul className='flex items-center w-full justify-between w-5/12 lg:w-5/12'>
                               <li><a href='https://www.facebook.com/profile.php?id=100088570011053&mibextid=LQQJ4d' target='_blank' rel="noreferrer"><img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1674808835/5mlog/facebook_k3hzd5.png' alt='social' className='hover:scale-105 w-7 lg:w-auto'/></a></li>
                               <li><a href='https://www.instagram.com/5mlogistics/' target='_blank' rel="noreferrer"><img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1674808841/5mlog/insta_jzwq3z.png' alt='social' className='hover:scale-105 w-7 lg:w-auto'/></a></li>
                               <li><a href='https://twitter.com/5m_global' target='_blank' rel="noreferrer"><img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1674808859/5mlog/twitter_kp3atw.png' alt='social' className='hover:scale-105 w-7 lg:w-auto'/></a></li>
-                              <li><a href='https://5mlogistics.com/' target='_blank' rel="noreferrer"><FaTiktok className='lg:text-gray-800 text-2xl lg:text-4xl'/></a></li>
                             </ul>
                           </div>
                       </div>
