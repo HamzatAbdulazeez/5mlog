@@ -15,7 +15,7 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 // import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
-import * as XLSX from 'xlsx'
+import * as XLSX from 'xlsx';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { useNavigate } from 'react-router';
 
