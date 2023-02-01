@@ -1,16 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import invent from "../../services/inventory";
 import vehicle from "../../services/vehicle";
 import { setMessage } from "./messages";
 
 
 const initialState= {
-    ivehicle: [],
+    vehicle: [],
     success: false,
 }
 export const createVehicle = createAsyncThunk(
-    "/auth/staffs",
+    "/create/vehicle",
     async ( payload, thunkAPI) => {
         try {
             const response = await vehicle.newVehicle(payload);
@@ -29,7 +28,7 @@ export const createVehicle = createAsyncThunk(
     }
 );
 export const getVehicle = createAsyncThunk( 
-    "/get/inventory",
+    "/get/vehicle",
     async (thunkAPI) => {
         try {
             const response = await vehicle.getVehicle();
@@ -40,7 +39,7 @@ export const getVehicle = createAsyncThunk(
     }
 );
 export const deleteVehicle = createAsyncThunk(
-    "/delete/inventory",
+    "/delete/vehicle",
     async ( id, thunkAPI) => {
         try {
             const response = await vehicle.deleteVehicle(id);
@@ -52,7 +51,7 @@ export const deleteVehicle = createAsyncThunk(
     }
 );
 export const updateVehicle = createAsyncThunk(
-    "/delete/inventory",
+    "/update/vehicle",
     async ( id, thunkAPI) => {
         try {
             const response = await vehicle.updateVehicle(id);
@@ -74,7 +73,7 @@ const vehicleSlice = createSlice({
         },
         [getVehicle.fulfilled]: (state, action) => {
             state.success = true;
-            state.inventory = action.payload
+            state.vehicle = action.payload
 
         },
     },

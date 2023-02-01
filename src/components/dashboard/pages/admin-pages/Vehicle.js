@@ -3,28 +3,30 @@ import { Input } from '@material-tailwind/react'
 // eslint-disable
 import { FaTimes, FaTruckMoving } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
-import { createItem, deleteInventory, getInventories } from '../../../../store/slices/inventService'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { clearMessage } from '../../../../store/slices/messages'
+import { createVehicle, deleteVehicle, getVehicle, updateVehicle } from '../../../../store/slices/vehicleService'
+import { Spinner2 } from '../../../assets/Spinner'
+import { VehicleTable } from '../../assets/Tables/Admin-Table/Vehicle'
 
 
 export const Vehicles = () => {
 
-    const[vehicles, setVehicles] = useState(false)
+    const[vehicles, setVehicles] = useState(false)// eslint-disable-next-line 
     const[item, setItem] = useState(false)
-
+    // eslint-disable-next-line 
     const ViewMore = (id) => {
         setItem(id)
     }
-    const inventModal = () => {
+    const vehicleModal = () => {
         setVehicles(true)
     }
     const CloseModal = () => {
         setVehicles(false)
     }
     const { message } = useSelector((state) => state.message);
-    const success =  useSelector((state) => state.inventory.success);
+    const success =  useSelector((state) => state.vehicle.success);
 
     const dispatch = useDispatch()
 
@@ -35,7 +37,7 @@ export const Vehicles = () => {
 
     useEffect(() => {
         dispatch(clearMessage());
-        dispatch(getInventories())
+        dispatch(getVehicle())
     }, [dispatch]);
 
     const handleSubmit = (event) => {
@@ -44,13 +46,13 @@ export const Vehicles = () => {
 
         const values = getValues();
 
-            dispatch(createItem(values))
+            dispatch(createVehicle(values))
                 .then(() => {
                     setDisableBtn(false)
                     setSuccessful(true)
                     CloseModal()
                     setTimeout(() => {
-                        dispatch(getInventories())
+                        dispatch(getVehicle())
                     }, 3000);
                 })
                 .catch(() => {
@@ -69,10 +71,10 @@ export const Vehicles = () => {
             }
             setSuccessful(false);
         }
-        const DeleteInventory = (id) => {
-            dispatch(deleteInventory(id))
+        const DeleteVehicle = (id) => {
+            dispatch(deleteVehicle(id))
             setTimeout(() => {
-                dispatch(getInventories())
+                dispatch(getVehicle())
             }, 3000);
         }
 
@@ -85,7 +87,7 @@ export const Vehicles = () => {
             </div>
             {/* add inventory */}
             <div className='mt-4 lg:mt-0'>
-                <button onClick={inventModal} className="bg-primary fw-600 px-4 lg:px-7 py-2 rounded-md shadow-xl">Add New Vehicle</button>
+                <button onClick={vehicleModal} className="bg-primary fw-600 px-4 lg:px-7 py-2 rounded-md shadow-xl">Add New Vehicle</button>
             </div>
         </div>
         {/* content */}
@@ -94,6 +96,9 @@ export const Vehicles = () => {
                 {/* inventory table */}
                 <div className='mb-6'>
                     <p className='fw-600 flex items-center text-lg'><span className="pr-2 text-primary text-2xl"><FaTruckMoving/></span>Vehicle Database Listing</p>
+                    <div className='mt-3 lg:mt-8'>
+                        {success === false? <Spinner2/> : <VehicleTable updateVehicle={updateVehicle} vehicleDelete={DeleteVehicle}/>}
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,12 +112,12 @@ export const Vehicles = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div>
                                       <label className='fs-500 mb-2 block'>Vehicle make</label>
-                                      <Input type="text" label="Make of Vehicle" name='name' {...register('name')}/>
+                                      <Input type="text" label="Make of Vehicle" name='make' {...register('make')}/>
                                     </div>
                                     <div className='lg:flex'>
                                         <div className='mt-5 lg:w-6/12 lg:pr-2'>
                                             <label className='fs-500 mb-2 block'>Production year</label>
-                                            <Input type="date" name='year' {...register('year')} />
+                                            <Input type="text" name='year' {...register('year')} />
                                         </div>
                                         <div className='mt-5 lg:w-6/12 lg:pl-2'>
                                             <label className='fs-500 mb-2 block'>Vehicle identitification Number</label>
@@ -131,6 +136,16 @@ export const Vehicles = () => {
                                     </div>
                                     <div className='lg:flex'>
                                         <div className='mt-5 lg:pr-2 lg:w-6/12'>
+                                            <label className='fs-500 mb-2 block'>Fuel Type</label>
+                                            <Input type="text" label="Vehicle fuel" name='fuel_type' {...register('fuel_type')} />
+                                        </div>
+                                        <div className='mt-5 lg:pl-2 lg:w-6/12'>
+                                            <label className='fs-500 mb-2 block'>Cylinder</label>
+                                            <Input type="text" label="Vehicle Cylinder" name='cylinder' {...register('cylinder')} />
+                                        </div>
+                                    </div>
+                                    <div className='lg:flex'>
+                                        <div className='mt-5 lg:pr-2 lg:w-6/12'>
                                             <label className='fs-500 mb-2 block'>Color</label>
                                             <Input type="text" label="Color of Vehicle" name='color' {...register('color')} />
                                         </div>
@@ -138,6 +153,10 @@ export const Vehicles = () => {
                                             <label className='fs-500 mb-2 block'>Vehicle Mileage</label>
                                             <Input type="text" label="Vehicle Milage" name='mileage' {...register('mileage')} />
                                         </div>
+                                    </div>
+                                    <div className='mt-5'>
+                                        <label className='fs-500 mb-2 block'>Vehicle Location</label>
+                                        <Input type="text" label="Location of Vehicle" name='transmission' {...register('transmission')} />
                                     </div>
                                     <div className='lg:flex'>
                                         <div className='mt-5 lg:pr-2 lg:w-6/12'>
