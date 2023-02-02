@@ -25,7 +25,7 @@ export default function Header() {
     }
     useEffect(() => {
         dispatch(getAllNotify())
-    }, [])
+    }, [dispatch])
 
     setInterval(() => {
         user = JSON.parse(localStorage.getItem("user"));

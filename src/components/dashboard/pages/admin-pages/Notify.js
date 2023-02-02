@@ -16,7 +16,7 @@ export const Notification = () => {
 
     useEffect(() => {
         dispatch(getAllNotify())
-    }, [])
+    }, [dispatch])
 
     const ReadNotify = ( id) => {
         const config = {
