@@ -43,6 +43,8 @@ import { Staff } from "./pages/admin-pages/Staff";
 import { DriverOrderDetails } from "./pages/rider-items/driver-detail";
 import { Notification } from "./pages/admin-pages/Notify";
 import { Vehicles } from "./pages/admin-pages/Vehicle";
+import { TransactionAdmin } from "./pages/admin-pages/TransactionAdmin";
+import { PrintReceipt } from "./pages/Print";
 
 export default function Dashboard() {
 
@@ -86,6 +88,7 @@ export default function Dashboard() {
                         <Route path="warehousedetail" element={<WarehouseDetailUser/>} />
                         <Route path="transact" element={<TransactionUser />} />
                         <Route path="track" element={<Tracking />} />
+                        <Route path="print" element={<PrintReceipt/>}/>
                         {/* admin routes */}
                         <Route path="admin-pickup" element={<PickupOrders />} />
                         <Route path="admin-interstate" element={<InterStateOrder />} />
@@ -103,6 +106,7 @@ export default function Dashboard() {
                         <Route path="user-detail" element={<UserDetails />} />
                         <Route path="sub-admin" element={<Subadmin />} />
                         <Route path="settings" element={<UserSettings />} />
+                        <Route path="transaction" element={<TransactionAdmin />} />
                         {/* Rider routes */}
                         <Route path="rider-form" element={<RiderInfo />} />
                         <Route path="new-orders" element={<NewOrder />} />

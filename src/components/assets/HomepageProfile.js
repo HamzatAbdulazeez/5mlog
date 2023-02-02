@@ -26,8 +26,21 @@ export const HomepageProfile = () => {
                 </Button>
             </MenuHandler>
             <MenuList>
-                <MenuItem onClick={() => navigate("/dashboard")}>Services</MenuItem>
-                <MenuItem onClick={() => navigate("/dashboard/myorders")}>My Orders</MenuItem>
+                {
+                    user?.account_type === "Administrator" || user?.account_type === "Dispatcher"? <MenuItem onClick={() => navigate("/dashboard")}>Orders</MenuItem> : ''
+                }
+                {
+                    user?.account_type === "Customer" || user?.account_type === "Partner"? <MenuItem onClick={() => navigate("/dashboard")}>Services</MenuItem> : ''
+                }
+                {
+                    user?.account_type === "Customer" || user?.account_type === "Partner"? <MenuItem onClick={() => navigate("/dashboard/myorders")}>My Orders</MenuItem> : ''
+                }
+                {
+                    user?.account_type === "Driver"? <MenuItem onClick={() => navigate("/dashboard/new-orders")}>New Orders</MenuItem> : ''
+                }
+                {
+                    user?.account_type === "Driver"? <MenuItem onClick={() => navigate("/dashboard/my-orders")}>My Orders</MenuItem> : ''
+                }
                 <MenuItem onClick={() => navigate("/dashboard/track")}>Tracking</MenuItem>
                 <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
                 <MenuItem onClick={()=> dispatch(logout())}>Sign Out</MenuItem>

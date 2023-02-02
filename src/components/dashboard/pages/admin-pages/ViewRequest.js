@@ -64,14 +64,14 @@ export const ViewRequest = () => {
     <div className='min-h-screen'>
         <div className='px-3 py-10 bg-white'>
             <p className='fw-600 text-xl pb-4'>Driver(s) Request for Delivery</p>
-            {requestData && <p className='flex items-center fw-600 lg:text-xl'><span className='pr-1'><FaListOl/></span> Order Id: <span className='text-primary pl-6'>{request[0].order_id}</span></p>}
+            {requestData && <p className='flex items-center fw-600 lg:text-xl'><span className='pr-1'><FaListOl/></span> Order Id: <span className='text-primary pl-6'>{request[0]?.order_id}</span></p>}
         </div>
         {/* content */}
         <div className='lg:p-5 px-3'>
             <div className='lg:grid-2 justify-between bg-white lg:p-10 lg:pt-4 shadow-md rounded-lg'>
                 {requestData &&
                     ( <div>
-                        {
+                        { request.length > 0?
                         request.map((item ) =>{
                             return (
                                 <div className='mt-6'>
@@ -99,7 +99,7 @@ export const ViewRequest = () => {
                                     </div>
                                 </div>
                             )
-                        })
+                        }) : "No Request Yet"
                         }
                      </div>
                      )

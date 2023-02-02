@@ -11,6 +11,8 @@ import staffReducer from "./slices/staffService";
 import inventReducer from "./slices/inventService";
 import notifyReducer from "./slices/notify";
 import vehicleReducer from "./slices/vehicleService";
+import transactReducer from "./slices/TransactService";
+
 
 const reducer = {
     auth: authReducer,
@@ -24,7 +26,8 @@ const reducer = {
     staff: staffReducer,
     inventory: inventReducer,
     notify: notifyReducer,
-    vehicle: vehicleReducer
+    vehicle: vehicleReducer,
+    transact: transactReducer
 }
 
 const store = configureStore({

@@ -113,7 +113,10 @@ export function InterstateTable({status, paymentModal, dispatchOrder}) {
     }
     const gotoDriverRequest = (id) => {
       navigate(`/dashboard/driver-request?requestId=${id}`)
-  ``}
+    }
+    const gotoPrint = (id) => {
+        navigate(`/dashboard/print?orderId=${id}`)
+    }
 
 
     const columns = useMemo(
@@ -181,7 +184,13 @@ export function InterstateTable({status, paymentModal, dispatchOrder}) {
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={() => paymentModal(row.row.original)}>Update Details</MenuItem>
                       {
-                        row.row.original?.status === "New" || row.row.original?.status === "Updated" ? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className=""  onClick={() => gotoDriverRequest(row.value)}>View Requests</MenuItem>
+                        row?.row.original.paid === null ?
+                        ""
+                        :
+                        row.row.original?.status === "New" || row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>         
+                      }
+                      {
+                        row.row.original?.status === "New" || row.row.original?.status === "Updated"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Label</MenuItem>
                       }
                       <MenuItem className="bg-red-600 text-white hover:bg-red-500">Reject Order</MenuItem>
                     </MenuList>

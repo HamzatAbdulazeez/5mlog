@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-tailwind/react": "^1.2.4",
     "@reduxjs/toolkit": "^1.9.1",
+    "@syncfusion/ej2-react-barcode-generator": "^20.4.48",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,6 +19,7 @@
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-avatar": "^5.0.3",
+    "react-barcode": "^1.4.6",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "react-hook-form": "^7.41.5",

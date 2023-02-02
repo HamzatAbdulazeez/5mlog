@@ -113,6 +113,9 @@ export function ExpressTable({status, paymentModal, dispatchOrder}) {
     const gotoDriverRequest = (id) => {
       navigate(`/dashboard/driver-request?requestId=${id}`)
     }
+    const gotoPrint = (id) => {
+        navigate(`/dashboard/print?orderId=${id}`)
+    }
 
 
     const columns = useMemo(
@@ -190,6 +193,9 @@ export function ExpressTable({status, paymentModal, dispatchOrder}) {
                         ""
                         :
                         row.row.original?.status === "New" || row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>         
+                      }
+                      {
+                        row.row.original?.status === "New" || row.row.original?.status === "Updated"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Label</MenuItem>
                       }
                       <MenuItem className="bg-red-600 text-white">Delete</MenuItem>
                     </MenuList>

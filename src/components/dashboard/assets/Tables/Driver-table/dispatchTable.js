@@ -136,9 +136,23 @@ export function DispatchTable({status, requestDeliver}) {
             accessor: "order[0].package_address",
             Cell: (props) => (
                 <>
-                  <p className="item title">{props.row.original.order[0].pickup_address}</p>
-                  <p className="item desc">{props.row.original.order[0].package_address}</p>
-                  <p className="item desc">{props.row.original.order[0].shipping_from_country}{props.row.original.order[0].shipping_from_state_province_region}</p>
+                  {props.value?
+                    <p className="item title">{props.row.original.order[0].pickup_address}</p>
+                    :
+                    ""
+                  }
+                  {
+                    props.value?
+                    <p className="item desc">{props.row.original.order[0].package_address}</p>
+                    :
+                    ""
+                  }
+                  {
+                    props.value?
+                    <p className="item desc">{props.row.original.order[0].shipping_from_country}{props.row.original.order.shipping_from_state_province_region}</p>
+                    :
+                    ''
+                  }
                 </>
             )
           },
@@ -147,8 +161,18 @@ export function DispatchTable({status, requestDeliver}) {
             accessor:  'order[0].dropoff_address',
             Cell: (props) => (
                 <>
-                  <p className="item title">{props.row.original.order[0].dropoff_address}</p>
-                  <p className="item desc">{props.row.original.order[0].shipping_to_country}{props.row.original.order[0].shipping_to_state_province_region}</p>
+                  {
+                    props.value?
+                    <p className="item title">{props.row.original.order[0].dropoff_address}</p>
+                    :
+                    ''
+                  }
+                  {
+                    props.value?
+                    <p className="item desc">{props.row.original.order[0].shipping_to_country}{props.row.original.order[0].shipping_to_state_province_region}</p>
+                    :
+                    ''
+                  }
                 </>
             ),
             
