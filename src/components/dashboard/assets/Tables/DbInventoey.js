@@ -1,6 +1,7 @@
+import dayjs from 'dayjs'
 import React from 'react'
 
-export const InventDashBoardHomeTable = () => {
+export const InventDashBoardHomeTable = ({tableList}) => {
   return (
     <div>
         <div className="overflow-x-auto">
@@ -33,137 +34,35 @@ export const InventDashBoardHomeTable = () => {
                     </th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    1
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    GNT-4672882829
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Electronics
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Ikeja
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Maitama, Abuja
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    140
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        <p className='px-2 py-1 rounded-lg bg-orange-100 text-orange-600 fw-600'>Pending</p>
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        20-12-2022
-                    </td>
-                </tr>
-                <tr>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    2
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    GNT-4672882829
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Clothing
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Ogbomosho
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Lekki, Lagos
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    90
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        <p className='px-2 py-1 rounded-lg bg-orange-100 text-orange-600 fw-600'>Pending</p>
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        22-12-2022
-                    </td>
-                </tr>
-                <tr>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    3
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    UYT-4672882829
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Food Item
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Danziyal Plaza
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Ikotun, Lagos
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    150
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        <p className='px-2 py-1 rounded-lg bg-orange-100 text-orange-600 fw-600'>Pending</p>
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        22-12-2022
-                    </td>
-                </tr>
-                <tr>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    4
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    YOT-4672882829
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Jewelry
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Houston
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Wuse, Abuja
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    12
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        <p className='px-2 py-1 rounded-lg bg-orange-100 text-orange-600 fw-600'>Pending</p>
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        19-12-2022
-                    </td>
-                </tr>
-                <tr>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    5
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    MOT-4672882829
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Electronics
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Tennesse
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    Ikeja, Lagos
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    100
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        <p className='px-2 py-1 rounded-lg bg-orange-100 text-orange-600 fw-600'>Pending</p>
-                    </td>
-                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                        19-12-2022
-                    </td>
-                </tr>
+                  <tbody>
+                      {tableList ? tableList.map((list, index) =>
+                          <tr>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                  {index + 1}
+                              </td>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                  {list.order_id}
+                              </td>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                              </td>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                  {list.pickup_address}
+                              </td>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                              </td>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                  {list.packegae_weight}
+                              </td>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                      {list.status === 'Ongoing' ? <p className='px-2 py-1 rounded-lg bg-orange-100 text-orange-600 fw-600'>Pending</p> : ''}
+                                      {list.status === 'Delivered' ? <p className='px-2 py-1 rounded-lg bg-green-100 text-green-600 fw-600'>Delivered</p> : ''}
+                                      {list.status === 'New' ? <p className='px-2 py-1 rounded-lg bg-blue-100 text-blue-600 fw-600'>New</p> : ''}
+                              </td>
+                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                  {dayjs(list.created_at).format('DD/MM/YYYY')}
+                              </td>
+                          </tr>
+                      ) : <tr></tr>}
                 </tbody>
             </table>
             </div>

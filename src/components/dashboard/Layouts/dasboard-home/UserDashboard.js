@@ -1,5 +1,5 @@
 import { Breadcrumbs } from '@material-tailwind/react'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { TbTruckDelivery, TbPackgeExport } from "react-icons/tb"
 import { AiOutlineDeliveredProcedure } from "react-icons/ai"
@@ -7,15 +7,44 @@ import { GiBuyCard } from "react-icons/gi"
 import { TbLiveView} from "react-icons/tb"
 import { UserDashBoardHomeTable } from '../../assets/Tables/UserDashBoardHome'
 import OrdersChart from '../../assets/Charts/OrdersChart'
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import axios from "axios";
+import { Spinner } from '../../../assets/Spinner'
 
 export const UserDashboard = () => {
 
     const user = useSelector((state) => state.auth.user);
 
+    const [request, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const token = JSON.parse(localStorage.getItem('lynchpin'));
+
+        async function fetchDashboard() {
+            try {
+                setLoading(true);
+                const url = `${process.env.REACT_APP_BASE_URL}/get/dashboard`;
+                const response = await axios.get(url, { headers: { 'Authorization': 'Bearer ' + token } });
+                const data = response.data.data
+                setData(data);
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setLoading(false);
+            }
+        }
+
+        fetchDashboard();
+    }, []);
+
+    if (loading) {
+        return <Spinner />
+    } 
+
   return (
     <div>
-        <div  className="min-h-screen fs-500 relative">
+        <div className="min-h-screen fs-500 relative">
             {/* header */}
             <div className="w-full py-8 lg:pl-6 bg-white px-4">
                 <p className="text-2xl fw-600">Hello {user?.first_name} {user?.last_name}</p>
@@ -45,7 +74,7 @@ export const UserDashboard = () => {
                             </div>
                         </div>
                         <div className='w-8/12'>
-                            <p className='lg:text-4xl text-2xl fw-600'>34</p>
+                              <p className='lg:text-4xl text-2xl fw-600'>{request ? request.total_order : 0}</p>
                             <p className='fs-400'>Total Deliveries</p>
                         </div>
                     </div>
@@ -56,7 +85,7 @@ export const UserDashboard = () => {
                             </div>
                         </div>
                         <div className='w-8/12'>
-                            <p className='lg:text-4xl text-2xl  fw-600'>14</p>
+                              <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.pending_order : 0}</p>
                             <p className='fs-400'>Delivery Request</p>
                         </div>
                     </div>
@@ -67,7 +96,7 @@ export const UserDashboard = () => {
                             </div>
                         </div>
                         <div className='w-8/12'>
-                            <p className='lg:text-4xl text-2xl  fw-600'>10</p>
+                              <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.ongoing_order : 0}</p>
                             <p className='fs-400'>Ongoing Deliveries</p>
                         </div>
                     </div>
@@ -78,7 +107,7 @@ export const UserDashboard = () => {
                             </div>
                         </div>
                         <div className='w-8/12'>
-                            <p className='lg:text-4xl text-2xl  fw-600'>14</p>
+                              <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.completed_order : 0}</p>
                             <p className='fs-400'>Delivered Orders</p>
                         </div>
                     </div>
@@ -91,11 +120,11 @@ export const UserDashboard = () => {
                             <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><GiBuyCard/></span>Order Activity</p>
                             <button className='btn-primary py-1 flex items-center'>view all <span className='pl-2 text-xl'><TbLiveView/></span></button>
                         </div>
-                        <UserDashBoardHomeTable/>
+                          <UserDashBoardHomeTable tableList={request ? request.order_activities : []} />
                     </div>
                     <div className='bg-white lg:p-4 p-6 rounded-lg mt-6 lg:mt-0'>
                         <p className='pb-2 mb-8 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><AiOutlineDeliveredProcedure/></span>Deliveries</p>
-                        <OrdersChart/>
+                          <OrdersChart chartData={request} />
                     </div>
                 </div>
             </div>
