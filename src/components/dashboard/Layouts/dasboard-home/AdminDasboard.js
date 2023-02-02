@@ -30,7 +30,6 @@ export const AdminDashboard = () => {
                 const url = `${process.env.REACT_APP_BASE_URL}/admin/get/dashboard`;
                 const response = await axios.get(url, { headers: { 'Authorization': 'Bearer ' + token } });
                 const data = response.data.data
-                console.log(data);
                 setData(data);
                 setLoading(false);
             } catch (error) {

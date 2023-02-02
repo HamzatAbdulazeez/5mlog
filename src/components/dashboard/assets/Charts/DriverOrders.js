@@ -1,7 +1,7 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
-export default function DriverOrdersChart() {
+export default function DriverOrdersChart({chartList}) {
     
     const options = { labels: ["Completed", "Ongoing", "Cancelled"],
     responsive: [{
@@ -28,13 +28,13 @@ export default function DriverOrdersChart() {
             label: 'Total',
             formatter: function (w) {
               // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-              return 249
+              return chartList.total_order_boards
             }
           }
         }
       }
     }, };
-const series = [20, 16, 3,]; //our data
+  const series = [chartList.completed_order, 0, 0,]; //our data
 
 return (
   <div className="">
