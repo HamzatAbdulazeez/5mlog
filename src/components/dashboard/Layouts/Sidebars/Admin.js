@@ -239,7 +239,7 @@ const AdminSidebar = () => {
                         </NavLink>
                     </div>
                     <div>
-                        <NavLink 
+                        {/* <NavLink 
                             to="settings"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -247,7 +247,7 @@ const AdminSidebar = () => {
                             >
                                 <BsGear className="text-xl" />
                                 <p className="pl-3">Settings</p>
-                        </NavLink>
+                        </NavLink> */}
                         <Link>
                             <div
                                 style={sideBarStyle.cursorStyle}

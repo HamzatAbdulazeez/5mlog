@@ -8,6 +8,7 @@ import { FaBars } from "react-icons/fa";
 import { TbTruckDelivery } from "react-icons/tb";
 import { logout } from "../../../../store/slices/auth";
 import { useDispatch } from "react-redux";
+import { MdNotificationAdd } from "react-icons/md";
 
 
 const UsersSidebar = () => {
@@ -121,7 +122,7 @@ const UsersSidebar = () => {
                                         to="freight"
                                         style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
-                                        <p className="py-2">Oversea shipping</p>
+                                        <p className="py-2">Overseas shipping</p>
                                     </NavLink>
                                     <NavLink
                                         to="procurement"
@@ -170,6 +171,15 @@ const UsersSidebar = () => {
                             >
                                 <GrTransaction className="text-xl" />
                                 <p className="pl-3">Transactions</p>
+                        </NavLink>
+                        <NavLink 
+                            to="notification"
+                            className="w-full flex items-center pl-2 py-2 fw-600 my-2"
+                            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                            onClick={unShow}
+                            >
+                                <MdNotificationAdd className="text-xl" />
+                                <p className="pl-3">Notification</p>
                         </NavLink>
                     </div>
                     <div>

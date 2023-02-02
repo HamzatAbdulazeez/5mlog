@@ -4,9 +4,11 @@ import {
 } from "@material-tailwind/react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBell, FaInfoCircle } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../store/slices/auth";
 import { ProfileAvatar } from "../../assets/Profilepic";
+import { getAllNotify } from "../../../store/slices/notify";
+import { useEffect } from "react";
 
 let user = JSON.parse(localStorage.getItem("user"));
 
@@ -14,6 +16,16 @@ export default function Header() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch();
+
+    const item = useSelector((state) => state.notify.allNotify)
+    const result = item.filter(item => item.status === "Unread")
+
+    const GotoNotify = () => {
+        navigate('/notification')
+    }
+    useEffect(() => {
+        dispatch(getAllNotify())
+    }, [])
 
     setInterval(() => {
         user = JSON.parse(localStorage.getItem("user"));
@@ -47,35 +59,21 @@ export default function Header() {
                                     <Button className="p-2 bg-transparent shadow-none">
                                         <div className="bg-gray-100 px-2 rounded-sm py-2 relative">
                                             <FaBell className="lg:text-xl text-lg text-primary" />
-                                            <p className="absolute -top-2 left-3/4 border circle px-1 text-white text-xs bg-primary">4</p>
+                                            <p className="absolute -top-2 left-3/4 border circle px-1 text-white text-xs bg-primary">{result?.length}</p>
                                         </div>
                                     </Button>
                                 </MenuHandler>
                                 <MenuList className="lg:w-60 w-56">
-                                    <MenuItem>
-                                        <div className="flex">
-                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
-                                            <p>A new order from a Customer</p>
-                                        </div>
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <div className="flex">
-                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
-                                            <p>A new order from a Partner</p>
-                                        </div>
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <div className="flex">
-                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
-                                            <p>Request to deliver a product has been made</p>
-                                        </div>
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <div className="flex">
-                                            <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
-                                            <p>Request to deliver a product has been made</p>
-                                        </div>
-                                    </MenuItem>
+                                    {
+                                        result.length > 0? result.slice(0,4).map(item => (
+                                            <MenuItem onClick={GotoNotify} key={item.id}>
+                                                <div className="flex">
+                                                    <span className="mt-1 text-primary pr-2"><FaInfoCircle/></span>
+                                                    <p className="truncate">{item?.message}</p>
+                                                </div>
+                                            </MenuItem>
+                                        )) : ''
+                                    }
                                 </MenuList>
                             </Menu>
                         </div>
@@ -89,7 +87,12 @@ export default function Header() {
                                     </Button>
                                 </MenuHandler>
                                 <MenuList>
-                                    <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
+                                    {
+                                        user.account_type === "Administrator"? 
+                                        ""
+                                        :
+                                        <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
+                                    }
                                     <MenuItem onClick={()=> dispatch(logout())}>Sign Out</MenuItem>
                                 </MenuList>
                             </Menu>
