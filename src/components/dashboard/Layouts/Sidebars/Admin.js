@@ -1,4 +1,4 @@
-import {  BsFillGrid1X2Fill, BsGear, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
+import {  BsFillGrid1X2Fill, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
 import { GrDeliver, GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
 import { MdNotificationAdd, MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
