@@ -167,7 +167,7 @@ export function InterstateTable({status, paymentModal, deleteOrder}) {
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={() => paymentModal(row.row.original)}>Payment Details</MenuItem>
                       {
-                        row.row.original?.status === "New" || row.row.original?.status === "Updated" || row.row.original?.status === "Processed"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Receipts</MenuItem>
+                        row.row.original?.status === "New" || row.row.original?.status === "Updated" || row.row.original?.status === "Processed"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Label</MenuItem>
                       }
                       <MenuItem className="bg-red-600 hover:bg-red-500 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>

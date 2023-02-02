@@ -42,7 +42,12 @@ export const HomepageProfile = () => {
                     user?.account_type === "Driver"? <MenuItem onClick={() => navigate("/dashboard/my-orders")}>My Orders</MenuItem> : ''
                 }
                 <MenuItem onClick={() => navigate("/dashboard/track")}>Tracking</MenuItem>
-                <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
+                {
+                    user.account_type === "Administrator"? 
+                    ""
+                    :
+                    <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
+                }
                 <MenuItem onClick={()=> dispatch(logout())}>Sign Out</MenuItem>
             </MenuList>
         </Menu>
