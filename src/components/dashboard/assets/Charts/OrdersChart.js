@@ -9,7 +9,7 @@ export default function OrdersChart({chartData}) {
         chart: {
           width: 320
         },
-        legend: {
+        legend: { 
           position: 'bottom'
         }
       }
