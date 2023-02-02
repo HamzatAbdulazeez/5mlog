@@ -87,7 +87,12 @@ export default function Header() {
                                     </Button>
                                 </MenuHandler>
                                 <MenuList>
-                                    <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
+                                    {
+                                        user.account_type === "Administrator"? 
+                                        ""
+                                        :
+                                        <MenuItem onClick={() => navigate("/dashboard/settings")}>Settings</MenuItem>
+                                    }
                                     <MenuItem onClick={()=> dispatch(logout())}>Sign Out</MenuItem>
                                 </MenuList>
                             </Menu>
