@@ -4,6 +4,7 @@ import transact from "../../services/Transact";
 
 const initialState= {
     transact: [],
+    adminTran: [],
     success: false,
 }
 
@@ -13,6 +14,17 @@ export const getTransact = createAsyncThunk(
     async (thunkAPI) => {
         try {
             const response = await transact.getTransact();
+            return response.data.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error)
+        }
+    }
+);
+export const adminTransact = createAsyncThunk( 
+    "/admin/transact",
+    async (thunkAPI) => {
+        try {
+            const response = await transact.adTransact();
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -29,7 +41,15 @@ const transactSlice = createSlice({
         },
         [getTransact.fulfilled]: (state, action) => {
             state.success = true;
-            state.Transact = action.payload
+            state.transact = action.payload
+
+        },
+        [adminTransact.pending]: (state, action) => {
+            state.success = false;
+        },
+        [adminTransact.fulfilled]: (state, action) => {
+            state.success = true;
+            state.adminTran = action.payload
 
         },
     },

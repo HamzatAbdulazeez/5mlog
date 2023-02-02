@@ -12,6 +12,8 @@ export const NewOrder = () => {
     const dispatch = useDispatch()
 
     const success = useSelector((state) => state.orderAdmin.success);
+    const item = useSelector((state) => state.orderAdmin.dispatchOrder);
+
     const { message } = useSelector((state) => state.message);
 
     const [successful, setSuccessful] = useState(false);
@@ -57,7 +59,13 @@ export const NewOrder = () => {
                     <p className='fw-600 flex items-center text-lg'><span className="pr-2 text-primary text-2xl"><GiHandTruck/></span>New Orders Listing</p>
                 </div>
                 <div>
-                    {success === false? <Spinner2/> : <DispatchTable requestDeliver = {requestDeliver}/> }
+                    {success === false? <Spinner2/> : <div>
+                        { item.length > 0 ?
+                            <DispatchTable requestDeliver = {requestDeliver}/>
+                            :
+                            ''
+                        }
+                    </div> }
                 </div>
             </div>
         </div>

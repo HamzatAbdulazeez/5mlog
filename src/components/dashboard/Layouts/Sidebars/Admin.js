@@ -193,7 +193,7 @@ const AdminSidebar = () => {
                                 <p className="pl-3">Tracking</p>
                         </NavLink>
                         <NavLink 
-                            to="transact"
+                            to="transaction"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={unShow}

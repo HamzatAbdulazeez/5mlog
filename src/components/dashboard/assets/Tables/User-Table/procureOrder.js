@@ -110,6 +110,9 @@ export function ProcureTable({status, paymentModal, deleteOrder}) {
     const gotoDetailsPage = (id) => {
         navigate(`/dashboard/procuredetail?orderId=${id}`)
     }
+    const gotoPrint = (id) => {
+      navigate(`/dashboard/print?orderId=${id}`)
+  }
 
 
     const columns = useMemo(
@@ -167,6 +170,9 @@ export function ProcureTable({status, paymentModal, deleteOrder}) {
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem>
                       <MenuItem onClick={() => paymentModal(row.row.original)}>Payment Details</MenuItem>
+                      {
+                        row.row.original?.status === "New" || row.row.original?.status === "Updated" || row.row.original?.status === "Processed"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Receipts</MenuItem>
+                      }
                       <MenuItem className="bg-red-600 text-white" onClick={() => deleteOrder(row.value)}>Delete</MenuItem>
                     </MenuList>
                   </Menu>,

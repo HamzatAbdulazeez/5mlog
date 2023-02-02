@@ -1,8 +1,21 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { GiPayMoney } from 'react-icons/gi'
-import { AdminOrderTable } from '../assets/Tables/adminOrder'
+import { useDispatch, useSelector } from 'react-redux'
+import { getTransact } from '../../../store/slices/TransactService'
+import { Spinner2 } from '../../assets/Spinner'
+import { TransactTable } from '../assets/Tables/Transaction'
 
 export const TransactionUser = () => {
+
+    const dispatch = useDispatch()
+    const item = useSelector((state) => state.transact.transact)
+    const success = useSelector((state) => state.success)
+
+
+    useEffect(() => {
+        dispatch(getTransact())
+    }, [dispatch])
 
   return (
     <div className='min-h-screen'>
@@ -19,7 +32,12 @@ export const TransactionUser = () => {
                     <p className='fw-600 flex items-center'><span className="pr-2 text-primary text-xl"><GiPayMoney/></span>Transaction Listing</p>
                 </div>
                 <div>
-                    <AdminOrderTable/>
+                    {success === false? <Spinner2/> : 
+                    <div>
+                        {
+                            item.length > 0? <TransactTable item={item}/>  : "No transaction"
+                        }
+                    </div>}
                 </div>
             </div>
         </div>
