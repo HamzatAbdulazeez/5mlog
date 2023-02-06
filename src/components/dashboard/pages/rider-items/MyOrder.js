@@ -1,8 +1,10 @@
 import { Input, Textarea } from '@material-tailwind/react'
-import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import React, { useEffect,  useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { GoPackage } from 'react-icons/go'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 import { getMyOrder } from '../../../../store/slices/driverOrder'
 import { Spinner2 } from '../../../assets/Spinner'
 import { MyOrderTable } from '../../assets/Tables/Driver-table/myOrder'
@@ -13,8 +15,13 @@ export const MyOrder = () => {
     const success = useSelector((state) => state.driver.success)
 
     const [endOrder, setEndOrder] = useState(false)
+    const [item, setItem] = useState(false)  // eslint-disable-next-line 
+    const [loading, setLoading] = useState(false)
+    const token = JSON.parse(localStorage.getItem('lynchpin'));
 
-    const OpenModal = () => {
+
+    const OpenModal = (id) => {
+        setItem(id)
         setEndOrder(true)
     }
     const CloseModal = () => {
@@ -24,6 +31,42 @@ export const MyOrder = () => {
     useEffect(() => {
         dispatch(getMyOrder())
     }, [dispatch])
+    
+    const [remark, setRemark] = useState("");
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        // setSelectedFile(imageData)
+        const formData = new FormData();
+        formData.append("status", remark);
+        formData.append('image', selectedFile);
+        try {
+            setLoading(true);
+            console.log(formData)
+            const config = {
+              headers: { 
+                  'Authorization': 'Bearer ' + token 
+              }
+            };
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL }/driver/confirm/delivery/${item}`, formData, config)
+            toast.success('End Order Successfully')
+            CloseModal();
+            setTimeout(() => {
+              dispatch(getMyOrder())
+          }, 3000);
+            return response
+        }catch (error) {
+            CloseModal();
+            setLoading(false);
+            if (error?.response?.data?.message) {
+              toast.error(error.response.data.message, {
+                duration: "4000",
+                position: "bottom",
+              });
+              return;
+            };
+        }}
 
   return (
     <div className='min-h-screen fs-500'>
@@ -50,12 +93,16 @@ export const MyOrder = () => {
                     <div className="bg-white relative lg:w-5/12 max-h-03 overflow-scroll rounded-md overscroll-none w-11/12 py-6 shadow scale-ani px-5" onClick={e => e.stopPropagation()}>
                         <p className='text-center fw-600 border-b border-gray-300 lg:text-xl pb-2'>Delivery Details</p>
                         <div className='lg:px-6 py-6'>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div>
-                                    <Input type='file' label='Picture Proof'/>
+                                {/* <FileUploader
+                                    onFileSelectSuccess={(file) => setSelectedFile(file)}
+                                    onFileSelectError={({ error }) => alert(error)}
+                                    />                                 */}
+                                    <Input type='file' onChange={(e) => setSelectedFile(e.target.files[0])} />
                                 </div>
                                 <div className='mt-5'>
-                                    <Textarea label='Remarks'/>
+                                    <Textarea label='Remarks' value={remark} onChange={(e) => setRemark(e.target.value)}/>
                                 </div>
                                 <div className='text-end mt-6'>
                                     <button className='btn-primary lg:px-8'>Submit</button>
@@ -70,3 +117,4 @@ export const MyOrder = () => {
     </div>
   )
 }
+

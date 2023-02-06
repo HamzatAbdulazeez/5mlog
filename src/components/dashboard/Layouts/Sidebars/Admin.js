@@ -8,6 +8,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { FaBars, FaUsers } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../../store/slices/auth";
+import { TbTruckDelivery } from "react-icons/tb";
 
 
 const AdminSidebar = () => {
@@ -15,6 +16,7 @@ const AdminSidebar = () => {
     const [signOut, setSignOut] = useState(false);
     const [orderDrop, setOrderDrop] = useState(false);
     const [userDrop, setUserDrop] = useState(false);
+    const [serviceDrop, setServiceDrop] = useState(false);
     function CloseModal() {
         setSignOut(false)
     }
@@ -102,13 +104,65 @@ const AdminSidebar = () => {
                                 <p className="pl-3">Staff</p>
                         </NavLink>
                         <div
+                            className="w-full items-center pl-2 py-2 fw-600 my-2"
+                            onClick={unShow}
+                        >
+                            <div className="flex" onClick={e => e.stopPropagation()}>
+                                <TbTruckDelivery className="text-2xl" />
+                                <div className="flex items-center cursor-pointer" onClick={() => {setServiceDrop(!serviceDrop);setOrderDrop(false);setUserDrop(false);}}>
+                                    <p className="pl-3 pr-5">Services</p>
+                                    <BsFillCaretDownFill className="text-black"/>
+                                </div>
+                            </div>
+                            {serviceDrop && (
+                                <div className="lg:ml-9 ml-4 fs-400 pt-2">
+                                    <NavLink
+                                        to="pickup"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">PickUp Service</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="inter-state"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">Inter-State</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="freight"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">Overseas shipping</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="procurement"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">Procurements</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="express"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">Express Shipping</p>
+                                    </NavLink>
+                                    <NavLink
+                                        to="warehouse"
+                                        style={({ isActive }) => (isActive ? activeStyles : undefined)}
+                                        >
+                                        <p className="py-2">Warehousing</p>
+                                    </NavLink>
+                                </div>
+                            )}
+                        </div>
+                        <div
                             
                             className="w-full items-center pl-2 py-2 fw-600 my-2"
                             onClick={unShow}
                         >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <BsBag className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setUserDrop(false);}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setOrderDrop(!orderDrop);setUserDrop(false);setServiceDrop(false);}}>
                                     <p className="pl-3 pr-5">Orders</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
@@ -161,7 +215,7 @@ const AdminSidebar = () => {
                             >
                             <div className="flex" onClick={e => e.stopPropagation()}>
                                 <FaUsers className="text-xl" />
-                                <div className="flex items-center cursor-pointer" onClick={() => {setUserDrop(!userDrop);setOrderDrop(false)}}>
+                                <div className="flex items-center cursor-pointer" onClick={() => {setUserDrop(!userDrop);setOrderDrop(false);setServiceDrop(false);}}>
                                     <p className="pl-3 pr-5">Users</p>
                                     <BsFillCaretDownFill className="text-black"/>
                                 </div>
