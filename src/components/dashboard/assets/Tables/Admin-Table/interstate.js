@@ -187,7 +187,8 @@ export function InterstateTable({status, paymentModal, dispatchOrder}) {
                         row?.row.original.paid === null ?
                         ""
                         :
-                        row.row.original?.status === "New" || row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>         
+                        row.row.original?.status === "New" || row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : 
+                        row.row.original?.assigned_to === null? <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>   : ''        
                       }
                       {
                         row.row.original?.status === "New" || row.row.original?.status === "Updated"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Label</MenuItem>

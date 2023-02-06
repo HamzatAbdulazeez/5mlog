@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, {useState} from 'react'
 import { useEffect } from 'react'
 import { FaArrowLeft, FaListOl, FaPhoneAlt, FaSearchLocation } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 import authHeader from '../../../services/auth-header'
 import { Spinner } from '../../assets/Spinner'
@@ -14,6 +15,8 @@ export const OrderDetailUser = () => {
     const orderId = new URLSearchParams(search).get("orderId");
     const [order, setOrder] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    const user = useSelector((state) => state.auth.user)
 
     const fetchOrderDetails = async () =>{
         try {
@@ -41,7 +44,12 @@ export const OrderDetailUser = () => {
     <div className='min-h-screen'>
         <div className='shadow-lg p-4 bg-white'>
             <div>
-                <Link to="/dashboard/myorders"><p className='flex items-center text-gray-600 '><span className='pr-4'><FaArrowLeft/></span>Orders</p></Link>
+                {
+                    user.account_type === "Customer" || user.account_type === "Partner" ?
+                    <Link to="/dashboard/myorders"><p className='flex items-center text-gray-600 '><span className='pr-4'><FaArrowLeft/></span>Orders</p></Link>
+                    :
+                    ''
+                }
             </div>
             <div className='pt-4 pr-4'>
                 <p className='flex items-center fw-600 lg:text-xl'><span className='pr-1'><FaListOl/></span> Order Id: <span className='pl-2 text-primary'>{order?.order_id}</span><span className='text-primary pl-6'></span></p>
