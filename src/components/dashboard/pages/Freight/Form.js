@@ -1,4 +1,3 @@
-import { Input, Option, Select, Textarea } from '@material-tailwind/react'
 import React from 'react'
 import { useSelector} from 'react-redux';
 import { FreightAdmin } from './AdminForm';
