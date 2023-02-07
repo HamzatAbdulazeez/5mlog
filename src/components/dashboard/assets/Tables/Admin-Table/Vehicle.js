@@ -13,7 +13,7 @@ import {
 } from "@material-tailwind/react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-// import { useExportData } from "react-table-plugins";
+import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx';
 import { BsThreeDotsVertical } from 'react-icons/bs';
@@ -78,11 +78,11 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
   return false;
 }
 
-export function VehicleTable ({vehicleDelete, updateVehicle}) {
+export function VehicleTable ({vehicleDelete}) {
 
   let vehicle = useSelector((state) => state.vehicle.vehicle);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate()   // eslint-disable-next-line 
     const seeDetails = (id) => {
         navigate(`/dashboard/vehicle-detail?vehicleId=${id}`)
     }
@@ -128,8 +128,8 @@ export function VehicleTable ({vehicleDelete, updateVehicle}) {
                       <Button className="border-none bg-transparent shadow-none hover:shadow-none text-black"><p className="lg:text-xl"><BsThreeDotsVertical /></p></Button>
                     </MenuHandler>
                     <MenuList className="w-16 bg-gray-100 fw-600 text-black">
-                      <MenuItem onClick={() => seeDetails(row.value)}>View Details</MenuItem>
-                      <MenuItem onClick={() => updateVehicle(row.row.original)}>Update Details</MenuItem>
+                      {/* <MenuItem onClick={() => seeDetails(row.value)}>View Details</MenuItem>
+                      <MenuItem onClick={() => updateVehicle(row.row.original)}>Update Details</MenuItem> */}
                       <MenuItem className='bg-red-600 text-white hover:bg-red-500' onClick={() => vehicleDelete(row.value)}>Delete Item</MenuItem>
                     </MenuList>
                   </Menu>,
@@ -195,7 +195,7 @@ const Table = ({columns, data}) => {
       getExportFileBlob,
     }, 
     useFilters,
-    useGlobalFilter, usePagination );
+    useGlobalFilter, usePagination, useExportData );
 
     
 

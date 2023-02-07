@@ -17,7 +17,7 @@ import {
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-// import { useExportData } from "react-table-plugins";
+import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
@@ -218,7 +218,7 @@ const Table = ({columns, data}) => {
       getExportFileBlob,
     }, 
     useFilters,
-    useGlobalFilter, usePagination );
+    useGlobalFilter, usePagination, useExportData); 
 
     
 

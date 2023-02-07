@@ -7,6 +7,8 @@ import { Header } from './home-comp/Header'
 import { Track } from './home-comp/Track'
 
 export const Contact = () => {
+
+
   return (
     <div>
         <Header/>

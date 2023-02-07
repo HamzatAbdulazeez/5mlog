@@ -17,7 +17,7 @@ import {
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-// import { useExportData } from "react-table-plugins";
+import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
 import * as XLSX from 'xlsx'
 import dayjs from 'dayjs';
@@ -118,6 +118,13 @@ export function OverseaTable({status, paymentModal, dispatchOrder}) {
   const gotoPrint = (id) => {
         navigate(`/dashboard/print?orderId=${id}`)
     }
+    
+  const gotoReceipt = (id) => {
+    navigate(`/dashboard/receipt?orderId=${id}`)
+  }
+  const driverStatus = (id) => {
+    navigate(`/dashboard/driver-status?orderId=${id}`)
+  }
 
 
     const columns = useMemo(
@@ -191,10 +198,13 @@ export function OverseaTable({status, paymentModal, dispatchOrder}) {
                         ""
                         :
                         row.row.original?.status === "New" || row.row.original?.status === "Updated"? <MenuItem onClick={() => dispatchOrder(row.value)}>Dispatch Order</MenuItem> : 
-                        row.row.original?.assigned_to === null? <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>   : ''            
+                        row.row.original?.assigned_to === null? <MenuItem className="" onClick={() => gotoDriverRequest(row.value)} >View Requests</MenuItem>   : <MenuItem className="" onClick={() => driverStatus(row.value)} >Driver Status</MenuItem>            
                       }
                       {
                         row.row.original?.status === "New" || row.row.original?.status === "Updated"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Label</MenuItem>
+                      }
+                      {
+                        row.row.original?.order_by.account_type === "Administrator" ?  <MenuItem className=""  onClick={() => gotoReceipt(row.value)}>Print Receipt</MenuItem> : ''
                       }
                       <MenuItem className="bg-red-600 text-white hover:bg-red-500">Delete</MenuItem>
                     </MenuList>
@@ -261,7 +271,7 @@ const Table = ({columns, data}) => {
       getExportFileBlob,
     }, 
     useFilters,
-    useGlobalFilter, usePagination );
+    useGlobalFilter, usePagination, useExportData );
 
     
 

@@ -21,7 +21,7 @@ export const OrderProgress = ({order}) => {
                 src="https://www.freeiconspng.com/uploads/orange-check-tick-icon-14.png"
                 alt="order"
               />
-              <p className='absolute text-center lg:w-24 text-xs lg:fs-400 fw-600 mt-1'>Package in Store</p>
+              <p className='absolute text-center lg:w-24 text-xs lg:fs-400 fw-600 mt-1'>Package in 5M origin facility</p>
             </div>
           )}
         </Step>
@@ -35,7 +35,7 @@ export const OrderProgress = ({order}) => {
                 src="https://www.freeiconspng.com/uploads/orange-check-tick-icon-14.png"
                 alt="order"
               />
-              <p className='absolute lg:w-28 text-xs lg:fs-400 fw-600 -left-4 mt-1 text-center'>Driver Pickup package</p>
+              <p className='absolute lg:w-28 text-xs lg:fs-400 fw-600 -left-4 mt-1 text-center'>IN Transit</p>
           </div>
           )}
         </Step>
@@ -49,7 +49,7 @@ export const OrderProgress = ({order}) => {
                 src="https://www.freeiconspng.com/uploads/orange-check-tick-icon-14.png"
                 alt="order"
               />
-              <p className='absolute lg:w-24 w-16 text-xs lg:fs-400 fw-600 -left-5 lg:-left-3 mt-1 text-center'>Driver is on the way</p>
+              <p className='absolute lg:w-24 w-16 text-xs lg:fs-400 fw-600 -left-5 lg:-left-3 mt-1 text-center'>Package is ready for pickup / delivery</p>
           </div>
           )}
         </Step>
