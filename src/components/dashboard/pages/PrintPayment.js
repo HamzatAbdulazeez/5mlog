@@ -7,6 +7,8 @@ import authHeader from '../../../services/auth-header'
 import { Spinner } from '../../assets/Spinner'
 import { Button } from '@material-tailwind/react'
 import jsPDF from 'jspdf'
+import { formatPriceNgn } from '../assets/RegexFormat/Format'
+import dayjs from 'dayjs'
 
 
 export const PrintPayment = () => {
@@ -65,8 +67,11 @@ export const PrintPayment = () => {
                             </div>
                             <div className='mt-5'>
                                 <p className='fw-600'>{order?.service_type} <span>Service</span></p>
-                                <p className='mt-4 fw-500'>{order?.order_id}</p>
-                                <p className='mt-4 fw-600'>Order Paid</p>
+                                <div className='flex'>
+                                    <p className='mt-4 fw-500 w-6/12'>{order?.order_id}</p>
+                                    <p className='mt-4 fw-500 w-6/12'>{dayjs(order?.created_at).format('YYYY-MM-DD')}<span className='block'>{dayjs(order?.created_at).format('HH:MM')}</span></p>
+                                </div>
+                                <p className='mt-4 fw-600'>Amount Paid: <span className='pl-3'>{ order?.price? formatPriceNgn(order?.price) : "Paid"}</span></p>
                             </div>
                             <div className='flex mt-5'>
                                 <div className='w-6/12 pr-3'>

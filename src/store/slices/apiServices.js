@@ -25,12 +25,51 @@ export const pickupService = createAsyncThunk(
     }
 );
 
+export const adminPickupService = createAsyncThunk(
+    "/add/pickup/service",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.adminPickupService(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
 
 export const addFreight = createAsyncThunk(
     "/add/oversea/shipping",
     async (payload, thunkAPI) => {
         try {
             const response = await apiFactory.addFreight(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+export const adminAddFreight = createAsyncThunk(
+    "/add/oversea/shipping",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.adminAddFreight(payload);
             thunkAPI.dispatch(setMessage(response.data));
             return response.data;
         } catch (error) {
@@ -67,6 +106,26 @@ export const addInterState = createAsyncThunk(
     }
 );
 
+export const adminAddInterState = createAsyncThunk(
+    "/add/inter-state/service",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.AdminAddInterState(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
 
 export const addExpress = createAsyncThunk(
     "/add/express/shipping",
@@ -88,6 +147,25 @@ export const addExpress = createAsyncThunk(
     }
 );
 
+export const adminAddExpress = createAsyncThunk(
+    "/add/express/shipping",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.adminAddExpress(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
 
 export const addProcurement = createAsyncThunk(
     "/add/procurement",
@@ -109,11 +187,51 @@ export const addProcurement = createAsyncThunk(
     }
 );
 
+export const adminAddProcurement = createAsyncThunk(
+    "/add/procurement",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.adminAddProcurement(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
 export const addWarehousing = createAsyncThunk(
     "/add/warehousing",
     async (payload, thunkAPI) => {
         try {
             const response = await apiFactory.addWarehousing(payload);
+            thunkAPI.dispatch(setMessage(response.data));
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+export const adminAddWarehousing = createAsyncThunk(
+    "/add/warehousing",
+    async (payload, thunkAPI) => {
+        try {
+            const response = await apiFactory.adminAddWarehousing(payload);
             thunkAPI.dispatch(setMessage(response.data));
             return response.data;
         } catch (error) {
@@ -156,6 +274,24 @@ const apiServicesSlice = createSlice({
             state.user = action.payload.user;
         },
         [addProcurement.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [adminPickupService.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [adminAddFreight.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [adminAddInterState.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [adminAddExpress.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [adminAddWarehousing.fulfilled]: (state, action) => {
+            state.user = action.payload.user;
+        },
+        [adminAddProcurement.fulfilled]: (state, action) => {
             state.user = action.payload.user;
         },
     },
