@@ -21,7 +21,7 @@ export default function Header() {
     const result = item.filter(item => item.status === "Unread")
 
     const GotoNotify = () => {
-        navigate('/notification')
+        navigate('/dashboard/notification')
     }
     useEffect(() => {
         dispatch(getAllNotify())
