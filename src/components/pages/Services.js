@@ -97,7 +97,7 @@ export const Services = () => {
                         </div>
                         <div className='border lg:flex flex-row-reverse p-5 bg-white shadow-md mt-6 lg:mt-10 lg:h-64 md:overflow-scroll xl:overflow-hidden'>
                             <div className='lg:w-4/12 grid place-content-center'>
-                                <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1670492401/5mlog/Rectangle_10_1_orf93q.png" alt="services" className='lg:w-9/12 ar-32' />
+                                <img src="https://tempuslogix.com/wp-content/uploads/2022/04/main-image-2-mobile.png" alt="services" className='lg:w-9/12 rounded-md ar-32' />
                             </div>
                             <div className='lg:w-8/12 lg:pr-8'>
                                 <p className='text-lg fw-600 lg:mt-0 mt-4'>AutoMobile Shipping Services</p>
