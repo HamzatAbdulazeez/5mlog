@@ -68,48 +68,56 @@ export const UserDashboard = () => {
             <div className='lg:p-5 px-2 py-3'>
                 <div className='lg:grid-4 justify-evenly mt-6'>
                     <div className='border shadow-xl flex py-8 rounded bg-green-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-primary text-3xl w-12 h-12 circle grid place-content-center'>
-                                <TbTruckDelivery/>
+                        <Link to='myorders' className='w-full flex rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-primary text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <TbTruckDelivery/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='lg:text-4xl text-2xl fw-600'>{request ? request.total_order : 0}</p>
-                            <p className='fs-400'>Total Deliveries</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='lg:text-4xl text-2xl fw-600'>{request ? request.total_order : 0}</p>
+                                <p className='fs-400'>Total Deliveries</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-blue-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-blue-400 text-3xl w-12 h-12 circle grid place-content-center'>
-                                <TbPackgeExport/>
+                        <Link to='myorders' className='w-full flex rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-blue-400 text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <TbPackgeExport/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.pending_order : 0}</p>
-                            <p className='fs-400'>Delivery Request</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.pending_order : 0}</p>
+                                <p className='fs-400'>Delivery Request</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-orange-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-orange-400 text-3xl w-12 h-12 circle grid place-content-center'>
-                                <TbPackgeExport/>
+                        <Link to='myorders' className='w-full flex rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-orange-400 text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <TbPackgeExport/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.ongoing_order : 0}</p>
-                            <p className='fs-400'>Ongoing Deliveries</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.ongoing_order : 0}</p>
+                                <p className='fs-400'>Ongoing Deliveries</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-red-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-red-400 text-3xl w-12 h-12 circle grid place-content-center'>
-                                <TbPackgeExport/>
+                        <Link to='myorders' className='w-full flex rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-red-400 text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <TbPackgeExport/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.completed_order : 0}</p>
-                            <p className='fs-400'>Delivered Orders</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='lg:text-4xl text-2xl  fw-600'>{request ? request.completed_order : 0}</p>
+                                <p className='fs-400'>Delivered Orders</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 {/* table and graph */}

@@ -127,8 +127,8 @@ export const RiderForm = () => {
                     <select label='Service Type' name='type_of_service_render'  value={serviceType} onChange={changeServiceType} className="p-2 font-light fs-500 rounded-lg border border-gray-400 w-full text-gray-600">
                         <option value='Pickup Service'>Pickup Service</option>
                         <option value='Inter-State Service'>Inter-State Service</option>
-                        <option value='Oversea Shipping (Air Freight)'>Oversea Shipping (Air Freight)</option>
-                        <option value='Oversea Shipping (Ocean Freight)'>Oversea Shipping (Ocean Freight)</option>
+                        <option value='Oversea Shipping (Air Freight)'>Overseas Shipping (Air Freight)</option>
+                        <option value='Oversea Shipping (Ocean Freight)'>Overseas Shipping (Ocean Freight)</option>
                         <option value='Express Shipping'>Express Shipping</option>
                         <option value='Procurement Services'>Procurement Services</option>
                     </select>

@@ -121,7 +121,7 @@ const DispatchSidebar = () => {
                                         to="admin-freight"
                                         style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
-                                        <p className="pb-2">Oversea</p>
+                                        <p className="pb-2">Overseas</p>
                                     </NavLink>
                                     <NavLink
                                         to="admin-procurement"

@@ -127,15 +127,15 @@ export const UserSettings = () => {
                         </div>
                         <div className='fw-500 fs-500 lg:mt-10 mt-5'>
                             <div className='flex items-center justify-between border-b pb-2'>
-                                <p>14 Total Orders</p>
+                                <p>Total Orders</p>
                                 <p className='bg-green-100 text-green-600  w-8 h-8 circle grid place-items-center'><BsBagCheck/></p>
                             </div>
                             <div className='flex items-center justify-between mt-4 border-b pb-2'>
-                                <p>12 Ongoing Deliveries</p>
+                                <p>Ongoing Deliveries</p>
                                 <p className='bg-orange-100 text-orange-600  w-8 h-8 circle grid place-items-center'><BsBagCheck/></p>
                             </div>
                             <div className='flex items-center justify-between mt-4 border-b pb-2'>
-                                <p>6 Delivered Items</p>
+                                <p>Delivered Items</p>
                                 <p className='bg-blue-100 text-blue-600  w-8 h-8 circle grid place-items-center'><BsBagCheck/></p>
                             </div>
                         </div>

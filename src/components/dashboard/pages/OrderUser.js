@@ -87,7 +87,7 @@ export const OrderUser = () => {
                     <div className='bg-green-200  mt-6 lg:mt-0  flex hover:scale-105 duration-500  items-center triangle cursor-pointer' onClick={() => {navigate("/dashboard/oversea-order")}}>
                         <div className='w-6/12 text-green-800 py-8 fw-600 text-center text-lg px-6 h-full bg-green-100 grid place-content-center'>
                             <div>
-                                <p>Oversea Shipping</p>
+                                <p>Overseas Shipping</p>
                                 <p>Orders</p>
                             </div>
                         </div>

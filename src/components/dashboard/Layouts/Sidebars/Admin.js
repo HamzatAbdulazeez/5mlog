@@ -1,4 +1,4 @@
-import {  BsFillGrid1X2Fill, BsBag, BsBoxArrowRight, BsFillCaretDownFill } from "react-icons/bs";
+import {  BsFillGrid1X2Fill, BsBag, BsBoxArrowRight, BsFillCaretDownFill, BsGear } from "react-icons/bs";
 import { GrDeliver, GrLocation, GrTransaction, GrUserAdmin, GrUserWorker } from "react-icons/gr"
 import { MdNotificationAdd, MdOutlineInventory } from "react-icons/md"
 import React, { useState, useEffect } from "react";
@@ -185,7 +185,7 @@ const AdminSidebar = () => {
                                         to="admin-freight"
                                         style={({ isActive }) => (isActive ? activeStyles : undefined)}
                                         >
-                                        <p className="pb-2">Oversea</p>
+                                        <p className="pb-2">Overseas</p>
                                     </NavLink>
                                     <NavLink
                                         to="admin-procurement"
@@ -293,7 +293,7 @@ const AdminSidebar = () => {
                         </NavLink>
                     </div>
                     <div>
-                        {/* <NavLink 
+                        <NavLink 
                             to="settings"
                             className="w-full flex items-center pl-2 py-2 fw-600 my-2"
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -301,7 +301,7 @@ const AdminSidebar = () => {
                             >
                                 <BsGear className="text-xl" />
                                 <p className="pl-3">Settings</p>
-                        </NavLink> */}
+                        </NavLink>
                         <Link>
                             <div
                                 style={sideBarStyle.cursorStyle}

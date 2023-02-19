@@ -80,12 +80,12 @@ export const UpdateDetails = ({CloseModal, order, reload}) => {
                             <option value='New' selected>New</option>
                             <option value='Updated'>Updated</option>
                             <option value='Ongoing'>Ongoing</option>
-                            <option value='Delivered'>Delivered</option>
+                            <option value='Completed'>Delivered</option>
                             <option value='Cancelled'>Cancelled</option>
                         </select>
                     </div>
                     <div>
-                        <Input type="number" label='Order Progress (0-100)' name='progress' value={progress} {...register("progress")} onChange={changeProgress}/>
+                        <Input type="number" min={0} max={100} label='Order Progress (0-100)' name='progress' value={progress}  {...register("progress")} onChange={changeProgress}/>
                     </div>
                     <div className='mt-5'>
                         <Input type="text" label='Order current location' name='current_location' value={location} {...register("current_location")} onChange={changeLocation}/>

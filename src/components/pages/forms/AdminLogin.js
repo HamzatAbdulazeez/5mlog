@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
@@ -23,6 +24,15 @@ export const AdminLogin = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const [passwordType, setPasswordType] = useState("password");
+    const togglePassword = () => {
+        if (passwordType === "password") {
+            setPasswordType("text")
+            return;
+        }
+        setPasswordType("password")
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -84,7 +94,21 @@ export const AdminLogin = () => {
                         </div>
                         <div className='mt-6'>
                             <label className='fw-500'>Password</label>
-                            <input type="password" placeholder="Enter your password" name='password' value={password} onChange={changePassword} className="w-full p-2 mt-2 rounded border border-gray-400"/>
+                            {/* <input type="password" placeholder="Enter your password" name='password' value={password} onChange={changePassword} className="w-full p-2 mt-2 rounded border border-gray-400"/> */}
+                            <div className="flex items-center bg-input border border-gray-400 mt-1 rounded">
+                                <input
+                                    type={passwordType}
+                                    placeholder="Enter your password"
+                                    className="w-full border-0 py-2 px-2 rounded"
+                                    name='password'
+                                    value={password}
+                                    onChange={changePassword}
+                                    required
+                                />
+                                <div onClick={togglePassword} className="px-3">
+                                    {passwordType === "password" ? <FaRegEyeSlash className="text-xl" /> : <FaRegEye className="text-xl" />}
+                                </div>
+                            </div>
                         </div>
                         <div className='mt-8 mb-4'>
                             <button className='w-full text-center py-2 bg-dark-pri rounded-md text-white fw-600 fs-700' disabled={disableBtn}>

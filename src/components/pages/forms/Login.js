@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
@@ -22,6 +23,16 @@ export const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    
+    const [passwordType, setPasswordType] = useState("password");
+    const togglePassword = () => {
+        if (passwordType === "password") {
+            setPasswordType("text")
+            return;
+        }
+        setPasswordType("password")
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -92,7 +103,21 @@ export const Login = () => {
                             <label className='fw-500'>Password</label>
                             <Link to="/forget" className='fs-400 fw-500 text-primary'>Forget password ?</Link>
                         </div>
-                          <input type="password" name='password' placeholder="Enter your password" value={password} onChange={changePassword} className="w-full p-2 mt-2 rounded border border-gray-400" required/>
+                          {/* <input type="password" name='password' placeholder="Enter your password" value={password} onChange={changePassword} className="w-full p-2 mt-2 rounded border border-gray-400" required/> */}
+                          <div className="flex items-center bg-input border border-gray-400 mt-1 rounded">
+                            <input
+                                type={passwordType}
+                                placeholder="Enter your password"
+                                className="w-full border-0 py-2 px-2 rounded"
+                                name='password'
+                                value={password}
+                                onChange={changePassword}
+                                required
+                            />
+                            <div onClick={togglePassword} className="px-3">
+                                {passwordType === "password" ? <FaRegEyeSlash className="text-xl" /> : <FaRegEye className="text-xl" />}
+                            </div>
+                        </div>
                     </div>
                     <div className='mt-8'>
                           <button className='w-full text-center py-2 bg-primary rounded-md text-white fw-600 fs-700' disabled={disableBtn}>

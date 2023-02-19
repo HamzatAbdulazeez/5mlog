@@ -63,13 +63,13 @@ export const PrintPayment = () => {
                     <div className='p-5 w-01 fs-500 mx-auto border-2 rounded border-gray-500' id='report'>
                         <div className=''>
                             <div className='w-5/12'>
-                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19530_wiuj5i.png' className='w-28' alt='' />
+                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png' className='w-28' alt='' />
                             </div>
                             <div className='mt-5'>
                                 <p className='fw-600'>{order?.service_type} <span>Service</span></p>
                                 <div className='flex'>
                                     <p className='mt-4 fw-500 w-6/12'>{order?.order_id}</p>
-                                    <p className='mt-4 fw-500 w-6/12'>{dayjs(order?.created_at).format('YYYY-MM-DD')}<span className='block'>{dayjs(order?.created_at).format('HH:MM')}</span></p>
+                                    <p className='mt-4 fw-500 w-6/12'>{dayjs(order?.created_at).format('DD-MMM-YYYY')}<span className='block'>{dayjs(order?.created_at).format('HH:MM')}</span></p>
                                 </div>
                                 <p className='mt-4 fw-600'>Amount Paid: <span className='pl-3'>{ order?.price? formatPriceNgn(order?.price) : "Paid"}</span></p>
                             </div>

@@ -168,7 +168,7 @@ export function MyOrderTable({status, endOrder}) {
                         {/* <MenuItem onClick={() => requestDeliver(row.value)}>Request Order</MenuItem> */}
                       {/* <MenuItem onClick={() => gotoDetailsPage(row.value)}>View Details</MenuItem> */}
                       <MenuItem onClick={() => gotoDetailsPage(row.value)}>More Details</MenuItem>
-                      <MenuItem className='bg-green-400 text-white fw-500 hover:bg-green-500' onClick={() => endOrder(row.value)}>End Order</MenuItem>
+                      <MenuItem className='bg-green-400 text-white fw-500 hover:bg-green-500' onClick={() => endOrder(row.value)}>Order Delivered</MenuItem>
                     </MenuList>
                   </Menu>,
           },

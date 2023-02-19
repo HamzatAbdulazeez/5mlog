@@ -5,7 +5,8 @@ import {FaListOl} from 'react-icons/fa'
 import { useLocation } from 'react-router-dom'
 import authHeader from '../../../services/auth-header'
 import { Spinner } from '../../assets/Spinner'
-import Barcode from 'react-barcode';
+// import Barcode from 'react-barcode';
+import { useBarcode } from 'next-barcode';
 import { Button } from '@material-tailwind/react'
 import jsPDF from 'jspdf'
 
@@ -42,12 +43,17 @@ export const PrintReceipt = () => {
 
         const width = document.getElementById('report').offsetWidth
         const height = document.getElementById('report').offsetHeight
+        // const bar = document.getElementById('barcode')
 
         const report = new jsPDF('p','pt',[width, height]);
+        // report.addImage(bar.src, 'JPEG', 15, 40, 180, 160);
+        // report.addImage(base64Image, 'png', 0, 0, 40, 100)
         report.html(document.querySelector('#report')).then(() => {
             report.save('report.pdf');
         });
     }
+
+    
 
   return (
     <div className='min-h-screen'>
@@ -62,9 +68,16 @@ export const PrintReceipt = () => {
                     <div className='p-5 w-03 fs-500 mx-auto border-2 rounded border-gray-500' id='report'>
                         <div className='flex items-center'>
                             <div className='w-5/12 border-r border-gray-500'>
-                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1669904666/5mlog/Rectangle_19530_wiuj5i.png' className='w-36' alt='' />
+                                <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1671791124/5mlog/new-logo_d5wzz4.png' className='w-36' alt='' />
                             </div>
                             <div className='w-7/12 pl-4'>
+                                <div>
+                                    <p className='fw-600 text-xl'>{order?.service_type} Services</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='border-y py-3 border-gray-500 flex items-center'>
+                            <div className='w-6/12 '>
                                 <div>
                                     <p className='fw-500'>From:</p>
                                 </div>
@@ -73,9 +86,7 @@ export const PrintReceipt = () => {
                                     <p>{order?.shipping_from_state_province_region? order?.shipping_from_state_province_region : ""} {order?.shipping_from_country? order?.shipping_from_country : ""}</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className='border-y py-3 border-gray-500 flex items-center'>
-                            <div className='w-6/12'>
+                            <div className='w-6/12 pl-4'>
                                 <div>
                                     <p  className='fw-500'>To:</p>
                                 </div>
@@ -84,22 +95,23 @@ export const PrintReceipt = () => {
                                     <p>{order?.shipping_to_state_province_region? order?.shipping_to_state_province_region : ""} {order?.shipping_to_country? order?.shipping_to_country : ""}</p>
                                 </div>
                             </div>
-                            <div className='w-6/12 flex justify-center bg-light'>
+                            {/* <div className='w-6/12 flex justify-center bg-light'>
                                 <img src='https://res.cloudinary.com/greenmouse-tech/image/upload/v1675259126/5mlog/fragile-removebg-preview_hbmxdy.png' alt='fragile' className='w-48' />
-                            </div>
+                            </div> */}
                         </div>
                         <div className=' pt-3'>
                             <div className='w-5/12'>
                                 <p className='fw-600'>Order ID:</p>
                                 <p>{order?.order_id}</p>
                             </div>
-                            <div className='mt-3 overflow-hidden'>
-                                <Barcode 
+                            <div className='mt-3 overflow-hidden' id='barcode'>
+                                <Barcod order={order}/>
+                                {/* <Barcode 
                                     className="w-full" 
                                     width={0.6}
                                     text= "Scan"
                                     value={`https:5mlogistics.com/tracking?trackId=${order?.tracking_number}`} 
-                                    />
+                                    /> */}
                             </div>
                         </div>
                     </div>
@@ -112,4 +124,17 @@ export const PrintReceipt = () => {
         </div>
     </div>
   )
+}
+
+export const Barcod = (order) => {
+    
+    const { inputRef } = useBarcode({
+        value:`https:5mlogistics.com/tracking?trackId=${order?.tracking_number}` ,
+        options: {
+          width: 0.7,
+          text: "Scan",
+        }
+      });
+      
+    return <img ref={inputRef} alt='barcode' />;
 }
