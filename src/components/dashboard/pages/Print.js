@@ -5,7 +5,7 @@ import {FaListOl} from 'react-icons/fa'
 import { useLocation } from 'react-router-dom'
 import authHeader from '../../../services/auth-header'
 import { Spinner } from '../../assets/Spinner'
-import Barcode from 'react-barcode';
+// import Barcode from 'react-barcode';
 import { useBarcode } from 'next-barcode';
 import { Button } from '@material-tailwind/react'
 import jsPDF from 'jspdf'
@@ -136,5 +136,5 @@ export const Barcod = (order) => {
         }
       });
       
-    return <img ref={inputRef} />;
+    return <img ref={inputRef} alt='barcode' />;
 }

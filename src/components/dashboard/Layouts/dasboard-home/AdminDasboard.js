@@ -72,7 +72,7 @@ export const AdminDashboard = () => {
             <div className='lg:p-5 px-2 py-3'>
                 <div className='lg:grid-4 justify-evenly mt-6'>
                     <div className='border shadow-xl flex py-8 rounded bg-green-100'>
-                        <Link to='customers' className='w-full flex py-8 rounded'>
+                        <Link to='customers' className='w-full flex  rounded'>
                             <div className='w-4/12 grid place-content-center'>
                                 <div className='bg-primary text-3xl w-12 h-12 circle grid place-content-center'>
                                     <FaUsers/>
@@ -85,7 +85,7 @@ export const AdminDashboard = () => {
                         </Link>
                     </div>
                     <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-blue-100'>
-                        <Link to='admin-pickup' className='w-full flex py-8 rounded'>
+                        <Link to='admin-pickup' className='w-full flex  rounded'>
                             <div className='w-4/12 grid place-content-center'>
                                 <div className='bg-blue-400 text-3xl w-12 h-12 circle grid place-content-center'>
                                     <TbPackgeExport/>
@@ -98,7 +98,7 @@ export const AdminDashboard = () => {
                         </Link>
                     </div>
                     <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-orange-100'>
-                        <Link to='' className='w-full flex py-8 rounded'>
+                        <Link to='' className='w-full flex rounded'>
                             <div className='w-4/12 grid place-content-center'>
                                 <div className='bg-orange-400 text-3xl w-12 h-12 circle grid place-content-center'>
                                     <TbTruckDelivery/>
@@ -111,7 +111,7 @@ export const AdminDashboard = () => {
                         </Link>
                     </div>
                     <div className='border shadow-xl flex mt-6 lg:mt-0  py-8 rounded bg-red-100'>
-                        <Link to='transaction' className='w-full flex py-8 rounded'>
+                        <Link to='transaction' className='w-full flex rounded'>
                             <div className='w-4/12 grid place-content-center'>
                                 <div className='bg-red-400 text-3xl w-12 h-12 circle grid place-content-center'>
                                     <GiMoneyStack/>

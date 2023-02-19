@@ -5,11 +5,13 @@ import {
     Tab,
     TabPanel,
   } from "@material-tailwind/react";
+import { useSelector } from "react-redux";
 import { PersonalInfo } from "./PersonalInfo";
 import { Reviews } from "./Reviews";
 import { Security } from "./Security";
    
   export default function SettingsIndex() {
+    const user = useSelector((state) => state.auth.user);
     const data = [
       {
         label: "Personal Info",
@@ -21,11 +23,10 @@ import { Security } from "./Security";
         value: "react",
         desc: <Security/>,
       },
-   
       {
         label: "Reviews",
         value: "vue",
-        desc: <Reviews/>,
+        desc:  user?.account_type === 'Administrator'? "" : <Reviews/>,
       },
     ];
    
