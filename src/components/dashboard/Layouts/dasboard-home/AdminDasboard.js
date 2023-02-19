@@ -72,48 +72,56 @@ export const AdminDashboard = () => {
             <div className='lg:p-5 px-2 py-3'>
                 <div className='lg:grid-4 justify-evenly mt-6'>
                     <div className='border shadow-xl flex py-8 rounded bg-green-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-primary text-3xl w-12 h-12 circle grid place-content-center'>
-                                <FaUsers/>
+                        <Link to='customers' className='w-full flex py-8 rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-primary text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <FaUsers/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='text-4xl fw-600'>{ request.total_users }</p>
-                            <p className='fs-400'>Total Users</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='text-4xl fw-600'>{ request.total_users }</p>
+                                <p className='fs-400'>Total Users</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-blue-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-blue-400 text-3xl w-12 h-12 circle grid place-content-center'>
-                                <TbPackgeExport/>
+                        <Link to='admin-pickup' className='w-full flex py-8 rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-blue-400 text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <TbPackgeExport/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='text-4xl fw-600'>{request.total_pending_order }</p>
-                            <p className='fs-400'>Delivery Request</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='text-4xl fw-600'>{request.total_pending_order }</p>
+                                <p className='fs-400'>Delivery Request</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className='border shadow-xl mt-6 lg:mt-0 flex py-8 rounded bg-orange-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-orange-400 text-3xl w-12 h-12 circle grid place-content-center'>
-                                <TbTruckDelivery/>
+                        <Link to='' className='w-full flex py-8 rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-orange-400 text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <TbTruckDelivery/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='text-4xl fw-600'>{request.total_completed_order }</p>
-                            <p className='fs-400'>Completed Deliveries</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='text-4xl fw-600'>{request.total_completed_order }</p>
+                                <p className='fs-400'>Completed Deliveries</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className='border shadow-xl flex mt-6 lg:mt-0  py-8 rounded bg-red-100'>
-                        <div className='w-4/12 grid place-content-center'>
-                            <div className='bg-red-400 text-3xl w-12 h-12 circle grid place-content-center'>
-                                <GiMoneyStack/>
+                        <Link to='transaction' className='w-full flex py-8 rounded'>
+                            <div className='w-4/12 grid place-content-center'>
+                                <div className='bg-red-400 text-3xl w-12 h-12 circle grid place-content-center'>
+                                    <GiMoneyStack/>
+                                </div>
                             </div>
-                        </div>
-                        <div className='w-8/12'>
-                              <p className='text-4xl fw-600'>{ request.total_transactions }</p>
-                            <p className='fs-400'>Transactions</p>
-                        </div>
+                            <div className='w-8/12'>
+                                <p className='text-4xl fw-600'>{ request.total_transactions }</p>
+                                <p className='fs-400'>Transactions</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 {/* table and graph */}

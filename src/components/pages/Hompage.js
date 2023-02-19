@@ -84,7 +84,7 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671232225/5mlog/icons8-box-64_s0pdzn.png" alt="wwd" className='w-9' />
                                     </div>
                                     <div  className='w-10/12'>
-                                        <p className='fw-600'>Logistics</p>
+                                        <p className='fw-600'>Logistics & Trucking</p>
                                         <p className='fs-500'>We take care of the end-to-end logistics of your business so you can focus on your core business operation.</p>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671232225/5mlog/icons8-logistics-64_tnd1nb.png" alt="wwd" className="w-9" />
                                     </div>
                                     <div className='w-10/12'>
-                                        <p className='fw-600'>Procurements</p>
+                                        <p className='fw-600'>Procurements / Shop for me</p>
                                         <p className='fs-500'>We offer easy and cost-effective way to help do your procurement.</p>
                                     </div>
                                 </div>
@@ -155,8 +155,8 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671232225/5mlog/icons8-deliveryman-48_rmosxw.png" alt="wwd" className="w-9" />
                                     </div>
                                     <div  className='w-10/12'>
-                                        <p className='fw-600'>Same-Day Delivery</p>
-                                        <p className='fs-500'>We Provide relaible, quality and affordable daily delivery of your goods and products.</p>
+                                        <p className='fw-600'>Express Shipping & Same-Day Delivery</p>
+                                        <p className='fs-500'>We offer quick delivery, ranging from same day to three-day delivery, depending upon the store and your geographic location.</p>
                                     </div>
                                 </div>
                                 <div className='flex mt-6'>
@@ -164,8 +164,8 @@ export const Hompage = () => {
                                         <img src="https://res.cloudinary.com/greenmouse-tech/image/upload/v1671232225/5mlog/icons8-express-delivery-64_huvyzx.png" alt="wwd" className="w-10" />
                                     </div>
                                     <div  className='w-10/12'>
-                                        <p className='fw-600'>Express Shipping</p>
-                                        <p className='fs-500'> We offer quick delivery, ranging from same day to three-day delivery, depending upon the store and your geographic location.</p>
+                                        <p className='fw-600'>AutoMobile Shipping Services</p>
+                                        <p className='fs-500'>Buy any car from trusted partners and we will ship directly to your doorstep. </p>
                                     </div>
                                 </div>
                             </div>

@@ -103,7 +103,7 @@ export const OverseaOrderUser = () => {
     <div className='min-h-screen'>
         <div className='h-44 bg-inter lg:bg-fill bg-center bg-cover  text-white w-full bg-white flex items-center'>
             <div className='lg:pl-12 px-4'>
-                <p className='fw-600 lg:text-2xl text-xl'>Oversea Shipping Orders</p>
+                <p className='fw-600 lg:text-2xl text-xl'>Overseas Shipping Orders</p>
                 <p className='mt-2 lg:w-10/12 fs-400 lg:fs-600'>Manage and monitor the transportation of your items.</p>
             </div>
         </div>

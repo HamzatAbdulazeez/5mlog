@@ -80,7 +80,7 @@ export const UpdateDetails = ({CloseModal, order, reload}) => {
                             <option value='New' selected>New</option>
                             <option value='Updated'>Updated</option>
                             <option value='Ongoing'>Ongoing</option>
-                            <option value='Delivered'>Delivered</option>
+                            <option value='Completed'>Delivered</option>
                             <option value='Cancelled'>Cancelled</option>
                         </select>
                     </div>

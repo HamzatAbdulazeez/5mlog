@@ -78,6 +78,7 @@ export const ProcureAdmin = () => {
                             <Option value='Bags'>Bags</Option>
                             <Option value='Clothings'>Clothings</Option>
                             <Option value='Working Tools'>Working tools</Option>
+                            <Option value='Others'>Others</Option>
                         </Select>
                     </div>
                     <div className='mt-4 lg:w-6/12 lg:pl-3'>

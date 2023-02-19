@@ -67,7 +67,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
         minCellHeight: 9,
         halign: "left",
         valign: "center",
-        fontSize: 11
+        fontSize: 6
       }
     });
     doc.save(`${fileName}.pdf`);
