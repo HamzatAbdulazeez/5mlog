@@ -84,7 +84,7 @@ export const UserSettings = () => {
         <div  className="min-h-screen fs-500 relative">
             {/* header */}
             <div className="w-full py-8 pl-6 bg-white px-4">
-                <p className="text-2xl fw-600">User Settings</p>
+                <p className="text-2xl fw-600">{user.account_type === "Administrator"? "Admin" : "User"} Settings</p>
                 <p className="fs-400 text-gray-600 mt-2">Update/edit your account and profile settings.</p>
                 <Breadcrumbs className="bg-white pl-0 mt-4">
                     <Link to="/" className="opacity-60">
