@@ -15,16 +15,13 @@ export const InventDashBoardHomeTable = ({tableList}) => {
                     Order ID
                     </th>
                     <th className="px-2 text-primary align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap text-left">
-                    Item type
+                    Service type
                     </th>
                     <th className="px-2 text-primary align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap text-left">
                     Pickup
                     </th>
                     <th className="px-2 text-primary align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap text-left">
                     Destination
-                    </th>
-                    <th className="px-2 text-primary align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap text-left">
-                    Weight(kg)
                     </th>
                     <th className="px-2 text-primary align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap text-left">
                     Status
@@ -44,14 +41,13 @@ export const InventDashBoardHomeTable = ({tableList}) => {
                                   {list.order_id}
                               </td>
                               <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    {list.service_type}
                               </td>
                               <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                  {list.pickup_address}
+                                  {list.pickup_address? list.pickup_address : list.shipping_from_city? list.shipping_from_city : list.package_address? list.package_address : ""}
                               </td>
                               <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                              </td>
-                              <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                  {list.packegae_weight}
+                                 {list.dropoff_address? list.dropoff_address : list.shipping_to_city? list.shipping_to_city :  ""}
                               </td>
                               <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                       {list.status === 'Ongoing' ? <p className='px-2 py-1 rounded-lg bg-orange-100 text-orange-600 fw-600'>Pending</p> : ''}
