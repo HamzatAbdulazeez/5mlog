@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { clearMessage } from "../../../../store/slices/messages";
 import { adminAddFreight } from "../../../../store/slices/apiServices";
+import { useNavigate } from 'react-router';
 
 
 export const FreightAdmin = () => {
@@ -17,6 +18,7 @@ export const FreightAdmin = () => {
 
 
       const dispatch = useDispatch();
+      const navigate = useNavigate()
 
       useEffect(() => {
             dispatch(clearMessage());
@@ -61,6 +63,7 @@ export const FreightAdmin = () => {
                   }
                   else {
                         toast.success(message.message);
+                        navigate('/dashboard/admin-pickup')
                   }
             }
             setSuccessful(false);

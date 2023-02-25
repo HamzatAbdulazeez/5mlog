@@ -41,7 +41,7 @@ export default function Header() {
 
                     <div className="ml-10 hidden lg:flex items-center w-6/12">
                         {/* <FontAwesomeIcon icon={faBarsStaggered} size="2x" className="text-2xl lg:ml-4 cursor-pointer" onClick={sidebarReduce}/> */}
-                        <p className="ml-5 fw-700 hidden lg:block"> {user?.account_type} Dasboard</p>
+                        <p className="ml-5 fw-700 hidden lg:block"> {user?.account_type} Dashboard</p>
                         
                     </div>
                     <div className="flex items-center justify-end w-full">

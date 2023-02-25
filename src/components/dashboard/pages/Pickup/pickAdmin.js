@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { clearMessage } from "../../../../store/slices/messages";
 import { adminPickupService} from "../../../../store/slices/apiServices";
+import { useNavigate } from 'react-router';
 
 export const PickupAdmin = () => {
     let formRef = useRef(null);
@@ -14,6 +15,7 @@ export const PickupAdmin = () => {
     const [disableBtn, setDisableBtn] = useState(false);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch(clearMessage());
@@ -46,6 +48,7 @@ export const PickupAdmin = () => {
             }
             else {
                 toast.success(message.message);
+                navigate('/dashboard/admin-pickup')
             }
         }
         setSuccessful(false);

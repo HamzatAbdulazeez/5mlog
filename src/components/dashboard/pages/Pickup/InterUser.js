@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { clearMessage } from "../../../../store/slices/messages";
 import { addInterState } from "../../../../store/slices/apiServices";
+import { useNavigate } from 'react-router';
 
 export const InterStateUser = () => {
     let formRef = useRef(null);
@@ -15,6 +16,7 @@ export const InterStateUser = () => {
 
 
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch(clearMessage());
@@ -47,6 +49,7 @@ export const InterStateUser = () => {
             }
             else {
                 toast.success(message.message);
+                navigate("/dashboard/myorders");
             }
         }
         setSuccessful(false);

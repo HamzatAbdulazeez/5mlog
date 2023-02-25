@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { clearMessage } from "../../../../store/slices/messages";
 import { adminAddProcurement } from "../../../../store/slices/apiServices";
+import { useNavigate } from 'react-router';
 
 
 export const ProcureAdmin = () => {
@@ -16,6 +17,7 @@ export const ProcureAdmin = () => {
     const [itemType, setItemType] = useState("");
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(clearMessage());
@@ -52,6 +54,7 @@ export const ProcureAdmin = () => {
             }
             else {
                 toast.success(message.message);
+                navigate('/dashboard/admin-pickup')
             }
         }
         setSuccessful(false);

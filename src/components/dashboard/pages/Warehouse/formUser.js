@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { clearMessage } from "../../../../store/slices/messages";
 import { addWarehousing } from "../../../../store/slices/apiServices";
+import { useNavigate } from 'react-router';
 
 
 export const WarehouseUser = () => {
@@ -17,6 +18,7 @@ export const WarehouseUser = () => {
 
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(clearMessage());
@@ -61,6 +63,7 @@ export const WarehouseUser = () => {
             }
             else {
                 toast.success(message.message);
+                navigate('/dashboard/myorders')
             }
         }
         setSuccessful(false);
