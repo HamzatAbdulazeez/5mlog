@@ -112,6 +112,7 @@ export const Staff = () => {
                                             <option value='Abuja'>Abuja</option>
                                             <option value='Ogbomoso Oyo'>Ogbomoso Oyo</option>
                                             <option value='Ahafsusan Kaduna'>Ahafsusan Kaduna</option>
+                                            <option value='Others'>Others</option>
                                         </select>
                                     </div>
                                     <div className='lg:flex'>

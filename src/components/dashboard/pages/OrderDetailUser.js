@@ -156,7 +156,7 @@ export const OrderDetailUser = () => {
                 }
                 { order?.service_type === "Pickup" || order?.service_type === "InterState" ?  "" :
                     <div className='bg-light lg:p-6 mt-7 lg:mt-12 p-5 shadow-md rounded'>
-                        <p className='fw-600 pb-4'>Owner's Information</p>
+                        <p className='fw-600 pb-4'>Sender's Information</p>
                         <div className='py-2 lg:flex border-b border-gray-300'>
                             <div className='lg:w-6/12'>
                                 <p className='w-3/12 fw-500'>Name:</p>

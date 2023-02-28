@@ -99,7 +99,7 @@ export const ProcureUser = () => {
                 </div> */}
             </div>
             <div className='border-b border-gray-400 py-6'>
-                <p className='fw-600'>Owner's Infomation</p>
+                <p className='fw-600'>Sender's Infomation</p>
                 <div className='mt-4'>
                       <Input type="text" name='owner_full_name' required label="Full Name"/>
                 </div>

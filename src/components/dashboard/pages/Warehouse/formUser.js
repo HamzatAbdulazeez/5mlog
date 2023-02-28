@@ -119,7 +119,7 @@ export const WarehouseUser = () => {
                 </div>
             </div>
             <div className='border-b border-gray-400 py-4'>
-                <p className='fw-600'>Owner's Information</p>
+                <p className='fw-600'>Customer's Information</p>
                 <div className='mt-4'>
                       <Input type="text" name='owner_full_name' required label="Name"/>
                 </div>

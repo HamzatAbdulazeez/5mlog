@@ -197,7 +197,7 @@ export function PickupTable({status, paymentModal, dispatchOrder}) {
                         row.row.original?.status === "New" || row.row.original?.status === "Updated"? "" :  <MenuItem className=""  onClick={() => gotoPrint(row.value)}>Print Label</MenuItem>
                       }
                       {
-                        row.row.original?.order_by.account_type === "Administrator" ?  <MenuItem className=""  onClick={() => gotoReceipt(row.value)}>Print Receipt</MenuItem> : ''
+                        row.row.original?.order_by.account_type === "Administrator" || row.row.original?.order_by.account_type === "Dispatcher" ?  <MenuItem className=""  onClick={() => gotoReceipt(row.value)}>Print Receipt</MenuItem> : ''
                       }
                       <MenuItem className="bg-red-600 text-white hover:bg-red-500">Reject Order</MenuItem>
                     </MenuList>

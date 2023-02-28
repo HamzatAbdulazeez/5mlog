@@ -111,7 +111,7 @@ export const WarehouseDetailUser = () => {
                         </div>
                     </div>
                     <div className='bg-light lg:p-6 mt-6 lg:mt-0 p-5 shadow-md rounded'>
-                        <p className='fw-600 pb-4'>Owner's Information</p>
+                        <p className='fw-600 pb-4'>Customer's Information</p>
                         <div className='py-2 border-b border-gray-300 flex'>
                             <p className='w-3/12 fw-500'>Name:</p>
                             <p>{order?.owner_full_name}</p>

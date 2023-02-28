@@ -113,7 +113,7 @@ export function OverseaTable({status, paymentModal, dispatchOrder}) {
         navigate(`/dashboard/orderdetail?orderId=${id}`)
     }
     const gotoDriverRequest = (id) => {
-      navigate(`/dashboard/driver-request`)
+      navigate(`/dashboard/driver-request?requestId=${id}`)
   }
   const gotoPrint = (id) => {
         navigate(`/dashboard/print?orderId=${id}`)

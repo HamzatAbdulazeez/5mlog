@@ -133,23 +133,23 @@ export function DispatchTable({status, requestDeliver}) {
           },
           {
             Header: "Shipping From",
-            accessor: "order[0].package_address",
-            Cell: (props) => (
+            accessor: "order[0].shipping_from_country",
+            Cell: (row) => (
                 <>
-                  {props.value?
-                    <p className="item title">{props.row.original.order[0].pickup_address}</p>
+                  {row.value?
+                    ""
+                    :
+                    <p className="item title">{row.row.original.order[0].pickup_address}</p>
+                  }
+                  {
+                    row.value?
+                    <p className="item desc">{row.row.original.order[0].package_address}</p>
                     :
                     ""
                   }
                   {
-                    props.value?
-                    <p className="item desc">{props.row.original.order[0].package_address}</p>
-                    :
-                    ""
-                  }
-                  {
-                    props.value?
-                    <p className="item desc">{props.row.original.order[0].shipping_from_country}{props.row.original.order.shipping_from_state_province_region}</p>
+                    row.value?
+                    <p className="item desc">{row.row.original.order[0].shipping_from_state_province_region} {row.row.original.order[0].shipping_from_country}</p>
                     :
                     ''
                   }
@@ -158,18 +158,18 @@ export function DispatchTable({status, requestDeliver}) {
           },
           {
             Header: "Shipping To",
-            accessor:  'order[0].dropoff_address',
+            accessor:  'order[0].shipping_to_country',
             Cell: (props) => (
                 <>
                   {
                     props.value?
-                    <p className="item title">{props.row.original.order[0].dropoff_address}</p>
+                    ""
                     :
-                    ''
+                    <p className="item title">{props.row.original.order[0].dropoff_address}</p>
                   }
                   {
                     props.value?
-                    <p className="item desc">{props.row.original.order[0].shipping_to_country}{props.row.original.order[0].shipping_to_state_province_region}</p>
+                    <p className="item desc">{props.row.original.order[0].shipping_to_state_province_region}{ } {props.row.original.order[0].shipping_to_country}</p>
                     :
                     ''
                   }

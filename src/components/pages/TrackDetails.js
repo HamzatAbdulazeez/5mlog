@@ -7,7 +7,7 @@ import { FaListOl, FaPhoneAlt, FaSearchLocation } from 'react-icons/fa'
 import axios from 'axios'
 import authHeader from '../../services/auth-header'
 import { Spinner2 } from '../assets/Spinner'
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 
 
 export const TrackDetails = () => {
@@ -16,6 +16,8 @@ export const TrackDetails = () => {
     const trackId = new URLSearchParams(search).get("trackId");
     const [order, setOrder] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    const navigate = useNavigate()
 
     const fetchTrackDetails = async () =>{
         try {
@@ -61,18 +63,38 @@ export const TrackDetails = () => {
                                     Dispatched
                                 </div>
                             </div>
-                            <div className='w-4/12 pr-1'>
-                                <p className='p-1 lg:p-2 bg-primary'></p>
-                                <div className='lg:p-4 py-4 px-2'>
-                                    Ongoing
+                            {
+                                order?.status === "Dispatch"?
+                                <div className='w-4/12 pr-1'>
+                                    <p className='p-1 lg:p-2 bg-primary'></p>
+                                    <div className='lg:p-4 py-4 px-2'>
+                                        Ongoing
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='w-4/12'>
-                                <p className='p-1 lg:p-2 bg-primary'></p>
-                                <div className='lg:p-4 py-4 px-2'>
-                                    Completed
+                                :
+                                <div className='w-4/12 pr-1'>
+                                    <p className='p-1 lg:p-2 bg-primary'></p>
+                                    <div className='lg:p-4 py-4 px-2 bg-op'>
+                                        Ongoing
+                                    </div>
                                 </div>
-                            </div>
+                            }
+                            {
+                                order?.status === "Completed"? 
+                                <div className='w-4/12'>
+                                    <p className='p-1 lg:p-2 bg-primary'></p>
+                                    <div className='lg:p-4 py-4 px-2 bg-op'>
+                                        Completed
+                                    </div>
+                                </div>
+                                :
+                                <div className='w-4/12'>
+                                    <p className='p-1 lg:p-2 bg-primary'></p>
+                                    <div className='lg:p-4 py-4 px-2'>
+                                        Completed
+                                    </div>
+                                </div>
+                            }
                         </div>
                         <div className='lg:grid-2 lg:mt-8 mt-6'>
                             <div>
@@ -81,7 +103,7 @@ export const TrackDetails = () => {
                             </div>
                             <div className=' mt-6 lg:mt-0'>
                                 <p className='fw-500 lg:fs-700 fs-600'>Delivery Location:</p>
-                                <p>{order?.receiver_address}</p>
+                                <p> {order?.dropoff_address? order?.dropoff_address : order?.shipping_to_street_address? order?.shipping_to_street_address + " " + order?.shipping_to_city : "Null"}</p>
                             </div>
                         </div>
                     </div>
@@ -101,7 +123,7 @@ export const TrackDetails = () => {
                             </div>
                         </div>
                         <div className='mt-6'>
-                            <Button className='w-full bg-primary'>Contact Us</Button>
+                            <Button className='w-full bg-primary' onClick={() => navigate('/contact')}>Contact Us</Button>
                         </div>
                     </div>
                 </div>
@@ -118,7 +140,7 @@ export const TrackDetails = () => {
                             <p className='flex items-center text-gray-600 fs-500'><span className='pr-1'><FaListOl/></span>Dropoff</p>
                             <p className='flex items-center fw-600 text-xl'>{order?.order_id}</p>
                             <p className='flex fs-500 mt-6'><span className='pr-1 mt-1'><FaSearchLocation/></span> {order?.dropoff_address? order?.dropoff_address : order?.shipping_to_street_address? order?.shipping_to_street_address + " " + order?.shipping_to_city : "Null"}</p>
-                            <p className='flex fs-500 mt-2'>{order?.shipping_to_state_province_region? order?.shipping_to_state_province_region : "Lagos"} {order?.shipping_to_country? order?.shipping_to_country : "Nigeria"}.</p>
+                            <p className='flex fs-500 mt-2'>{order?.shipping_to_state_province_region? order?.shipping_to_state_province_region : ""} {order?.shipping_to_country? order?.shipping_to_country : ""}.</p>
                             <p className='flex fs-500 mt-2 flex items-center'><span className='pr-2'><FaPhoneAlt/></span>{order?.receiver_phone_number? order?.receiver_phone_number : "Null"}</p>
                         </div>
                         <div className='shadow-lg lg:p-6 p-3 mt-6 lg:mt-0 rounded-lg bg-blue-100'>
