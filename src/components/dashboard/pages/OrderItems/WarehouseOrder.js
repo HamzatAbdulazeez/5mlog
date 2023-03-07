@@ -91,7 +91,7 @@ export const WarehouseOrderUser = () => {
         reference: "TR-" + new Date().getTime().toString(),
         email: user?.email,
         amount: item?.price,
-        publicKey: "pk_test_b510f76c925d5a1fefd9b2a1286fce525ac44b41",
+        publicKey: "pk_live_8f22101cb02964ff9b916dd057340d266bd64aad",
       };
       const componentProps = {
         ...config,
