@@ -91,7 +91,7 @@ export const ProcureOrderUser = () => {
       const config = {
         reference: "TR-" + new Date().getTime().toString(),
         email: user?.email,
-        amount: item?.price,
+        amount: item?.price * 100,
         publicKey: "pk_live_8f22101cb02964ff9b916dd057340d266bd64aad",
       };
       const componentProps = {
