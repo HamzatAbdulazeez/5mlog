@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import React from 'react'
 
 export const DashBoardPendingOrders = ({tableList}) => {
+    console.log(tableList)
   return (
     <div>
         <div className="overflow-x-auto">
@@ -35,8 +36,8 @@ export const DashBoardPendingOrders = ({tableList}) => {
                 </tr>
                 </thead>
                 <tbody>
-                      {tableList ? tableList.map((lists) =>
-                          lists.order.map((list, j) => 
+                      {!!tableList.length && tableList.map((lists) =>
+                          lists?.order?.map((list, j) => 
                           <tr key={j}>
                               <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                   {j + 1}
@@ -63,7 +64,7 @@ export const DashBoardPendingOrders = ({tableList}) => {
                                       {dayjs(list.created_at).format('DD-MM-YYYY')}
                               </td>
                           </tr>
-                      )) : <tr></tr>
+                      ))
                       }
                 </tbody>
             </table>

@@ -121,7 +121,7 @@ export const DriverDashboard = () => {
                                 <p className='fw-600 text-lg flex items-center '><span className=' pr-3'><MdOutlineInventory/></span>New Orders</p>
                                 <button className='btn-primary py-1 flex items-center'>view all <span className='pl-2 text-xl'><TbLiveView/></span></button>
                             </div>
-                              <DashBoardPendingOrders tableList={ request ? request.my_order_activities : [] } />
+                              <DashBoardPendingOrders tableList={ !!request?.my_order_activities.length ? request.my_order_activities : [] } />
                         </div>
                         <div className='bg-white mt-6 lg:mt-0 p-4 rounded-lg'>
                             <p className='pb-2 mb-8 fw-600 text-lg flex items-center border-b border-gray-400'><span className=' pr-3'><MdAnalytics/></span>Delivery Analytics</p>

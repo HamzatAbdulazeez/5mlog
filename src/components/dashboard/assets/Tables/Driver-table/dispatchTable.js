@@ -139,17 +139,17 @@ export function DispatchTable({status, requestDeliver}) {
                   {row.value?
                     ""
                     :
-                    <p className="item title">{row.row.original.order[0].pickup_address}</p>
+                    <p className="item title">{!!row.row.original?.order?.length && row.row.original.order[0]?.pickup_address}</p>
                   }
                   {
                     row.value?
-                    <p className="item desc">{row.row.original.order[0].package_address}</p>
+                    <p className="item desc">{!!row.row.original?.order?.length && row.row.original.order[0]?.package_address}</p>
                     :
                     ""
                   }
                   {
                     row.value?
-                    <p className="item desc">{row.row.original.order[0].shipping_from_state_province_region} {row.row.original.order[0].shipping_from_country}</p>
+                    <p className="item desc">{!!row.row.original?.order?.length && row.row.original.order[0]?.shipping_from_state_province_region} {row.row.original.order[0].shipping_from_country}</p>
                     :
                     ''
                   }
@@ -165,11 +165,11 @@ export function DispatchTable({status, requestDeliver}) {
                     props.value?
                     ""
                     :
-                    <p className="item title">{props.row.original.order[0].dropoff_address}</p>
+                    <p className="item title">{!!props.row.original.order?.length && props.row.original.order[0]?.dropoff_address}</p>
                   }
                   {
                     props.value?
-                    <p className="item desc">{props.row.original.order[0].shipping_to_state_province_region}{ } {props.row.original.order[0].shipping_to_country}</p>
+                    <p className="item desc">{!!props.row.original.order?.length && props.row.original.order[0]?.shipping_to_state_province_region}{ } {props.row.original.order[0].shipping_to_country}</p>
                     :
                     ''
                   }
