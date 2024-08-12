@@ -35,6 +35,17 @@ const deleteVehicle = (id) => {
     }
     return axios(config);
 };
+const getVehicle = () =>{
+    return axios.get(
+        const config = {
+            method: 'post',
+            url: `${process.env.REACT_APP_BASE_URL }/admin/update/vehicle/${id}`,
+            headers: {
+                'Authorization': 'Bearer' + token
+            }
+        }
+    )
+}
 
 
 const vehicle = {
